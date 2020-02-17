@@ -45,7 +45,7 @@ public class Main {
 					break;
 			case 2: CalculateWeeks.startCalculateWeeks(listMonthly, listWeekly, listOneTime, scan, listLimited);
 					break;
-			case 3: 
+			case 3: EditBills.startEdit(listMonthly, listWeekly, listOneTime, listLimited, scan);
 					break;
 			case 4: quit = true;
 					break;
