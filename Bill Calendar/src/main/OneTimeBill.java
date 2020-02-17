@@ -34,7 +34,7 @@ public class OneTimeBill extends Bill {
 	}
 	@Override
 	public String toString() {
-		return "oneTime " + super.toString() + " " + date.get(Calendar.YEAR) + " " + date.get(Calendar.MONTH) + " " + date.get(Calendar.DAY_OF_MONTH) + '\n';
+		return "oneTime " + super.toString() + " " + date.get(Calendar.YEAR) + " " + (date.get(Calendar.MONTH)+1) + " " + date.get(Calendar.DAY_OF_MONTH) + '\n';
 	}
 
 }

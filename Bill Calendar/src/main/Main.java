@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import GUI.GUIMain;
+
 /**
  * @author traviscox
  *
@@ -32,6 +34,7 @@ public class Main {
 		}
 		
 		//Main menu
+		//new GUIMain();
 		Scanner scan = new Scanner(System.in);
 		Boolean quit = false;
 		while(!quit) {
