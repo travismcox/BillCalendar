@@ -25,7 +25,7 @@ public abstract class FileAccess {
 		// TODO Auto-generated constructor stub
 	}
 
-	public static void readFile(ArrayList<MonthlyBill> listMonthly, ArrayList<WeeklyBill> listWeekly, ArrayList<OneTimeBill> listOneTime) throws IOException {
+	public static void readFile(ArrayList<MonthlyBill> listMonthly, ArrayList<WeeklyBill> listWeekly, ArrayList<OneTimeBill> listOneTime, ArrayList<LimitedMonthlyBill> listLimited) throws IOException {
 		BufferedReader reader = new BufferedReader(new FileReader("calendar.txt"));
 		String line;
 		while((line = reader.readLine()) != null) {
@@ -37,17 +37,26 @@ public abstract class FileAccess {
 					break;
 			case "oneTime": listOneTime.add(new OneTimeBill(words[1], Double.parseDouble(words[2]), new GregorianCalendar(Integer.parseInt(words[3]), Integer.parseInt(words[4]), Integer.parseInt(words[5]))));
 					break;
+			case "limited": listLimited.add(new LimitedMonthlyBill(words[1], Double.parseDouble(words[2]), Integer.parseInt(words[3]), new GregorianCalendar(Integer.parseInt(words[4]), Integer.parseInt(words[5]), Integer.parseInt(words[6]))));
+					break;
 			}
 		}
 	}
 	
-	public static void saveToFile(ArrayList<MonthlyBill> listMonthly, ArrayList<WeeklyBill> listWeekly, ArrayList<OneTimeBill> listOneTime) throws IOException {
+	public static void saveToFile(ArrayList<MonthlyBill> listMonthly, ArrayList<WeeklyBill> listWeekly, ArrayList<OneTimeBill> listOneTime, ArrayList<LimitedMonthlyBill> listLimited) throws IOException {
 		BufferedWriter writer = new BufferedWriter(new FileWriter("calendar.txt"));
 		monthlyToFile(listMonthly, writer);
 		weeklyToFile(listWeekly, writer);
 		oneTimeToFile(listOneTime, writer);
+		limitedToFile(listLimited, writer);
 		writer.flush();
 		writer.close();
+	}
+
+	private static void limitedToFile(ArrayList<LimitedMonthlyBill> listLimited, BufferedWriter writer) throws IOException {
+		for(int i = 0; i < listLimited.size(); i++) {
+			writer.write(listLimited.get(i).toString());
+		}
 	}
 
 	private static void oneTimeToFile(ArrayList<OneTimeBill> listOneTime, BufferedWriter writer) throws IOException {
