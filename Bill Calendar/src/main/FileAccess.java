@@ -25,30 +25,30 @@ public abstract class FileAccess {
 		// TODO Auto-generated constructor stub
 	}
 
-	public static void readFile(ArrayList<MonthlyBill> listMonthly, ArrayList<WeeklyBill> listWeekly, ArrayList<OneTimeBill> listOneTime, ArrayList<LimitedMonthlyBill> listLimited) throws IOException {
+	public static void readFile(ListCollection listCollection) throws IOException {
 		BufferedReader reader = new BufferedReader(new FileReader(Utility.billFileName));
 		String line;
 		while((line = reader.readLine()) != null) {
 			String words[] = line.split(" ");
 			switch(words[0]) {
-			case "monthly": listMonthly.add(new MonthlyBill(words[1], Double.parseDouble(words[2]), Integer.parseInt(words[3])));
+			case "monthly": listCollection.getListMonthly().add(new MonthlyBill(words[1], Double.parseDouble(words[2]), Integer.parseInt(words[3])));
 					break;
-			case "weekly": listWeekly.add(new WeeklyBill(words[1], Double.parseDouble(words[2])));
+			case "weekly": listCollection.getListWeekly().add(new WeeklyBill(words[1], Double.parseDouble(words[2])));
 					break;
-			case "oneTime": listOneTime.add(new OneTimeBill(words[1], Double.parseDouble(words[2]), new GregorianCalendar(Integer.parseInt(words[3]), Integer.parseInt(words[4]), Integer.parseInt(words[5]))));
+			case "oneTime": listCollection.getListOneTime().add(new OneTimeBill(words[1], Double.parseDouble(words[2]), new GregorianCalendar(Integer.parseInt(words[3]), Integer.parseInt(words[4]), Integer.parseInt(words[5]))));
 					break;
-			case "limited": listLimited.add(new LimitedMonthlyBill(words[1], Double.parseDouble(words[2]), Integer.parseInt(words[3]), new GregorianCalendar(Integer.parseInt(words[4]), Integer.parseInt(words[5]), Integer.parseInt(words[6]))));
+			case "limited": listCollection.getListLimited().add(new LimitedMonthlyBill(words[1], Double.parseDouble(words[2]), Integer.parseInt(words[3]), new GregorianCalendar(Integer.parseInt(words[4]), Integer.parseInt(words[5]), Integer.parseInt(words[6]))));
 					break;
 			}
 		}
 	}
 	
-	public static void saveToFile(ArrayList<MonthlyBill> listMonthly, ArrayList<WeeklyBill> listWeekly, ArrayList<OneTimeBill> listOneTime, ArrayList<LimitedMonthlyBill> listLimited) throws IOException {
+	public static void saveToFile(ListCollection listCollection) throws IOException {
 		BufferedWriter writer = new BufferedWriter(new FileWriter(Utility.billFileName));
-		monthlyToFile(listMonthly, writer);
-		weeklyToFile(listWeekly, writer);
-		oneTimeToFile(listOneTime, writer);
-		limitedToFile(listLimited, writer);
+		monthlyToFile(listCollection.getListMonthly(), writer);
+		weeklyToFile(listCollection.getListWeekly(), writer);
+		oneTimeToFile(listCollection.getListOneTime(), writer);
+		limitedToFile(listCollection.getListLimited(), writer);
 		writer.flush();
 		writer.close();
 	}

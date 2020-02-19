@@ -26,7 +26,12 @@ public abstract class CalculateWeeks {
 		
 	}
 	
-	public static void startCalculateWeeks(ArrayList<MonthlyBill> listMonthly, ArrayList<WeeklyBill> listWeekly, ArrayList<OneTimeBill> listOneTime, Scanner scan, ArrayList<LimitedMonthlyBill> listLimited) {
+	public static void startCalculateWeeks(ListCollection listCollection, Scanner scan) {
+		ArrayList<MonthlyBill> listMonthly = listCollection.getListMonthly();
+		ArrayList<WeeklyBill> listWeekly = listCollection.getListWeekly();
+		ArrayList<OneTimeBill> listOneTime = listCollection.getListOneTime();
+		ArrayList<LimitedMonthlyBill> listLimited = listCollection.getListLimited();
+		
 		System.out.print("How many weeks would you like to calculate?");
 		//Scanner scan = new Scanner (System.in);
 		int weeks = scan.nextInt();

@@ -21,7 +21,12 @@ public abstract class BillInput {
 		
 	}
 	
-	public static void startBillInput(ArrayList<MonthlyBill> listMonthly, ArrayList<WeeklyBill> listWeekly, ArrayList<OneTimeBill> listOneTime, Scanner scan, ArrayList<LimitedMonthlyBill> listLimited) {
+	public static void startBillInput(ListCollection listCollection, Scanner scan) {
+		ArrayList<MonthlyBill> listMonthly = listCollection.getListMonthly();
+		ArrayList<WeeklyBill> listWeekly = listCollection.getListWeekly();
+		ArrayList<OneTimeBill> listOneTime = listCollection.getListOneTime();
+		ArrayList<LimitedMonthlyBill> listLimited = listCollection.getListLimited();
+		
 		System.out.print("Select 1 (Monthly), 2 (Weekly), 3 (One Time), 4 (Limited Monthly):");
 		switch(scan.nextInt()) {
 		case 1: monthlyBillCreator(listMonthly, scan);

@@ -22,18 +22,15 @@ public class Main {
 	public static void main(String[] args) {
 		//ArrayList<MonthlyBill> listMonthly, ArrayList<WeeklyBill> listWeekly, ArrayList<OneTimeBill> listOneTime
 		//Initialize
-		ArrayList<MonthlyBill> listMonthly = new ArrayList<MonthlyBill>(); 
-		ArrayList<WeeklyBill> listWeekly = new ArrayList<WeeklyBill>(); 
-		ArrayList<OneTimeBill> listOneTime = new ArrayList<OneTimeBill>();
-		ArrayList<LimitedMonthlyBill> listLimited = new ArrayList<LimitedMonthlyBill>();
+		ListCollection listCollection = new ListCollection();
 		//Read from file, if it exists
 		try {
-			FileAccess.readFile(listMonthly, listWeekly, listOneTime, listLimited);
+			FileAccess.readFile(listCollection);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			//e.printStackTrace();
 		}
-		EditBills.autoDelete(listOneTime, listLimited);
+		EditBills.autoDelete(listCollection);
 		
 		
 		//Main menu
@@ -43,11 +40,11 @@ public class Main {
 		while(!quit) {
 			System.out.print("Main Menu:\n 1)Add Bill\n 2)Calculate weeks\n 3)Edit Bills\n 4)Quit\n");
 			switch(scan.nextInt()) {
-			case 1: BillInput.startBillInput(listMonthly, listWeekly, listOneTime, scan, listLimited);
+			case 1: BillInput.startBillInput(listCollection, scan);
 					break;
-			case 2: CalculateWeeks.startCalculateWeeks(listMonthly, listWeekly, listOneTime, scan, listLimited);
+			case 2: CalculateWeeks.startCalculateWeeks(listCollection, scan);
 					break;
-			case 3: EditBills.startEdit(listMonthly, listWeekly, listOneTime, listLimited, scan);
+			case 3: EditBills.startEdit(listCollection, scan);
 					break;
 			case 4: quit = true;
 					break;
@@ -58,7 +55,7 @@ public class Main {
 		
 		//Quit protocol
 		try {
-			FileAccess.saveToFile(listMonthly, listWeekly, listOneTime, listLimited);
+			FileAccess.saveToFile(listCollection);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -22,25 +22,23 @@ public class GUIMain extends JFrame implements ActionListener{
 	 * 
 	 */
 	public GUIMain() {
-		JFrame frame = new JFrame("Main Menu");
-	       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	       frame.setSize(200,300);
-	       JButton buttonAddBill = new JButton("Add Bill");
-	       JButton buttonCalculateBills = new JButton("Calculate Bills");
-	       JButton buttonEditBills = new JButton("Edit Bills");
-	       JButton buttonExit = new JButton("Exit");
-	       buttonAddBill.addActionListener(this);
-	       
-	       
-	       Panel panel = new Panel();
-	       panel.setLayout(new GridLayout(4,1));
-	       panel.add(buttonAddBill);
-	       panel.add(buttonCalculateBills);
-	       panel.add(buttonEditBills);
-	       panel.add(buttonExit);
-	       frame.getContentPane().add(panel);
-	       //add(panel);
-	       frame.setVisible(true);
+		this.setTitle("Main Menu");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setSize(200,300);
+		JButton buttonAddBill = new JButton("Add Bill");
+		JButton buttonCalculateBills = new JButton("Calculate Bills");
+		JButton buttonEditBills = new JButton("Edit Bills");
+		JButton buttonExit = new JButton("Exit");
+		buttonAddBill.addActionListener(this);
+		
+		Panel panel = new Panel();
+		panel.setLayout(new GridLayout(4,1));
+		panel.add(buttonAddBill);
+		panel.add(buttonCalculateBills);
+		panel.add(buttonEditBills);
+		panel.add(buttonExit);
+		getContentPane().add(panel);
+		setVisible(true);
 	}
 	
 	public void actionPerformed(ActionEvent ae) {

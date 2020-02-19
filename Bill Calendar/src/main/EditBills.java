@@ -20,7 +20,12 @@ public abstract class EditBills {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public static void startEdit(ArrayList<MonthlyBill> listMonthly, ArrayList<WeeklyBill> listWeekly, ArrayList<OneTimeBill> listOneTime, ArrayList<LimitedMonthlyBill> listLimited, Scanner scan) {
+	public static void startEdit(ListCollection listCollection, Scanner scan) {
+		ArrayList<MonthlyBill> listMonthly = listCollection.getListMonthly(); 
+		ArrayList<WeeklyBill> listWeekly = listCollection.getListWeekly();
+		ArrayList<OneTimeBill> listOneTime = listCollection.getListOneTime();
+		ArrayList<LimitedMonthlyBill> listLimited = listCollection.getListLimited();
+		
 		System.out.println("Select which type of bill to edit");
 		System.out.println("1) Monthly\n2) Weekly\n3) One Time\n4) Limited Monthly\n5) Go Back");
 		Boolean quitLoop = false;
@@ -203,17 +208,17 @@ public abstract class EditBills {
 		}
 	}
 
-	public static void autoDelete(ArrayList<OneTimeBill> listOneTime, ArrayList<LimitedMonthlyBill> listLimited) {
-		for(int i = 0; i < listOneTime.size(); i++) {
-			if(listOneTime.get(i).getDate().before(new GregorianCalendar())) {
-				listOneTime.remove(i);
+	public static void autoDelete(ListCollection listCollection) {
+		for(int i = 0; i < listCollection.getListOneTime().size(); i++) {
+			if(listCollection.getListOneTime().get(i).getDate().before(new GregorianCalendar())) {
+				listCollection.getListOneTime().remove(i);
 				i--;
 			}
 		}
 		
-		for(int i = 0; i < listLimited.size(); i++) {
-			if(listLimited.get(i).getEndDate().before(new GregorianCalendar())) {
-				listLimited.remove(i);
+		for(int i = 0; i < listCollection.getListLimited().size(); i++) {
+			if(listCollection.getListLimited().get(i).getEndDate().before(new GregorianCalendar())) {
+				listCollection.getListLimited().remove(i);
 				i--;
 			}
 		}
