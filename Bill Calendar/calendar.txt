@@ -6,3 +6,5 @@ monthly Spectrum 96.0 20
 monthly GreenMountain 100.0 5
 monthly NYTimes 6.38 24
 weekly Factor 138.0
+limited AffirmCasper 208.33 22 2020 5 22
+limited AffirmGiant 120.83 22 2020 11 22

@@ -4,7 +4,6 @@
 package main;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 
@@ -53,7 +52,7 @@ public abstract class BillInput {
 		listOneTime.add(new OneTimeBill(name, amount, date));
 	}
 
-	private static GregorianCalendar wholeDateInput(String modifier, Scanner scan) {
+	public static GregorianCalendar wholeDateInput(String modifier, Scanner scan) {
 		System.out.print(modifier + " year (YYYY):");
 		int year = scan.nextInt();
 		System.out.print(modifier + " month (MM):");
