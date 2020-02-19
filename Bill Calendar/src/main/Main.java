@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-//import GUI.GUIMain;
+import GUI.GUIMain;
 
 /**
  * @author traviscox
@@ -33,9 +33,11 @@ public class Main {
 			// TODO Auto-generated catch block
 			//e.printStackTrace();
 		}
+		EditBills.autoDelete(listOneTime, listLimited);
+		
 		
 		//Main menu
-		//new GUIMain();
+		new GUIMain();
 		Scanner scan = new Scanner(System.in);
 		Boolean quit = false;
 		while(!quit) {

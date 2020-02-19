@@ -26,7 +26,7 @@ public abstract class FileAccess {
 	}
 
 	public static void readFile(ArrayList<MonthlyBill> listMonthly, ArrayList<WeeklyBill> listWeekly, ArrayList<OneTimeBill> listOneTime, ArrayList<LimitedMonthlyBill> listLimited) throws IOException {
-		BufferedReader reader = new BufferedReader(new FileReader("calendar.txt"));
+		BufferedReader reader = new BufferedReader(new FileReader(Utility.billFileName));
 		String line;
 		while((line = reader.readLine()) != null) {
 			String words[] = line.split(" ");
@@ -44,7 +44,7 @@ public abstract class FileAccess {
 	}
 	
 	public static void saveToFile(ArrayList<MonthlyBill> listMonthly, ArrayList<WeeklyBill> listWeekly, ArrayList<OneTimeBill> listOneTime, ArrayList<LimitedMonthlyBill> listLimited) throws IOException {
-		BufferedWriter writer = new BufferedWriter(new FileWriter("calendar.txt"));
+		BufferedWriter writer = new BufferedWriter(new FileWriter(Utility.billFileName));
 		monthlyToFile(listMonthly, writer);
 		weeklyToFile(listWeekly, writer);
 		oneTimeToFile(listOneTime, writer);

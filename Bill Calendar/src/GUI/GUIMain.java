@@ -4,7 +4,10 @@
 package GUI;
 
 import java.awt.Frame;
+import java.awt.GridLayout;
 import java.awt.Panel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -13,29 +16,41 @@ import javax.swing.JFrame;
  * @author traviscox
  *
  */
-public class GUIMain extends Frame {
+public class GUIMain extends JFrame implements ActionListener{
 
 	/**
 	 * 
 	 */
 	public GUIMain() {
-		JFrame frame = new JFrame("My First GUI");
+		JFrame frame = new JFrame("Main Menu");
 	       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	       frame.setSize(500,500);
-	       JButton button = new JButton("Press");
+	       frame.setSize(200,300);
 	       JButton buttonAddBill = new JButton("Add Bill");
-	      // frame.getContentPane().add(button); // Adds Button to content pane of frame
-	       //frame.getContentPane().add(buttonAddBill);
+	       JButton buttonCalculateBills = new JButton("Calculate Bills");
+	       JButton buttonEditBills = new JButton("Edit Bills");
+	       JButton buttonExit = new JButton("Exit");
+	       buttonAddBill.addActionListener(this);
 	       
-	       setSize(400, 400);
 	       
 	       Panel panel = new Panel();
+	       panel.setLayout(new GridLayout(4,1));
 	       panel.add(buttonAddBill);
-	       //frame.getContentPane().add(panel);
-	       add(panel);
-	       setVisible(true);
-	       
-	       //frame.setVisible(true);
+	       panel.add(buttonCalculateBills);
+	       panel.add(buttonEditBills);
+	       panel.add(buttonExit);
+	       frame.getContentPane().add(panel);
+	       //add(panel);
+	       frame.setVisible(true);
 	}
+	
+	public void actionPerformed(ActionEvent ae) {
+        String action = ae.getActionCommand();
+        if (action.equals("Add Bill")) {
+            System.out.println("Yes Button pressed!");
+        }
+        else if (action.equals("No")) {
+            System.out.println("No Button pressed!");
+        }
+    }
 
 }

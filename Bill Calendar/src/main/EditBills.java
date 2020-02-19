@@ -56,11 +56,20 @@ public abstract class EditBills {
 				editAmount(selectedBill, scan);
 				selectedBill.setDate(editDate(selectedBill.getDate(), scan));
 				selectedBill.setEndDate(editGregorianDate(selectedBill.getEndDate(), "End", scan));
+				deleteLimited(listLimited, selection-1, scan);
 				correct = true;
 			}
 			else {
 				System.out.println("Incorrect Input!");
 			}
+		}
+	}
+
+	private static void deleteLimited(ArrayList<LimitedMonthlyBill> listLimited, int selection, Scanner scan) {
+		System.out.print("Would you like to delete bill? Y/N");
+		if(scan.next().charAt(0) == 'Y') {
+			scan.nextLine();
+			listLimited.remove(selection);
 		}
 	}
 
@@ -77,11 +86,21 @@ public abstract class EditBills {
 				editName(selectedBill, scan);
 				editAmount(selectedBill, scan);
 				selectedBill.setDate(editGregorianDate(selectedBill.getDate(), "One Time", scan));
+				deleteOneTime(listOneTime, selection-1, scan);
 				correct = true;
 			}
 			else {
 				System.out.println("Incorrect Input!");
 			}
+		}
+		
+	}
+
+	private static void deleteOneTime(ArrayList<OneTimeBill> listOneTime, int selection, Scanner scan) {
+		System.out.print("Would you like to delete bill? Y/N");
+		if(scan.next().charAt(0) == 'Y') {
+			scan.nextLine();
+			listOneTime.remove(selection);
 		}
 		
 	}
@@ -108,6 +127,7 @@ public abstract class EditBills {
 				WeeklyBill selectedBill = listWeekly.get(selection-1);
 				editName(selectedBill, scan);
 				editAmount(selectedBill, scan);
+				deleteWeekly(listWeekly, selection-1, scan);
 				correct = true;
 			}
 			else {
@@ -115,6 +135,14 @@ public abstract class EditBills {
 			}
 		}
 		
+	}
+
+	private static void deleteWeekly(ArrayList<WeeklyBill> listWeekly, int selection, Scanner scan) {
+		System.out.print("Would you like to delete bill? Y/N");
+		if(scan.next().charAt(0) == 'Y') {
+			scan.nextLine();
+			listWeekly.remove(selection);
+		}
 	}
 
 	private static void editMonthly(ArrayList<MonthlyBill> listMonthly, Scanner scan) {
@@ -130,11 +158,20 @@ public abstract class EditBills {
 				editName(selectedBill, scan);
 				editAmount(selectedBill, scan);
 				selectedBill.setDate(editDate(selectedBill.getDate(), scan));
+				deleteMonthly(listMonthly, selection-1, scan);
 				correct = true;
 			}
 			else {
 				System.out.println("Incorrect Input!");
 			}
+		}
+	}
+
+	private static void deleteMonthly(ArrayList<MonthlyBill> listMonthly, int selection, Scanner scan) {
+		System.out.print("Would you like to delete bill? Y/N");
+		if(scan.next().charAt(0) == 'Y') {
+			scan.nextLine();
+			listMonthly.remove(selection);
 		}
 	}
 
@@ -166,4 +203,19 @@ public abstract class EditBills {
 		}
 	}
 
+	public static void autoDelete(ArrayList<OneTimeBill> listOneTime, ArrayList<LimitedMonthlyBill> listLimited) {
+		for(int i = 0; i < listOneTime.size(); i++) {
+			if(listOneTime.get(i).getDate().before(new GregorianCalendar())) {
+				listOneTime.remove(i);
+				i--;
+			}
+		}
+		
+		for(int i = 0; i < listLimited.size(); i++) {
+			if(listLimited.get(i).getEndDate().before(new GregorianCalendar())) {
+				listLimited.remove(i);
+				i--;
+			}
+		}
+	}
 }
