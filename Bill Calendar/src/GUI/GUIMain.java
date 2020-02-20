@@ -11,12 +11,13 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 /**
  * @author traviscox
  *
  */
-public class GUIMain extends JFrame implements ActionListener{
+public class GUIMain extends JFrame{
 
 	/**
 	 * 
@@ -25,30 +26,57 @@ public class GUIMain extends JFrame implements ActionListener{
 		this.setTitle("Main Menu");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(200,300);
-		JButton buttonAddBill = new JButton("Add Bill");
-		JButton buttonCalculateBills = new JButton("Calculate Bills");
-		JButton buttonEditBills = new JButton("Edit Bills");
-		JButton buttonExit = new JButton("Exit");
-		buttonAddBill.addActionListener(this);
+		GUIMainMenu mainMenu = new GUIMainMenu();
+		getContentPane().add(mainMenu.mainMenuPanel());
 		
-		Panel panel = new Panel();
-		panel.setLayout(new GridLayout(4,1));
-		panel.add(buttonAddBill);
-		panel.add(buttonCalculateBills);
-		panel.add(buttonEditBills);
-		panel.add(buttonExit);
-		getContentPane().add(panel);
+		//pack();
+		setLocationRelativeTo(null);
+	}
+	
+	public void run() {
 		setVisible(true);
 	}
 	
-	public void actionPerformed(ActionEvent ae) {
-        String action = ae.getActionCommand();
-        if (action.equals("Add Bill")) {
-            System.out.println("Yes Button pressed!");
-        }
-        else if (action.equals("No")) {
-            System.out.println("No Button pressed!");
-        }
-    }
+	class MainMenuActionListener implements ActionListener {
+		public void actionPerformed(ActionEvent ae) {
+			String action = ae.getActionCommand();
+			if (action.equals("Add Bill")) {
+	            //setVisible(false);
+	            GUIAddBill addBill = new GUIAddBill();
+	            //addBill.addBillPanel();
+	            getContentPane().removeAll();
+	            getContentPane().add(addBill.addBillPanel());
+	            setVisible(true);
+	        }
+	        else if (action.equals("Calculate Bills")) {
+	            
+	        }
+	        else if (action.equals("Edit Bills")) {
+	        	
+	        }
+	        else if (action.equals("Exit")) {
+	        	
+	        }
+		}
+	}
+	
+	class AddBillActionListener implements ActionListener {
+		public void actionPerformed(ActionEvent ae) {
+	        String action = ae.getActionCommand();
+	        if (action.equals("Monthly Bill")) {
+	            
+	            setVisible(false);
+	        }
+	        else if (action.equals("Weekly Bill")) {
+	            System.out.println("No Button pressed!");
+	        }
+	        else if (action.equals("One Time Bill")) {
+	        	
+	        }
+	        else if(action.contentEquals("Limited Monthly Bills")) {
+	        	
+	        }
+	    }
+	}
 
 }

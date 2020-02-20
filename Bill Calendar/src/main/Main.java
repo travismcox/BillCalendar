@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import GUI.GUIAddBill;
 import GUI.GUIMain;
 
 /**
@@ -34,10 +35,12 @@ public class Main {
 		
 		
 		//Main menu
-		new GUIMain();
+		GUIMain instance = new GUIMain();
+		instance.run();
+		//new GUIAddBill();
 		Scanner scan = new Scanner(System.in);
 		Boolean quit = false;
-		while(!quit) {
+		/*while(!quit) {
 			System.out.print("Main Menu:\n 1)Add Bill\n 2)Calculate weeks\n 3)Edit Bills\n 4)Quit\n");
 			switch(scan.nextInt()) {
 			case 1: BillInput.startBillInput(listCollection, scan);
@@ -51,7 +54,7 @@ public class Main {
 			default: System.out.println("Input error");
 					break;
 			}
-		}
+		}*/
 		
 		//Quit protocol
 		try {
