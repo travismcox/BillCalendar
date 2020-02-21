@@ -33,7 +33,7 @@ public class Main {
 		
 		
 		//Main menu
-		GUIMain instance = new GUIMain();
+		GUIMain instance = new GUIMain(listCollection);
 		instance.openMainMenu();
 		instance.run();
 		//new GUIAddBill();

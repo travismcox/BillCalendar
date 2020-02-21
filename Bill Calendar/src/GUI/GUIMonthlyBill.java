@@ -13,6 +13,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import main.MonthlyBill;
+
 /**
  * @author traviscox
  *
@@ -20,6 +22,7 @@ import javax.swing.JTextField;
 public class GUIMonthlyBill extends JPanel {
 
 	GUIMain frame;
+	JTextField nameTextField, amountTextField, dateTextField;
 	public GUIMonthlyBill(GUIMain frame) {
 		this.frame = frame;
 		frame.setVisible(false);
@@ -30,9 +33,9 @@ public class GUIMonthlyBill extends JPanel {
 		JLabel amountLabel = new JLabel("Amount");
 		JLabel dateLabel = new JLabel("Recurring Date");
 		
-		JTextField nameTextField = new JTextField();
-		JTextField amountTextField = new JTextField();
-		JTextField dateTextField = new JTextField();
+		nameTextField = new JTextField();
+		amountTextField = new JTextField();
+		dateTextField = new JTextField();
 		
 		JButton buttonEnter = new JButton("Add Monthly Bill");
 		
@@ -50,6 +53,7 @@ public class GUIMonthlyBill extends JPanel {
 		panelAddBill.add(dateTextField);
 		panelAddBill.add(buttonEnter);
 		
+		frame.setSize(500, 300);
 		frame.getContentPane().add(panelAddBill);
 		frame.setVisible(true);
 		
@@ -59,7 +63,11 @@ public class GUIMonthlyBill extends JPanel {
 		public void actionPerformed(ActionEvent ae) {
 	        String action = ae.getActionCommand();
 	        if(action.contentEquals("Add Monthly Bill")) {
-	        	
+	        	String name = nameTextField.getText();
+	        	Double amount = Double.parseDouble(amountTextField.getText());
+	        	Integer date = Integer.parseInt(dateTextField.getText());
+	        	frame.getListCollection().getListMonthly().add(new MonthlyBill(name, amount, date));
+	        	new GUIAddBill(frame);
 	        }
 	    }
 	}

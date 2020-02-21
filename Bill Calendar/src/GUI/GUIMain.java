@@ -16,16 +16,22 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import main.ListCollection;
+
 /**
  * @author traviscox
  *
  */
 public class GUIMain extends JFrame{
 
+	ListCollection listCollection;
 	/**
+	 * @param listCollection 
 	 * 
 	 */
-	public GUIMain() {
+	public GUIMain(ListCollection listCollection) {
+		this.listCollection = listCollection;
+		
 		this.setTitle("Main Menu");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(200,300);
@@ -38,6 +44,10 @@ public class GUIMain extends JFrame{
 	
 	public void openMainMenu() {
 		new GUIMainMenu(this);
+	}
+	
+	public ListCollection getListCollection() {
+		return listCollection;
 	}
 
 }
