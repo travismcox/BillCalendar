@@ -21,7 +21,7 @@ import main.MonthlyBill;
  * @author traviscox
  *
  */
-public class GUILimitedBill {
+public class GUILimitedBill extends JPanel {
 	GUIMain frame;
 	JTextField nameTextField, amountTextField, dateTextField, yearTextField, monthTextField, dayTextField;
 	public GUILimitedBill(GUIMain frame) {
