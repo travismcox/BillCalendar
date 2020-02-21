@@ -52,7 +52,7 @@ public class GUIAddBill extends JPanel implements ActionListener {
             new GUIWeeklyBill(frame);
         }
         else if (action.equals("One Time Bill")) {
-        	
+        	new GUIOneTimeBill(frame);
         }
         else if(action.contentEquals("Limited Monthly Bills")) {
         	
