@@ -21,14 +21,13 @@ import main.OneTimeBill;
  * @author traviscox
  *
  */
-public class GUIOneTimeBill {
+public class GUIOneTimeBill extends JPanel {
 	GUIMain frame;
 	JTextField nameTextField, amountTextField, yearTextField, monthTextField, dayTextField;
 	public GUIOneTimeBill(GUIMain frame) {
 		this.frame = frame;
 		frame.setVisible(false);
 		frame.getContentPane().removeAll();
-		JPanel panelAddBill = new JPanel();
 		
 		JLabel nameLabel = new JLabel("Name");
 		JLabel amountLabel = new JLabel("Amount");
@@ -44,27 +43,20 @@ public class GUIOneTimeBill {
 		
 		JButton buttonEnter = new JButton("Add Monthly Bill");
 		
-		//buttonMonthly.addActionListener(new GUIMain().new AddBillActionListener());
-		//buttonWeekly.addActionListener(new GUIMain().new AddBillActionListener());
-		//buttonOneTime.addActionListener(new GUIMain().new AddBillActionListener());
 		buttonEnter.addActionListener(new AddBillActionListener());
 		
-		panelAddBill.setLayout(new GridLayout(6,2));
-		panelAddBill.add(nameLabel);
-		panelAddBill.add(nameTextField);
-		panelAddBill.add(amountLabel);
-		panelAddBill.add(amountTextField);
-		panelAddBill.add(yearLabel);
-		panelAddBill.add(yearTextField);
-		panelAddBill.add(monthLabel);
-		panelAddBill.add(monthTextField);
-		panelAddBill.add(dayLabel);
-		panelAddBill.add(dayTextField);
-		panelAddBill.add(buttonEnter);
-		
-		frame.setSize(600, 300);
-		frame.getContentPane().add(panelAddBill);
-		frame.setVisible(true);
+		setLayout(new GridLayout(6,2));
+		add(nameLabel);
+		add(nameTextField);
+		add(amountLabel);
+		add(amountTextField);
+		add(yearLabel);
+		add(yearTextField);
+		add(monthLabel);
+		add(monthTextField);
+		add(dayLabel);
+		add(dayTextField);
+		add(buttonEnter);
 		
 	}
 	

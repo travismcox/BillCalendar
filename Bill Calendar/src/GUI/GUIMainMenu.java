@@ -22,8 +22,6 @@ public class GUIMainMenu extends JPanel implements ActionListener {
 		this.frame = frame;
 		frame.getContentPane().removeAll();
 		
-		JPanel panelAddBill = new JPanel();
-		
 		JButton buttonAddBill = new JButton("Add Bill");
 		JButton buttonCalculateBills = new JButton("Calculate Bills");
 		JButton buttonEditBills = new JButton("Edit Bills");
@@ -33,21 +31,18 @@ public class GUIMainMenu extends JPanel implements ActionListener {
 		buttonEditBills.addActionListener(this);
 		buttonExit.addActionListener(this);
 		
-		panelAddBill.setLayout(new GridLayout(4,1));
-		panelAddBill.add(buttonAddBill);
-		panelAddBill.add(buttonCalculateBills);
-		panelAddBill.add(buttonEditBills);
-		panelAddBill.add(buttonExit);
-		
-		frame.getContentPane().add(panelAddBill);
-		frame.setVisible(true);
+		setLayout(new GridLayout(4,1));
+		add(buttonAddBill);
+		add(buttonCalculateBills);
+		add(buttonEditBills);
+		add(buttonExit);
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent ae) {
 		String action = ae.getActionCommand();
 		if (action.equals("Add Bill")) {
-            new GUIAddBill(frame);
+            frame.changeToAdd();
         }
         else if (action.equals("Calculate Bills")) {
             
@@ -56,7 +51,7 @@ public class GUIMainMenu extends JPanel implements ActionListener {
         	
         }
         else if (action.equals("Exit")) {
-        	
+        	frame.saveAndExit();
         }
 	}
 

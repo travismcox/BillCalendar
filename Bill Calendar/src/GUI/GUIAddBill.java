@@ -21,7 +21,6 @@ public class GUIAddBill extends JPanel implements ActionListener {
 		this.frame = frame;
 		frame.setVisible(false);
 		frame.getContentPane().removeAll();
-		JPanel panelAddBill = new JPanel();
 		
 		JButton buttonMonthly = new JButton("Monthly Bill");
 		JButton buttonWeekly = new JButton("Weekly Bill");
@@ -35,34 +34,31 @@ public class GUIAddBill extends JPanel implements ActionListener {
 		buttonLimited.addActionListener(this);
 		buttonBackToMain.addActionListener(this);
 		
-		panelAddBill.setLayout(new GridLayout(5,1));
-		panelAddBill.add(buttonMonthly);
-		panelAddBill.add(buttonWeekly);
-		panelAddBill.add(buttonOneTime);
-		panelAddBill.add(buttonLimited);
-		panelAddBill.add(buttonBackToMain);
-		
-		frame.getContentPane().add(panelAddBill);
-		frame.setVisible(true);
+		setLayout(new GridLayout(5,1));
+		add(buttonMonthly);
+		add(buttonWeekly);
+		add(buttonOneTime);
+		add(buttonLimited);
+		add(buttonBackToMain);
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent ae) {
         String action = ae.getActionCommand();
         if (action.equals("Monthly Bill")) {
-            new GUIMonthlyBill(frame);
+            frame.changeToMonthly();
         }
         else if (action.equals("Weekly Bill")) {
-            new GUIWeeklyBill(frame);
+            frame.changeToWeekly();
         }
         else if (action.equals("One Time Bill")) {
-        	new GUIOneTimeBill(frame);
+        	frame.changeToOneTime();
         }
         else if(action.contentEquals("Limited Monthly Bills")) {
-        	new GUILimitedBill(frame);
+        	frame.changeToLimited();
         }
         else if(action.contentEquals("Back to Main Menu")) {
-        	new GUIMainMenu(frame);
+        	frame.changeToMain();
         }
     }
 

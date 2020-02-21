@@ -27,7 +27,6 @@ public class GUIMonthlyBill extends JPanel {
 		this.frame = frame;
 		frame.setVisible(false);
 		frame.getContentPane().removeAll();
-		JPanel panelAddBill = new JPanel();
 		
 		JLabel nameLabel = new JLabel("Name");
 		JLabel amountLabel = new JLabel("Amount");
@@ -39,24 +38,16 @@ public class GUIMonthlyBill extends JPanel {
 		
 		JButton buttonEnter = new JButton("Add Monthly Bill");
 		
-		//buttonMonthly.addActionListener(new GUIMain().new AddBillActionListener());
-		//buttonWeekly.addActionListener(new GUIMain().new AddBillActionListener());
-		//buttonOneTime.addActionListener(new GUIMain().new AddBillActionListener());
 		buttonEnter.addActionListener(new AddBillActionListener());
 		
-		panelAddBill.setLayout(new GridLayout(4,2));
-		panelAddBill.add(nameLabel);
-		panelAddBill.add(nameTextField);
-		panelAddBill.add(amountLabel);
-		panelAddBill.add(amountTextField);
-		panelAddBill.add(dateLabel);
-		panelAddBill.add(dateTextField);
-		panelAddBill.add(buttonEnter);
-		
-		frame.setSize(500, 300);
-		frame.getContentPane().add(panelAddBill);
-		frame.setVisible(true);
-		
+		setLayout(new GridLayout(4,2));
+		add(nameLabel);
+		add(nameTextField);
+		add(amountLabel);
+		add(amountTextField);
+		add(dateLabel);
+		add(dateTextField);
+		add(buttonEnter);
 	}
 	
 	public class AddBillActionListener implements ActionListener {

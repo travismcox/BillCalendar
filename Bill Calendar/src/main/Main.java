@@ -34,11 +34,11 @@ public class Main {
 		
 		//Main menu
 		GUIMain instance = new GUIMain(listCollection);
-		instance.openMainMenu();
-		instance.run();
+		instance.changeToMain();
+		
 		//new GUIAddBill();
-		Scanner scan = new Scanner(System.in);
-		Boolean quit = false;
+		//Scanner scan = new Scanner(System.in);
+		//Boolean quit = false;
 		/*while(!quit) {
 			System.out.print("Main Menu:\n 1)Add Bill\n 2)Calculate weeks\n 3)Edit Bills\n 4)Quit\n");
 			switch(scan.nextInt()) {
@@ -57,7 +57,6 @@ public class Main {
 		
 		//Quit protocol
 		try {
-			System.out.println("Here");
 			FileAccess.saveToFile(listCollection);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
