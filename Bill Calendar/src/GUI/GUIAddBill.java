@@ -27,16 +27,20 @@ public class GUIAddBill extends JPanel implements ActionListener {
 		JButton buttonWeekly = new JButton("Weekly Bill");
 		JButton buttonOneTime = new JButton("One Time Bill");
 		JButton buttonLimited = new JButton("Limited Monthly Bill");
+		JButton buttonBackToMain = new JButton("Back to Main Menu");
+		
 		buttonMonthly.addActionListener(this);
 		buttonWeekly.addActionListener(this);
 		buttonOneTime.addActionListener(this);
 		buttonLimited.addActionListener(this);
+		buttonBackToMain.addActionListener(this);
 		
-		panelAddBill.setLayout(new GridLayout(4,1));
+		panelAddBill.setLayout(new GridLayout(5,1));
 		panelAddBill.add(buttonMonthly);
 		panelAddBill.add(buttonWeekly);
 		panelAddBill.add(buttonOneTime);
 		panelAddBill.add(buttonLimited);
+		panelAddBill.add(buttonBackToMain);
 		
 		frame.getContentPane().add(panelAddBill);
 		frame.setVisible(true);
@@ -56,6 +60,9 @@ public class GUIAddBill extends JPanel implements ActionListener {
         }
         else if(action.contentEquals("Limited Monthly Bills")) {
         	new GUILimitedBill(frame);
+        }
+        else if(action.contentEquals("Back to Main Menu")) {
+        	new GUIMainMenu(frame);
         }
     }
 
