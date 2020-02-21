@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import GUI.GUIAddBill;
 import GUI.GUIMain;
 
 /**
@@ -16,14 +15,13 @@ import GUI.GUIMain;
  */
 public class Main {
 
-
+	static ListCollection listCollection;
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		//ArrayList<MonthlyBill> listMonthly, ArrayList<WeeklyBill> listWeekly, ArrayList<OneTimeBill> listOneTime
 		//Initialize
-		ListCollection listCollection = new ListCollection();
+		listCollection = new ListCollection();
 		//Read from file, if it exists
 		try {
 			FileAccess.readFile(listCollection);
@@ -36,6 +34,7 @@ public class Main {
 		
 		//Main menu
 		GUIMain instance = new GUIMain();
+		instance.openMainMenu();
 		instance.run();
 		//new GUIAddBill();
 		Scanner scan = new Scanner(System.in);
@@ -58,6 +57,7 @@ public class Main {
 		
 		//Quit protocol
 		try {
+			System.out.println("Here");
 			FileAccess.saveToFile(listCollection);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
