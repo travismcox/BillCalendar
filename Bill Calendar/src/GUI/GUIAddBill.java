@@ -55,7 +55,7 @@ public class GUIAddBill extends JPanel implements ActionListener {
         	new GUIOneTimeBill(frame);
         }
         else if(action.contentEquals("Limited Monthly Bills")) {
-        	
+        	new GUILimitedBill(frame);
         }
     }
 
