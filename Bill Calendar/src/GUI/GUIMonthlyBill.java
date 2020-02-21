@@ -22,6 +22,8 @@ public class GUIMonthlyBill extends JPanel {
 	GUIMain frame;
 	public GUIMonthlyBill(GUIMain frame) {
 		this.frame = frame;
+		frame.setVisible(false);
+		frame.getContentPane().removeAll();
 		JPanel panelAddBill = new JPanel();
 		
 		JLabel nameLabel = new JLabel("Name");
@@ -47,6 +49,9 @@ public class GUIMonthlyBill extends JPanel {
 		panelAddBill.add(dateLabel);
 		panelAddBill.add(dateTextField);
 		panelAddBill.add(buttonEnter);
+		
+		frame.getContentPane().add(panelAddBill);
+		frame.setVisible(true);
 		
 	}
 	

@@ -19,6 +19,8 @@ public class GUIAddBill extends JPanel implements ActionListener {
 	GUIMain frame;
 	public GUIAddBill(GUIMain frame) {
 		this.frame = frame;
+		frame.setVisible(false);
+		frame.getContentPane().removeAll();
 		JPanel panelAddBill = new JPanel();
 		
 		JButton buttonMonthly = new JButton("Monthly Bill");
@@ -35,6 +37,9 @@ public class GUIAddBill extends JPanel implements ActionListener {
 		panelAddBill.add(buttonWeekly);
 		panelAddBill.add(buttonOneTime);
 		panelAddBill.add(buttonLimited);
+		
+		frame.getContentPane().add(panelAddBill);
+		frame.setVisible(true);
 	}
 	
 	@Override
