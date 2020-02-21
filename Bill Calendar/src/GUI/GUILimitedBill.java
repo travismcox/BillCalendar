@@ -73,7 +73,7 @@ public class GUILimitedBill extends JPanel {
 	        	Integer recurringDate = Integer.parseInt(dateTextField.getText());
 	        	GregorianCalendar endDate = new GregorianCalendar(Integer.parseInt(yearTextField.getText()), Integer.parseInt(monthTextField.getText()), Integer.parseInt(dayTextField.getText()));
 	        	frame.getListCollection().getListLimited().add(new LimitedMonthlyBill(name, amount, recurringDate, endDate));
-	        	new GUIAddBill(frame);
+	        	frame.changeToAdd();
 	        }
 	    }
 	}

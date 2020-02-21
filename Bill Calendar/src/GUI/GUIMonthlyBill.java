@@ -58,7 +58,7 @@ public class GUIMonthlyBill extends JPanel {
 	        	Double amount = Double.parseDouble(amountTextField.getText());
 	        	Integer date = Integer.parseInt(dateTextField.getText());
 	        	frame.getListCollection().getListMonthly().add(new MonthlyBill(name, amount, date));
-	        	new GUIAddBill(frame);
+	        	frame.changeToAdd();
 	        }
 	    }
 	}

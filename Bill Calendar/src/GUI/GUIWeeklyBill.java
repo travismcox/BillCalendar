@@ -55,7 +55,7 @@ public class GUIWeeklyBill extends JPanel {
 	        	String name = nameTextField.getText();
 	        	Double amount = Double.parseDouble(amountTextField.getText());
 	        	frame.getListCollection().getListWeekly().add(new WeeklyBill(name, amount));
-	        	new GUIAddBill(frame);
+	        	frame.changeToAdd();
 	        }
 	    }
 	}

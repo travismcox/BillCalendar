@@ -68,7 +68,7 @@ public class GUIOneTimeBill extends JPanel {
 	        	Double amount = Double.parseDouble(amountTextField.getText());
 	        	GregorianCalendar date = new GregorianCalendar(Integer.parseInt(yearTextField.getText()), Integer.parseInt(monthTextField.getText()), Integer.parseInt(dayTextField.getText()));
 	        	frame.getListCollection().getListOneTime().add(new OneTimeBill(name, amount, date));
-	        	new GUIAddBill(frame);
+	        	frame.changeToAdd();
 	        }
 	    }
 	}
