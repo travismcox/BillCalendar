@@ -26,28 +26,26 @@ public abstract class CalculateWeeks {
 		
 	}
 	
-	public static void startCalculateWeeks(ListCollection listCollection, Scanner scan) {
-		ArrayList<MonthlyBill> listMonthly = listCollection.getListMonthly();
-		ArrayList<WeeklyBill> listWeekly = listCollection.getListWeekly();
-		ArrayList<OneTimeBill> listOneTime = listCollection.getListOneTime();
-		ArrayList<LimitedMonthlyBill> listLimited = listCollection.getListLimited();
-		
-		System.out.print("How many weeks would you like to calculate?");
-		//Scanner scan = new Scanner (System.in);
-		int weeks = scan.nextInt();
+	public static ArrayList<String> startCalculateWeeks(ListCollection listCollection, int weeks) {
 		GregorianCalendar startDate = new GregorianCalendar();
 		GregorianCalendar endDate = new GregorianCalendar();
+		ArrayList<String> results = new ArrayList<String>(), tempResults;
 		establishDays(startDate, endDate);
 		for(int i = 0; i < weeks; i++) {
-			calculateWeek(startDate, endDate, listMonthly, listWeekly, listOneTime, listLimited);
+			tempResults = calculateWeek(startDate, endDate, listCollection.getListMonthly(), listCollection.getListWeekly(), listCollection.getListOneTime(), listCollection.getListLimited());
 			startDate.add(GregorianCalendar.DATE, 7);
 			endDate.add(GregorianCalendar.DATE, 7);
+			for(int j = 0; j < tempResults.size(); j++) {
+				results.add(tempResults.get(j));
+			}
 		}
+		return results;
 	}
 	
-	private static void calculateWeek(GregorianCalendar startDate, GregorianCalendar endDate, ArrayList<MonthlyBill> listMonthly, ArrayList<WeeklyBill> listWeekly, ArrayList<OneTimeBill> listOneTime, ArrayList<LimitedMonthlyBill> listLimited) {
+	private static ArrayList<String> calculateWeek(GregorianCalendar startDate, GregorianCalendar endDate, ArrayList<MonthlyBill> listMonthly, ArrayList<WeeklyBill> listWeekly, ArrayList<OneTimeBill> listOneTime, ArrayList<LimitedMonthlyBill> listLimited) {
 		Double sum = 0.0;
 		ArrayList<String> listOfBills = new ArrayList<String>();
+		ArrayList<String> results = new ArrayList<String>();
 		//Weekly
 		for(int i = 0; i < listWeekly.size(); i++) {
 			sum = foundDate(listWeekly.get(i), listOfBills, sum);
@@ -69,10 +67,12 @@ public abstract class CalculateWeeks {
 		}
 		
 		//Print output
-		printWeek(startDate, endDate, sum);
+		results.add(printWeek(startDate, endDate, sum));
 		for(int i = 0; i < listOfBills.size(); i++) {
-			System.out.println('\t' + listOfBills.get(i));
+			//System.out.println('\t' + listOfBills.get(i));
+			results.add('\t' + listOfBills.get(i));
 		}
+		return results;
 	}
 	
 	private static Double monthlyCalculator(Bill bill, ArrayList<String> listOfBills, GregorianCalendar startDate, GregorianCalendar endDate, Double sum, int recurringDate) {
@@ -103,12 +103,17 @@ public abstract class CalculateWeeks {
 		return sum += bill.getAmount();
 	}
 
-	private static void printWeek(GregorianCalendar startDate, GregorianCalendar endDate, Double sum) {
+	private static String printWeek(GregorianCalendar startDate, GregorianCalendar endDate, Double sum) {
 		DateFormat dformat = new SimpleDateFormat("yyyy/MM/dd");
-		System.out.print(dformat.format(startDate.getTime()) + " - ");
-		System.out.print(dformat.format(endDate.getTime()) + " ");
-		System.out.println(String.format("\t%.2f", sum));
+		String dates = "";
+		dates += dformat.format(startDate.getTime()) + " - ";
+		dates += dformat.format(endDate.getTime()) + " ";
+		dates += String.format("\t%.2f", sum);
+		//System.out.print(dformat.format(startDate.getTime()) + " - ");
+		//System.out.print(dformat.format(endDate.getTime()) + " ");
+		//System.out.println(String.format("\t%.2f", sum));
 		
+		return dates;
 	}
 
 	public static void establishDays(GregorianCalendar startDate, GregorianCalendar endDate) {

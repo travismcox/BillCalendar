@@ -105,7 +105,11 @@ public class GUIMain extends JFrame{
 		getContentPane().removeAll();
 		getContentPane().add(panelLimitedBill);
 		setSize(500, 450);
-;		run();
+		run();
+	}
+	
+	public void printResults() {
+		
 	}
 
 	public void saveAndExit() {

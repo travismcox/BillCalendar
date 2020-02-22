@@ -54,14 +54,6 @@ public class Main {
 					break;
 			}
 		}*/
-		
-		//Quit protocol
-		try {
-			FileAccess.saveToFile(listCollection);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 
 }
