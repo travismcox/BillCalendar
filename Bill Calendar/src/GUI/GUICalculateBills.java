@@ -44,10 +44,10 @@ public class GUICalculateBills extends JPanel {
 	public class AddBillActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent ae) {
 	        String action = ae.getActionCommand();
-	        if(action.contentEquals("Add Monthly Bill")) {
+	        if(action.contentEquals("Calculate")) {
 	        	Integer weeks = Integer.parseInt(calculateTextField.getText());
-	        	CalculateWeeks.startCalculateWeeks(frame.getListCollection(), weeks);
-	        	frame.printResults();
+	        	//CalculateWeeks.startCalculateWeeks(frame.getListCollection(), weeks);
+	        	frame.printResults(CalculateWeeks.startCalculateWeeks(frame.getListCollection(), weeks));
 	        }
 	    }
 	}

@@ -10,6 +10,7 @@ import java.awt.Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -28,6 +29,7 @@ public class GUIMain extends JFrame{
 
 	ListCollection listCollection;
 	JPanel panelAddBill, panelMainMenu, panelMonthlyBill, panelWeeklyBill, panelOneTimeBill, panelLimitedBill;
+	JPanel panelCalculate;
 	/**
 	 * @param listCollection 
 	 * 
@@ -41,6 +43,7 @@ public class GUIMain extends JFrame{
 		panelWeeklyBill = new GUIWeeklyBill(this);
 		panelOneTimeBill = new GUIOneTimeBill(this);
 		panelLimitedBill = new GUILimitedBill(this);
+		panelCalculate = new GUICalculateBills(this);
 		
 		this.setTitle("Main Menu");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -108,8 +111,9 @@ public class GUIMain extends JFrame{
 		run();
 	}
 	
-	public void printResults() {
-		
+	public void printResults(ArrayList<String> results) {
+		new GUIResults(results);
+		changeToMain();
 	}
 
 	public void saveAndExit() {
@@ -120,6 +124,14 @@ public class GUIMain extends JFrame{
 			e.printStackTrace();
 		}
 		System.exit(0);
+	}
+
+	public void changeToCalculate() {
+		setVisible(false);
+		getContentPane().removeAll();
+		getContentPane().add(panelCalculate);
+		setSize(400, 250);
+		run();
 	}
 
 }
