@@ -48,7 +48,12 @@ public abstract class CalculateWeeks {
 		ArrayList<String> results = new ArrayList<String>();
 		//Weekly
 		for(int i = 0; i < listWeekly.size(); i++) {
-			sum = foundDate(listWeekly.get(i), listOfBills, sum);
+			GregorianCalendar tempDate = new GregorianCalendar();
+			tempDate.set(Calendar.YEAR, startDate.get(Calendar.YEAR));
+			tempDate.set(Calendar.MONTH, startDate.get(Calendar.MONTH));
+			tempDate.set(Calendar.DAY_OF_MONTH, startDate.get(Calendar.DAY_OF_MONTH));
+			tempDate.add(Calendar.DAY_OF_MONTH, 5);
+			sum = foundDate(listWeekly.get(i), listOfBills, sum, tempDate);
 		}
 		//Monthly
 		for(int i = 0; i < listMonthly.size(); i++) {
@@ -70,7 +75,7 @@ public abstract class CalculateWeeks {
 		results.add(printWeek(startDate, endDate, sum));
 		for(int i = 0; i < listOfBills.size(); i++) {
 			//System.out.println('\t' + listOfBills.get(i));
-			results.add('\t' + listOfBills.get(i));
+			results.add("       " + listOfBills.get(i));
 		}
 		return results;
 	}
@@ -87,38 +92,35 @@ public abstract class CalculateWeeks {
 	
 	private static Double dateComparison(Bill bill, GregorianCalendar date, ArrayList<String> listOfBills, GregorianCalendar startDate, GregorianCalendar endDate, Double sum) {
 		if(date.after(startDate) && date.before(endDate)) {
-			sum = foundDate(bill, listOfBills, sum);
+			sum = foundDate(bill, listOfBills, sum, date);
 		}
 		else if(date.get(Calendar.YEAR) == startDate.get(Calendar.YEAR) && date.get(Calendar.MONTH) == startDate.get(Calendar.MONTH) && date.get(Calendar.DAY_OF_MONTH) == startDate.get(Calendar.DAY_OF_MONTH)) {
-			sum = foundDate(bill, listOfBills, sum);
+			sum = foundDate(bill, listOfBills, sum, date);
 		}
 		else if(date.get(Calendar.YEAR) == endDate.get(Calendar.YEAR) && date.get(Calendar.MONTH) == endDate.get(Calendar.MONTH) && date.get(Calendar.DAY_OF_MONTH) == endDate.get(Calendar.DAY_OF_MONTH)) {
-			sum = foundDate(bill, listOfBills, sum);
+			sum = foundDate(bill, listOfBills, sum, date);
 		}
 		return sum;
 	}
 	
-	private static Double foundDate(Bill bill, ArrayList<String> listOfBills, Double sum) {
-		listOfBills.add(bill.getName() + " " + bill.getAmount());
+	private static Double foundDate(Bill bill, ArrayList<String> listOfBills, Double sum, GregorianCalendar date) {
+		listOfBills.add(bill.getName() + " - " + bill.getAmount() + " - " + printDate(date));
 		return sum += bill.getAmount();
 	}
 
 	private static String printWeek(GregorianCalendar startDate, GregorianCalendar endDate, Double sum) {
+		return printDate(startDate) + " - " + printDate(endDate) + " " + String.format("\t%.2f", sum);
+	}
+	
+	private static String printDate(GregorianCalendar date) {
 		DateFormat dformat = new SimpleDateFormat("yyyy/MM/dd");
-		String dates = "";
-		dates += dformat.format(startDate.getTime()) + " - ";
-		dates += dformat.format(endDate.getTime()) + " ";
-		dates += String.format("\t%.2f", sum);
-		//System.out.print(dformat.format(startDate.getTime()) + " - ");
-		//System.out.print(dformat.format(endDate.getTime()) + " ");
-		//System.out.println(String.format("\t%.2f", sum));
 		
-		return dates;
+		return dformat.format(date.getTime());
 	}
 
 	public static void establishDays(GregorianCalendar startDate, GregorianCalendar endDate) {
 		while(startDate.get(GregorianCalendar.DAY_OF_WEEK) != GregorianCalendar.FRIDAY) {
-			startDate.add(GregorianCalendar.DATE, 1);
+			startDate.add(GregorianCalendar.DATE, -1);
 			
 		}
 		endDate.set(startDate.get(GregorianCalendar.YEAR), startDate.get(GregorianCalendar.MONTH), startDate.get(GregorianCalendar.DAY_OF_MONTH));

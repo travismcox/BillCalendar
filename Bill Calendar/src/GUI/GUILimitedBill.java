@@ -26,8 +26,6 @@ public class GUILimitedBill extends JPanel {
 	JTextField nameTextField, amountTextField, dateTextField, yearTextField, monthTextField, dayTextField;
 	public GUILimitedBill(GUIMain frame) {
 		this.frame = frame;
-		frame.setVisible(false);
-		frame.getContentPane().removeAll();
 		
 		JLabel nameLabel = new JLabel("Name");
 		JLabel amountLabel = new JLabel("Amount");
