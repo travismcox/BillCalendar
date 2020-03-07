@@ -42,7 +42,7 @@ public class GUIEditBill extends JPanel implements ActionListener {
 	}
 	
 	public void actionPerformed(ActionEvent ae) {
-        String action = ae.getActionCommand();
+        /*String action = ae.getActionCommand();
         if (action.equals("Monthly Bill")) {
             frame.changeToSelectMonthly();
         }
@@ -57,6 +57,6 @@ public class GUIEditBill extends JPanel implements ActionListener {
         }
         else if(action.contentEquals("Back to Main Menu")) {
         	frame.changeToMain();
-        }
+        }*/
     }
 }

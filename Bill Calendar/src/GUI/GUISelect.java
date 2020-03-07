@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JList;
 import javax.swing.JPanel;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 
 import main.ListCollection;
 
@@ -17,24 +19,33 @@ import main.ListCollection;
  * @author traviscox
  *
  */
-public class GUISelect extends JPanel implements ActionListener {
+public class GUISelect extends JPanel implements ActionListener, ListSelectionListener {
 
-	GUIMain guiMain;
+	GUIMain frame;
 	ListCollection listCollection;
 	public GUISelect(GUIMain guiMain, int typeOfBill) {
-		this.guiMain = guiMain;
-		listCollection = this.guiMain.getListCollection();
+		frame = guiMain;
+		listCollection = this.frame.getListCollection();
 		
 		//select(typeOfBill);
 		JList selectionList = new JList(select(typeOfBill));
 		JButton goBackButton = new JButton("Go Back");
 		JButton enterButton = new JButton("Enter");
+		
+		goBackButton.addActionListener(this);
+		enterButton.addActionListener(this);
+		selectionList.addListSelectionListener(this);
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-
+		String action = e.getActionCommand();
+        if (action.equals("Go Back")) {
+            frame.changeToEdit();
+        }
+        else if (action.equals("Enter")) {
+            //frame.changeToSelectWeekly();
+        }
 	}
 	
 	private String[] select(int typeOfBill) {
@@ -87,6 +98,12 @@ public class GUISelect extends JPanel implements ActionListener {
 		}
 		
 		return (String[]) list.toArray();
+	}
+
+	@Override
+	public void valueChanged(ListSelectionEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

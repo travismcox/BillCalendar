@@ -1,11 +1,11 @@
-monthly Netflix 60.6 17
+monthly Netflix 40.6 21
 monthly Hulu 12.98 8
 monthly AT&T 264.14 4
-monthly AT&TTV 86.6 22
-monthly Spectrum 96.0 20
-monthly GreenMountain 100.0 5
+monthly AT&TTV 95.0 22
+monthly Spectrum 50.0 20
+monthly GreenMountain 100.0 19
 monthly NYTimes 6.38 24
-weekly Factor 138.0
-limited AffirmCasper 208.33 22 2024 1 22
-limited AffirmGiant 120.83 22 2024 7 22
-limited BroadwayAtTheBass 359.58 1 2020 10 1
+weekly Factor 77.0
+limited AffirmCasper 208.33 22 2024 3 22
+limited AffirmGiant 120.83 22 2024 9 22
+limited BroadwayAtTheBass 359.58 1 2020 12 1

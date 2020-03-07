@@ -134,4 +134,9 @@ public class GUIMain extends JFrame{
 		run();
 	}
 
+	public void changeToEdit() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
