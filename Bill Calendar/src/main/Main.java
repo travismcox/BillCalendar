@@ -35,25 +35,6 @@ public class Main {
 		//Main menu
 		GUIMain instance = new GUIMain(listCollection);
 		instance.changeToMain();
-		
-		//new GUIAddBill();
-		//Scanner scan = new Scanner(System.in);
-		//Boolean quit = false;
-		/*while(!quit) {
-			System.out.print("Main Menu:\n 1)Add Bill\n 2)Calculate weeks\n 3)Edit Bills\n 4)Quit\n");
-			switch(scan.nextInt()) {
-			case 1: BillInput.startBillInput(listCollection, scan);
-					break;
-			case 2: CalculateWeeks.startCalculateWeeks(listCollection, scan);
-					break;
-			case 3: EditBills.startEdit(listCollection, scan);
-					break;
-			case 4: quit = true;
-					break;
-			default: System.out.println("Input error");
-					break;
-			}
-		}*/
 	}
 
 }

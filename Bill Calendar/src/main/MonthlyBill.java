@@ -38,5 +38,9 @@ public class MonthlyBill extends Bill {
 	public String toString() {
 		return "monthly " + super.toString() + " " + date + '\n';
 	}
+	
+	public String listToString() {
+		return super.toString() + " " + date;
+	}
 
 }

@@ -51,8 +51,15 @@ public class LimitedMonthlyBill extends Bill {
 	}
 	@Override
 	public String toString() {
-		return "limited " + super.toString() + " " + getDate() + " " + getEndDate().get(Calendar.YEAR) + " " + (getEndDate().get(Calendar.MONTH)+1) + " " + getEndDate().get(Calendar.DAY_OF_MONTH) + '\n';
+		return "limited " + super.toString() + " " + getDate() + " " + getFullDate(' ') + '\n';
 	}
 
+	public String listToString() {
+		return super.toString() + " " + getDate() + " " + getFullDate('/');
+	}
+	
+	private String getFullDate(char seperator) {
+		return "" + getEndDate().get(Calendar.YEAR) + seperator + (getEndDate().get(Calendar.MONTH)+1) + seperator + getEndDate().get(Calendar.DAY_OF_MONTH);
+	}
 	
 }

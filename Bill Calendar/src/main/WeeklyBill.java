@@ -18,5 +18,9 @@ public class WeeklyBill extends Bill {
 	public String toString() {
 		return "weekly " + super.toString() + '\n';
 	}
+	
+	public String listToString() {
+		return super.toString();
+	}
 
 }
