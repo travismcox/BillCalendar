@@ -48,7 +48,7 @@ public class GUIMainMenu extends JPanel implements ActionListener {
             frame.changeToCalculate();
         }
         else if (action.equals("Edit Bills")) {
-        	
+        	frame.changeToEdit();
         }
         else if (action.equals("Exit")) {
         	frame.saveAndExit();

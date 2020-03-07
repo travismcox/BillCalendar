@@ -6,6 +6,6 @@ monthly Spectrum 50.0 20
 monthly GreenMountain 100.0 19
 monthly NYTimes 6.38 24
 weekly Factor 77.0
-limited AffirmCasper 208.33 22 2024 3 22
-limited AffirmGiant 120.83 22 2024 9 22
-limited BroadwayAtTheBass 359.58 1 2020 12 1
+limited AffirmCasper 208.33 22 2024 4 22
+limited AffirmGiant 120.83 22 2024 10 22
+limited BroadwayAtTheBass 359.58 1 2021 1 1

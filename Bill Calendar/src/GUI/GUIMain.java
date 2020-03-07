@@ -28,22 +28,12 @@ import main.ListCollection;
 public class GUIMain extends JFrame{
 
 	ListCollection listCollection;
-	JPanel panelAddBill, panelMainMenu, panelMonthlyBill, panelWeeklyBill, panelOneTimeBill, panelLimitedBill;
-	JPanel panelCalculate;
 	/**
 	 * @param listCollection 
 	 * 
 	 */
 	public GUIMain(ListCollection listCollection) {
 		this.listCollection = listCollection;
-		
-		panelAddBill = new GUIAddBill(this);
-		panelMainMenu = new GUIMainMenu(this);
-		panelMonthlyBill = new GUIMonthlyBill(this);
-		panelWeeklyBill = new GUIWeeklyBill(this);
-		panelOneTimeBill = new GUIOneTimeBill(this);
-		panelLimitedBill = new GUILimitedBill(this);
-		panelCalculate = new GUICalculateBills(this);
 		
 		this.setTitle("Main Menu");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -66,7 +56,7 @@ public class GUIMain extends JFrame{
 	public void changeToMain() {
 		setVisible(false);
 		getContentPane().removeAll();
-		getContentPane().add(panelMainMenu);
+		getContentPane().add(new GUIMainMenu(this));
 		setSize(200,300);
 		run();
 	}
@@ -74,7 +64,7 @@ public class GUIMain extends JFrame{
 	public void changeToAdd() {
 		setVisible(false);
 		getContentPane().removeAll();
-		getContentPane().add(panelAddBill);
+		getContentPane().add(new GUIAddBill(this));
 		setSize(200,300);
 		run();
 	}
@@ -82,7 +72,7 @@ public class GUIMain extends JFrame{
 	public void changeToMonthly() {
 		setVisible(false);
 		getContentPane().removeAll();
-		getContentPane().add(panelMonthlyBill);
+		getContentPane().add(new GUIMonthlyBill(this));
 		setSize(500, 300);
 		run();
 	}
@@ -90,7 +80,7 @@ public class GUIMain extends JFrame{
 	public void changeToWeekly() {
 		setVisible(false);
 		getContentPane().removeAll();
-		getContentPane().add(panelWeeklyBill);
+		getContentPane().add(new GUIWeeklyBill(this));
 		setSize(500, 300);
 		run();
 	}
@@ -98,7 +88,7 @@ public class GUIMain extends JFrame{
 	public void changeToOneTime() {
 		setVisible(false);
 		getContentPane().removeAll();
-		getContentPane().add(panelOneTimeBill);
+		getContentPane().add(new GUIOneTimeBill(this));
 		setSize(500, 400);
 		run();
 	}
@@ -106,7 +96,7 @@ public class GUIMain extends JFrame{
 	public void changeToLimited() {
 		setVisible(false);
 		getContentPane().removeAll();
-		getContentPane().add(panelLimitedBill);
+		getContentPane().add(new GUILimitedBill(this));
 		setSize(500, 450);
 		run();
 	}
@@ -129,14 +119,17 @@ public class GUIMain extends JFrame{
 	public void changeToCalculate() {
 		setVisible(false);
 		getContentPane().removeAll();
-		getContentPane().add(panelCalculate);
+		getContentPane().add(new GUICalculateBills(this));
 		setSize(400, 250);
 		run();
 	}
 
 	public void changeToEdit() {
-		// TODO Auto-generated method stub
-		
+		setVisible(false);
+		getContentPane().removeAll();
+		getContentPane().add(new GUIEditBill(this));
+		setSize(200, 300);
+		run();
 	}
 
 }
