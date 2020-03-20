@@ -42,6 +42,6 @@ public class OneTimeBill extends Bill {
 	}
 
 	private String getFullDate(char seperator) {
-		return "" + getDate().get(Calendar.YEAR) + seperator + (getDate().get(Calendar.MONTH)+1) + seperator + getDate().get(Calendar.DAY_OF_MONTH);
+		return "" + getDate().get(Calendar.YEAR) + seperator + (getDate().get(Calendar.MONTH)) + seperator + getDate().get(Calendar.DAY_OF_MONTH);
 	}
 }

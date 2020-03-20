@@ -3,6 +3,7 @@
  */
 package main;
 
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -39,9 +40,22 @@ public abstract class CalculateWeeks {
 				results.add(tempResults.get(j));
 			}
 		}
+		
+		printWeeks(results);
+		
 		return results;
 	}
 	
+	private static void printWeeks(ArrayList<String> results) {
+		try {
+			FileAccess.calculatedWeeksToFile(results);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
 	private static ArrayList<String> calculateWeek(GregorianCalendar startDate, GregorianCalendar endDate, ArrayList<MonthlyBill> listMonthly, ArrayList<WeeklyBill> listWeekly, ArrayList<OneTimeBill> listOneTime, ArrayList<LimitedMonthlyBill> listLimited) {
 		Double sum = 0.0;
 		ArrayList<String> listOfBills = new ArrayList<String>();
@@ -66,7 +80,7 @@ public abstract class CalculateWeeks {
 		}
 		//Limited Monthly
 		for(int i = 0; i < listLimited.size(); i++) {
-			if(!startDate.after(listLimited.get(i).getEndDate())) {
+			if(startDateEndDateComparison(startDate, listLimited.get(i).getEndDate())) {
 				sum = monthlyCalculator(listLimited.get(i), listOfBills, startDate, endDate, sum, listLimited.get(i).getDate());
 			}
 		}
@@ -78,6 +92,18 @@ public abstract class CalculateWeeks {
 			results.add("       " + listOfBills.get(i));
 		}
 		return results;
+	}
+	
+	private static boolean startDateEndDateComparison(GregorianCalendar startDate, GregorianCalendar endDate) {
+		boolean result = startDate.before(endDate);
+		if(!result) {
+			result = (startDate.get(Calendar.YEAR) == endDate.get(Calendar.YEAR)) 
+					&& (startDate.get(Calendar.MONTH) == endDate.get(Calendar.MONTH)) 
+					&& (startDate.get(Calendar.DAY_OF_MONTH) == endDate.get(Calendar.DAY_OF_MONTH));
+		}
+		
+		return result;
+		
 	}
 	
 	private static Double monthlyCalculator(Bill bill, ArrayList<String> listOfBills, GregorianCalendar startDate, GregorianCalendar endDate, Double sum, int recurringDate) {
@@ -127,4 +153,5 @@ public abstract class CalculateWeeks {
 		endDate.add(GregorianCalendar.DATE, 6);
 	}
 
+	
 }

@@ -132,4 +132,36 @@ public class GUIMain extends JFrame{
 		run();
 	}
 
+	public void changeToSelectMonthly() {
+		setVisible(false);
+		getContentPane().removeAll();
+		getContentPane().add(new GUISelect(this, 0));
+		setSize(200, 300);
+		run();
+	}
+
+	public void changeToSelectWeekly() {
+		setVisible(false);
+		getContentPane().removeAll();
+		getContentPane().add(new GUISelect(this, 1));
+		setSize(200, 300);
+		run();
+	}
+
+	public void changeToSelectOneTime() {
+		setVisible(false);
+		getContentPane().removeAll();
+		getContentPane().add(new GUISelect(this, 2));
+		setSize(200, 300);
+		run();
+	}
+
+	public void changeToSelectLimited() {
+		setVisible(false);
+		getContentPane().removeAll();
+		getContentPane().add(new GUISelect(this, 3));
+		setSize(200, 300);
+		run();
+	}
+
 }

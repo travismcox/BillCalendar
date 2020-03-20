@@ -77,4 +77,16 @@ public abstract class FileAccess {
 			writer.write(test);
 		}
 	}
+
+	
+	public static void calculatedWeeksToFile(ArrayList<String> results) throws IOException {
+		BufferedWriter writer = new BufferedWriter(new FileWriter(Utility.resultsFileName));
+		for(int i = 0; i < results.size(); i++) {
+			writer.write(results.get(i).toString() + '\n');
+		}
+		writer.flush();
+		writer.close();
+	}
+
+	
 }

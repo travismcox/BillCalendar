@@ -35,6 +35,10 @@ public class GUISelect extends JPanel implements ActionListener, ListSelectionLi
 		goBackButton.addActionListener(this);
 		enterButton.addActionListener(this);
 		selectionList.addListSelectionListener(this);
+		
+		this.add(selectionList);
+		add(goBackButton);
+		add(enterButton);
 	}
 	
 	@Override
@@ -44,12 +48,13 @@ public class GUISelect extends JPanel implements ActionListener, ListSelectionLi
             frame.changeToEdit();
         }
         else if (action.equals("Enter")) {
-            //frame.changeToSelectWeekly();
+            frame.changeToSelectWeekly();
         }
 	}
 	
 	private String[] select(int typeOfBill) {
-		String[] arrayOfStrings = null;
+		ArrayList<String> arrayOfStrings = null;
+		
 		switch(typeOfBill) {
 		case 0: arrayOfStrings = selectMonthly();
 			break;
@@ -61,43 +66,49 @@ public class GUISelect extends JPanel implements ActionListener, ListSelectionLi
 			break;
 		}
 		
-		return arrayOfStrings;
+		String[] listArray = new String[arrayOfStrings.size()];
+		for(int i = 0; i < arrayOfStrings.size(); i++) {
+			listArray[i] = arrayOfStrings.get(i);
+		}
+		
+		
+		return listArray;
 	}
 
-	private String[] selectLimited() {
+	private ArrayList<String> selectLimited() {
 		ArrayList<String> list = new ArrayList<String>();
 		for(int i = 0; i < listCollection.getListLimited().size(); i++) {
 			list.add(listCollection.getListLimited().get(i).listToString());
 		}
 		
-		return (String[]) list.toArray();
+		return list;
 	}
 
-	private String[] selectOneTime() {
+	private ArrayList<String> selectOneTime() {
 		ArrayList<String> list = new ArrayList<String>();
 		for(int i = 0; i < listCollection.getListOneTime().size(); i++) {
 			list.add(listCollection.getListOneTime().get(i).listToString());
 		}
 		
-		return (String[]) list.toArray();
+		return list;
 	}
 
-	private String[] selectWeekly() {
+	private ArrayList<String> selectWeekly() {
 		ArrayList<String> list = new ArrayList<String>();
 		for(int i = 0; i < listCollection.getListWeekly().size(); i++) {
 			list.add(listCollection.getListWeekly().get(i).listToString());
 		}
 		
-		return (String[]) list.toArray();
+		return list;
 	}
 
-	private String[] selectMonthly() {
+	private ArrayList<String> selectMonthly() {
 		ArrayList<String> list = new ArrayList<String>();
 		for(int i = 0; i < listCollection.getListMonthly().size(); i++) {
 			list.add(listCollection.getListMonthly().get(i).listToString());
 		}
 		
-		return (String[]) list.toArray();
+		return list;
 	}
 
 	@Override

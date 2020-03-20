@@ -59,7 +59,7 @@ public class LimitedMonthlyBill extends Bill {
 	}
 	
 	private String getFullDate(char seperator) {
-		return "" + getEndDate().get(Calendar.YEAR) + seperator + (getEndDate().get(Calendar.MONTH)+1) + seperator + getEndDate().get(Calendar.DAY_OF_MONTH);
+		return "" + getEndDate().get(Calendar.YEAR) + seperator + (getEndDate().get(Calendar.MONTH)) + seperator + getEndDate().get(Calendar.DAY_OF_MONTH);
 	}
 	
 }
