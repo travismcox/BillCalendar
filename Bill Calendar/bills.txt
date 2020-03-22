@@ -1,13 +1,9 @@
-monthly Netflix 40.6 21
-monthly Hulu 12.98 8
-monthly AT&T 264.14 4
-monthly AT&TTV 95.0 22
-monthly Spectrum 50.0 20
-monthly GreenMountain 100.0 19
-monthly NYTimes 6.38 24
-monthly AlamoSeasonPass 21.64 26
-weekly Factor 77.0
-limited AffirmCasper 208.33 22 2020 3 22
-limited AffirmGiant 120.83 22 2020 9 22
-limited BroadwayAtTheBass 359.58 1 2020 4 1
-limited iPhoneLoan 60.37 20 2021 8 20
+M7 Netflix40.6 21 
+M4 Hulu12.98 8 
+M4 AT&T264.14 4 
+M7 AT&T TV95.0 22 
+M8 Spectrum50.0 20 
+M14 Green Mountain100.0 19 
+M7 NYTimes6.38 24 
+M7 Alamo Season Pass21.64 26 
+W6 Factor77.0 

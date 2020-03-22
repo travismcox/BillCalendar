@@ -27,18 +27,16 @@ public abstract class FileAccess {
 
 	public static void readFile(ListCollection listCollection) throws IOException {
 		BufferedReader reader = new BufferedReader(new FileReader(Utility.billFileName));
-		String line;
-		while((line = reader.readLine()) != null) {
-			String words[] = line.split(" ");
-			
-			switch(words[0]) {
-			case "monthly": listCollection.getListMonthly().add(new MonthlyBill(words[1], Double.parseDouble(words[2]), Integer.parseInt(words[3])));
+		char tempChar;
+		while((tempChar = (char) reader.read()) != -1) {
+			switch(tempChar) {
+			case 'M': listCollection.getListMonthly().add(new MonthlyBill(reader));
 					break;
-			case "weekly": listCollection.getListWeekly().add(new WeeklyBill(words[1], Double.parseDouble(words[2])));
+			case 'W': listCollection.getListWeekly().add(new WeeklyBill(reader));
 					break;
-			case "oneTime": listCollection.getListOneTime().add(new OneTimeBill(words[1], Double.parseDouble(words[2]), new GregorianCalendar(Integer.parseInt(words[3]), Integer.parseInt(words[4]), Integer.parseInt(words[5]))));
+			case 'O': listCollection.getListOneTime().add(new OneTimeBill(reader));
 					break;
-			case "Length": listCollection.getListLimited().add(new LimitedMonthlyBill(words[1], Double.parseDouble(words[2]), Integer.parseInt(words[3]), new GregorianCalendar(Integer.parseInt(words[4]), Integer.parseInt(words[5]), Integer.parseInt(words[6]))));
+			case 'L': listCollection.getListLimited().add(new LimitedMonthlyBill(reader));
 					break;
 			}
 		}
