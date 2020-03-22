@@ -10,3 +10,4 @@ weekly Factor 77.0
 limited AffirmCasper 208.33 22 2020 3 22
 limited AffirmGiant 120.83 22 2020 9 22
 limited BroadwayAtTheBass 359.58 1 2020 4 1
+limited iPhoneLoan 60.37 20 2021 8 20

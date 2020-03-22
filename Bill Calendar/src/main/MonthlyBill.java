@@ -3,6 +3,8 @@
  */
 package main;
 
+import java.io.BufferedReader;
+
 /**
  * @author traviscox
  *
@@ -19,6 +21,10 @@ public class MonthlyBill extends Bill {
 	public MonthlyBill(String name, Double amount, int date) {
 		super(name, amount);
 		setDate(date);
+	}
+	
+	public MonthlyBill(BufferedReader reader) {
+		super(reader);
 	}
 	
 	/**

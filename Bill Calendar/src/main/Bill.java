@@ -3,6 +3,9 @@
  */
 package main;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+
 /**
  * @author traviscox
  *
@@ -17,6 +20,10 @@ public class Bill {
 	public Bill(String name, Double amount) {
 		setName(name);
 		setAmount(amount);
+	}
+	public Bill(BufferedReader reader) throws IOException {
+		
+		setName(reader.read(new char[count]));
 	}
 	/**
 	 * @return the name

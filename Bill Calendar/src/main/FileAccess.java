@@ -30,14 +30,15 @@ public abstract class FileAccess {
 		String line;
 		while((line = reader.readLine()) != null) {
 			String words[] = line.split(" ");
-			switch(words[0]) {
-			case "monthly": listCollection.getListMonthly().add(new MonthlyBill(words[1], Double.parseDouble(words[2]), Integer.parseInt(words[3])));
+			char billType = (char) reader.read();
+			switch(billType) {
+			case 'M': listCollection.getListMonthly().add(new MonthlyBill(words[1], Double.parseDouble(words[2]), Integer.parseInt(words[3])));
 					break;
-			case "weekly": listCollection.getListWeekly().add(new WeeklyBill(words[1], Double.parseDouble(words[2])));
+			case 'W': listCollection.getListWeekly().add(new WeeklyBill(words[1], Double.parseDouble(words[2])));
 					break;
-			case "oneTime": listCollection.getListOneTime().add(new OneTimeBill(words[1], Double.parseDouble(words[2]), new GregorianCalendar(Integer.parseInt(words[3]), Integer.parseInt(words[4]), Integer.parseInt(words[5]))));
+			case 'O': listCollection.getListOneTime().add(new OneTimeBill(words[1], Double.parseDouble(words[2]), new GregorianCalendar(Integer.parseInt(words[3]), Integer.parseInt(words[4]), Integer.parseInt(words[5]))));
 					break;
-			case "limited": listCollection.getListLimited().add(new LimitedMonthlyBill(words[1], Double.parseDouble(words[2]), Integer.parseInt(words[3]), new GregorianCalendar(Integer.parseInt(words[4]), Integer.parseInt(words[5]), Integer.parseInt(words[6]))));
+			case 'L': listCollection.getListLimited().add(new LimitedMonthlyBill(words[1], Double.parseDouble(words[2]), Integer.parseInt(words[3]), new GregorianCalendar(Integer.parseInt(words[4]), Integer.parseInt(words[5]), Integer.parseInt(words[6]))));
 					break;
 			}
 		}
@@ -88,5 +89,23 @@ public abstract class FileAccess {
 		writer.close();
 	}
 
+	public static String getStringSpace(BufferedReader reader) throws IOException {
+		char tempChar;
+		String tempString = "";
+		do {
+			tempChar = (char) reader.read();
+			tempString += tempChar;
+		} while(tempChar != ' ');
+		
+		return tempString;
+	}
 	
+	public static String getStringLenght(BufferedReader reader, int length) throws IOException {
+		String tempString = "";
+		for(int i = 0; i < length; i++) {
+			tempString += (char) reader.read();
+		}
+		
+		return tempString;
+	}
 }
