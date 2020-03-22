@@ -3,6 +3,8 @@
  */
 package main;
 
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -23,6 +25,13 @@ public class LimitedMonthlyBill extends Bill {
 		super(name, amount);
 		setDate(date);
 		setEndDate(endDate);
+	}
+	
+	public LimitedMonthlyBill(BufferedReader reader) throws IOException {
+		super(reader);
+		setDate(Integer.parseInt(FileAccess.getStringSpace(reader)));
+		setEndDate(new GregorianCalendar(Integer.parseInt(FileAccess.getStringSpace(reader)), Integer.parseInt(FileAccess.getStringSpace(reader)), Integer.parseInt(FileAccess.getStringSpace(reader))));
+		FileAccess.consumeNewLine(reader);
 	}
 	/**
 	 * @return the endDate
@@ -51,7 +60,7 @@ public class LimitedMonthlyBill extends Bill {
 	}
 	@Override
 	public String toString() {
-		return "limited " + super.toString() + " " + getDate() + " " + getFullDate(' ') + '\n';
+		return "L" + super.toString() + getDate() + " " + getFullDate(' ') + " " + '\n';
 	}
 
 	public String listToString() {

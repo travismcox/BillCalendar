@@ -3,6 +3,9 @@
  */
 package main;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+
 /**
  * @author traviscox
  *
@@ -13,10 +16,15 @@ public class WeeklyBill extends Bill {
 		super(name, amount);
 		// TODO Auto-generated constructor stub
 	}
+	
+	public WeeklyBill(BufferedReader reader) throws IOException {
+		super(reader);
+		FileAccess.consumeNewLine(reader);
+	}
 
 	@Override
 	public String toString() {
-		return "weekly " + super.toString() + '\n';
+		return "W" + super.toString() + '\n';
 	}
 	
 	public String listToString() {

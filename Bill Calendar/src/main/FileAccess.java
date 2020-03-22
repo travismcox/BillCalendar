@@ -30,15 +30,15 @@ public abstract class FileAccess {
 		String line;
 		while((line = reader.readLine()) != null) {
 			String words[] = line.split(" ");
-			char billType = (char) reader.read();
-			switch(billType) {
-			case 'M': listCollection.getListMonthly().add(new MonthlyBill(words[1], Double.parseDouble(words[2]), Integer.parseInt(words[3])));
+			
+			switch(words[0]) {
+			case "monthly": listCollection.getListMonthly().add(new MonthlyBill(words[1], Double.parseDouble(words[2]), Integer.parseInt(words[3])));
 					break;
-			case 'W': listCollection.getListWeekly().add(new WeeklyBill(words[1], Double.parseDouble(words[2])));
+			case "weekly": listCollection.getListWeekly().add(new WeeklyBill(words[1], Double.parseDouble(words[2])));
 					break;
-			case 'O': listCollection.getListOneTime().add(new OneTimeBill(words[1], Double.parseDouble(words[2]), new GregorianCalendar(Integer.parseInt(words[3]), Integer.parseInt(words[4]), Integer.parseInt(words[5]))));
+			case "oneTime": listCollection.getListOneTime().add(new OneTimeBill(words[1], Double.parseDouble(words[2]), new GregorianCalendar(Integer.parseInt(words[3]), Integer.parseInt(words[4]), Integer.parseInt(words[5]))));
 					break;
-			case 'L': listCollection.getListLimited().add(new LimitedMonthlyBill(words[1], Double.parseDouble(words[2]), Integer.parseInt(words[3]), new GregorianCalendar(Integer.parseInt(words[4]), Integer.parseInt(words[5]), Integer.parseInt(words[6]))));
+			case "Length": listCollection.getListLimited().add(new LimitedMonthlyBill(words[1], Double.parseDouble(words[2]), Integer.parseInt(words[3]), new GregorianCalendar(Integer.parseInt(words[4]), Integer.parseInt(words[5]), Integer.parseInt(words[6]))));
 					break;
 			}
 		}
@@ -100,12 +100,16 @@ public abstract class FileAccess {
 		return tempString;
 	}
 	
-	public static String getStringLenght(BufferedReader reader, int length) throws IOException {
+	public static String getStringLength(BufferedReader reader, int length) throws IOException {
 		String tempString = "";
 		for(int i = 0; i < length; i++) {
 			tempString += (char) reader.read();
 		}
 		
 		return tempString;
+	}
+
+	public static void consumeNewLine(BufferedReader reader) throws IOException {
+		reader.read();	
 	}
 }

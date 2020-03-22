@@ -4,6 +4,7 @@
 package main;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 
 /**
  * @author traviscox
@@ -23,8 +24,10 @@ public class MonthlyBill extends Bill {
 		setDate(date);
 	}
 	
-	public MonthlyBill(BufferedReader reader) {
+	public MonthlyBill(BufferedReader reader) throws IOException {
 		super(reader);
+		setDate(Integer.parseInt(FileAccess.getStringSpace(reader)));
+		FileAccess.consumeNewLine(reader);
 	}
 	
 	/**
@@ -42,7 +45,7 @@ public class MonthlyBill extends Bill {
 
 	@Override
 	public String toString() {
-		return "monthly " + super.toString() + " " + date + '\n';
+		return "M" + super.toString() + date + " " + '\n';
 	}
 	
 	public String listToString() {

@@ -3,6 +3,8 @@
  */
 package main;
 
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
@@ -20,6 +22,12 @@ public class OneTimeBill extends Bill {
 		super(name, amount);
 		setDate(date);
 	}
+	
+	public OneTimeBill(BufferedReader reader) throws NumberFormatException, IOException {
+		super(reader);
+		setDate(new GregorianCalendar(Integer.parseInt(FileAccess.getStringSpace(reader)), Integer.parseInt(FileAccess.getStringSpace(reader)), Integer.parseInt(FileAccess.getStringSpace(reader))));
+		FileAccess.consumeNewLine(reader);
+	}
 	/**
 	 * @return the date
 	 */
@@ -34,7 +42,7 @@ public class OneTimeBill extends Bill {
 	}
 	@Override
 	public String toString() {
-		return "oneTime " + super.toString() + " " + getFullDate(' ') + '\n';
+		return "O" + super.toString() + getFullDate(' ') + " " + '\n';
 	}
 	
 	public String listToString() {

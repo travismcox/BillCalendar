@@ -22,8 +22,8 @@ public class Bill {
 		setAmount(amount);
 	}
 	public Bill(BufferedReader reader) throws IOException {
-		
-		setName(reader.read(new char[count]));
+		setName(FileAccess.getStringLength(reader, Integer.parseInt(FileAccess.getStringSpace(reader))));
+		setAmount(Double.parseDouble(FileAccess.getStringSpace(reader)));
 	}
 	/**
 	 * @return the name
@@ -51,7 +51,7 @@ public class Bill {
 	}
 	@Override
 	public String toString() {
-		return name + " " + amount;
+		return name.length() + " " + name + amount + " ";
 	}
 
 	
