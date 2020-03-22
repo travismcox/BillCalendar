@@ -28,7 +28,9 @@ public abstract class FileAccess {
 	public static void readFile(ListCollection listCollection) throws IOException {
 		BufferedReader reader = new BufferedReader(new FileReader(Utility.billFileName));
 		char tempChar;
-		while((tempChar = (char) reader.read()) != -1) {
+		int value;
+		while((value = reader.read()) != -1) {
+			tempChar = (char) value;
 			switch(tempChar) {
 			case 'M': listCollection.getListMonthly().add(new MonthlyBill(reader));
 					break;
@@ -90,10 +92,9 @@ public abstract class FileAccess {
 	public static String getStringSpace(BufferedReader reader) throws IOException {
 		char tempChar;
 		String tempString = "";
-		do {
-			tempChar = (char) reader.read();
+		while((tempChar = (char) reader.read()) != ' ') {
 			tempString += tempChar;
-		} while(tempChar != ' ');
+		}
 		
 		return tempString;
 	}
@@ -108,6 +109,6 @@ public abstract class FileAccess {
 	}
 
 	public static void consumeNewLine(BufferedReader reader) throws IOException {
-		reader.read();	
+		reader.read();
 	}
 }

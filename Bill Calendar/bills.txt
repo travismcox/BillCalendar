@@ -5,5 +5,9 @@ M7 AT&T TV95.0 22
 M8 Spectrum50.0 20 
 M14 Green Mountain100.0 19 
 M7 NYTimes6.38 24 
-M7 Alamo Season Pass21.64 26 
+M17 Alamo Season Pass21.64 26 
 W6 Factor77.0 
+L15 Affirm - Casper208.33 22 2020 3 22 
+L14 Affirm - Giant120.83 22 2020 9 22 
+L20 Broadway at the Bass359.58 1 2020 4 1 
+L11 iPhone Loan60.37 20 2021 8 20 
