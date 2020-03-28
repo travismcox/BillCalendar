@@ -63,7 +63,7 @@ public class GUIAnnualBill extends JPanel {
 	public GUIAnnualBill(GUIMain frame, int selection) {
 		this.frame = frame;
 		this.selection = selection;
-		OneTimeBill tempBill = frame.listCollection.getListOneTime().get(selection);
+		AnnualBill tempBill = frame.listCollection.getListAnnual().get(selection);
 		
 		JLabel nameLabel = new JLabel("Name");
 		JLabel amountLabel = new JLabel("Amount");
@@ -72,8 +72,8 @@ public class GUIAnnualBill extends JPanel {
 		
 		nameTextField = new JTextField(tempBill.getName());
 		amountTextField = new JTextField(tempBill.getAmount().toString());
-		monthTextField = new JTextField(String.valueOf(tempBill.getDate().get(Calendar.MONTH)+1));
-		dayTextField = new JTextField(String.valueOf(tempBill.getDate().get(Calendar.DAY_OF_MONTH)));
+		monthTextField = new JTextField(String.valueOf(tempBill.getMonth()));
+		dayTextField = new JTextField(String.valueOf(tempBill.getDay()));
 		
 		JButton buttonGoBack = new JButton("Go Back");
 		JButton buttonEdit = new JButton("Edit");
