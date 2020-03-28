@@ -15,6 +15,7 @@ public class ListCollection {
 	private ArrayList<WeeklyBill> listWeekly; 
 	private ArrayList<OneTimeBill> listOneTime;
 	private ArrayList<LimitedMonthlyBill> listLimited;
+	private ArrayList<AnnualBill> listAnnual;
 	/**
 	 * 
 	 */
@@ -23,6 +24,7 @@ public class ListCollection {
 		listWeekly = new ArrayList<WeeklyBill>(); 
 		listOneTime = new ArrayList<OneTimeBill>();
 		listLimited = new ArrayList<LimitedMonthlyBill>();
+		listAnnual = new ArrayList<AnnualBill>();
 	}
 	/**
 	 * @return the listMonthly
@@ -71,6 +73,18 @@ public class ListCollection {
 	 */
 	public void setListLimited(ArrayList<LimitedMonthlyBill> listLimited) {
 		this.listLimited = listLimited;
+	}
+	/**
+	 * @return the listAnnual
+	 */
+	public ArrayList<AnnualBill> getListAnnual() {
+		return listAnnual;
+	}
+	/**
+	 * @param listAnnual the listAnnual to set
+	 */
+	public void setListAnnual(ArrayList<AnnualBill> listAnnual) {
+		this.listAnnual = listAnnual;
 	}
 
 }
