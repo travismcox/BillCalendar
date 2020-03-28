@@ -180,4 +180,12 @@ public class GUIMain extends JFrame{
 		run();
 	}
 
+	public void changeToEditAnnual(int selection) {
+		setVisible(false);
+		getContentPane().removeAll();
+		getContentPane().add(new GUIAnnualBill(this, selection));
+		setSize(500, 350);
+		run();
+	}
+
 }

@@ -14,6 +14,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
 import main.ListCollection;
+import main.Utility;
 
 /**
  * @author traviscox
@@ -55,11 +56,13 @@ public class GUISelect extends JPanel implements ActionListener, ListSelectionLi
             switch(typeOfBill) {
     		case 0: frame.changeToEditMonthly(selection);
     			break;
-    		case 1: frame.changeToEditWeekly(selection);
+    		case 1: frame.changeToEditAnnual(selection);
     			break;
-    		case 2: frame.changeToEditOneTime(selection);
+    		case 2: frame.changeToEditWeekly(selection);
     			break;
-    		case 3: frame.changeToEditLimited(selection);
+    		case 3: frame.changeToEditOneTime(selection);
+    			break;
+    		case 4: frame.changeToEditLimited(selection);
     			break;
     		}
         }
@@ -71,11 +74,13 @@ public class GUISelect extends JPanel implements ActionListener, ListSelectionLi
 		switch(typeOfBill) {
 		case 0: arrayOfStrings = selectMonthly();
 			break;
-		case 1: arrayOfStrings = selectWeekly();
+		case 1: arrayOfStrings = selectAnnual();
 			break;
-		case 2: arrayOfStrings = selectOneTime();
+		case 2: arrayOfStrings = selectWeekly();
 			break;
-		case 3: arrayOfStrings = selectLimited();
+		case 3: arrayOfStrings = selectOneTime();
+			break;
+		case 4: arrayOfStrings = selectLimited();
 			break;
 		}
 		
@@ -92,6 +97,15 @@ public class GUISelect extends JPanel implements ActionListener, ListSelectionLi
 		ArrayList<String> list = new ArrayList<String>();
 		for(int i = 0; i < listCollection.getListLimited().size(); i++) {
 			list.add(listCollection.getListLimited().get(i).listToString());
+		}
+		
+		return list;
+	}
+	
+	private ArrayList<String> selectAnnual() {
+		ArrayList<String> list = new ArrayList<String>();
+		for(int i = 0; i < listCollection.getListAnnual().size(); i++) {
+			list.add(listCollection.getListAnnual().get(i).listToString());
 		}
 		
 		return list;
