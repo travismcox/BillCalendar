@@ -21,6 +21,12 @@ public class WeeklyBill extends Bill {
 		super(reader);
 		FileAccess.consumeNewLine(reader);
 	}
+	
+	public void edit(String name, Double amount)
+	{
+		super.setName(name);
+		super.setAmount(amount);
+	}
 
 	@Override
 	public String toString() {

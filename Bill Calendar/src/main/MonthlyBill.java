@@ -30,6 +30,12 @@ public class MonthlyBill extends Bill {
 		FileAccess.consumeNewLine(reader);
 	}
 	
+	public void edit(String name, Double amount, Integer date2) {
+		super.setName(name);
+		super.setAmount(amount);
+		setDate(date);
+	}
+	
 	/**
 	 * @return the date
 	 */

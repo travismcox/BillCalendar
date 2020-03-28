@@ -44,16 +44,16 @@ public class GUIEditBill extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent ae) {
         String action = ae.getActionCommand();
         if (action.equals("Monthly Bill")) {
-            frame.changeToSelectMonthly();
+            frame.changeToSelect(0);
         }
         else if (action.equals("Weekly Bill")) {
-            frame.changeToSelectWeekly();
+            frame.changeToSelect(1);
         }
         else if (action.equals("One Time Bill")) {
-        	frame.changeToSelectOneTime();
+        	frame.changeToSelect(2);
         }
         else if(action.contentEquals("Limited Monthly Bill")) {
-        	frame.changeToSelectLimited();
+        	frame.changeToSelect(3);
         }
         else if(action.contentEquals("Back to Main Menu")) {
         	frame.changeToMain();

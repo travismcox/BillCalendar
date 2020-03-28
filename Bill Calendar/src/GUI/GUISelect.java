@@ -23,12 +23,15 @@ public class GUISelect extends JPanel implements ActionListener, ListSelectionLi
 
 	GUIMain frame;
 	ListCollection listCollection;
+	int typeOfBill;
+	JList selectionList;
 	public GUISelect(GUIMain guiMain, int typeOfBill) {
 		frame = guiMain;
 		listCollection = this.frame.getListCollection();
+		this.typeOfBill = typeOfBill;
 		
 		//select(typeOfBill);
-		JList selectionList = new JList(select(typeOfBill));
+		selectionList = new JList(select());
 		JButton goBackButton = new JButton("Go Back");
 		JButton enterButton = new JButton("Enter");
 		
@@ -48,11 +51,21 @@ public class GUISelect extends JPanel implements ActionListener, ListSelectionLi
             frame.changeToEdit();
         }
         else if (action.equals("Enter")) {
-            frame.changeToSelectWeekly();
+            int selection = selectionList.getSelectedIndex();
+            switch(typeOfBill) {
+    		case 0: frame.changeToEditMonthly(selection);
+    			break;
+    		case 1: frame.changeToEditWeekly(selection);
+    			break;
+    		case 2: frame.changeToEditOneTime(selection);
+    			break;
+    		case 3: frame.changeToEditLimited(selection);
+    			break;
+    		}
         }
 	}
 	
-	private String[] select(int typeOfBill) {
+	private String[] select() {
 		ArrayList<String> arrayOfStrings = null;
 		
 		switch(typeOfBill) {

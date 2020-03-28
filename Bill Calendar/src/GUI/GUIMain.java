@@ -132,35 +132,43 @@ public class GUIMain extends JFrame{
 		run();
 	}
 
-	public void changeToSelectMonthly() {
+	public void changeToSelect(int type) {
 		setVisible(false);
 		getContentPane().removeAll();
-		getContentPane().add(new GUISelect(this, 0));
+		getContentPane().add(new GUISelect(this, type));
 		setSize(200, 300);
 		run();
 	}
 
-	public void changeToSelectWeekly() {
+	public void changeToEditMonthly(int selection) {
 		setVisible(false);
 		getContentPane().removeAll();
-		getContentPane().add(new GUISelect(this, 1));
-		setSize(200, 300);
+		getContentPane().add(new GUIMonthlyBill(this, selection));
+		setSize(500, 300);
 		run();
 	}
 
-	public void changeToSelectOneTime() {
+	public void changeToEditWeekly(int selection) {
 		setVisible(false);
 		getContentPane().removeAll();
-		getContentPane().add(new GUISelect(this, 2));
-		setSize(200, 300);
+		getContentPane().add(new GUIWeeklyBill(this, selection));
+		setSize(500, 300);
 		run();
 	}
 
-	public void changeToSelectLimited() {
+	public void changeToEditOneTime(int selection) {
 		setVisible(false);
 		getContentPane().removeAll();
-		getContentPane().add(new GUISelect(this, 3));
-		setSize(200, 300);
+		getContentPane().add(new GUIOneTimeBill(this, selection));
+		setSize(500, 400);
+		run();
+	}
+
+	public void changeToEditLimited(int selection) {
+		setVisible(false);
+		getContentPane().removeAll();
+		getContentPane().add(new GUILimitedBill(this, selection));
+		setSize(500, 450);
 		run();
 	}
 

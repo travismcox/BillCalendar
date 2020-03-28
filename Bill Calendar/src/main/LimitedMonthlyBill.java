@@ -70,5 +70,12 @@ public class LimitedMonthlyBill extends Bill {
 	private String getFullDate(char seperator) {
 		return "" + getEndDate().get(Calendar.YEAR) + seperator + (getEndDate().get(Calendar.MONTH)) + seperator + getEndDate().get(Calendar.DAY_OF_MONTH);
 	}
+
+	public void edit(String name, Double amount, Integer recurringDate, GregorianCalendar endDate) {
+		super.setName(name);
+		super.setAmount(amount);
+		setDate(recurringDate);
+		setEndDate(endDate);
+	}
 	
 }

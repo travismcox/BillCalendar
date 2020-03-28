@@ -31,9 +31,13 @@ public abstract class CalculateWeeks {
 		GregorianCalendar startDate = new GregorianCalendar();
 		GregorianCalendar endDate = new GregorianCalendar();
 		ArrayList<String> results = new ArrayList<String>(), tempResults;
+		ArrayList<Double> pastFourWeeks = new ArrayList<Double>();
+		for(int i = 0; i < Utility.FourInteger; i++) {
+			pastFourWeeks.add(0.0);
+		}
 		establishDays(startDate, endDate);
 		for(int i = 0; i < weeks; i++) {
-			tempResults = calculateWeek(startDate, endDate, listCollection.getListMonthly(), listCollection.getListWeekly(), listCollection.getListOneTime(), listCollection.getListLimited());
+			tempResults = calculateWeek(startDate, endDate, listCollection, i, pastFourWeeks);
 			startDate.add(GregorianCalendar.DATE, 7);
 			endDate.add(GregorianCalendar.DATE, 7);
 			for(int j = 0; j < tempResults.size(); j++) {
@@ -56,7 +60,11 @@ public abstract class CalculateWeeks {
 		
 	}
 
-	private static ArrayList<String> calculateWeek(GregorianCalendar startDate, GregorianCalendar endDate, ArrayList<MonthlyBill> listMonthly, ArrayList<WeeklyBill> listWeekly, ArrayList<OneTimeBill> listOneTime, ArrayList<LimitedMonthlyBill> listLimited) {
+	private static ArrayList<String> calculateWeek(GregorianCalendar startDate, GregorianCalendar endDate, ListCollection listCollection, int week, ArrayList<Double> pastFourWeeks) {
+		ArrayList<MonthlyBill> listMonthly = listCollection.getListMonthly();
+		ArrayList<WeeklyBill> listWeekly = listCollection.getListWeekly();
+		ArrayList<OneTimeBill> listOneTime = listCollection.getListOneTime();
+		ArrayList<LimitedMonthlyBill> listLimited = listCollection.getListLimited();
 		Double sum = 0.0;
 		ArrayList<String> listOfBills = new ArrayList<String>();
 		ArrayList<String> results = new ArrayList<String>();
@@ -85,10 +93,17 @@ public abstract class CalculateWeeks {
 			}
 		}
 		
+		//Get Average
+		pastFourWeeks.set(week%Utility.FourInteger, sum);
+		Double tempSum = 0.0;
+		for(int i = 0; i < pastFourWeeks.size(); i++) {
+			tempSum += pastFourWeeks.get(i);
+		}
+		Double average = tempSum / Utility.FourDouble;
+		
 		//Print output
-		results.add(printWeek(startDate, endDate, sum));
+		results.add(printWeek(startDate, endDate, sum, average));
 		for(int i = 0; i < listOfBills.size(); i++) {
-			//System.out.println('\t' + listOfBills.get(i));
 			results.add("       " + listOfBills.get(i));
 		}
 		return results;
@@ -134,8 +149,8 @@ public abstract class CalculateWeeks {
 		return sum += bill.getAmount();
 	}
 
-	private static String printWeek(GregorianCalendar startDate, GregorianCalendar endDate, Double sum) {
-		return printDate(startDate) + " - " + printDate(endDate) + " " + String.format("\t%.2f", sum);
+	private static String printWeek(GregorianCalendar startDate, GregorianCalendar endDate, Double sum, Double average) {
+		return printDate(startDate) + " - " + printDate(endDate) + " " + String.format("\t%.2f", sum) + "\tavg: " + String.format("\t%.2f", average);
 	}
 	
 	private static String printDate(GregorianCalendar date) {
