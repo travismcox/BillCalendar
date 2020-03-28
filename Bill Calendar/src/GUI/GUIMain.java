@@ -172,4 +172,12 @@ public class GUIMain extends JFrame{
 		run();
 	}
 
+	public void changeToAnnual() {
+		setVisible(false);
+		getContentPane().removeAll();
+		getContentPane().add(new GUIAnnualBill(this));
+		setSize(500, 350);
+		run();
+	}
+
 }

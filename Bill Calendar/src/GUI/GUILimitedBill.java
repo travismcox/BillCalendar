@@ -17,6 +17,7 @@ import javax.swing.JTextField;
 import GUI.GUIMonthlyBill.AddBillActionListener;
 import main.LimitedMonthlyBill;
 import main.MonthlyBill;
+import main.Utility;
 
 /**
  * @author traviscox
@@ -119,7 +120,7 @@ public class GUILimitedBill extends JPanel {
 	        	frame.changeToAdd();
 	        }
 	        else if(action.contentEquals("Go Back")) {
-	        	frame.changeToSelect(3);
+	        	frame.changeToSelect(Utility.LimitedBill);
 	        }
 	        else if(action.contentEquals("Edit")) {
 	        	String name = nameTextField.getText();

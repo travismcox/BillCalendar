@@ -14,6 +14,7 @@ import javax.swing.JTextField;
 
 import GUI.GUIMonthlyBill.AddBillActionListener;
 import main.MonthlyBill;
+import main.Utility;
 import main.WeeklyBill;
 
 /**
@@ -84,7 +85,7 @@ public class GUIWeeklyBill extends JPanel {
 	        	frame.changeToAdd();
 	        }
 	        else if(action.contentEquals("Go Back")) {
-	        	frame.changeToSelect(1);
+	        	frame.changeToSelect(Utility.WeeklyBill);
 	        }
 	        if(action.contentEquals("Edit")) {
 	        	String name = nameTextField.getText();

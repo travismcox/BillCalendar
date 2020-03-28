@@ -23,19 +23,22 @@ public class GUIAddBill extends JPanel implements ActionListener {
 		frame.getContentPane().removeAll();
 		
 		JButton buttonMonthly = new JButton("Monthly Bill");
+		JButton buttonAnnual = new JButton("Annual Bill");
 		JButton buttonWeekly = new JButton("Weekly Bill");
 		JButton buttonOneTime = new JButton("One Time Bill");
 		JButton buttonLimited = new JButton("Limited Monthly Bill");
 		JButton buttonBackToMain = new JButton("Back to Main Menu");
 		
 		buttonMonthly.addActionListener(this);
+		buttonAnnual.addActionListener(this);
 		buttonWeekly.addActionListener(this);
 		buttonOneTime.addActionListener(this);
 		buttonLimited.addActionListener(this);
 		buttonBackToMain.addActionListener(this);
 		
-		setLayout(new GridLayout(5,1));
+		setLayout(new GridLayout(6,1));
 		add(buttonMonthly);
+		add(buttonAnnual);
 		add(buttonWeekly);
 		add(buttonOneTime);
 		add(buttonLimited);
@@ -47,6 +50,9 @@ public class GUIAddBill extends JPanel implements ActionListener {
         String action = ae.getActionCommand();
         if (action.equals("Monthly Bill")) {
             frame.changeToMonthly();
+        }
+        else if(action.equals("Annual Bill")) {
+        	frame.changeToAnnual();
         }
         else if (action.equals("Weekly Bill")) {
             frame.changeToWeekly();

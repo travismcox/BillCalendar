@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import main.MonthlyBill;
+import main.Utility;
 
 /**
  * @author traviscox
@@ -90,7 +91,7 @@ public class GUIMonthlyBill extends JPanel {
 	        	frame.changeToAdd();
 	        }
 	        else if(action.contentEquals("Go Back")) {
-	        	frame.changeToSelect(0);
+	        	frame.changeToSelect(Utility.MonthlyBill);
 	        }
 	        else if(action.contentEquals("Edit")) {
 	        	String name = nameTextField.getText();

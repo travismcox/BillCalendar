@@ -17,6 +17,7 @@ import javax.swing.JTextField;
 import GUI.GUIMonthlyBill.AddBillActionListener;
 import main.MonthlyBill;
 import main.OneTimeBill;
+import main.Utility;
 
 /**
  * @author traviscox
@@ -112,7 +113,7 @@ public class GUIOneTimeBill extends JPanel {
 	        	frame.changeToAdd();
 	        }
 	        else if(action.contentEquals("Go Back")) {
-	        	frame.changeToSelect(2);
+	        	frame.changeToSelect(Utility.OneTimeBill);
 	        }
 	        else if(action.contentEquals("Edit")) {
 	        	String name = nameTextField.getText();
