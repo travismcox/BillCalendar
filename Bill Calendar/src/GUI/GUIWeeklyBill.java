@@ -25,75 +25,101 @@ public class GUIWeeklyBill extends JPanel {
 
 	GUIMain frame;
 	JTextField nameTextField, amountTextField, dateTextField;
+	JButton buttonEnter, buttonGoBack, buttonEdit;
+	JLabel nameLabel, amountLabel;
+	String name;
+	Double amount;
 	int selection;
 	public GUIWeeklyBill(GUIMain frame) {
 		this.frame = frame;
 		
-		JLabel nameLabel = new JLabel("Name");
-		JLabel amountLabel = new JLabel("Amount");
+		initializeLabels();
+		initializeFields();
+		initializeButtonsNew();
 		
+		addComponentsNew();
+	}
+	
+	private void initializeButtonsNew() {
+		buttonEnter = new JButton(Utility.AddBill);
+		buttonEnter.addActionListener(new AddBillActionListener());
+	}
+
+	private void initializeFields() {
 		nameTextField = new JTextField();
 		amountTextField = new JTextField();
-		
-		JButton buttonEnter = new JButton("Add Monthly Bill");
-		
-		buttonEnter.addActionListener(new AddBillActionListener());
-		
+	}
+
+	private void initializeLabels() {
+		nameLabel = new JLabel(Utility.Name);
+		amountLabel = new JLabel(Utility.Amount);
+	}
+
+	private void addComponentsNew() {
+		addComponents();
+		add(buttonEnter);
+	}
+
+	private void addComponents() {
 		setLayout(new GridLayout(3,2));
 		add(nameLabel);
 		add(nameTextField);
 		add(amountLabel);
 		add(amountTextField);
-		add(buttonEnter);
-		
 	}
-	
+
 	public GUIWeeklyBill(GUIMain frame, int selection) {
 		this.frame = frame;
 		this.selection = selection;
 		WeeklyBill tempBill = frame.listCollection.getListWeekly().get(selection);
 		
-		JLabel nameLabel = new JLabel("Name");
-		JLabel amountLabel = new JLabel("Amount");
+		initializeLabels();
+		initializeFields();
+		setFields(tempBill);
+		initializeButtonsEdit();
 		
-		nameTextField = new JTextField(tempBill.getName());
-		amountTextField = new JTextField(tempBill.getAmount().toString());
-		
-		JButton buttonGoBack = new JButton("Go Back");
-		JButton buttonEdit = new JButton("Edit");
-		
+		addComponentsEdit();
+	}
+	
+	private void initializeButtonsEdit() {
+		buttonGoBack = new JButton(Utility.GoBack);
+		buttonEdit = new JButton(Utility.Edit);
 		buttonGoBack.addActionListener(new AddBillActionListener());
 		buttonEdit.addActionListener(new AddBillActionListener());
-		
-		setLayout(new GridLayout(3,2));
-		add(nameLabel);
-		add(nameTextField);
-		add(amountLabel);
-		add(amountTextField);
+	}
+
+	private void setFields(WeeklyBill tempBill) {
+		nameTextField.setText(tempBill.getName());
+		amountTextField.setText(tempBill.getAmount().toString());
+	}
+
+	private void addComponentsEdit() {
+		addComponents();
 		add(buttonGoBack);
 		add(buttonEdit);
-		
 	}
 	
 	public class AddBillActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent ae) {
 	        String action = ae.getActionCommand();
-	        if(action.contentEquals("Add Weekly Bill")) {
-	        	String name = nameTextField.getText();
-	        	Double amount = Double.parseDouble(amountTextField.getText());
+	        if(action.contentEquals(Utility.AddBill)) {
+	        	getFieldInput();
 	        	frame.getListCollection().getListWeekly().add(new WeeklyBill(name, amount));
 	        	frame.changeToAdd();
 	        }
-	        else if(action.contentEquals("Go Back")) {
+	        else if(action.contentEquals(Utility.GoBack)) {
 	        	frame.changeToSelect(Utility.WeeklyBill);
 	        }
-	        if(action.contentEquals("Edit")) {
-	        	String name = nameTextField.getText();
-	        	Double amount = Double.parseDouble(amountTextField.getText());
+	        if(action.contentEquals(Utility.Edit)) {
+	        	getFieldInput();
 	        	frame.getListCollection().getListWeekly().get(selection).edit(name, amount);
-	        	frame.changeToAdd();
+	        	frame.changeToSelect(Utility.WeeklyBill);
 	        }
 	    }
 	}
 
+	public void getFieldInput() {
+		name = nameTextField.getText();
+    	amount = Double.parseDouble(amountTextField.getText());
+	}
 }

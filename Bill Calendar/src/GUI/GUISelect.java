@@ -33,8 +33,8 @@ public class GUISelect extends JPanel implements ActionListener, ListSelectionLi
 		
 		//select(typeOfBill);
 		selectionList = new JList(select());
-		JButton goBackButton = new JButton("Go Back");
-		JButton enterButton = new JButton("Enter");
+		JButton goBackButton = new JButton(Utility.GoBack);
+		JButton enterButton = new JButton(Utility.Enter);
 		
 		goBackButton.addActionListener(this);
 		enterButton.addActionListener(this);
@@ -48,10 +48,10 @@ public class GUISelect extends JPanel implements ActionListener, ListSelectionLi
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		String action = e.getActionCommand();
-        if (action.equals("Go Back")) {
+        if (action.equals(Utility.GoBack)) {
             frame.changeToEdit();
         }
-        else if (action.equals("Enter")) {
+        else if (action.equals(Utility.Enter)) {
             int selection = selectionList.getSelectedIndex();
             switch(typeOfBill) {
     		case 0: frame.changeToEditMonthly(selection);

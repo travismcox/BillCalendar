@@ -10,6 +10,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -25,42 +26,22 @@ import main.Utility;
  */
 public class GUIOneTimeBill extends JPanel {
 	GUIMain frame;
-	JTextField nameTextField, amountTextField, yearTextField, monthTextField, dayTextField;
+	JTextField nameTextField, amountTextField, yearTextField;
+	JComboBox<String> monthsComboBox, daysComboBox;
+	JLabel nameLabel, amountLabel, yearLabel, monthLabel, dayLabel;
+	JButton buttonEnter, buttonGoBack, buttonEdit;
+	String name;
+	Double amount;
+	GregorianCalendar date;
 	private int selection;
 	public GUIOneTimeBill(GUIMain frame) {
 		this.frame = frame;
-		frame.setVisible(false);
-		frame.getContentPane().removeAll();
 		
-		JLabel nameLabel = new JLabel("Name");
-		JLabel amountLabel = new JLabel("Amount");
-		JLabel yearLabel = new JLabel("YYYY");
-		JLabel monthLabel = new JLabel("MM");
-		JLabel dayLabel = new JLabel("DD");
+		initializeLabels();
+		initializeFields();
+		initializeButtonsNew();
 		
-		nameTextField = new JTextField();
-		amountTextField = new JTextField();
-		yearTextField = new JTextField();
-		monthTextField = new JTextField();
-		dayTextField = new JTextField();
-		
-		JButton buttonEnter = new JButton("Add One Time Bill");
-		
-		buttonEnter.addActionListener(new AddBillActionListener());
-		
-		setLayout(new GridLayout(6,2));
-		add(nameLabel);
-		add(nameTextField);
-		add(amountLabel);
-		add(amountTextField);
-		add(yearLabel);
-		add(yearTextField);
-		add(monthLabel);
-		add(monthTextField);
-		add(dayLabel);
-		add(dayTextField);
-		add(buttonEnter);
-		
+		addComponentsNew();
 	}
 	
 	public GUIOneTimeBill(GUIMain frame, int selection) {
@@ -68,24 +49,63 @@ public class GUIOneTimeBill extends JPanel {
 		this.selection = selection;
 		OneTimeBill tempBill = frame.listCollection.getListOneTime().get(selection);
 		
-		JLabel nameLabel = new JLabel("Name");
-		JLabel amountLabel = new JLabel("Amount");
-		JLabel yearLabel = new JLabel("YYYY");
-		JLabel monthLabel = new JLabel("MM");
-		JLabel dayLabel = new JLabel("DD");
+		initializeLabels();
+		initializeFields();
+		setFields(tempBill);
+		initializeButtonsEdit();
 		
-		nameTextField = new JTextField(tempBill.getName());
-		amountTextField = new JTextField(tempBill.getAmount().toString());
-		yearTextField = new JTextField(String.valueOf(tempBill.getDate().get(Calendar.YEAR)));
-		monthTextField = new JTextField(String.valueOf(tempBill.getDate().get(Calendar.MONTH)+1));
-		dayTextField = new JTextField(String.valueOf(tempBill.getDate().get(Calendar.DAY_OF_MONTH)));
+		addComponentsEdit();
+	}
+	
+	private void initializeButtonsNew() {
+		buttonEnter = new JButton(Utility.AddBill);
+		buttonEnter.addActionListener(new AddBillActionListener());
+	}
+
+	private void initializeFields() {
+		nameTextField = new JTextField();
+		amountTextField = new JTextField();
+		yearTextField = new JTextField();
+		monthsComboBox = new JComboBox<String>(Utility.Months);
+		daysComboBox = new JComboBox<String>(Utility.Days);
+	}
+
+	private void addComponentsNew() {
+		addComponents();
+		add(buttonEnter);
+	}
+
+	private void initializeLabels() {
+		nameLabel = new JLabel(Utility.Name);
+		amountLabel = new JLabel(Utility.Amount);
+		yearLabel = new JLabel(Utility.Year);
+		monthLabel = new JLabel(Utility.Month);
+		dayLabel = new JLabel(Utility.Day);
+	}
+
+	private void setFields(OneTimeBill tempBill) {
+		nameTextField.setText(tempBill.getName());
+		amountTextField.setText(tempBill.getAmount().toString());
+		yearTextField.setText(String.valueOf(tempBill.getDate().get(Calendar.YEAR)));
+		monthsComboBox.setSelectedIndex(tempBill.getDate().get(Calendar.MONTH));
+		daysComboBox.setSelectedIndex(tempBill.getDate().get(Calendar.DAY_OF_MONTH)-1);
 		
-		JButton buttonGoBack = new JButton("Go Back");
-		JButton buttonEdit = new JButton("Edit");
-		
+	}
+
+	private void initializeButtonsEdit() {
+		buttonGoBack = new JButton(Utility.GoBack);
+		buttonEdit = new JButton(Utility.Edit);
 		buttonGoBack.addActionListener(new AddBillActionListener());
 		buttonEdit.addActionListener(new AddBillActionListener());
-		
+	}
+
+	private void addComponentsEdit() {
+		addComponents();
+		add(buttonGoBack);
+		add(buttonEdit);
+	}
+
+	private void addComponents() {
 		setLayout(new GridLayout(6,2));
 		add(nameLabel);
 		add(nameTextField);
@@ -94,34 +114,33 @@ public class GUIOneTimeBill extends JPanel {
 		add(yearLabel);
 		add(yearTextField);
 		add(monthLabel);
-		add(monthTextField);
+		add(monthsComboBox);
 		add(dayLabel);
-		add(dayTextField);
-		add(buttonGoBack);
-		add(buttonEdit);
-		
+		add(daysComboBox);
 	}
-	
+
 	public class AddBillActionListener implements ActionListener {
 		public void actionPerformed(ActionEvent ae) {
 	        String action = ae.getActionCommand();
-	        if(action.contentEquals("Add One Time Bill")) {
-	        	String name = nameTextField.getText();
-	        	Double amount = Double.parseDouble(amountTextField.getText());
-	        	GregorianCalendar date = new GregorianCalendar(Integer.parseInt(yearTextField.getText()), Integer.parseInt(monthTextField.getText()), Integer.parseInt(dayTextField.getText()));
+	        if(action.contentEquals(Utility.AddBill)) {
+	        	getFieldInput();
 	        	frame.getListCollection().getListOneTime().add(new OneTimeBill(name, amount, date));
 	        	frame.changeToAdd();
 	        }
-	        else if(action.contentEquals("Go Back")) {
+	        else if(action.contentEquals(Utility.GoBack)) {
 	        	frame.changeToSelect(Utility.OneTimeBill);
 	        }
-	        else if(action.contentEquals("Edit")) {
-	        	String name = nameTextField.getText();
-	        	Double amount = Double.parseDouble(amountTextField.getText());
-	        	GregorianCalendar date = new GregorianCalendar(Integer.parseInt(yearTextField.getText()), Integer.parseInt(monthTextField.getText()), Integer.parseInt(dayTextField.getText()));
+	        else if(action.contentEquals(Utility.Edit)) {
+	        	getFieldInput();
 	        	frame.getListCollection().getListOneTime().get(selection).edit(name, amount, date);
-	        	frame.changeToAdd();
+	        	frame.changeToSelect(Utility.OneTimeBill);
 	        }
 	    }
+	}
+	
+	public void getFieldInput() {
+		name = nameTextField.getText();
+    	amount = Double.parseDouble(amountTextField.getText());
+    	date = new GregorianCalendar(Integer.parseInt(yearTextField.getText()), monthsComboBox.getSelectedIndex(), daysComboBox.getSelectedIndex()+1);
 	}
 }
