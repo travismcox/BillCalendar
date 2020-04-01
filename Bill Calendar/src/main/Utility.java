@@ -13,7 +13,9 @@ public class Utility {
 	public static String[] Months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
 	public static String[] Days = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"};
 	public static String AddBill = "Add Bill";
-	public static String GoBack = "Go Back";
+	public static String GoBackAdd = "Go Back to Add";
+	public static String GoBackSelect = "Go Back to Selct";
+	public static String GoBackMenu = "Go Back to Menu";
 	public static String Enter = "Enter";
 	public static String Edit = "Edit";
 	public static String Name = "Name";
@@ -22,4 +24,6 @@ public class Utility {
 	public static String Month = "Month";
 	public static String Day = "Day";
 	public static String RecurringDate = "Recurring Date";
+	public static String EmptyField = "";
+	public static Integer InitialIndex = 0;
 }
