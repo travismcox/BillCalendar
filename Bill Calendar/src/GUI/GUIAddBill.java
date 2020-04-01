@@ -6,66 +6,57 @@ package GUI;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
+
+import main.Utility;
 
 /**
  * @author traviscox
  *
  */
-public class GUIAddBill extends JPanel implements ActionListener {
+public class GUIAddBill extends GUIMenu {
 
-	GUIMain frame;
+	JButton[] buttonList;
+	MenuActionListener[] actionListenerList;
 	public GUIAddBill(GUIMain frame) {
-		this.frame = frame;
-		frame.setVisible(false);
-		frame.getContentPane().removeAll();
+		super(frame);
 		
-		JButton buttonMonthly = new JButton("Monthly Bill");
-		JButton buttonAnnual = new JButton("Annual Bill");
-		JButton buttonWeekly = new JButton("Weekly Bill");
-		JButton buttonOneTime = new JButton("One Time Bill");
-		JButton buttonLimited = new JButton("Limited Monthly Bill");
-		JButton buttonBackToMain = new JButton("Back to Main Menu");
-		
-		buttonMonthly.addActionListener(this);
-		buttonAnnual.addActionListener(this);
-		buttonWeekly.addActionListener(this);
-		buttonOneTime.addActionListener(this);
-		buttonLimited.addActionListener(this);
-		buttonBackToMain.addActionListener(this);
-		
-		setLayout(new GridLayout(6,1));
-		add(buttonMonthly);
-		add(buttonAnnual);
-		add(buttonWeekly);
-		add(buttonOneTime);
-		add(buttonLimited);
-		add(buttonBackToMain);
+		initializeArrays();
+		initializeBills(buttonList, Utility.labelListBill, actionListenerList);
 	}
 	
-	@Override
-	public void actionPerformed(ActionEvent ae) {
-        String action = ae.getActionCommand();
-        if (action.equals("Monthly Bill")) {
-            frame.changeToMonthly();
-        }
-        else if(action.equals("Annual Bill")) {
-        	frame.changeToAnnual();
-        }
-        else if (action.equals("Weekly Bill")) {
-            frame.changeToWeekly();
-        }
-        else if (action.equals("One Time Bill")) {
-        	frame.changeToOneTime();
-        }
-        else if(action.contentEquals("Limited Monthly Bill")) {
-        	frame.changeToLimited();
-        }
-        else if(action.contentEquals("Back to Main Menu")) {
-        	frame.changeToMain();
-        }
-    }
+	protected class MenuActionListener extends GUIMenu.MenuActionListener {
+		@Override
+		public void actionPerformed(ActionEvent ae) {
+	        String action = ae.getActionCommand();
+	        if (action.equals(Utility.MonthlyBill)) {
+	            frame.changeToMonthly();
+	        }
+	        else if(action.equals(Utility.AnnualBill)) {
+	        	frame.changeToAnnual();
+	        }
+	        else if (action.equals(Utility.WeeklyBill)) {
+	            frame.changeToWeekly();
+	        }
+	        else if (action.equals(Utility.OneTimeBill)) {
+	        	frame.changeToOneTime();
+	        }
+	        else if(action.contentEquals(Utility.LimitedBill)) {
+	        	frame.changeToLimited();
+	        }
+	        else if(action.contentEquals(Utility.BackToMainMenu)) {
+	        	frame.changeToMain();
+	        }
+	    }
+	}
+	
+	private void initializeArrays() {
+		buttonList = new JButton[Utility.labelListBill.length];
+		actionListenerList = new MenuActionListener[Utility.labelListBill.length];
+	}
 
 }

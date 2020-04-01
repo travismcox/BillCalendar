@@ -23,13 +23,6 @@ import main.WeeklyBill;
  */
 public class GUIWeeklyBill extends GUIBill {
 
-	/*GUIMain frame;
-	JTextField nameTextField, amountTextField, dateTextField;
-	JButton buttonEnter, buttonGoBack, buttonEdit;
-	JLabel nameLabel, amountLabel;
-	String name;
-	Double amount;
-	int selection;*/
 	public GUIWeeklyBill(GUIMain frame) {
 		super(frame);
 		
@@ -77,7 +70,7 @@ public class GUIWeeklyBill extends GUIBill {
 	        	frame.changeToAdd();
 	        }
 	        else if(action.contentEquals(Utility.GoBackSelect)) {
-	        	frame.changeToSelect(Utility.WeeklyBill);
+	        	frame.changeToSelect(Utility.WeeklyBillValue);
 	        }
 	        else if(action.contentEquals(Utility.GoBackAdd)) {
 	        	frame.changeToAdd();
@@ -85,7 +78,7 @@ public class GUIWeeklyBill extends GUIBill {
 	        if(action.contentEquals(Utility.Edit)) {
 	        	getFieldInput();
 	        	frame.getListCollection().getListWeekly().get(selection).edit(name, amount);
-	        	frame.changeToSelect(Utility.WeeklyBill);
+	        	frame.changeToSelect(Utility.WeeklyBillValue);
 	        }
 	    }
 	}

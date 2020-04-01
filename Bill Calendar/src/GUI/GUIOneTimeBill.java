@@ -79,7 +79,7 @@ public class GUIOneTimeBill extends GUIBill {
 	        	frame.changeToAdd();
 	        }
 	        else if(action.contentEquals(Utility.GoBackSelect)) {
-	        	frame.changeToSelect(Utility.OneTimeBill);
+	        	frame.changeToSelect(Utility.OneTimeBillValue);
 	        }
 	        else if(action.contentEquals(Utility.GoBackAdd)) {
 	        	frame.changeToAdd();
@@ -87,7 +87,7 @@ public class GUIOneTimeBill extends GUIBill {
 	        else if(action.contentEquals(Utility.Edit)) {
 	        	getFieldInput();
 	        	frame.getListCollection().getListOneTime().get(selection).edit(name, amount, endDate);
-	        	frame.changeToSelect(Utility.OneTimeBill);
+	        	frame.changeToSelect(Utility.OneTimeBillValue);
 	        }
 	    }
 	}

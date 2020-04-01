@@ -36,17 +36,6 @@ public class GUIAnnualBill extends GUIBill {
 		
 	}
 	
-	private void initializeLabelsAndFields(String nameField, String amountField, Integer monthIndex, Integer dayIndex) {
-		initializeNameAndAmount(nameField, amountField);
-		initializeMonth(monthIndex);
-		initializeRecurringDate(dayIndex);
-	}
-
-	private void addComponentsNew() {
-		addComponents();
-		addComponentsLabelAndField(buttonGoBackAdd, buttonEnter);
-	}
-
 	public GUIAnnualBill(GUIMain frame, int selection) {
 		super(frame, selection);
 		AnnualBill tempBill = frame.listCollection.getListAnnual().get(selection);
@@ -57,11 +46,35 @@ public class GUIAnnualBill extends GUIBill {
 		addComponentsEdit();	
 	}
 	
+	private void initializeLabelsAndFields(String nameField, String amountField, Integer monthIndex, Integer dayIndex) {
+		initializeNameAndAmount(nameField, amountField);
+		initializeMonth(monthIndex);
+		initializeRecurringDate(dayIndex);
+	}
+	
+	private void addComponents() {
+		addComponentsStart(5, 2);
+		addComponentsLabelAndField(monthLabel, monthsComboBox);
+		addComponentsLabelAndField(recurringDateLabel, recurringDateComboBox);
+	}
+
 	private void addComponentsEdit() {
 		addComponents();
 		addComponentsLabelAndField(buttonGoBackSelect, buttonEdit);
 	}
 
+	private void addComponentsNew() {
+		addComponents();
+		addComponentsLabelAndField(buttonGoBackAdd, buttonEnter);
+	}
+	
+	public void getFieldInput() {
+		name = nameTextField.getText();
+    	amount = Double.parseDouble(amountTextField.getText());
+    	month = monthsComboBox.getSelectedIndex();
+    	recurringDate = recurringDateComboBox.getSelectedIndex() + 1;
+	}
+	
 	protected class AddBillActionListener extends GUIBill.AddBillActionListener {
 		@Override
 		public void actionPerformed(ActionEvent ae) {
@@ -72,7 +85,7 @@ public class GUIAnnualBill extends GUIBill {
 	        	frame.changeToAdd();
 	        }
 	        else if(action.contentEquals(Utility.GoBackSelect)) {
-	        	frame.changeToSelect(Utility.OneTimeBill);
+	        	frame.changeToSelect(Utility.OneTimeBillValue);
 	        }
 	        else if(action.contentEquals(Utility.GoBackAdd)) {
 	        	frame.changeToAdd();
@@ -80,21 +93,8 @@ public class GUIAnnualBill extends GUIBill {
 	        else if(action.contentEquals(Utility.Edit)) {
 	        	getFieldInput();
 	        	frame.getListCollection().getListAnnual().get(selection).edit(name, amount, month, recurringDate);
-	        	frame.changeToSelect(Utility.OneTimeBill);
+	        	frame.changeToSelect(Utility.OneTimeBillValue);
 	        }
 		}
-	}
-	
-	public void getFieldInput() {
-		name = nameTextField.getText();
-    	amount = Double.parseDouble(amountTextField.getText());
-    	month = monthsComboBox.getSelectedIndex();
-    	recurringDate = recurringDateComboBox.getSelectedIndex() + 1;
-	}
-	
-	private void addComponents() {
-		addComponentsStart(5, 2);
-		addComponentsLabelAndField(monthLabel, monthsComboBox);
-		addComponentsLabelAndField(recurringDateLabel, recurringDateComboBox);
 	}
 }

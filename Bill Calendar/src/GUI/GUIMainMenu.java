@@ -10,49 +10,47 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import GUI.GUIAddBill.MenuActionListener;
+import main.Utility;
+
 
 /**
  * @author traviscox
  *
  */
-public class GUIMainMenu extends JPanel implements ActionListener {
+public class GUIMainMenu extends GUIMenu {
 
-	GUIMain frame;
+	JButton[] buttonList;
+	MenuActionListener[] actionListenerList;
 	public GUIMainMenu(GUIMain frame) {
-		this.frame = frame;
-		frame.getContentPane().removeAll();
-		
-		JButton buttonAddBill = new JButton("Add Bill");
-		JButton buttonCalculateBills = new JButton("Calculate Bills");
-		JButton buttonEditBills = new JButton("Edit Bills");
-		JButton buttonExit = new JButton("Exit");
-		buttonAddBill.addActionListener(this);
-		buttonCalculateBills.addActionListener(this);
-		buttonEditBills.addActionListener(this);
-		buttonExit.addActionListener(this);
-		
-		setLayout(new GridLayout(4,1));
-		add(buttonAddBill);
-		add(buttonCalculateBills);
-		add(buttonEditBills);
-		add(buttonExit);
+		super(frame);
+
+		initializeArrays();
+		initializeBills(buttonList, Utility.labelListBill, actionListenerList);
 	}
 	
-	@Override
-	public void actionPerformed(ActionEvent ae) {
-		String action = ae.getActionCommand();
-		if (action.equals("Add Bill")) {
-            frame.changeToAdd();
-        }
-        else if (action.equals("Calculate Bills")) {
-            frame.changeToCalculate();
-        }
-        else if (action.equals("Edit Bills")) {
-        	frame.changeToEdit();
-        }
-        else if (action.equals("Exit")) {
-        	frame.saveAndExit();
-        }
+	protected class MenuActionListener extends GUIMenu.MenuActionListener {
+		@Override
+		public void actionPerformed(ActionEvent ae) {
+			String action = ae.getActionCommand();
+			if (action.equals(Utility.AddBill)) {
+	            frame.changeToAdd();
+	        }
+	        else if (action.equals(Utility.CalculateBills)) {
+	            frame.changeToCalculate();
+	        }
+	        else if (action.equals(Utility.EditBill)) {
+	        	frame.changeToEdit();
+	        }
+	        else if (action.equals(Utility.Exit)) {
+	        	frame.saveAndExit();
+	        }
+		}
+	}
+	
+	private void initializeArrays() {
+		buttonList = new JButton[Utility.labelListBill.length];
+		actionListenerList = new MenuActionListener[Utility.labelListBill.length];
 	}
 
 }

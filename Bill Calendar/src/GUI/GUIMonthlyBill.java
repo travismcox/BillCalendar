@@ -67,7 +67,7 @@ public class GUIMonthlyBill extends GUIBill {
 	        	frame.changeToAdd();
 	        }
 	        else if(action.contentEquals(Utility.GoBackSelect)){
-	        	frame.changeToSelect(Utility.MonthlyBill);
+	        	frame.changeToSelect(Utility.MonthlyBillValue);
 	        }
 	        else if(action.contentEquals(Utility.Edit)) {
 	        	getFieldInput();

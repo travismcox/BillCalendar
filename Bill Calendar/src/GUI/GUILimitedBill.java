@@ -81,7 +81,7 @@ public class GUILimitedBill extends GUIBill {
 	        	frame.changeToAdd();
 	        }
 	        else if(action.contentEquals(Utility.GoBackSelect)) {
-	        	frame.changeToSelect(Utility.LimitedBill);
+	        	frame.changeToSelect(Utility.LimitedBillValue);
 	        }
 	        else if(action.contentEquals(Utility.GoBackAdd)) {
 	        	frame.changeToAdd();
@@ -89,7 +89,7 @@ public class GUILimitedBill extends GUIBill {
 	        else if(action.contentEquals(Utility.Edit)) {
 	        	getFieldInput();
 	        	frame.getListCollection().getListLimited().get(selection).edit(name, amount, recurringDate, endDate);
-	        	frame.changeToSelect(Utility.LimitedBill);
+	        	frame.changeToSelect(Utility.LimitedBillValue);
 	        }
 	    }
 	}
