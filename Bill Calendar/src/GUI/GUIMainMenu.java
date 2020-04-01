@@ -20,13 +20,11 @@ import main.Utility;
  */
 public class GUIMainMenu extends GUIMenu {
 
-	JButton[] buttonList;
-	MenuActionListener[] actionListenerList;
 	public GUIMainMenu(GUIMain frame) {
 		super(frame);
 
 		initializeArrays();
-		initializeBills(buttonList, Utility.labelListBill, actionListenerList);
+		initializeBills(buttonList, Utility.labelListMainMenu, actionListenerList);
 	}
 	
 	protected class MenuActionListener extends GUIMenu.MenuActionListener {
@@ -49,8 +47,11 @@ public class GUIMainMenu extends GUIMenu {
 	}
 	
 	private void initializeArrays() {
-		buttonList = new JButton[Utility.labelListBill.length];
-		actionListenerList = new MenuActionListener[Utility.labelListBill.length];
+		buttonList = new JButton[Utility.labelListMainMenu.length];
+		actionListenerList = new MenuActionListener[Utility.labelListMainMenu.length];
+		for(int i = 0; i < Utility.labelListMainMenu.length; i++) {
+			actionListenerList[i] = new MenuActionListener();
+		}
 	}
 
 }

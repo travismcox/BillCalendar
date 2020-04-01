@@ -54,5 +54,8 @@ public class GUIEditBill extends GUIMenu {
 	private void initializeArrays() {
 		buttonList = new JButton[Utility.labelListBill.length];
 		actionListenerList = new MenuActionListener[Utility.labelListBill.length];
+		for(int i = 0; i < Utility.labelListMainMenu.length; i++) {
+			actionListenerList[i] = new MenuActionListener();
+		}
 	}
 }
