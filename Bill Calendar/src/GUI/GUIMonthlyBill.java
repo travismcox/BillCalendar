@@ -54,12 +54,13 @@ public class GUIMonthlyBill extends GUIBill {
 		addComponentsLabelAndField(buttonGoBackSelect, buttonEdit);
 	}
 
-	public class AddBillActionListener implements ActionListener {
+	protected class AddBillActionListener extends GUIBill.AddBillActionListener {
+		@Override
 		public void actionPerformed(ActionEvent ae) {
 	        String action = ae.getActionCommand();
 	        if(action.contentEquals(Utility.AddBill)) {
 	        	getFieldInput();
-	        	frame.getListCollection().getListMonthly().add(new MonthlyBill(name, amount, date));
+	        	frame.getListCollection().getListMonthly().add(new MonthlyBill(name, amount, recurringDate));
 	        	frame.changeToAdd();
 	        }
 	        else if(action.contentEquals(Utility.GoBackAdd)) {
@@ -70,7 +71,7 @@ public class GUIMonthlyBill extends GUIBill {
 	        }
 	        else if(action.contentEquals(Utility.Edit)) {
 	        	getFieldInput();
-	        	frame.getListCollection().getListMonthly().get(selection).edit(name, amount, date);
+	        	frame.getListCollection().getListMonthly().get(selection).edit(name, amount, recurringDate);
 	        	frame.changeToAdd();
 	        }
 	    }
@@ -79,6 +80,6 @@ public class GUIMonthlyBill extends GUIBill {
 	public void getFieldInput() {
 		name = nameTextField.getText();
     	amount = Double.parseDouble(amountTextField.getText());
-    	date = recurringDateComboBox.getSelectedIndex() + 1;
+    	recurringDate = recurringDateComboBox.getSelectedIndex() + 1;
 	}
 }

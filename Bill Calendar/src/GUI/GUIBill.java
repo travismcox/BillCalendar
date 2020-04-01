@@ -5,6 +5,9 @@ package GUI;
 
 import java.awt.Component;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.GregorianCalendar;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -13,6 +16,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import GUI.GUIMonthlyBill.AddBillActionListener;
+import main.AnnualBill;
 import main.Utility;
 
 /**
@@ -22,13 +26,14 @@ import main.Utility;
 public abstract class GUIBill extends JPanel {
 
 	GUIMain frame;
-	JTextField nameTextField, amountTextField, dateTextField;
-	JComboBox<String> recurringDateComboBox;
-	JLabel nameLabel, amountLabel, recurringDateLabel;
+	JTextField nameTextField, amountTextField, dateTextField, yearTextField;
+	JComboBox<String> recurringDateComboBox, monthsComboBox, endDateComboBox;
+	JLabel nameLabel, amountLabel, recurringDateLabel, monthLabel, yearLabel, endDateLabel;
 	JButton buttonEnter, buttonGoBackAdd, buttonGoBackSelect, buttonEdit;
 	String name;
 	Double amount;
-	Integer date;
+	Integer recurringDate, month;
+	GregorianCalendar endDate;
 	int selection;
 	
 	public GUIBill(GUIMain frame) {
@@ -58,6 +63,26 @@ public abstract class GUIBill extends JPanel {
 	private void initializeRecurringDateField(Integer index) {
 		recurringDateComboBox = new JComboBox<String>(Utility.Days);
 		recurringDateComboBox.setSelectedIndex(index);
+	}
+	private void initializeMonthLabel() {
+		monthLabel = new JLabel(Utility.Month);
+	}
+	private void initializeMonthField(Integer index) {
+		monthsComboBox = new JComboBox<String>(Utility.Months);
+		monthsComboBox.setSelectedIndex(index);
+	}
+	private void initalizeYearLabel() {
+		yearLabel = new JLabel(Utility.Year);
+	}
+	private void initializeYearField(String yearData) {
+		yearTextField = new JTextField(yearData);
+	}
+	private void initializeEndDateLabel() {
+		endDateLabel = new JLabel(Utility.RecurringDate);
+	}
+	private void initializeEndDateField(Integer index) {
+		endDateComboBox = new JComboBox<String>(Utility.Days);
+		endDateComboBox.setSelectedIndex(index);
 	}
 	private void initializeButtonGoBackSelect(AddBillActionListener listener) {
 		buttonGoBackSelect = new JButton(Utility.GoBackSelect);
@@ -93,6 +118,18 @@ public abstract class GUIBill extends JPanel {
 		initializeRecurringDateLabel();
 		initializeRecurringDateField(index);
 	}
+	protected void initializeMonth(Integer index) {
+		initializeMonthLabel();
+		initializeMonthField(index);
+	}
+	protected void initializeYear(String yearData) {
+		initalizeYearLabel();
+		initializeYearField(yearData);
+	}
+	protected void initializeEndDate(Integer index) {
+		initializeEndDateLabel();
+		initializeEndDateField(index);
+	}
 	protected void addComponentsStart(Integer rows, Integer columns) {
 		setLayout(new GridLayout(rows, columns));
 		addComponentsLabelAndField(nameLabel, nameTextField);
@@ -104,4 +141,6 @@ public abstract class GUIBill extends JPanel {
 		add(component1);
 		add(component2);
 	}
+	
+	protected abstract class AddBillActionListener implements ActionListener{};
 }

@@ -24,92 +24,59 @@ import main.Utility;
  * @author traviscox
  *
  */
-public class GUIAnnualBill extends JPanel {
+public class GUIAnnualBill extends GUIBill {
 
-	GUIMain frame;
-	JTextField nameTextField, amountTextField;
-	JComboBox<String> monthsComboBox, daysComboBox;
-	JLabel nameLabel, amountLabel, monthLabel, dayLabel;
-	JButton buttonGoBack, buttonEdit, buttonEnter;
-	String name;
-	Double amount;
-	Integer month, day;
-	private int selection;
 	public GUIAnnualBill(GUIMain frame) {
-		this.frame = frame;
+		super(frame);
 		
-		initializeLabels();
-		initializeFields();
-		initializeButtonsNew();
+		initializeLabelsAndFields(Utility.EmptyField, Utility.EmptyField, Utility.InitialIndex, Utility.InitialIndex);
+		initializeButtonsNew(new AddBillActionListener(), new AddBillActionListener());
 		
 		addComponentsNew();
 		
 	}
 	
-	private void initializeFields() {
-		nameTextField = new JTextField();
-		amountTextField = new JTextField();
-		monthsComboBox = new JComboBox<String>(Utility.Months);
-		daysComboBox = new JComboBox<String>(Utility.Days);
+	private void initializeLabelsAndFields(String nameField, String amountField, Integer monthIndex, Integer dayIndex) {
+		initializeNameAndAmount(nameField, amountField);
+		initializeMonth(monthIndex);
+		initializeRecurringDate(dayIndex);
 	}
 
 	private void addComponentsNew() {
 		addComponents();
-		add(buttonEnter);
-	}
-
-	private void initializeButtonsNew() {
-		buttonEnter = new JButton(Utility.AddBill);
-		buttonEnter.addActionListener(new AddBillActionListener());
+		addComponentsLabelAndField(buttonGoBackAdd, buttonEnter);
 	}
 
 	public GUIAnnualBill(GUIMain frame, int selection) {
-		this.frame = frame;
-		this.selection = selection;
+		super(frame, selection);
 		AnnualBill tempBill = frame.listCollection.getListAnnual().get(selection);
 		
-		initializeLabels();
-		initializeFields();
-		setFields(tempBill);
-		initializeButtonsEdit();
+		initializeLabelsAndFields(tempBill.getName(), String.valueOf(tempBill.getAmount()), tempBill.getMonth(), tempBill.getDay());
+		initializeButtonsEdit(new AddBillActionListener(), new AddBillActionListener());
 		
 		addComponentsEdit();	
 	}
 	
 	private void addComponentsEdit() {
 		addComponents();
-		add(buttonGoBack);
-		add(buttonEdit);
+		addComponentsLabelAndField(buttonGoBackSelect, buttonEdit);
 	}
 
-	private void setFields(AnnualBill tempBill) {
-		nameTextField.setText(tempBill.getName());
-		amountTextField.setText(tempBill.getAmount().toString());
-		monthsComboBox.setSelectedIndex(tempBill.getMonth());
-		daysComboBox.setSelectedIndex(tempBill.getDay());
-	}
-
-	private void initializeButtonsEdit() {
-		buttonGoBack = new JButton(Utility.GoBack);
-		buttonEdit = new JButton(Utility.Edit);
-		buttonGoBack.addActionListener(new AddBillActionListener());
-		buttonEdit.addActionListener(new AddBillActionListener());
-	}
-
-	public class AddBillActionListener implements ActionListener {
+	protected class AddBillActionListener extends GUIBill.AddBillActionListener {
+		@Override
 		public void actionPerformed(ActionEvent ae) {
 	        String action = ae.getActionCommand();
 	        if(action.contentEquals(Utility.AddBill)) {
 	        	getFieldInput();
-	        	frame.getListCollection().getListAnnual().add(new AnnualBill(name, amount, month, day));
+	        	frame.getListCollection().getListAnnual().add(new AnnualBill(name, amount, month, recurringDate));
 	        	frame.changeToAdd();
 	        }
-	        else if(action.contentEquals(Utility.GoBack)) {
+	        else if(action.contentEquals(Utility.GoBackSelect)) {
 	        	frame.changeToSelect(Utility.OneTimeBill);
 	        }
 	        else if(action.contentEquals(Utility.Edit)) {
 	        	getFieldInput();
-	        	frame.getListCollection().getListAnnual().get(selection).edit(name, amount, month, day);
+	        	frame.getListCollection().getListAnnual().get(selection).edit(name, amount, month, recurringDate);
 	        	frame.changeToSelect(Utility.OneTimeBill);
 	        }
 		}
@@ -119,25 +86,12 @@ public class GUIAnnualBill extends JPanel {
 		name = nameTextField.getText();
     	amount = Double.parseDouble(amountTextField.getText());
     	month = monthsComboBox.getSelectedIndex();
-    	day = daysComboBox.getSelectedIndex() + 1;
-	}
-	
-	private void initializeLabels() {
-		nameLabel = new JLabel(Utility.Name);
-		amountLabel = new JLabel(Utility.Amount);
-		monthLabel = new JLabel(Utility.Month);
-		dayLabel = new JLabel(Utility.Day);
+    	recurringDate = recurringDateComboBox.getSelectedIndex() + 1;
 	}
 	
 	private void addComponents() {
-		setLayout(new GridLayout(5,2));
-		add(nameLabel);
-		add(nameTextField);
-		add(amountLabel);
-		add(amountTextField);
-		add(monthLabel);
-		add(monthsComboBox);
-		add(dayLabel);
-		add(daysComboBox);
+		addComponentsStart(5, 2);
+		addComponentsLabelAndField(monthLabel, monthsComboBox);
+		addComponentsLabelAndField(recurringDateLabel, recurringDateComboBox);
 	}
 }
