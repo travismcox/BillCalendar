@@ -3,14 +3,9 @@
  */
 package GUI;
 
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.Arrays;
-import java.util.List;
 
 import javax.swing.JButton;
-import javax.swing.JPanel;
 
 import main.Utility;
 
@@ -20,8 +15,6 @@ import main.Utility;
  */
 public class GUIAddBill extends GUIMenu {
 
-	JButton[] buttonList;
-	MenuActionListener[] actionListenerList;
 	public GUIAddBill(GUIMain frame) {
 		super(frame);
 		

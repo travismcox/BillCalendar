@@ -19,8 +19,6 @@ import main.Utility;
  */
 public class GUIEditBill extends GUIMenu {
 	
-	JButton[] buttonList;
-	MenuActionListener[] actionListenerList;
 	public GUIEditBill(GUIMain frame) {
 		super(frame);
 		

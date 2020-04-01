@@ -12,6 +12,7 @@ import java.util.Arrays;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import GUI.GUIAddBill.MenuActionListener;
 import main.Utility;
 
 /**
@@ -21,6 +22,8 @@ import main.Utility;
 public class GUIMenu extends JPanel {
 
 	GUIMain frame;
+	JButton[] buttonList;
+	MenuActionListener[] actionListenerList;
 	public GUIMenu(GUIMain frame) {
 		this.frame = frame;
 	}
