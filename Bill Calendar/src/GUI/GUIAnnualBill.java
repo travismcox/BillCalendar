@@ -74,6 +74,9 @@ public class GUIAnnualBill extends GUIBill {
 	        else if(action.contentEquals(Utility.GoBackSelect)) {
 	        	frame.changeToSelect(Utility.OneTimeBill);
 	        }
+	        else if(action.contentEquals(Utility.GoBackAdd)) {
+	        	frame.changeToAdd();
+	        }
 	        else if(action.contentEquals(Utility.Edit)) {
 	        	getFieldInput();
 	        	frame.getListCollection().getListAnnual().get(selection).edit(name, amount, month, recurringDate);
