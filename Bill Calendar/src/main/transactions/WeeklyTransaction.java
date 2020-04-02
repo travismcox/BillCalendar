@@ -1,23 +1,25 @@
 /**
  * 
  */
-package main;
+package main.transactions;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+
+import main.FileAccess;
 
 /**
  * @author traviscox
  *
  */
-public class WeeklyBill extends Transaction {
+public class WeeklyTransaction extends Transaction {
 
-	public WeeklyBill(String name, Double amount) {
+	public WeeklyTransaction(String name, Double amount) {
 		super(name, amount);
 		// TODO Auto-generated constructor stub
 	}
 	
-	public WeeklyBill(BufferedReader reader) throws IOException {
+	public WeeklyTransaction(BufferedReader reader) throws IOException {
 		super(reader);
 		FileAccess.consumeNewLine(reader);
 	}

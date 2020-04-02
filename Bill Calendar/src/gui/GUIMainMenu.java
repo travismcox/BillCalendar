@@ -32,13 +32,19 @@ public class GUIMainMenu extends GUIMenu {
 		public void actionPerformed(ActionEvent ae) {
 			String action = ae.getActionCommand();
 			if (action.equals(Utility.AddBill)) {
-	            frame.changeToAdd();
+	            frame.changeToAddBill();
+	        }
+			else if (action.equals(Utility.AddIncome)) {
+	            frame.changeToAddIncome();
 	        }
 	        else if (action.equals(Utility.CalculateBills)) {
 	            frame.changeToCalculate();
 	        }
 	        else if (action.equals(Utility.EditBill)) {
 	        	frame.changeToEdit();
+	        }
+	        else if (action.equals(Utility.EditIncome)) {
+	            frame.changeToEditIncome();
 	        }
 	        else if (action.equals(Utility.Exit)) {
 	        	frame.saveAndExit();

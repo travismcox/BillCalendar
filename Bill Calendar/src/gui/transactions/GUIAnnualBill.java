@@ -1,7 +1,7 @@
 /**
  * 
  */
-package gui;
+package gui.transactions;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -15,10 +15,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import gui.GUIOneTimeBill.AddBillActionListener;
-import main.AnnualBill;
-import main.OneTimeBill;
+import gui.GUIMain;
+import gui.transactions.GUIOneTimeBill.AddBillActionListener;
 import main.Utility;
+import main.transactions.AnnualBill;
+import main.transactions.OneTimeTransaction;
 
 /**
  * @author traviscox

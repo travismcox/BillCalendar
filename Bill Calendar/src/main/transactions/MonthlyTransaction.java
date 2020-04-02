@@ -1,16 +1,18 @@
 /**
  * 
  */
-package main;
+package main.transactions;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+
+import main.FileAccess;
 
 /**
  * @author traviscox
  *
  */
-public class MonthlyBill extends Transaction {
+public class MonthlyTransaction extends Transaction {
 
 	private int date;
 	/**
@@ -19,12 +21,12 @@ public class MonthlyBill extends Transaction {
 	 * @param date
 	 */
 	
-	public MonthlyBill(String name, Double amount, int date) {
+	public MonthlyTransaction(String name, Double amount, int date) {
 		super(name, amount);
 		setDate(date);
 	}
 	
-	public MonthlyBill(BufferedReader reader) throws IOException {
+	public MonthlyTransaction(BufferedReader reader) throws IOException {
 		super(reader);
 		setDate(Integer.parseInt(FileAccess.getStringSpace(reader)));
 		FileAccess.consumeNewLine(reader);

@@ -18,6 +18,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import gui.transactions.GUIAnnualBill;
+import gui.transactions.GUILimitedBill;
+import gui.transactions.GUIMonthlyBill;
+import gui.transactions.GUIOneTimeBill;
+import gui.transactions.GUIWeeklyBill;
 import main.FileAccess;
 import main.ListCollection;
 
@@ -61,10 +66,18 @@ public class GUIMain extends JFrame{
 		run();
 	}
 	
-	public void changeToAdd() {
+	public void changeToAddBill() {
 		setVisible(false);
 		getContentPane().removeAll();
 		getContentPane().add(new GUIAddBill(this));
+		setSize(200,300);
+		run();
+	}
+	
+	public void changeToAddIncome() {
+		setVisible(false);
+		getContentPane().removeAll();
+		getContentPane().add(new GUIAddIncome(this));
 		setSize(200,300);
 		run();
 	}
@@ -128,6 +141,14 @@ public class GUIMain extends JFrame{
 		setVisible(false);
 		getContentPane().removeAll();
 		getContentPane().add(new GUIEditBill(this));
+		setSize(200, 300);
+		run();
+	}
+	
+	public void changeToEditIncome() {
+		setVisible(false);
+		getContentPane().removeAll();
+		getContentPane().add(new GUIEditIncome(this));
 		setSize(200, 300);
 		run();
 	}

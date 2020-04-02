@@ -7,6 +7,11 @@ import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 
+import main.transactions.LimitedMonthlyTransaction;
+import main.transactions.MonthlyTransaction;
+import main.transactions.OneTimeTransaction;
+import main.transactions.WeeklyTransaction;
+
 /**
  * @author traviscox
  *
@@ -22,10 +27,10 @@ public abstract class BillInput {
 	}
 	
 	public static void startBillInput(ListCollection listCollection, Scanner scan) {
-		ArrayList<MonthlyBill> listMonthly = listCollection.getListMonthlyBill();
-		ArrayList<WeeklyBill> listWeekly = listCollection.getListWeeklyBill();
-		ArrayList<OneTimeBill> listOneTime = listCollection.getListOneTimeBill();
-		ArrayList<LimitedMonthlyBill> listLimited = listCollection.getListLimitedBill();
+		ArrayList<MonthlyTransaction> listMonthly = listCollection.getListMonthlyBill();
+		ArrayList<WeeklyTransaction> listWeekly = listCollection.getListWeeklyBill();
+		ArrayList<OneTimeTransaction> listOneTime = listCollection.getListOneTimeBill();
+		ArrayList<LimitedMonthlyTransaction> listLimited = listCollection.getListLimitedBill();
 		
 		System.out.print("Select 1 (Monthly), 2 (Weekly), 3 (One Time), 4 (Limited Monthly):");
 		switch(scan.nextInt()) {
@@ -42,19 +47,19 @@ public abstract class BillInput {
 		}
 	}
 
-	private static void limitedMonthlyBillCreator(ArrayList<LimitedMonthlyBill> listLimited, Scanner scan) {
+	private static void limitedMonthlyBillCreator(ArrayList<LimitedMonthlyTransaction> listLimited, Scanner scan) {
 		String name = nameInput(scan);
 		Double amount = amountInput(scan);
 		int date = dateInput(scan);
 		GregorianCalendar endDate = wholeDateInput("Bill End", scan);
-		listLimited.add(new LimitedMonthlyBill(name, amount, date, endDate));
+		listLimited.add(new LimitedMonthlyTransaction(name, amount, date, endDate));
 	}
 
-	private static void oneTimeBillCreator(ArrayList<OneTimeBill> listOneTime, Scanner scan) {
+	private static void oneTimeBillCreator(ArrayList<OneTimeTransaction> listOneTime, Scanner scan) {
 		String name = nameInput(scan);
 		Double amount = amountInput(scan);
 		GregorianCalendar date = wholeDateInput("Bill", scan);
-		listOneTime.add(new OneTimeBill(name, amount, date));
+		listOneTime.add(new OneTimeTransaction(name, amount, date));
 	}
 
 	public static GregorianCalendar wholeDateInput(String modifier, Scanner scan) {
@@ -68,10 +73,10 @@ public abstract class BillInput {
 		return date;
 	}
 
-	private static void weeklyBillCreator(ArrayList<WeeklyBill> listWeekly, Scanner scan) {
+	private static void weeklyBillCreator(ArrayList<WeeklyTransaction> listWeekly, Scanner scan) {
 		String name = nameInput(scan);
 		Double amount = amountInput(scan);
-		listWeekly.add(new WeeklyBill(name, amount));
+		listWeekly.add(new WeeklyTransaction(name, amount));
 	}
 
 	private static Double amountInput(Scanner scan) {
@@ -79,11 +84,11 @@ public abstract class BillInput {
 		return scan.nextDouble();
 	}
 
-	private static void monthlyBillCreator(ArrayList<MonthlyBill> listMonthly, Scanner scan) {
+	private static void monthlyBillCreator(ArrayList<MonthlyTransaction> listMonthly, Scanner scan) {
 		String name = nameInput(scan);
 		Double amount = amountInput(scan);
 		int date = dateInput(scan);
-		listMonthly.add(new MonthlyBill(name, amount, date));
+		listMonthly.add(new MonthlyTransaction(name, amount, date));
 	}
 
 	private static int dateInput(Scanner scan) {

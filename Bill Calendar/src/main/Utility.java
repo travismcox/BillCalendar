@@ -38,6 +38,8 @@ public class Utility {
 	public static String CalculateBills = "Calculate Bills";
 	public static String EditBill = "Edit Bill";
 	public static String Exit = "Exit";
+	public static String AddIncome = "Add Income";
+	public static String EditIncome = "Edit Income";
 	public static String[] labelListBill = {Utility.MonthlyBill, Utility.AnnualBill, Utility.WeeklyBill, Utility.OneTimeBill, Utility.LimitedBill, Utility.BackToMainMenu};
-	public static String[] labelListMainMenu = {Utility.AddBill, Utility.CalculateBills, Utility.EditBill, Utility.Exit};
+	public static String[] labelListMainMenu = {Utility.AddBill, Utility.AddIncome, Utility.CalculateBills, Utility.EditBill, Utility.EditIncome, Utility.Exit};
 }

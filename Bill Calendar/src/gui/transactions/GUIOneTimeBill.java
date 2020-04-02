@@ -1,7 +1,7 @@
 /**
  * 
  */
-package gui;
+package gui.transactions;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -15,10 +15,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import gui.GUIMonthlyBill.AddBillActionListener;
-import main.MonthlyBill;
-import main.OneTimeBill;
+import gui.GUIMain;
+import gui.transactions.GUIMonthlyBill.AddBillActionListener;
 import main.Utility;
+import main.transactions.MonthlyTransaction;
+import main.transactions.OneTimeTransaction;
 
 /**
  * @author traviscox
@@ -37,7 +38,7 @@ public class GUIOneTimeBill extends GUITransaction {
 	
 	public GUIOneTimeBill(GUIMain frame, int selection) {
 		super(frame, selection);
-		OneTimeBill tempBill = frame.listCollection.getListOneTime().get(selection);
+		OneTimeTransaction tempBill = frame.listCollection.getListOneTime().get(selection);
 		
 		initializeLabelsAndFields(tempBill.getName(), String.valueOf(tempBill.getAmount()), String.valueOf(tempBill.getDate().get(Calendar.YEAR)), tempBill.getDate().get(Calendar.MONTH), tempBill.getDate().get(Calendar.DAY_OF_MONTH)-1);
 		initializeButtonsEdit(new AddBillActionListener(), new AddBillActionListener());
@@ -75,7 +76,7 @@ public class GUIOneTimeBill extends GUITransaction {
 	        String action = ae.getActionCommand();
 	        if(action.contentEquals(Utility.AddBill)) {
 	        	getFieldInput();
-	        	frame.getListCollection().getListOneTime().add(new OneTimeBill(name, amount, endDate));
+	        	frame.getListCollection().getListOneTime().add(new OneTimeTransaction(name, amount, endDate));
 	        	frame.changeToAdd();
 	        }
 	        else if(action.contentEquals(Utility.GoBackSelect)) {

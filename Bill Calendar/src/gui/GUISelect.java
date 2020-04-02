@@ -93,46 +93,91 @@ public class GUISelect extends JPanel implements ActionListener, ListSelectionLi
 		return listArray;
 	}
 
-	private ArrayList<String> selectLimited() {
+	private ArrayList<String> selectLimitedBill() {
 		ArrayList<String> list = new ArrayList<String>();
-		for(int i = 0; i < listCollection.getListLimited().size(); i++) {
-			list.add(listCollection.getListLimited().get(i).listToString());
+		for(int i = 0; i < listCollection.getListLimitedBill().size(); i++) {
+			list.add(listCollection.getListLimitedBill().get(i).listToString());
 		}
 		
 		return list;
 	}
 	
-	private ArrayList<String> selectAnnual() {
+	private ArrayList<String> selectLimitedIncome() {
 		ArrayList<String> list = new ArrayList<String>();
-		for(int i = 0; i < listCollection.getListAnnual().size(); i++) {
-			list.add(listCollection.getListAnnual().get(i).listToString());
+		for(int i = 0; i < listCollection.getListLimitedIncome().size(); i++) {
+			list.add(listCollection.getListLimitedIncome().get(i).listToString());
+		}
+		
+		return list;
+	}
+	
+	private ArrayList<String> selectAnnualBill() {
+		ArrayList<String> list = new ArrayList<String>();
+		for(int i = 0; i < listCollection.getListAnnualBill().size(); i++) {
+			list.add(listCollection.getListAnnualBill().get(i).listToString());
+		}
+		
+		return list;
+	}
+	
+	private ArrayList<String> selectAnnualIncome() {
+		ArrayList<String> list = new ArrayList<String>();
+		for(int i = 0; i < listCollection.getListAnnualIncome().size(); i++) {
+			list.add(listCollection.getListAnnualIncome().get(i).listToString());
 		}
 		
 		return list;
 	}
 
-	private ArrayList<String> selectOneTime() {
+	private ArrayList<String> selectOneTimeBill() {
 		ArrayList<String> list = new ArrayList<String>();
-		for(int i = 0; i < listCollection.getListOneTime().size(); i++) {
-			list.add(listCollection.getListOneTime().get(i).listToString());
+		for(int i = 0; i < listCollection.getListOneTimeBill().size(); i++) {
+			list.add(listCollection.getListOneTimeBill().get(i).listToString());
+		}
+		
+		return list;
+	}
+	
+	private ArrayList<String> selectOneTimeIncome() {
+		ArrayList<String> list = new ArrayList<String>();
+		for(int i = 0; i < listCollection.getListOneTimeIncome().size(); i++) {
+			list.add(listCollection.getListOneTimeIncome().get(i).listToString());
 		}
 		
 		return list;
 	}
 
-	private ArrayList<String> selectWeekly() {
+	private ArrayList<String> selectWeeklyBill() {
 		ArrayList<String> list = new ArrayList<String>();
-		for(int i = 0; i < listCollection.getListWeekly().size(); i++) {
-			list.add(listCollection.getListWeekly().get(i).listToString());
+		for(int i = 0; i < listCollection.getListWeeklyBill().size(); i++) {
+			list.add(listCollection.getListWeeklyBill().get(i).listToString());
+		}
+		
+		return list;
+	}
+	
+	private ArrayList<String> selectWeeklyIncome() {
+		ArrayList<String> list = new ArrayList<String>();
+		for(int i = 0; i < listCollection.getListWeeklyIncome().size(); i++) {
+			list.add(listCollection.getListWeeklyIncome().get(i).listToString());
 		}
 		
 		return list;
 	}
 
-	private ArrayList<String> selectMonthly() {
+	private ArrayList<String> selectMonthlyBill() {
 		ArrayList<String> list = new ArrayList<String>();
-		for(int i = 0; i < listCollection.getListMonthly().size(); i++) {
-			list.add(listCollection.getListMonthly().get(i).listToString());
+		for(int i = 0; i < listCollection.getListMonthlyBill().size(); i++) {
+			list.add(listCollection.getListMonthlyBill().get(i).listToString());
+		}
+		
+		return list;
+	}
+	
+	private ArrayList<String> selectMonthlyIncome() {
+		ArrayList<String> list = new ArrayList<String>();
+		for(int i = 0; i < listCollection.getListMonthlyIncome().size(); i++) {
+			list.add(listCollection.getListMonthlyIncome().get(i).listToString());
 		}
 		
 		return list;

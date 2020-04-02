@@ -1,7 +1,7 @@
 /**
  * 
  */
-package gui;
+package gui.transactions;
 
 import java.awt.Component;
 import java.awt.GridLayout;
@@ -15,9 +15,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import gui.GUIMonthlyBill.AddBillActionListener;
-import main.AnnualBill;
+import gui.GUIMain;
+import gui.transactions.GUIMonthlyBill.AddBillActionListener;
 import main.Utility;
+import main.transactions.AnnualBill;
 
 /**
  * @author traviscox

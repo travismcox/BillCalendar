@@ -1,7 +1,7 @@
 /**
  * 
  */
-package gui;
+package gui.transactions;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -15,10 +15,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import gui.GUIMonthlyBill.AddBillActionListener;
-import main.LimitedMonthlyBill;
-import main.MonthlyBill;
+import gui.GUIMain;
+import gui.transactions.GUIMonthlyBill.AddBillActionListener;
 import main.Utility;
+import main.transactions.LimitedMonthlyTransaction;
+import main.transactions.MonthlyTransaction;
 
 /**
  * @author traviscox
@@ -58,7 +59,7 @@ public class GUILimitedBill extends GUITransaction {
 
 	public GUILimitedBill(GUIMain frame, int selection) {
 		super(frame, selection);
-		LimitedMonthlyBill tempBill = frame.listCollection.getListLimited().get(selection);
+		LimitedMonthlyTransaction tempBill = frame.listCollection.getListLimited().get(selection);
 		
 		initializeLabelsAndFields(tempBill.getName(), String.valueOf(tempBill.getAmount()), tempBill.getDate()-1, Integer.toString(tempBill.getEndDate().get(Calendar.YEAR)), tempBill.getEndDate().get(Calendar.MONTH), tempBill.getEndDate().get(Calendar.DAY_OF_MONTH)-1);
 		initializeButtonsEdit(new AddBillActionListener(), new AddBillActionListener());
@@ -77,7 +78,7 @@ public class GUILimitedBill extends GUITransaction {
 	        String action = ae.getActionCommand();
 	        if(action.contentEquals(Utility.AddBill)) {
 	        	getFieldInput();
-	        	frame.getListCollection().getListLimited().add(new LimitedMonthlyBill(name, amount, recurringDate, endDate));
+	        	frame.getListCollection().getListLimited().add(new LimitedMonthlyTransaction(name, amount, recurringDate, endDate));
 	        	frame.changeToAdd();
 	        }
 	        else if(action.contentEquals(Utility.GoBackSelect)) {

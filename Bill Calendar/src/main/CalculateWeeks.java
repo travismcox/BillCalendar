@@ -12,6 +12,12 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 
+import main.transactions.LimitedMonthlyTransaction;
+import main.transactions.MonthlyTransaction;
+import main.transactions.OneTimeTransaction;
+import main.transactions.Transaction;
+import main.transactions.WeeklyTransaction;
+
 /**
  * @author traviscox
  *
@@ -61,10 +67,10 @@ public abstract class CalculateWeeks {
 	}
 
 	private static ArrayList<String> calculateWeek(GregorianCalendar startDate, GregorianCalendar endDate, ListCollection listCollection, int week, ArrayList<Double> pastFourWeeks) {
-		ArrayList<MonthlyBill> listMonthly = listCollection.getListMonthlyBill();
-		ArrayList<WeeklyBill> listWeekly = listCollection.getListWeeklyBill();
-		ArrayList<OneTimeBill> listOneTime = listCollection.getListOneTimeBill();
-		ArrayList<LimitedMonthlyBill> listLimited = listCollection.getListLimitedBill();
+		ArrayList<MonthlyTransaction> listMonthly = listCollection.getListMonthlyBill();
+		ArrayList<WeeklyTransaction> listWeekly = listCollection.getListWeeklyBill();
+		ArrayList<OneTimeTransaction> listOneTime = listCollection.getListOneTimeBill();
+		ArrayList<LimitedMonthlyTransaction> listLimited = listCollection.getListLimitedBill();
 		Double sum = 0.0;
 		ArrayList<String> listOfBills = new ArrayList<String>();
 		ArrayList<String> results = new ArrayList<String>();

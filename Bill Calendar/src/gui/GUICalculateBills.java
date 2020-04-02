@@ -12,9 +12,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import gui.GUIWeeklyBill.AddBillActionListener;
+import gui.transactions.GUIWeeklyBill.AddBillActionListener;
 import main.CalculateWeeks;
-import main.WeeklyBill;
+import main.transactions.WeeklyTransaction;
 
 /**
  * @author traviscox

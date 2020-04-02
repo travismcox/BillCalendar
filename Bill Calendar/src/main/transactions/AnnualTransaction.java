@@ -1,17 +1,18 @@
 /**
  * 
  */
-package main;
+package main.transactions;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.GregorianCalendar;
+
+import main.FileAccess;
 
 /**
  * @author traviscox
  *
  */
-public class AnnualBill extends Transaction {
+public class AnnualTransaction extends Transaction {
 
 	private int month;
 	private int day;
@@ -19,7 +20,7 @@ public class AnnualBill extends Transaction {
 	 * @param name
 	 * @param amount
 	 */
-	public AnnualBill(String name, Double amount, int month, int day) {
+	public AnnualTransaction(String name, Double amount, int month, int day) {
 		super(name, amount);
 		setMonth(month);
 		setDay(day);
@@ -57,7 +58,7 @@ public class AnnualBill extends Transaction {
 	 * @param reader
 	 * @throws IOException
 	 */
-	public AnnualBill(BufferedReader reader) throws IOException {
+	public AnnualTransaction(BufferedReader reader) throws IOException {
 		super(reader);
 		setMonth(Integer.parseInt(FileAccess.getStringSpace(reader)));
 		setDay(Integer.parseInt(FileAccess.getStringSpace(reader)));

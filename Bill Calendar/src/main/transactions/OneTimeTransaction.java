@@ -1,29 +1,31 @@
 /**
  * 
  */
-package main;
+package main.transactions;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+import main.FileAccess;
+
 /**
  * @author traviscox
  *
  */
-public class OneTimeBill extends Transaction {
+public class OneTimeTransaction extends Transaction {
 
 	private GregorianCalendar date;
 	/**
 	 * 
 	 */
-	public OneTimeBill(String name, Double amount, GregorianCalendar date) {
+	public OneTimeTransaction(String name, Double amount, GregorianCalendar date) {
 		super(name, amount);
 		setDate(date);
 	}
 	
-	public OneTimeBill(BufferedReader reader) throws NumberFormatException, IOException {
+	public OneTimeTransaction(BufferedReader reader) throws NumberFormatException, IOException {
 		super(reader);
 		setDate(new GregorianCalendar(Integer.parseInt(FileAccess.getStringSpace(reader)), Integer.parseInt(FileAccess.getStringSpace(reader)), Integer.parseInt(FileAccess.getStringSpace(reader))));
 		FileAccess.consumeNewLine(reader);

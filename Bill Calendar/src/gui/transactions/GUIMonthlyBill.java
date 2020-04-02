@@ -1,13 +1,14 @@
 /**
  * 
  */
-package gui;
+package gui.transactions;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import main.MonthlyBill;
+import gui.GUIMain;
 import main.Utility;
+import main.transactions.MonthlyTransaction;
 
 /**
  * @author traviscox
@@ -26,7 +27,7 @@ public class GUIMonthlyBill extends GUITransaction {
 
 	public GUIMonthlyBill(GUIMain frame, int selection) {
 		super(frame, selection);
-		MonthlyBill tempBill = frame.listCollection.getListMonthly().get(selection);
+		MonthlyTransaction tempBill = frame.getListCollection().getMonthlyBill(selection);
 		
 		initializeLabelsAndFields(tempBill.getName(), String.valueOf(tempBill.getAmount()), tempBill.getDate());
 		initializeButtonsEdit(new AddBillActionListener(), new AddBillActionListener());
@@ -60,19 +61,19 @@ public class GUIMonthlyBill extends GUITransaction {
 	        String action = ae.getActionCommand();
 	        if(action.contentEquals(Utility.AddBill)) {
 	        	getFieldInput();
-	        	frame.getListCollection().getListMonthly().add(new MonthlyBill(name, amount, recurringDate));
-	        	frame.changeToAdd();
+	        	frame.getListCollection().getListMonthlyBill().add(new MonthlyTransaction(name, amount, recurringDate));
+	        	frame.changeToAddBill();
 	        }
 	        else if(action.contentEquals(Utility.GoBackAdd)) {
-	        	frame.changeToAdd();
+	        	frame.changeToAddBill();
 	        }
 	        else if(action.contentEquals(Utility.GoBackSelect)){
 	        	frame.changeToSelect(Utility.MonthlyBillValue);
 	        }
 	        else if(action.contentEquals(Utility.Edit)) {
 	        	getFieldInput();
-	        	frame.getListCollection().getListMonthly().get(selection).edit(name, amount, recurringDate);
-	        	frame.changeToAdd();
+	        	frame.getListCollection().getListMonthlyBill().get(selection).edit(name, amount, recurringDate);
+	        	frame.changeToAddBill();
 	        }
 	    }
 	}

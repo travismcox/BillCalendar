@@ -1,18 +1,20 @@
 /**
  * 
  */
-package main;
+package main.transactions;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+import main.FileAccess;
+
 /**
  * @author traviscox
  *
  */
-public class LimitedMonthlyBill extends Transaction {
+public class LimitedMonthlyTransaction extends Transaction {
 
 	private GregorianCalendar endDate;
 	private int date;
@@ -21,13 +23,13 @@ public class LimitedMonthlyBill extends Transaction {
 	 * @param amount
 	 * @param date
 	 */
-	public LimitedMonthlyBill(String name, Double amount, int date, GregorianCalendar endDate) {
+	public LimitedMonthlyTransaction(String name, Double amount, int date, GregorianCalendar endDate) {
 		super(name, amount);
 		setDate(date);
 		setEndDate(endDate);
 	}
 	
-	public LimitedMonthlyBill(BufferedReader reader) throws IOException {
+	public LimitedMonthlyTransaction(BufferedReader reader) throws IOException {
 		super(reader);
 		setDate(Integer.parseInt(FileAccess.getStringSpace(reader)));
 		setEndDate(new GregorianCalendar(Integer.parseInt(FileAccess.getStringSpace(reader)), Integer.parseInt(FileAccess.getStringSpace(reader)), Integer.parseInt(FileAccess.getStringSpace(reader))));
