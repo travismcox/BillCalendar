@@ -5,7 +5,6 @@ package gui.transactions;
 
 import java.awt.Component;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.GregorianCalendar;
 
@@ -16,9 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import gui.GUIMain;
-import gui.transactions.GUIMonthlyBill.AddBillActionListener;
 import main.Utility;
-import main.transactions.AnnualBill;
 
 /**
  * @author traviscox

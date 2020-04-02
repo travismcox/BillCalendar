@@ -5,13 +5,11 @@ package main;
 
 import java.util.ArrayList;
 
-import main.transactions.AnnualBill;
 import main.transactions.AnnualTransaction;
 import main.transactions.LimitedMonthlyTransaction;
 import main.transactions.MonthlyTransaction;
 import main.transactions.OneTimeTransaction;
 import main.transactions.WeeklyTransaction;
-import main.transactions.WeeklyIncome;
 
 /**
  * @author traviscox

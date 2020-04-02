@@ -12,13 +12,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
-import main.transactions.AnnualBill;
+import main.transactions.AnnualTransaction;
 import main.transactions.LimitedMonthlyTransaction;
 import main.transactions.MonthlyTransaction;
 import main.transactions.OneTimeTransaction;
 import main.transactions.WeeklyTransaction;
-import main.transactions.WeeklyIncome;
-
 /**
  * @author traviscox
  *
@@ -44,7 +42,7 @@ public abstract class FileAccess {
 			switch(tempChar) {
 			//case 'M': listCollection.getListMonthlyIncome().add(new MonthlyIncome(reader));
 			//		break;
-			case 'W': listCollection.getListWeeklyIncome().add(new WeeklyIncome(reader));
+			case 'W': listCollection.getListWeeklyIncome().add(new WeeklyTransaction(reader));
 					break;
 			//case 'O': listCollection.getListOneTimeIncome().add(new OneTimeIncome(reader));
 			//		break;
@@ -71,7 +69,7 @@ public abstract class FileAccess {
 					break;
 			case 'L': listCollection.getListLimitedBill().add(new LimitedMonthlyTransaction(reader));
 					break;
-			case 'A': listCollection.getListAnnualBill().add(new AnnualBill(reader));
+			case 'A': listCollection.getListAnnualBill().add(new AnnualTransaction(reader));
 				break;
 			}
 		}

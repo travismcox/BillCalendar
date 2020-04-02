@@ -6,10 +6,8 @@ package gui.transactions;
 import java.awt.event.ActionEvent;
 
 import gui.GUIMain;
-import gui.transactions.GUIWeeklyBill.AddBillActionListener;
 import main.Utility;
 import main.transactions.WeeklyTransaction;
-import main.transactions.WeeklyIncome;
 
 /**
  * @author traviscox
@@ -35,7 +33,7 @@ public class GUIWeeklyIncome extends GUITransaction {
 	 */
 	public GUIWeeklyIncome(GUIMain frame, int selection) {
 		super(frame, selection);
-		WeeklyIncome tempIncome = frame.listCollection.getListWeeklyIncome().get(selection);
+		WeeklyTransaction tempIncome = frame.getListCollection().getListWeeklyIncome().get(selection);
 		
 		initializeLabelsAndFields(tempIncome.getName(), String.valueOf(tempIncome.getAmount()));
 		initializeButtonsEdit(new AddBillActionListener(), new AddBillActionListener());
@@ -72,14 +70,14 @@ public class GUIWeeklyIncome extends GUITransaction {
 	        String action = ae.getActionCommand();
 	        if(action.contentEquals(Utility.AddBill)) {
 	        	getFieldInput();
-	        	frame.getListCollection().getListWeeklyIncome().add(new WeeklyIncome(name, amount));
-	        	frame.changeToAdd();
+	        	frame.getListCollection().getListWeeklyIncome().add(new WeeklyTransaction(name, amount));
+	        	frame.changeToAddIncome();
 	        }
 	        else if(action.contentEquals(Utility.GoBackSelect)) {
 	        	frame.changeToSelect(Utility.WeeklyBillValue);
 	        }
 	        else if(action.contentEquals(Utility.GoBackAdd)) {
-	        	frame.changeToAdd();
+	        	frame.changeToAddIncome();
 	        }
 	        if(action.contentEquals(Utility.Edit)) {
 	        	getFieldInput();

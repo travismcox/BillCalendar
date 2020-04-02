@@ -12,7 +12,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import gui.transactions.GUIWeeklyBill.AddBillActionListener;
 import main.CalculateWeeks;
 import main.transactions.WeeklyTransaction;
 

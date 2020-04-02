@@ -4,7 +4,6 @@
 package gui.transactions;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import gui.GUIMain;
 import main.Utility;
@@ -27,7 +26,7 @@ public class GUIMonthlyBill extends GUITransaction {
 
 	public GUIMonthlyBill(GUIMain frame, int selection) {
 		super(frame, selection);
-		MonthlyTransaction tempBill = frame.getListCollection().getMonthlyBill(selection);
+		MonthlyTransaction tempBill = frame.getListCollection().getListMonthlyBill().get(selection);
 		
 		initializeLabelsAndFields(tempBill.getName(), String.valueOf(tempBill.getAmount()), tempBill.getDate());
 		initializeButtonsEdit(new AddBillActionListener(), new AddBillActionListener());

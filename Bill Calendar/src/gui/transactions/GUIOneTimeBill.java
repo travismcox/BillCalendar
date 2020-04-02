@@ -3,22 +3,12 @@
  */
 package gui.transactions;
 
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-
 import gui.GUIMain;
-import gui.transactions.GUIMonthlyBill.AddBillActionListener;
 import main.Utility;
-import main.transactions.MonthlyTransaction;
 import main.transactions.OneTimeTransaction;
 
 /**
@@ -38,7 +28,7 @@ public class GUIOneTimeBill extends GUITransaction {
 	
 	public GUIOneTimeBill(GUIMain frame, int selection) {
 		super(frame, selection);
-		OneTimeTransaction tempBill = frame.listCollection.getListOneTime().get(selection);
+		OneTimeTransaction tempBill = frame.getListCollection().getListOneTimeBill().get(selection);
 		
 		initializeLabelsAndFields(tempBill.getName(), String.valueOf(tempBill.getAmount()), String.valueOf(tempBill.getDate().get(Calendar.YEAR)), tempBill.getDate().get(Calendar.MONTH), tempBill.getDate().get(Calendar.DAY_OF_MONTH)-1);
 		initializeButtonsEdit(new AddBillActionListener(), new AddBillActionListener());
@@ -76,18 +66,18 @@ public class GUIOneTimeBill extends GUITransaction {
 	        String action = ae.getActionCommand();
 	        if(action.contentEquals(Utility.AddBill)) {
 	        	getFieldInput();
-	        	frame.getListCollection().getListOneTime().add(new OneTimeTransaction(name, amount, endDate));
-	        	frame.changeToAdd();
+	        	frame.getListCollection().getListOneTimeBill().add(new OneTimeTransaction(name, amount, endDate));
+	        	frame.changeToAddBill();
 	        }
 	        else if(action.contentEquals(Utility.GoBackSelect)) {
 	        	frame.changeToSelect(Utility.OneTimeBillValue);
 	        }
 	        else if(action.contentEquals(Utility.GoBackAdd)) {
-	        	frame.changeToAdd();
+	        	frame.changeToAddBill();
 	        }
 	        else if(action.contentEquals(Utility.Edit)) {
 	        	getFieldInput();
-	        	frame.getListCollection().getListOneTime().get(selection).edit(name, amount, endDate);
+	        	frame.getListCollection().getListOneTimeBill().get(selection).edit(name, amount, endDate);
 	        	frame.changeToSelect(Utility.OneTimeBillValue);
 	        }
 	    }

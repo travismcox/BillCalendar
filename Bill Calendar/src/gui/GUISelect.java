@@ -32,7 +32,7 @@ public class GUISelect extends JPanel implements ActionListener, ListSelectionLi
 		this.typeOfBill = typeOfBill;
 		
 		//select(typeOfBill);
-		selectionList = new JList(select());
+		selectionList = new JList(selectBill());
 		JButton goBackButton = new JButton(Utility.GoBackMenu);
 		JButton enterButton = new JButton(Utility.Enter);
 		
@@ -68,19 +68,44 @@ public class GUISelect extends JPanel implements ActionListener, ListSelectionLi
         }
 	}
 	
-	private String[] select() {
+	private String[] selectBill() {
 		ArrayList<String> arrayOfStrings = null;
 		
 		switch(typeOfBill) {
-		case 0: arrayOfStrings = selectMonthly();
+		case 0: arrayOfStrings = selectMonthlyBill();
 			break;
-		case 1: arrayOfStrings = selectAnnual();
+		case 1: arrayOfStrings = selectAnnualBill();
 			break;
-		case 2: arrayOfStrings = selectWeekly();
+		case 2: arrayOfStrings = selectWeeklyBill();
 			break;
-		case 3: arrayOfStrings = selectOneTime();
+		case 3: arrayOfStrings = selectOneTimeBill();
 			break;
-		case 4: arrayOfStrings = selectLimited();
+		case 4: arrayOfStrings = selectLimitedBill();
+			break;
+		}
+		
+		String[] listArray = new String[arrayOfStrings.size()];
+		for(int i = 0; i < arrayOfStrings.size(); i++) {
+			listArray[i] = arrayOfStrings.get(i);
+		}
+		
+		
+		return listArray;
+	}
+	
+	private String[] selectIncome() {
+		ArrayList<String> arrayOfStrings = null;
+		
+		switch(typeOfBill) {
+		case 0: arrayOfStrings = selectMonthlyIncome();
+			break;
+		case 1: arrayOfStrings = selectAnnualIncome();
+			break;
+		case 2: arrayOfStrings = selectWeeklyIncome();
+			break;
+		case 3: arrayOfStrings = selectOneTimeIncome();
+			break;
+		case 4: arrayOfStrings = selectLimitedIncome();
 			break;
 		}
 		

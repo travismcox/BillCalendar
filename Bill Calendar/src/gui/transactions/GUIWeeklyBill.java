@@ -48,7 +48,7 @@ public class GUIWeeklyBill extends GUITransaction {
 
 	public GUIWeeklyBill(GUIMain frame, int selection) {
 		super(frame, selection);
-		WeeklyTransaction tempBill = frame.listCollection.getListWeekly().get(selection);
+		WeeklyTransaction tempBill = frame.getListCollection().getListWeeklyBill().get(selection);
 		
 		initializeLabelsAndFields(tempBill.getName(), String.valueOf(tempBill.getAmount()));
 		initializeButtonsEdit(new AddBillActionListener(), new AddBillActionListener());
@@ -67,18 +67,18 @@ public class GUIWeeklyBill extends GUITransaction {
 	        String action = ae.getActionCommand();
 	        if(action.contentEquals(Utility.AddBill)) {
 	        	getFieldInput();
-	        	frame.getListCollection().getListWeekly().add(new WeeklyTransaction(name, amount));
-	        	frame.changeToAdd();
+	        	frame.getListCollection().getListWeeklyBill().add(new WeeklyTransaction(name, amount));
+	        	frame.changeToAddBill();
 	        }
 	        else if(action.contentEquals(Utility.GoBackSelect)) {
 	        	frame.changeToSelect(Utility.WeeklyBillValue);
 	        }
 	        else if(action.contentEquals(Utility.GoBackAdd)) {
-	        	frame.changeToAdd();
+	        	frame.changeToAddBill();
 	        }
 	        if(action.contentEquals(Utility.Edit)) {
 	        	getFieldInput();
-	        	frame.getListCollection().getListWeekly().get(selection).edit(name, amount);
+	        	frame.getListCollection().getListWeeklyBill().get(selection).edit(name, amount);
 	        	frame.changeToSelect(Utility.WeeklyBillValue);
 	        }
 	    }
