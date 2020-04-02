@@ -10,18 +10,18 @@ import java.io.IOException;
  * @author traviscox
  *
  */
-public class Bill {
+public class Transaction {
 
 	private String name;
 	private Double amount;
 	/**
 	 * 
 	 */
-	public Bill(String name, Double amount) {
+	public Transaction(String name, Double amount) {
 		setName(name);
 		setAmount(amount);
 	}
-	public Bill(BufferedReader reader) throws IOException {
+	public Transaction(BufferedReader reader) throws IOException {
 		setName(FileAccess.getStringLength(reader, Integer.parseInt(FileAccess.getStringSpace(reader))));
 		setAmount(Double.parseDouble(FileAccess.getStringSpace(reader)));
 	}

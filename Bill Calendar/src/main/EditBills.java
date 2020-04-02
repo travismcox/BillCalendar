@@ -190,7 +190,7 @@ public abstract class EditBills {
 		return date;
 	}
 
-	private static void editAmount(Bill selectedBill, Scanner scan) {
+	private static void editAmount(Transaction selectedBill, Scanner scan) {
 		System.out.print("Would you like to edit bill amount? Y/N");
 		if(scan.next().charAt(0) == 'Y') {
 			scan.nextLine();
@@ -199,7 +199,7 @@ public abstract class EditBills {
 		}
 	}
 
-	private static void editName(Bill selectedBill, Scanner scan) {
+	private static void editName(Transaction selectedBill, Scanner scan) {
 		System.out.print("Would you like to edit bill name? Y/N");
 		if(scan.next().charAt(0) == 'Y') {
 			scan.nextLine();

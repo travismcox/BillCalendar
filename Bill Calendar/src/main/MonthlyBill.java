@@ -10,7 +10,7 @@ import java.io.IOException;
  * @author traviscox
  *
  */
-public class MonthlyBill extends Bill {
+public class MonthlyBill extends Transaction {
 
 	private int date;
 	/**

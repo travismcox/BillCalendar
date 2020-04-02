@@ -121,7 +121,7 @@ public abstract class CalculateWeeks {
 		
 	}
 	
-	private static Double monthlyCalculator(Bill bill, ArrayList<String> listOfBills, GregorianCalendar startDate, GregorianCalendar endDate, Double sum, int recurringDate) {
+	private static Double monthlyCalculator(Transaction bill, ArrayList<String> listOfBills, GregorianCalendar startDate, GregorianCalendar endDate, Double sum, int recurringDate) {
 		GregorianCalendar date = new GregorianCalendar(startDate.get(Calendar.YEAR), startDate.get(Calendar.MONTH), recurringDate);
 		sum = dateComparison(bill, date, listOfBills, startDate, endDate, sum);
 		if(startDate.get(Calendar.MONTH) != endDate.get(Calendar.MONTH)) {
@@ -131,7 +131,7 @@ public abstract class CalculateWeeks {
 		return sum;
 	}
 	
-	private static Double dateComparison(Bill bill, GregorianCalendar date, ArrayList<String> listOfBills, GregorianCalendar startDate, GregorianCalendar endDate, Double sum) {
+	private static Double dateComparison(Transaction bill, GregorianCalendar date, ArrayList<String> listOfBills, GregorianCalendar startDate, GregorianCalendar endDate, Double sum) {
 		if(date.after(startDate) && date.before(endDate)) {
 			sum = foundDate(bill, listOfBills, sum, date);
 		}
@@ -144,7 +144,7 @@ public abstract class CalculateWeeks {
 		return sum;
 	}
 	
-	private static Double foundDate(Bill bill, ArrayList<String> listOfBills, Double sum, GregorianCalendar date) {
+	private static Double foundDate(Transaction bill, ArrayList<String> listOfBills, Double sum, GregorianCalendar date) {
 		listOfBills.add(bill.getName() + " - " + bill.getAmount() + " - " + printDate(date));
 		return sum += bill.getAmount();
 	}

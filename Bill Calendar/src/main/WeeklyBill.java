@@ -10,7 +10,7 @@ import java.io.IOException;
  * @author traviscox
  *
  */
-public class WeeklyBill extends Bill {
+public class WeeklyBill extends Transaction {
 
 	public WeeklyBill(String name, Double amount) {
 		super(name, amount);

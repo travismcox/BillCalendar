@@ -12,7 +12,7 @@ import java.util.GregorianCalendar;
  * @author traviscox
  *
  */
-public class LimitedMonthlyBill extends Bill {
+public class LimitedMonthlyBill extends Transaction {
 
 	private GregorianCalendar endDate;
 	private int date;

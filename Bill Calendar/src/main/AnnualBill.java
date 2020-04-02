@@ -11,7 +11,7 @@ import java.util.GregorianCalendar;
  * @author traviscox
  *
  */
-public class AnnualBill extends Bill {
+public class AnnualBill extends Transaction {
 
 	private int month;
 	private int day;
