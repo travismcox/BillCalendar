@@ -11,80 +11,101 @@ import java.util.ArrayList;
  */
 public class ListCollection {
 
-	private ArrayList<MonthlyBill> listMonthly; 
-	private ArrayList<WeeklyBill> listWeekly; 
-	private ArrayList<OneTimeBill> listOneTime;
-	private ArrayList<LimitedMonthlyBill> listLimited;
-	private ArrayList<AnnualBill> listAnnual;
+	private ArrayList<MonthlyBill> listMonthlyBill; 
+	private ArrayList<WeeklyBill> listWeeklyBill; 
+	private ArrayList<OneTimeBill> listOneTimeBill;
+	private ArrayList<LimitedMonthlyBill> listLimitedBill;
+	private ArrayList<AnnualBill> listAnnualBill;
+	private ArrayList<WeeklyIncome> listWeeklyIncome;
 	/**
 	 * 
 	 */
 	public ListCollection() {
-		listMonthly = new ArrayList<MonthlyBill>(); 
-		listWeekly = new ArrayList<WeeklyBill>(); 
-		listOneTime = new ArrayList<OneTimeBill>();
-		listLimited = new ArrayList<LimitedMonthlyBill>();
-		listAnnual = new ArrayList<AnnualBill>();
+		initializeBills();
+		initializeIncome();
+	}
+	private void initializeIncome() {
+		listWeeklyIncome = new ArrayList<WeeklyIncome>();
 	}
 	/**
-	 * @return the listMonthly
+	 * @return the listWeeklyIncome
 	 */
-	public ArrayList<MonthlyBill> getListMonthly() {
-		return listMonthly;
+	public ArrayList<WeeklyIncome> getListWeeklyIncome() {
+		return listWeeklyIncome;
 	}
 	/**
-	 * @param listMonthly the listMonthly to set
+	 * @param listWeeklyIncome the listWeeklyIncome to set
 	 */
-	public void setListMonthly(ArrayList<MonthlyBill> listMonthly) {
-		this.listMonthly = listMonthly;
+	public void setListWeeklyIncome(ArrayList<WeeklyIncome> listWeeklyIncome) {
+		this.listWeeklyIncome = listWeeklyIncome;
+	}
+	private void initializeBills() {
+		listMonthlyBill = new ArrayList<MonthlyBill>(); 
+		listWeeklyBill = new ArrayList<WeeklyBill>(); 
+		listOneTimeBill = new ArrayList<OneTimeBill>();
+		listLimitedBill = new ArrayList<LimitedMonthlyBill>();
+		listAnnualBill = new ArrayList<AnnualBill>();
 	}
 	/**
-	 * @return the listWeekly
+	 * @return the listMonthlyBill
 	 */
-	public ArrayList<WeeklyBill> getListWeekly() {
-		return listWeekly;
+	public ArrayList<MonthlyBill> getListMonthlyBill() {
+		return listMonthlyBill;
 	}
 	/**
-	 * @param listWeekly the listWeekly to set
+	 * @param listMonthlyBill the listMonthlyBill to set
 	 */
-	public void setListWeekly(ArrayList<WeeklyBill> listWeekly) {
-		this.listWeekly = listWeekly;
+	public void setListMonthlyBill(ArrayList<MonthlyBill> listMonthlyBill) {
+		this.listMonthlyBill = listMonthlyBill;
 	}
 	/**
-	 * @return the listOneTime
+	 * @return the listWeeklyBill
 	 */
-	public ArrayList<OneTimeBill> getListOneTime() {
-		return listOneTime;
+	public ArrayList<WeeklyBill> getListWeeklyBill() {
+		return listWeeklyBill;
 	}
 	/**
-	 * @param listOneTime the listOneTime to set
+	 * @param listWeeklyBill the listWeeklyBill to set
 	 */
-	public void setListOneTime(ArrayList<OneTimeBill> listOneTime) {
-		this.listOneTime = listOneTime;
+	public void setListWeeklyBill(ArrayList<WeeklyBill> listWeeklyBill) {
+		this.listWeeklyBill = listWeeklyBill;
 	}
 	/**
-	 * @return the listLimited
+	 * @return the listOneTimeBill
 	 */
-	public ArrayList<LimitedMonthlyBill> getListLimited() {
-		return listLimited;
+	public ArrayList<OneTimeBill> getListOneTimeBill() {
+		return listOneTimeBill;
 	}
 	/**
-	 * @param listLimited the listLimited to set
+	 * @param listOneTimeBill the listOneTimeBill to set
 	 */
-	public void setListLimited(ArrayList<LimitedMonthlyBill> listLimited) {
-		this.listLimited = listLimited;
+	public void setListOneTimeBill(ArrayList<OneTimeBill> listOneTimeBill) {
+		this.listOneTimeBill = listOneTimeBill;
 	}
 	/**
-	 * @return the listAnnual
+	 * @return the listLimitedBill
 	 */
-	public ArrayList<AnnualBill> getListAnnual() {
-		return listAnnual;
+	public ArrayList<LimitedMonthlyBill> getListLimitedBill() {
+		return listLimitedBill;
 	}
 	/**
-	 * @param listAnnual the listAnnual to set
+	 * @param listLimitedBill the listLimitedBill to set
 	 */
-	public void setListAnnual(ArrayList<AnnualBill> listAnnual) {
-		this.listAnnual = listAnnual;
+	public void setListLimitedBill(ArrayList<LimitedMonthlyBill> listLimitedBill) {
+		this.listLimitedBill = listLimitedBill;
 	}
+	/**
+	 * @return the listAnnualBill
+	 */
+	public ArrayList<AnnualBill> getListAnnualBill() {
+		return listAnnualBill;
+	}
+	/**
+	 * @param listAnnualBill the listAnnualBill to set
+	 */
+	public void setListAnnualBill(ArrayList<AnnualBill> listAnnualBill) {
+		this.listAnnualBill = listAnnualBill;
+	}
+	
 
 }
