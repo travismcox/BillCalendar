@@ -21,10 +21,10 @@ public abstract class EditBills {
 	}
 	
 	public static void startEdit(ListCollection listCollection, Scanner scan) {
-		ArrayList<MonthlyBill> listMonthly = listCollection.getListMonthly(); 
-		ArrayList<WeeklyBill> listWeekly = listCollection.getListWeekly();
-		ArrayList<OneTimeBill> listOneTime = listCollection.getListOneTime();
-		ArrayList<LimitedMonthlyBill> listLimited = listCollection.getListLimited();
+		ArrayList<MonthlyBill> listMonthly = listCollection.getListMonthlyBill(); 
+		ArrayList<WeeklyBill> listWeekly = listCollection.getListWeeklyBill();
+		ArrayList<OneTimeBill> listOneTime = listCollection.getListOneTimeBill();
+		ArrayList<LimitedMonthlyBill> listLimited = listCollection.getListLimitedBill();
 		
 		System.out.println("Select which type of bill to edit");
 		System.out.println("1) Monthly\n2) Weekly\n3) One Time\n4) Limited Monthly\n5) Go Back");
@@ -209,16 +209,16 @@ public abstract class EditBills {
 	}
 
 	public static void autoDelete(ListCollection listCollection) {
-		for(int i = 0; i < listCollection.getListOneTime().size(); i++) {
-			if(listCollection.getListOneTime().get(i).getDate().before(new GregorianCalendar())) {
-				listCollection.getListOneTime().remove(i);
+		for(int i = 0; i < listCollection.getListOneTimeBill().size(); i++) {
+			if(listCollection.getListOneTimeBill().get(i).getDate().before(new GregorianCalendar())) {
+				listCollection.getListOneTimeBill().remove(i);
 				i--;
 			}
 		}
 		
-		for(int i = 0; i < listCollection.getListLimited().size(); i++) {
-			if(listCollection.getListLimited().get(i).getEndDate().before(new GregorianCalendar())) {
-				listCollection.getListLimited().remove(i);
+		for(int i = 0; i < listCollection.getListLimitedBill().size(); i++) {
+			if(listCollection.getListLimitedBill().get(i).getEndDate().before(new GregorianCalendar())) {
+				listCollection.getListLimitedBill().remove(i);
 				i--;
 			}
 		}

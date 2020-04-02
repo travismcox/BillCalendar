@@ -21,9 +21,7 @@ public abstract class FileAccess {
 	/**
 	 * 
 	 */
-	public FileAccess() {
-		// TODO Auto-generated constructor stub
-	}
+	public FileAccess() {}
 
 	public static void readFile(ListCollection listCollection) throws IOException {
 		readBills(listCollection);
@@ -31,20 +29,22 @@ public abstract class FileAccess {
 	}
 	
 	private static void readIncome(ListCollection listCollection) throws NumberFormatException, IOException {
-		BufferedReader reader = new BufferedReader(new FileReader(Utility.billFileName));
+		BufferedReader reader = new BufferedReader(new FileReader(Utility.incomeFileName));
 		char tempChar;
 		int value;
 		while((value = reader.read()) != -1) {
 			tempChar = (char) value;
 			switch(tempChar) {
-			//case 'M': listCollection.getListMonthlyIncome().add(new MonthlyBill(reader));
+			//case 'M': listCollection.getListMonthlyIncome().add(new MonthlyIncome(reader));
 			//		break;
 			case 'W': listCollection.getListWeeklyIncome().add(new WeeklyIncome(reader));
 					break;
-			//case 'O': listCollection.getListOneTimeIncome().add(new OneTimeBill(reader));
+			//case 'O': listCollection.getListOneTimeIncome().add(new OneTimeIncome(reader));
 			//		break;
-			//case 'L': listCollection.getListLimitedIncome().add(new LimitedMonthlyBill(reader));
+			//case 'L': listCollection.getListLimitedIncome().add(new LimitedMonthlyIncome(reader));
 			//		break;
+			//case 'A': listCollection.getListAnnualIncome().add(new AnnualIncome(reader));
+			//	break;
 			}
 		}
 	}
@@ -64,6 +64,8 @@ public abstract class FileAccess {
 					break;
 			case 'L': listCollection.getListLimitedBill().add(new LimitedMonthlyBill(reader));
 					break;
+			case 'A': listCollection.getListAnnualBill().add(new AnnualBill(reader));
+				break;
 			}
 		}
 	}

@@ -61,10 +61,10 @@ public abstract class CalculateWeeks {
 	}
 
 	private static ArrayList<String> calculateWeek(GregorianCalendar startDate, GregorianCalendar endDate, ListCollection listCollection, int week, ArrayList<Double> pastFourWeeks) {
-		ArrayList<MonthlyBill> listMonthly = listCollection.getListMonthly();
-		ArrayList<WeeklyBill> listWeekly = listCollection.getListWeekly();
-		ArrayList<OneTimeBill> listOneTime = listCollection.getListOneTime();
-		ArrayList<LimitedMonthlyBill> listLimited = listCollection.getListLimited();
+		ArrayList<MonthlyBill> listMonthly = listCollection.getListMonthlyBill();
+		ArrayList<WeeklyBill> listWeekly = listCollection.getListWeeklyBill();
+		ArrayList<OneTimeBill> listOneTime = listCollection.getListOneTimeBill();
+		ArrayList<LimitedMonthlyBill> listLimited = listCollection.getListLimitedBill();
 		Double sum = 0.0;
 		ArrayList<String> listOfBills = new ArrayList<String>();
 		ArrayList<String> results = new ArrayList<String>();

@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import gui.GUIWeeklyBill.AddBillActionListener;
 import main.Utility;
 import main.WeeklyBill;
+import main.WeeklyIncome;
 
 /**
  * @author traviscox
@@ -33,9 +34,9 @@ public class GUIWeeklyIncome extends GUITransaction {
 	 */
 	public GUIWeeklyIncome(GUIMain frame, int selection) {
 		super(frame, selection);
-		WeeklyBill tempBill = frame.listCollection.getListWeekly().get(selection);
+		WeeklyIncome tempIncome = frame.listCollection.getListWeeklyIncome().get(selection);
 		
-		initializeLabelsAndFields(tempBill.getName(), String.valueOf(tempBill.getAmount()));
+		initializeLabelsAndFields(tempIncome.getName(), String.valueOf(tempIncome.getAmount()));
 		initializeButtonsEdit(new AddBillActionListener(), new AddBillActionListener());
 		
 		addComponentsEdit();
@@ -70,7 +71,7 @@ public class GUIWeeklyIncome extends GUITransaction {
 	        String action = ae.getActionCommand();
 	        if(action.contentEquals(Utility.AddBill)) {
 	        	getFieldInput();
-	        	frame.getListCollection().getListWeekly().add(new WeeklyBill(name, amount));
+	        	frame.getListCollection().getListWeeklyIncome().add(new WeeklyIncome(name, amount));
 	        	frame.changeToAdd();
 	        }
 	        else if(action.contentEquals(Utility.GoBackSelect)) {
@@ -81,7 +82,7 @@ public class GUIWeeklyIncome extends GUITransaction {
 	        }
 	        if(action.contentEquals(Utility.Edit)) {
 	        	getFieldInput();
-	        	frame.getListCollection().getListWeekly().get(selection).edit(name, amount);
+	        	frame.getListCollection().getListWeeklyIncome().get(selection).edit(name, amount);
 	        	frame.changeToSelect(Utility.WeeklyBillValue);
 	        }
 	    }

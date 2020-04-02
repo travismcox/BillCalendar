@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class Utility {
 	public static String billFileName = "bills.txt";
 	public static String resultsFileName = "calculatedBills.txt";
+	public static String incomeFileName = "income.txt";
 	public static Double FourDouble = 4.0;
 	public static Integer FourInteger = 4;
 	public static Integer MonthlyBillValue = 0;
