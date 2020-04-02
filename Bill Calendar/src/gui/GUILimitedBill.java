@@ -1,7 +1,7 @@
 /**
  * 
  */
-package GUI;
+package gui;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -15,7 +15,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import GUI.GUIMonthlyBill.AddBillActionListener;
+import gui.GUIMonthlyBill.AddBillActionListener;
 import main.LimitedMonthlyBill;
 import main.MonthlyBill;
 import main.Utility;
@@ -24,7 +24,7 @@ import main.Utility;
  * @author traviscox
  *
  */
-public class GUILimitedBill extends GUIBill {
+public class GUILimitedBill extends GUITransaction {
 	
 	public GUILimitedBill(GUIMain frame) {
 		super(frame);
@@ -71,7 +71,7 @@ public class GUILimitedBill extends GUIBill {
 		addComponentsLabelAndField(buttonGoBackSelect, buttonEdit);
 	}
 
-	public class AddBillActionListener extends GUIBill.AddBillActionListener {
+	public class AddBillActionListener extends GUITransaction.AddBillActionListener {
 		@Override
 		public void actionPerformed(ActionEvent ae) {
 	        String action = ae.getActionCommand();

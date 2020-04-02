@@ -1,7 +1,7 @@
 /**
  * 
  */
-package GUI;
+package gui;
 
 import java.awt.Container;
 import java.awt.Frame;

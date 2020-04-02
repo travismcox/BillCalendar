@@ -1,7 +1,7 @@
 /**
  * 
  */
-package GUI;
+package gui;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -12,7 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import GUI.GUIWeeklyBill.AddBillActionListener;
+import gui.GUIWeeklyBill.AddBillActionListener;
 import main.CalculateWeeks;
 import main.WeeklyBill;
 

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package GUI;
+package gui;
 
 import java.awt.Component;
 import java.awt.GridLayout;
@@ -15,7 +15,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import GUI.GUIMonthlyBill.AddBillActionListener;
+import gui.GUIMonthlyBill.AddBillActionListener;
 import main.AnnualBill;
 import main.Utility;
 
@@ -23,7 +23,7 @@ import main.Utility;
  * @author traviscox
  *
  */
-public abstract class GUIBill extends JPanel {
+public abstract class GUITransaction extends JPanel {
 
 	GUIMain frame;
 	JTextField nameTextField, amountTextField, dateTextField, yearTextField;
@@ -36,11 +36,11 @@ public abstract class GUIBill extends JPanel {
 	GregorianCalendar endDate;
 	int selection;
 	
-	public GUIBill(GUIMain frame) {
+	public GUITransaction(GUIMain frame) {
 		this.frame = frame;
 	}
 	
-	public GUIBill(GUIMain frame, int selection) {
+	public GUITransaction(GUIMain frame, int selection) {
 		this.frame = frame;
 		this.selection = selection;
 	}

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package GUI;
+package gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,7 +13,7 @@ import main.Utility;
  * @author traviscox
  *
  */
-public class GUIMonthlyBill extends GUIBill {
+public class GUIMonthlyBill extends GUITransaction {
 
 	public GUIMonthlyBill(GUIMain frame) {
 		super(frame);
@@ -54,7 +54,7 @@ public class GUIMonthlyBill extends GUIBill {
 		addComponentsLabelAndField(buttonGoBackSelect, buttonEdit);
 	}
 
-	protected class AddBillActionListener extends GUIBill.AddBillActionListener {
+	protected class AddBillActionListener extends GUITransaction.AddBillActionListener {
 		@Override
 		public void actionPerformed(ActionEvent ae) {
 	        String action = ae.getActionCommand();

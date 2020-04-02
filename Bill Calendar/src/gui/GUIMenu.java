@@ -1,7 +1,7 @@
 /**
  * 
  */
-package GUI;
+package gui;
 
 import java.awt.GridLayout;
 import java.awt.LayoutManager;
@@ -12,7 +12,7 @@ import java.util.Arrays;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import GUI.GUIAddBill.MenuActionListener;
+import gui.GUIAddBill.MenuActionListener;
 import main.Utility;
 
 /**

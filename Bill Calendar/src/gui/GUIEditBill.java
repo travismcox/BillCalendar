@@ -1,22 +1,25 @@
 /**
  * 
  */
-package GUI;
+package gui;
 
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
+import javax.swing.JPanel;
 
-import GUI.GUIMainMenu.MenuActionListener;
+import gui.GUIAddBill.MenuActionListener;
 import main.Utility;
 
 /**
  * @author traviscox
  *
  */
-public class GUIAddBill extends GUIMenu {
-
-	public GUIAddBill(GUIMain frame) {
+public class GUIEditBill extends GUIMenu {
+	
+	public GUIEditBill(GUIMain frame) {
 		super(frame);
 		
 		initializeArrays();
@@ -28,19 +31,19 @@ public class GUIAddBill extends GUIMenu {
 		public void actionPerformed(ActionEvent ae) {
 	        String action = ae.getActionCommand();
 	        if (action.equals(Utility.MonthlyBill)) {
-	            frame.changeToMonthly();
+	            frame.changeToSelect(Utility.MonthlyBillValue);
 	        }
 	        else if(action.equals(Utility.AnnualBill)) {
-	        	frame.changeToAnnual();
+	        	frame.changeToSelect(Utility.AnnualBillValue);
 	        }
 	        else if (action.equals(Utility.WeeklyBill)) {
-	            frame.changeToWeekly();
+	            frame.changeToSelect(Utility.WeeklyBillValue);
 	        }
 	        else if (action.equals(Utility.OneTimeBill)) {
-	        	frame.changeToOneTime();
+	        	frame.changeToSelect(Utility.OneTimeBillValue);
 	        }
 	        else if(action.contentEquals(Utility.LimitedBill)) {
-	        	frame.changeToLimited();
+	        	frame.changeToSelect(Utility.LimitedBillValue);
 	        }
 	        else if(action.contentEquals(Utility.BackToMainMenu)) {
 	        	frame.changeToMain();
@@ -55,5 +58,4 @@ public class GUIAddBill extends GUIMenu {
 			actionListenerList[i] = new MenuActionListener();
 		}
 	}
-
 }

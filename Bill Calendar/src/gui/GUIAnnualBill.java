@@ -1,7 +1,7 @@
 /**
  * 
  */
-package GUI;
+package gui;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -15,7 +15,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import GUI.GUIOneTimeBill.AddBillActionListener;
+import gui.GUIOneTimeBill.AddBillActionListener;
 import main.AnnualBill;
 import main.OneTimeBill;
 import main.Utility;
@@ -24,7 +24,7 @@ import main.Utility;
  * @author traviscox
  *
  */
-public class GUIAnnualBill extends GUIBill {
+public class GUIAnnualBill extends GUITransaction {
 
 	public GUIAnnualBill(GUIMain frame) {
 		super(frame);
@@ -75,7 +75,7 @@ public class GUIAnnualBill extends GUIBill {
     	recurringDate = recurringDateComboBox.getSelectedIndex() + 1;
 	}
 	
-	protected class AddBillActionListener extends GUIBill.AddBillActionListener {
+	protected class AddBillActionListener extends GUITransaction.AddBillActionListener {
 		@Override
 		public void actionPerformed(ActionEvent ae) {
 	        String action = ae.getActionCommand();

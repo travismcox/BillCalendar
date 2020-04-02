@@ -8,7 +8,6 @@ M14 Green Mountain135.0 6
 M7 NYTimes6.38 24 
 M17 Alamo Season Pass21.64 26 
 W6 Factor77.0 
-O7 BestBuy25.0 2020 3 2 
 O9 Southwest71.0 2020 3 5 
 O14 Barclay - 1089125.99 2020 3 5 
 O14 Barclay - 611645.0 2020 3 5 
