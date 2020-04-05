@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import gui.GUIAddBill.MenuActionListener;
+import gui.GUIAddTransaction.MenuActionListener;
 import main.Utility;
 
 
@@ -32,19 +32,19 @@ public class GUIMainMenu extends GUIMenu {
 		public void actionPerformed(ActionEvent ae) {
 			String action = ae.getActionCommand();
 			if (action.equals(Utility.AddBill)) {
-	            frame.changeToAddBill();
+	            frame.changeToAddTransaction(Utility.BILL);
 	        }
 			else if (action.equals(Utility.AddIncome)) {
-	            frame.changeToAddIncome();
+	            frame.changeToAddTransaction(Utility.INCOME);
 	        }
 	        else if (action.equals(Utility.CalculateBills)) {
 	            frame.changeToCalculate();
 	        }
 	        else if (action.equals(Utility.EditBill)) {
-	        	frame.changeToEdit();
+	        	frame.changeToEditTransaction(Utility.BILL);
 	        }
 	        else if (action.equals(Utility.EditIncome)) {
-	            frame.changeToEditIncome();
+	            frame.changeToEditTransaction(Utility.INCOME);
 	        }
 	        else if (action.equals(Utility.Exit)) {
 	        	frame.saveAndExit();

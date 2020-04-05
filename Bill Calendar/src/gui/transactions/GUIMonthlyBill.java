@@ -61,10 +61,10 @@ public class GUIMonthlyBill extends GUITransaction {
 	        if(action.contentEquals(Utility.AddBill)) {
 	        	getFieldInput();
 	        	listCollection.getListMonthly().add(new MonthlyTransaction(name, amount, recurringDate));
-	        	frame.changeToAddBill();
+	        	frame.changeToAddTransaction(transactionType);
 	        }
 	        else if(action.contentEquals(Utility.GoBackAdd)) {
-	        	frame.changeToAddBill();
+	        	frame.changeToAddTransaction(transactionType);
 	        }
 	        else if(action.contentEquals(Utility.GoBackSelect)){
 	        	frame.changeToSelect(Utility.MonthlyBillValue, transactionType);
@@ -72,7 +72,7 @@ public class GUIMonthlyBill extends GUITransaction {
 	        else if(action.contentEquals(Utility.Edit)) {
 	        	getFieldInput();
 	        	listCollection.getListMonthly().get(selection).edit(name, amount, recurringDate);
-	        	frame.changeToAddBill();
+	        	frame.changeToSelect(Utility.MonthlyBillValue, transactionType);
 	        }
 	    }
 	}

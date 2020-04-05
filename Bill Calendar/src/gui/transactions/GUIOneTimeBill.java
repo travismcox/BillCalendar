@@ -67,13 +67,13 @@ public class GUIOneTimeBill extends GUITransaction {
 	        if(action.contentEquals(Utility.AddBill)) {
 	        	getFieldInput();
 	        	listCollection.getListOneTime().add(new OneTimeTransaction(name, amount, endDate));
-	        	frame.changeToAddBill();
+	        	frame.changeToAddTransaction(transactionType);
 	        }
 	        else if(action.contentEquals(Utility.GoBackSelect)) {
 	        	frame.changeToSelect(Utility.OneTimeBillValue, transactionType);
 	        }
 	        else if(action.contentEquals(Utility.GoBackAdd)) {
-	        	frame.changeToAddBill();
+	        	frame.changeToAddTransaction(transactionType);
 	        }
 	        else if(action.contentEquals(Utility.Edit)) {
 	        	getFieldInput();

@@ -69,13 +69,13 @@ public class GUILimitedBill extends GUITransaction {
 	        if(action.contentEquals(Utility.AddBill)) {
 	        	getFieldInput();
 	        	listCollection.getListLimited().add(new LimitedMonthlyTransaction(name, amount, recurringDate, endDate));
-	        	frame.changeToAddBill();
+	        	frame.changeToAddTransaction(transactionType);
 	        }
 	        else if(action.contentEquals(Utility.GoBackSelect)) {
 	        	frame.changeToSelect(Utility.LimitedBillValue, transactionType);
 	        }
 	        else if(action.contentEquals(Utility.GoBackAdd)) {
-	        	frame.changeToAddBill();
+	        	frame.changeToAddTransaction(transactionType);
 	        }
 	        else if(action.contentEquals(Utility.Edit)) {
 	        	getFieldInput();

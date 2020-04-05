@@ -7,19 +7,19 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JButton;
 
+import gui.GUIMainMenu.MenuActionListener;
 import main.Utility;
 
 /**
  * @author traviscox
  *
  */
-public class GUIEditIncome extends GUIMenu {
+public class GUIAddTransaction extends GUIMenu {
 
-	/**
-	 * @param frame
-	 */
-	public GUIEditIncome(GUIMain frame) {
+	int transactionType;
+	public GUIAddTransaction(GUIMain frame, int transactionType) {
 		super(frame);
+		this.transactionType = transactionType;
 		
 		initializeArrays();
 		initializeBills(buttonList, Utility.labelListBill, actionListenerList);
@@ -30,19 +30,19 @@ public class GUIEditIncome extends GUIMenu {
 		public void actionPerformed(ActionEvent ae) {
 	        String action = ae.getActionCommand();
 	        if (action.equals(Utility.MonthlyBill)) {
-	            frame.changeToSelect(Utility.MonthlyBillValue, Utility.INCOME);
+	            frame.changeToMonthly(transactionType);
 	        }
 	        else if(action.equals(Utility.AnnualBill)) {
-	        	frame.changeToSelect(Utility.AnnualBillValue, Utility.INCOME);
+	        	frame.changeToAnnual(transactionType);
 	        }
 	        else if (action.equals(Utility.WeeklyBill)) {
-	            frame.changeToSelect(Utility.WeeklyBillValue, Utility.INCOME);
+	            frame.changeToWeekly(transactionType);
 	        }
 	        else if (action.equals(Utility.OneTimeBill)) {
-	        	frame.changeToSelect(Utility.OneTimeBillValue, Utility.INCOME);
+	        	frame.changeToOneTime(transactionType);
 	        }
 	        else if(action.contentEquals(Utility.LimitedBill)) {
-	        	frame.changeToSelect(Utility.LimitedBillValue, Utility.INCOME);
+	        	frame.changeToLimited(transactionType);
 	        }
 	        else if(action.contentEquals(Utility.BackToMainMenu)) {
 	        	frame.changeToMain();

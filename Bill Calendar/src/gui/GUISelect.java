@@ -25,12 +25,13 @@ public class GUISelect extends JPanel implements ActionListener, ListSelectionLi
 
 	GUIMain frame;
 	CollectionOfListCollections collection;
-	int typeOfBill;
+	int typeOfBill, transactionType;
 	JList selectionList;
 	public GUISelect(GUIMain guiMain, int typeOfBill, int transactionType) {
 		frame = guiMain;
 		collection = this.frame.getCollections();
 		this.typeOfBill = typeOfBill;
+		this.transactionType = transactionType;
 		
 		//select(typeOfBill);
 		switch(transactionType) {
@@ -57,7 +58,7 @@ public class GUISelect extends JPanel implements ActionListener, ListSelectionLi
 	public void actionPerformed(ActionEvent e) {
 		String action = e.getActionCommand();
         if (action.equals(Utility.GoBackMenu)) {
-            frame.changeToEdit();
+            frame.changeToEditTransaction(transactionType);
         }
         else if (action.equals(Utility.Enter)) {
             int selection = selectionList.getSelectedIndex();

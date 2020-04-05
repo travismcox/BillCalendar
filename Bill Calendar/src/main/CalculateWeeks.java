@@ -164,7 +164,7 @@ public abstract class CalculateWeeks {
 	}
 
 	private static String printWeek(GregorianCalendar startDate, GregorianCalendar endDate, Double billSum, Double incomeSum) {
-		return printDate(startDate) + " - " + printDate(endDate) + " " + String.format("\t%.2f", billSum) + "\tavg: " + String.format("\t%.2f", incomeSum) + "\ttotal: " + String.format("\t%.2f", (incomeSum+billSum));
+		return printDate(startDate) + " - " + printDate(endDate) + " " + String.format("\t%.2f", billSum) + "\tavg: " + String.format("\t%.2f", incomeSum) + "\ttotal: " + String.format("\t%.2f", (incomeSum-billSum));
 	}
 	
 	private static String printDate(GregorianCalendar date) {

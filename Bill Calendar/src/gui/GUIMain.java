@@ -64,8 +64,8 @@ public class GUIMain extends JFrame{
 		cleanUp(new GUIMainMenu(this), 200, 300);
 	}
 	
-	public void changeToAddBill() {
-		cleanUp(new GUIAddBill(this), 200, 300);
+	public void changeToAddTransaction(int transactionType) {
+		cleanUp(new GUIAddTransaction(this, transactionType), 200, 300);
 	}
 	
 	public void changeToAddIncome() {
@@ -107,12 +107,8 @@ public class GUIMain extends JFrame{
 		cleanUp(new GUICalculateBills(this), 400, 250);
 	}
 
-	public void changeToEdit() {
-		cleanUp(new GUIEditBill(this), 200, 300);
-	}
-	
-	public void changeToEditIncome() {
-		cleanUp(new GUIEditIncome(this), 200, 300);
+	public void changeToEditTransaction(int transactionType) {
+		cleanUp(new GUIEditTransaction(this, transactionType), 200, 300);
 	}
 
 	public void changeToSelect(int timeType, int transactionType) {

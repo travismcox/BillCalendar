@@ -59,13 +59,13 @@ public class GUIWeeklyBill extends GUITransaction {
 	        if(action.contentEquals(Utility.AddBill)) {
 	        	getFieldInput();
 	        	listCollection.getListWeekly().add(new WeeklyTransaction(name, amount));
-	        	frame.changeToAddBill();
+	        	frame.changeToAddTransaction(transactionType);
 	        }
 	        else if(action.contentEquals(Utility.GoBackSelect)) {
 	        	frame.changeToSelect(Utility.WeeklyBillValue, transactionType);
 	        }
 	        else if(action.contentEquals(Utility.GoBackAdd)) {
-	        	frame.changeToAddBill();
+	        	frame.changeToAddTransaction(transactionType);
 	        }
 	        if(action.contentEquals(Utility.Edit)) {
 	        	getFieldInput();

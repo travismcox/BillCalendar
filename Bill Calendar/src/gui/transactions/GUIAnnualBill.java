@@ -71,13 +71,13 @@ public class GUIAnnualBill extends GUITransaction {
 	        if(action.contentEquals(Utility.AddBill)) {
 	        	getFieldInput();
 	        	listCollection.getListAnnual().add(new AnnualTransaction(name, amount, month, recurringDate));
-	        	frame.changeToAddBill();
+	        	frame.changeToAddTransaction(transactionType);
 	        }
 	        else if(action.contentEquals(Utility.GoBackSelect)) {
 	        	frame.changeToSelect(Utility.OneTimeBillValue, transactionType);
 	        }
 	        else if(action.contentEquals(Utility.GoBackAdd)) {
-	        	frame.changeToAddBill();
+	        	frame.changeToAddTransaction(transactionType);
 	        }
 	        else if(action.contentEquals(Utility.Edit)) {
 	        	getFieldInput();
