@@ -23,6 +23,7 @@ import gui.transactions.GUILimitedBill;
 import gui.transactions.GUIMonthlyBill;
 import gui.transactions.GUIOneTimeBill;
 import gui.transactions.GUIWeeklyBill;
+import main.CollectionOfListCollections;
 import main.FileAccess;
 import main.ListCollection;
 
@@ -32,13 +33,13 @@ import main.ListCollection;
  */
 public class GUIMain extends JFrame{
 
-	ListCollection listCollection;
+	CollectionOfListCollections listCollection;
 	/**
-	 * @param listCollection 
+	 * @param collection 
 	 * 
 	 */
-	public GUIMain(ListCollection listCollection) {
-		this.listCollection = listCollection;
+	public GUIMain(CollectionOfListCollections collection) {
+		this.listCollection = collection;
 		
 		this.setTitle("Main Menu");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -54,7 +55,7 @@ public class GUIMain extends JFrame{
 		new GUIMainMenu(this);
 	}
 	
-	public ListCollection getListCollection() {
+	public CollectionOfListCollections getListCollection() {
 		return listCollection;
 	}
 	

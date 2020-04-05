@@ -28,129 +28,73 @@ public abstract class FileAccess {
 	 */
 	public FileAccess() {}
 
-	public static void readFile(ListCollection listCollection) throws IOException {
-		readBills(listCollection);
-		readIncome(listCollection);
-	}
-	
-	private static void readIncome(ListCollection listCollection) throws NumberFormatException, IOException {
-		BufferedReader reader = new BufferedReader(new FileReader(Utility.incomeFileName));
-		char tempChar;
-		int value;
-		while((value = reader.read()) != -1) {
-			tempChar = (char) value;
-			switch(tempChar) {
-			//case 'M': listCollection.getListMonthlyIncome().add(new MonthlyIncome(reader));
-			//		break;
-			case 'W': listCollection.getListWeeklyIncome().add(new WeeklyTransaction(reader));
-					break;
-			//case 'O': listCollection.getListOneTimeIncome().add(new OneTimeIncome(reader));
-			//		break;
-			//case 'L': listCollection.getListLimitedIncome().add(new LimitedMonthlyIncome(reader));
-			//		break;
-			//case 'A': listCollection.getListAnnualIncome().add(new AnnualIncome(reader));
-			//	break;
-			}
-		}
+	public static void readFile(CollectionOfListCollections collection) throws IOException {		
+		readTransactionsFromFile(collection.getBillListCollection(), Utility.billFileName);
+		readTransactionsFromFile(collection.getIncomeListCollection(), Utility.incomeFileName);
 	}
 
-	private static void readBills(ListCollection listCollection) throws NumberFormatException, IOException {
-		BufferedReader reader = new BufferedReader(new FileReader(Utility.billFileName));
+	private static void readTransactionsFromFile(ListCollection listCollection, String fileName) throws NumberFormatException, IOException {
+		BufferedReader reader = new BufferedReader(new FileReader(fileName));
 		char tempChar;
 		int value;
 		while((value = reader.read()) != -1) {
 			tempChar = (char) value;
 			switch(tempChar) {
-			case 'M': listCollection.getListMonthlyBill().add(new MonthlyTransaction(reader));
+			case 'M': listCollection.getListMonthly().add(new MonthlyTransaction(reader));
 					break;
-			case 'W': listCollection.getListWeeklyBill().add(new WeeklyTransaction(reader));
+			case 'W': listCollection.getListWeekly().add(new WeeklyTransaction(reader));
 					break;
-			case 'O': listCollection.getListOneTimeBill().add(new OneTimeTransaction(reader));
+			case 'O': listCollection.getListOneTime().add(new OneTimeTransaction(reader));
 					break;
-			case 'L': listCollection.getListLimitedBill().add(new LimitedMonthlyTransaction(reader));
+			case 'L': listCollection.getListLimited().add(new LimitedMonthlyTransaction(reader));
 					break;
-			case 'A': listCollection.getListAnnualBill().add(new AnnualTransaction(reader));
+			case 'A': listCollection.getListAnnual().add(new AnnualTransaction(reader));
 				break;
 			}
 		}
 	}
 
-	public static void saveToFile(ListCollection listCollection) throws IOException {
-		writeBills(listCollection);
-		writeIncome(listCollection);
+	public static void saveToFile(CollectionOfListCollections collection) throws IOException {		
+		writeTransactionsToFile(collection.getBillListCollection(), Utility.billFileName);
+		writeTransactionsToFile(collection.getIncomeListCollection(), Utility.incomeFileName);
 	}
 
-	private static void writeIncome(ListCollection listCollection) throws IOException {
-		BufferedWriter writer = new BufferedWriter(new FileWriter(Utility.billFileName));
-		monthlyIncomeToFile(listCollection.getListMonthlyBill(), writer);
-		weeklyIncomeToFile(listCollection.getListWeeklyBill(), writer);
-		oneTimeIncomeToFile(listCollection.getListOneTimeBill(), writer);
-		limitedIncomeToFile(listCollection.getListLimitedBill(), writer);
-		annualIncomeToFile(listCollection.getListLimitedBill(), writer);
+	private static void writeTransactionsToFile(ListCollection listCollection, String fileName) throws IOException {
+		BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
+		monthlyTransactionToFile(listCollection.getListMonthly(), writer);
+		weeklyTransactionToFile(listCollection.getListWeekly(), writer);
+		oneTimeTransactionToFile(listCollection.getListOneTime(), writer);
+		limitedTransactionToFile(listCollection.getListLimited(), writer);
+		annualTransactionToFile(listCollection.getListAnnual(), writer);
 		writer.flush();
 		writer.close();
 	}
 
-	private static void annualIncomeToFile(ArrayList<LimitedMonthlyTransaction> listLimitedBill, BufferedWriter writer) {
-		// TODO Auto-generated method stub
-		
+	private static void annualTransactionToFile(ArrayList<AnnualTransaction> listAnnual, BufferedWriter writer) throws IOException {
+		for(int i = 0; i < listAnnual.size(); i++) {
+			writer.write(listAnnual.get(i).toString());
+		}
 	}
 
-	private static void limitedIncomeToFile(ArrayList<LimitedMonthlyTransaction> listLimitedBill, BufferedWriter writer) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	private static void oneTimeIncomeToFile(ArrayList<OneTimeTransaction> listOneTimeBill, BufferedWriter writer) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	private static void weeklyIncomeToFile(ArrayList<WeeklyTransaction> listWeeklyBill, BufferedWriter writer) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	private static void monthlyIncomeToFile(ArrayList<MonthlyTransaction> listMonthlyBill, BufferedWriter writer) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	private static void writeBills(ListCollection listCollection) throws IOException {
-		BufferedWriter writer = new BufferedWriter(new FileWriter(Utility.billFileName));
-		monthlyBillToFile(listCollection.getListMonthlyBill(), writer);
-		weeklyBillToFile(listCollection.getListWeeklyBill(), writer);
-		oneTimeBillToFile(listCollection.getListOneTimeBill(), writer);
-		limitedBillToFile(listCollection.getListLimitedBill(), writer);
-		annualBillToFile(listCollection.getListLimitedBill(), writer);
-		writer.flush();
-		writer.close();
-	}
-
-	private static void annualBillToFile(ArrayList<LimitedMonthlyTransaction> listLimitedBill, BufferedWriter writer) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	private static void limitedBillToFile(ArrayList<LimitedMonthlyTransaction> listLimited, BufferedWriter writer) throws IOException {
+	private static void limitedTransactionToFile(ArrayList<LimitedMonthlyTransaction> listLimited, BufferedWriter writer) throws IOException {
 		for(int i = 0; i < listLimited.size(); i++) {
 			writer.write(listLimited.get(i).toString());
 		}
 	}
 
-	private static void oneTimeBillToFile(ArrayList<OneTimeTransaction> listOneTime, BufferedWriter writer) throws IOException {
+	private static void oneTimeTransactionToFile(ArrayList<OneTimeTransaction> listOneTime, BufferedWriter writer) throws IOException {
 		for(int i = 0; i < listOneTime.size(); i++) {
 			writer.write(listOneTime.get(i).toString());
 		}
 	}
 
-	private static void weeklyBillToFile(ArrayList<WeeklyTransaction> listWeekly, BufferedWriter writer) throws IOException {
+	private static void weeklyTransactionToFile(ArrayList<WeeklyTransaction> listWeekly, BufferedWriter writer) throws IOException {
 		for(int i = 0; i < listWeekly.size(); i++) {
 			writer.write(listWeekly.get(i).toString());
 		}
 	}
 
-	private static void monthlyBillToFile(ArrayList<MonthlyTransaction> listMonthly, BufferedWriter writer) throws IOException {
+	private static void monthlyTransactionToFile(ArrayList<MonthlyTransaction> listMonthly, BufferedWriter writer) throws IOException {
 		for(int i = 0; i < listMonthly.size(); i++) {
 			String test = listMonthly.get(i).toString();
 			writer.write(test);

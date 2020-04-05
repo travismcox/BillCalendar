@@ -14,44 +14,44 @@ import main.FileAccess;
  */
 public class AnnualTransaction extends Transaction {
 
-	private int month;
-	private int day;
+	private int recurringMonth;
+	private int recurringDate;
 	/**
 	 * @param name
 	 * @param amount
 	 */
 	public AnnualTransaction(String name, Double amount, int month, int day) {
 		super(name, amount);
-		setMonth(month);
-		setDay(day);
+		setRecurringMonth(month);
+		setRecurringDate(day);
 	}
 	
 	/**
 	 * @return the month
 	 */
-	public int getMonth() {
-		return month;
+	public int getRecurringMonth() {
+		return recurringMonth;
 	}
 
 	/**
 	 * @param month the month to set
 	 */
-	public void setMonth(int month) {
-		this.month = month;
+	public void setRecurringMonth(int month) {
+		this.recurringMonth = month;
 	}
 
 	/**
 	 * @return the day
 	 */
-	public int getDay() {
-		return day;
+	public int getRecurringDate() {
+		return recurringDate;
 	}
 
 	/**
 	 * @param day the day to set
 	 */
-	public void setDay(int day) {
-		this.day = day;
+	public void setRecurringDate(int day) {
+		this.recurringDate = day;
 	}
 
 	/**
@@ -60,24 +60,24 @@ public class AnnualTransaction extends Transaction {
 	 */
 	public AnnualTransaction(BufferedReader reader) throws IOException {
 		super(reader);
-		setMonth(Integer.parseInt(FileAccess.getStringSpace(reader)));
-		setDay(Integer.parseInt(FileAccess.getStringSpace(reader)));
+		setRecurringMonth(Integer.parseInt(FileAccess.getStringSpace(reader)));
+		setRecurringDate(Integer.parseInt(FileAccess.getStringSpace(reader)));
 	}
 	
 	@Override
 	public String toString() {
-		return "A" + super.toString() + month + " " + day + " " + '\n';
+		return "A" + super.toString() + recurringMonth + " " + recurringMonth + " " + '\n';
 	}
 	
 	public String listToString() {
-		return super.toString() + " " + month + " " + day;
+		return super.toString() + " " + recurringMonth + " " + recurringMonth;
 	}
 	
 	public void edit(String name, Double amount, int month, int day) {
 		super.setName(name);
 		super.setAmount(amount);
-		setMonth(month);
-		setDay(day);
+		setRecurringMonth(month);
+		setRecurringDate(day);
 	}
 
 }

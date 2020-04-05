@@ -17,7 +17,7 @@ import main.FileAccess;
 public class LimitedMonthlyTransaction extends Transaction {
 
 	private GregorianCalendar endDate;
-	private int date;
+	private int recurringDate;
 	/**
 	 * @param name
 	 * @param amount
@@ -25,13 +25,13 @@ public class LimitedMonthlyTransaction extends Transaction {
 	 */
 	public LimitedMonthlyTransaction(String name, Double amount, int date, GregorianCalendar endDate) {
 		super(name, amount);
-		setDate(date);
+		setRecurringDate(date);
 		setEndDate(endDate);
 	}
 	
 	public LimitedMonthlyTransaction(BufferedReader reader) throws IOException {
 		super(reader);
-		setDate(Integer.parseInt(FileAccess.getStringSpace(reader)));
+		setRecurringDate(Integer.parseInt(FileAccess.getStringSpace(reader)));
 		setEndDate(new GregorianCalendar(Integer.parseInt(FileAccess.getStringSpace(reader)), Integer.parseInt(FileAccess.getStringSpace(reader)), Integer.parseInt(FileAccess.getStringSpace(reader))));
 		FileAccess.consumeNewLine(reader);
 	}
@@ -51,22 +51,22 @@ public class LimitedMonthlyTransaction extends Transaction {
 	/**
 	 * @return the date
 	 */
-	public int getDate() {
-		return date;
+	public int getRecurringDate() {
+		return recurringDate;
 	}
 	/**
 	 * @param date the date to set
 	 */
-	public void setDate(int date) {
-		this.date = date;
+	public void setRecurringDate(int date) {
+		this.recurringDate = date;
 	}
 	@Override
 	public String toString() {
-		return "L" + super.toString() + getDate() + " " + getFullDate(' ') + " " + '\n';
+		return "L" + super.toString() + getRecurringDate() + " " + getFullDate(' ') + " " + '\n';
 	}
 
 	public String listToString() {
-		return super.toString() + " " + getDate() + " " + getFullDate('/');
+		return super.toString() + " " + getRecurringDate() + " " + getFullDate('/');
 	}
 	
 	private String getFullDate(char seperator) {
@@ -76,7 +76,7 @@ public class LimitedMonthlyTransaction extends Transaction {
 	public void edit(String name, Double amount, Integer recurringDate, GregorianCalendar endDate) {
 		super.setName(name);
 		super.setAmount(amount);
-		setDate(recurringDate);
+		setRecurringDate(recurringDate);
 		setEndDate(endDate);
 	}
 	

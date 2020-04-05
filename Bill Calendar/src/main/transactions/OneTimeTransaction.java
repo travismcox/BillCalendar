@@ -16,31 +16,31 @@ import main.FileAccess;
  */
 public class OneTimeTransaction extends Transaction {
 
-	private GregorianCalendar date;
+	private GregorianCalendar endDate;
 	/**
 	 * 
 	 */
 	public OneTimeTransaction(String name, Double amount, GregorianCalendar date) {
 		super(name, amount);
-		setDate(date);
+		setEndDate(date);
 	}
 	
 	public OneTimeTransaction(BufferedReader reader) throws NumberFormatException, IOException {
 		super(reader);
-		setDate(new GregorianCalendar(Integer.parseInt(FileAccess.getStringSpace(reader)), Integer.parseInt(FileAccess.getStringSpace(reader)), Integer.parseInt(FileAccess.getStringSpace(reader))));
+		setEndDate(new GregorianCalendar(Integer.parseInt(FileAccess.getStringSpace(reader)), Integer.parseInt(FileAccess.getStringSpace(reader)), Integer.parseInt(FileAccess.getStringSpace(reader))));
 		FileAccess.consumeNewLine(reader);
 	}
 	/**
 	 * @return the date
 	 */
-	public GregorianCalendar getDate() {
-		return date;
+	public GregorianCalendar getEndDate() {
+		return endDate;
 	}
 	/**
 	 * @param date the date to set
 	 */
-	public void setDate(GregorianCalendar date) {
-		this.date = date;
+	public void setEndDate(GregorianCalendar date) {
+		this.endDate = date;
 	}
 	@Override
 	public String toString() {
@@ -52,12 +52,12 @@ public class OneTimeTransaction extends Transaction {
 	}
 
 	private String getFullDate(char seperator) {
-		return "" + getDate().get(Calendar.YEAR) + seperator + (getDate().get(Calendar.MONTH)) + seperator + getDate().get(Calendar.DAY_OF_MONTH);
+		return "" + getEndDate().get(Calendar.YEAR) + seperator + (getEndDate().get(Calendar.MONTH)) + seperator + getEndDate().get(Calendar.DAY_OF_MONTH);
 	}
 
 	public void edit(String name, Double amount, GregorianCalendar date) {
 		super.setName(name);
 		super.setAmount(amount);
-		setDate(date);
+		setEndDate(date);
 	}
 }

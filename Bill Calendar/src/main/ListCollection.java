@@ -17,158 +17,94 @@ import main.transactions.WeeklyTransaction;
  */
 public class ListCollection {
 
-	private ArrayList<MonthlyTransaction> listMonthlyBill; 
-	private ArrayList<WeeklyTransaction> listWeeklyBill; 
-	private ArrayList<OneTimeTransaction> listOneTimeBill;
-	private ArrayList<LimitedMonthlyTransaction> listLimitedBill;
-	private ArrayList<AnnualTransaction> listAnnualBill;
-	private ArrayList<WeeklyTransaction> listWeeklyIncome;
-	private ArrayList<MonthlyTransaction> listMonthlyIncome; 
-	private ArrayList<OneTimeTransaction> listOneTimeIncome;
-	private ArrayList<LimitedMonthlyTransaction> listLimitedIncome;
-	private ArrayList<AnnualTransaction> listAnnualIncome;
+	private ArrayList<MonthlyTransaction> listMonthly; 
+	private ArrayList<WeeklyTransaction> listWeekly; 
+	private ArrayList<OneTimeTransaction> listOneTime;
+	private ArrayList<LimitedMonthlyTransaction> listLimited;
+	private ArrayList<AnnualTransaction> listAnnual;
 	/**
 	 * 
 	 */
 	public ListCollection() {
-		initializeBills();
-		initializeIncome();
-	}
-	private void initializeIncome() {
-		listMonthlyIncome = new ArrayList<MonthlyTransaction>(); 
-		listWeeklyIncome = new ArrayList<WeeklyTransaction>(); 
-		listOneTimeIncome = new ArrayList<OneTimeTransaction>();
-		listLimitedIncome = new ArrayList<LimitedMonthlyTransaction>();
-		listAnnualIncome = new ArrayList<AnnualTransaction>();
+		initializeTransactions();
 	}
 	
-	private void initializeBills() {
-		listMonthlyBill = new ArrayList<MonthlyTransaction>(); 
-		listWeeklyBill = new ArrayList<WeeklyTransaction>(); 
-		listOneTimeBill = new ArrayList<OneTimeTransaction>();
-		listLimitedBill = new ArrayList<LimitedMonthlyTransaction>();
-		listAnnualBill = new ArrayList<AnnualTransaction>();
-	}
-	/**
-	 * @return the listMonthlyBill
-	 */
-	public ArrayList<MonthlyTransaction> getListMonthlyBill() {
-		return listMonthlyBill;
-	}
-	/**
-	 * @param listMonthlyBill the listMonthlyBill to set
-	 */
-	public void setListMonthlyBill(ArrayList<MonthlyTransaction> listMonthlyBill) {
-		this.listMonthlyBill = listMonthlyBill;
-	}
-	/**
-	 * @return the listWeeklyBill
-	 */
-	public ArrayList<WeeklyTransaction> getListWeeklyBill() {
-		return listWeeklyBill;
-	}
-	/**
-	 * @param listWeeklyBill the listWeeklyBill to set
-	 */
-	public void setListWeeklyBill(ArrayList<WeeklyTransaction> listWeeklyBill) {
-		this.listWeeklyBill = listWeeklyBill;
-	}
-	/**
-	 * @return the listOneTimeBill
-	 */
-	public ArrayList<OneTimeTransaction> getListOneTimeBill() {
-		return listOneTimeBill;
-	}
-	/**
-	 * @param listOneTimeBill the listOneTimeBill to set
-	 */
-	public void setListOneTimeBill(ArrayList<OneTimeTransaction> listOneTimeBill) {
-		this.listOneTimeBill = listOneTimeBill;
-	}
-	/**
-	 * @return the listLimitedBill
-	 */
-	public ArrayList<LimitedMonthlyTransaction> getListLimitedBill() {
-		return listLimitedBill;
-	}
-	/**
-	 * @param listLimitedBill the listLimitedBill to set
-	 */
-	public void setListLimitedBill(ArrayList<LimitedMonthlyTransaction> listLimitedBill) {
-		this.listLimitedBill = listLimitedBill;
-	}
-	/**
-	 * @return the listAnnualBill
-	 */
-	public ArrayList<AnnualTransaction> getListAnnualBill() {
-		return listAnnualBill;
-	}
-	/**
-	 * @param listAnnualBill the listAnnualBill to set
-	 */
-	public void setListAnnualBill(ArrayList<AnnualTransaction> listAnnualBill) {
-		this.listAnnualBill = listAnnualBill;
-	}
-	/**
-	 * @return the listWeeklyIncome
-	 */
-	public ArrayList<WeeklyTransaction> getListWeeklyIncome() {
-		return listWeeklyIncome;
-	}
-	/**
-	 * @param listWeeklyIncome the listWeeklyIncome to set
-	 */
-	public void setListWeeklyIncome(ArrayList<WeeklyTransaction> listWeeklyIncome) {
-		this.listWeeklyIncome = listWeeklyIncome;
-	}
-	/**
-	 * @return the listMonthlyIncome
-	 */
-	public ArrayList<MonthlyTransaction> getListMonthlyIncome() {
-		return listMonthlyIncome;
-	}
-	/**
-	 * @param listMonthlyIncome the listMonthlyIncome to set
-	 */
-	public void setListMonthlyIncome(ArrayList<MonthlyTransaction> listMonthlyIncome) {
-		this.listMonthlyIncome = listMonthlyIncome;
-	}
-	/**
-	 * @return the listOneTimeIncome
-	 */
-	public ArrayList<OneTimeTransaction> getListOneTimeIncome() {
-		return listOneTimeIncome;
-	}
-	/**
-	 * @param listOneTimeIncome the listOneTimeIncome to set
-	 */
-	public void setListOneTimeIncome(ArrayList<OneTimeTransaction> listOneTimeIncome) {
-		this.listOneTimeIncome = listOneTimeIncome;
-	}
-	/**
-	 * @return the listLimitedIncome
-	 */
-	public ArrayList<LimitedMonthlyTransaction> getListLimitedIncome() {
-		return listLimitedIncome;
-	}
-	/**
-	 * @param listLimitedIncome the listLimitedIncome to set
-	 */
-	public void setListLimitedIncome(ArrayList<LimitedMonthlyTransaction> listLimitedIncome) {
-		this.listLimitedIncome = listLimitedIncome;
-	}
-	/**
-	 * @return the listAnnualIncome
-	 */
-	public ArrayList<AnnualTransaction> getListAnnualIncome() {
-		return listAnnualIncome;
-	}
-	/**
-	 * @param listAnnualIncome the listAnnualIncome to set
-	 */
-	public void setListAnnualIncome(ArrayList<AnnualTransaction> listAnnualIncome) {
-		this.listAnnualIncome = listAnnualIncome;
+	private void initializeTransactions() {
+		listMonthly = new ArrayList<MonthlyTransaction>(); 
+		listWeekly = new ArrayList<WeeklyTransaction>(); 
+		listOneTime = new ArrayList<OneTimeTransaction>();
+		listLimited = new ArrayList<LimitedMonthlyTransaction>();
+		listAnnual = new ArrayList<AnnualTransaction>();
 	}
 
+	/**
+	 * @return the listMonthly
+	 */
+	public ArrayList<MonthlyTransaction> getListMonthly() {
+		return listMonthly;
+	}
+
+	/**
+	 * @param listMonthly the listMonthly to set
+	 */
+	public void setListMonthly(ArrayList<MonthlyTransaction> listMonthly) {
+		this.listMonthly = listMonthly;
+	}
+
+	/**
+	 * @return the listWeekly
+	 */
+	public ArrayList<WeeklyTransaction> getListWeekly() {
+		return listWeekly;
+	}
+
+	/**
+	 * @param listWeekly the listWeekly to set
+	 */
+	public void setListWeekly(ArrayList<WeeklyTransaction> listWeekly) {
+		this.listWeekly = listWeekly;
+	}
+
+	/**
+	 * @return the listOneTime
+	 */
+	public ArrayList<OneTimeTransaction> getListOneTime() {
+		return listOneTime;
+	}
+
+	/**
+	 * @param listOneTime the listOneTime to set
+	 */
+	public void setListOneTime(ArrayList<OneTimeTransaction> listOneTime) {
+		this.listOneTime = listOneTime;
+	}
+
+	/**
+	 * @return the listLimited
+	 */
+	public ArrayList<LimitedMonthlyTransaction> getListLimited() {
+		return listLimited;
+	}
+
+	/**
+	 * @param listLimited the listLimited to set
+	 */
+	public void setListLimited(ArrayList<LimitedMonthlyTransaction> listLimited) {
+		this.listLimited = listLimited;
+	}
+
+	/**
+	 * @return the listAnnual
+	 */
+	public ArrayList<AnnualTransaction> getListAnnual() {
+		return listAnnual;
+	}
+
+	/**
+	 * @param listAnnual the listAnnual to set
+	 */
+	public void setListAnnual(ArrayList<AnnualTransaction> listAnnual) {
+		this.listAnnual = listAnnual;
+	}
 	
 }

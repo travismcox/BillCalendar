@@ -67,10 +67,10 @@ public abstract class CalculateWeeks {
 	}
 
 	private static ArrayList<String> calculateWeek(GregorianCalendar startDate, GregorianCalendar endDate, ListCollection listCollection, int week, ArrayList<Double> pastFourWeeks) {
-		ArrayList<MonthlyTransaction> listMonthly = listCollection.getListMonthlyBill();
-		ArrayList<WeeklyTransaction> listWeekly = listCollection.getListWeeklyBill();
-		ArrayList<OneTimeTransaction> listOneTime = listCollection.getListOneTimeBill();
-		ArrayList<LimitedMonthlyTransaction> listLimited = listCollection.getListLimitedBill();
+		ArrayList<MonthlyTransaction> listMonthly = listCollection.getListMonthly();
+		ArrayList<WeeklyTransaction> listWeekly = listCollection.getListWeekly();
+		ArrayList<OneTimeTransaction> listOneTime = listCollection.getListOneTime();
+		ArrayList<LimitedMonthlyTransaction> listLimited = listCollection.getListLimited();
 		Double sum = 0.0;
 		ArrayList<String> listOfBills = new ArrayList<String>();
 		ArrayList<String> results = new ArrayList<String>();
@@ -85,17 +85,17 @@ public abstract class CalculateWeeks {
 		}
 		//Monthly
 		for(int i = 0; i < listMonthly.size(); i++) {
-			sum = monthlyCalculator(listMonthly.get(i), listOfBills, startDate, endDate, sum, listMonthly.get(i).getDate());
+			sum = monthlyCalculator(listMonthly.get(i), listOfBills, startDate, endDate, sum, listMonthly.get(i).getRecurringDate());
 		}
 		//One Time
 		for(int i = 0; i < listOneTime.size(); i++) {
-			GregorianCalendar date = listOneTime.get(i).getDate();
+			GregorianCalendar date = listOneTime.get(i).getEndDate();
 			sum = dateComparison(listOneTime.get(i), date, listOfBills, startDate, endDate, sum);
 		}
 		//Limited Monthly
 		for(int i = 0; i < listLimited.size(); i++) {
 			if(startDateEndDateComparison(startDate, listLimited.get(i).getEndDate())) {
-				sum = monthlyCalculator(listLimited.get(i), listOfBills, startDate, endDate, sum, listLimited.get(i).getDate());
+				sum = monthlyCalculator(listLimited.get(i), listOfBills, startDate, endDate, sum, listLimited.get(i).getRecurringDate());
 			}
 		}
 		

@@ -14,50 +14,50 @@ import main.FileAccess;
  */
 public class MonthlyTransaction extends Transaction {
 
-	private int date;
+	private int recurringDate;
 	/**
 	 * @param name
 	 * @param amount
 	 * @param date
 	 */
 	
-	public MonthlyTransaction(String name, Double amount, int date) {
+	public MonthlyTransaction(String name, Double amount, int recurringDate) {
 		super(name, amount);
-		setDate(date);
+		setRecurringDate(recurringDate);
 	}
 	
 	public MonthlyTransaction(BufferedReader reader) throws IOException {
 		super(reader);
-		setDate(Integer.parseInt(FileAccess.getStringSpace(reader)));
+		setRecurringDate(Integer.parseInt(FileAccess.getStringSpace(reader)));
 		FileAccess.consumeNewLine(reader);
 	}
 	
 	public void edit(String name, Double amount, Integer date2) {
 		super.setName(name);
 		super.setAmount(amount);
-		setDate(date);
+		setRecurringDate(recurringDate);
 	}
 	
 	/**
 	 * @return the date
 	 */
-	public int getDate() {
-		return date;
+	public int getRecurringDate() {
+		return recurringDate;
 	}
 	/**
 	 * @param date the date to set
 	 */
-	public void setDate(int date) {
-		this.date = date;
+	public void setRecurringDate(int recurringDate) {
+		this.recurringDate = recurringDate;
 	}
 
 	@Override
 	public String toString() {
-		return "M" + super.toString() + date + " " + '\n';
+		return "M" + super.toString() + recurringDate + " " + '\n';
 	}
 	
 	public String listToString() {
-		return super.toString() + " " + date;
+		return super.toString() + " " + recurringDate;
 	}
 
 }

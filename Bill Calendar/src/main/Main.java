@@ -15,25 +15,26 @@ import gui.GUIMain;
  */
 public class Main {
 
-	static ListCollection listCollection;
+	static CollectionOfListCollections collection;
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		//Initialize
-		listCollection = new ListCollection();
+		collection = new CollectionOfListCollections();
+	
 		//Read from file, if it exists
 		try {
-			FileAccess.readFile(listCollection);
+			FileAccess.readFile(collection);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			//e.printStackTrace();
 		}
-		EditBills.autoDelete(listCollection);
+		EditBills.autoDelete(collection);
 		
 		
 		//Main menu
-		GUIMain instance = new GUIMain(listCollection);
+		GUIMain instance = new GUIMain(collection);
 		instance.changeToMain();
 	}
 
