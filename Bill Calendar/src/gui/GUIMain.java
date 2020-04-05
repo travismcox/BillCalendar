@@ -3,6 +3,7 @@
  */
 package gui;
 
+import java.awt.Component;
 import java.awt.Container;
 import java.awt.Frame;
 import java.awt.GridLayout;
@@ -55,64 +56,36 @@ public class GUIMain extends JFrame{
 		new GUIMainMenu(this);
 	}
 	
-	public CollectionOfListCollections getListCollection() {
+	public CollectionOfListCollections getCollections() {
 		return listCollection;
 	}
 	
 	public void changeToMain() {
-		setVisible(false);
-		getContentPane().removeAll();
-		getContentPane().add(new GUIMainMenu(this));
-		setSize(200,300);
-		run();
+		cleanUp(new GUIMainMenu(this), 200, 300);
 	}
 	
 	public void changeToAddBill() {
-		setVisible(false);
-		getContentPane().removeAll();
-		getContentPane().add(new GUIAddBill(this));
-		setSize(200,300);
-		run();
+		cleanUp(new GUIAddBill(this), 200, 300);
 	}
 	
 	public void changeToAddIncome() {
-		setVisible(false);
-		getContentPane().removeAll();
-		getContentPane().add(new GUIAddIncome(this));
-		setSize(200,300);
-		run();
+		cleanUp(new GUIAddIncome(this), 200, 300);
 	}
 	
-	public void changeToMonthly() {
-		setVisible(false);
-		getContentPane().removeAll();
-		getContentPane().add(new GUIMonthlyBill(this));
-		setSize(500, 300);
-		run();
+	public void changeToMonthly(int transactionType) {
+		cleanUp(new GUIMonthlyBill(this, transactionType), 500, 300);
 	}
 	
-	public void changeToWeekly() {
-		setVisible(false);
-		getContentPane().removeAll();
-		getContentPane().add(new GUIWeeklyBill(this));
-		setSize(500, 300);
-		run();
+	public void changeToWeekly(int transactionType) {
+		cleanUp(new GUIWeeklyBill(this, transactionType), 500, 300);
 	}
 	
-	public void changeToOneTime() {
-		setVisible(false);
-		getContentPane().removeAll();
-		getContentPane().add(new GUIOneTimeBill(this));
-		setSize(500, 400);
-		run();
+	public void changeToOneTime(int transactionType) {
+		cleanUp(new GUIOneTimeBill(this, transactionType), 500, 400);
 	}
 	
-	public void changeToLimited() {
-		setVisible(false);
-		getContentPane().removeAll();
-		getContentPane().add(new GUILimitedBill(this));
-		setSize(500, 450);
-		run();
+	public void changeToLimited(int transactionType) {
+		cleanUp(new GUILimitedBill(this, transactionType), 500, 450);
 	}
 	
 	public void printResults(ArrayList<String> results) {
@@ -131,82 +104,50 @@ public class GUIMain extends JFrame{
 	}
 
 	public void changeToCalculate() {
-		setVisible(false);
-		getContentPane().removeAll();
-		getContentPane().add(new GUICalculateBills(this));
-		setSize(400, 250);
-		run();
+		cleanUp(new GUICalculateBills(this), 400, 250);
 	}
 
 	public void changeToEdit() {
-		setVisible(false);
-		getContentPane().removeAll();
-		getContentPane().add(new GUIEditBill(this));
-		setSize(200, 300);
-		run();
+		cleanUp(new GUIEditBill(this), 200, 300);
 	}
 	
 	public void changeToEditIncome() {
-		setVisible(false);
-		getContentPane().removeAll();
-		getContentPane().add(new GUIEditIncome(this));
-		setSize(200, 300);
-		run();
+		cleanUp(new GUIEditIncome(this), 200, 300);
 	}
 
-	public void changeToSelect(int type) {
-		setVisible(false);
-		getContentPane().removeAll();
-		getContentPane().add(new GUISelect(this, type));
-		setSize(200, 300);
-		run();
+	public void changeToSelect(int timeType, int transactionType) {
+		cleanUp(new GUISelect(this, timeType, transactionType), 200, 300);
 	}
 
 	public void changeToEditMonthly(int selection) {
-		setVisible(false);
-		getContentPane().removeAll();
-		getContentPane().add(new GUIMonthlyBill(this, selection));
-		setSize(500, 300);
-		run();
+		cleanUp(new GUIMonthlyBill(this, selection), 500, 300);
 	}
 
 	public void changeToEditWeekly(int selection) {
-		setVisible(false);
-		getContentPane().removeAll();
-		getContentPane().add(new GUIWeeklyBill(this, selection));
-		setSize(500, 300);
-		run();
+		cleanUp(new GUIWeeklyBill(this, selection), 500, 300);
 	}
 
 	public void changeToEditOneTime(int selection) {
-		setVisible(false);
-		getContentPane().removeAll();
-		getContentPane().add(new GUIOneTimeBill(this, selection));
-		setSize(500, 400);
-		run();
+		cleanUp(new GUIOneTimeBill(this, selection), 500, 400);
 	}
 
 	public void changeToEditLimited(int selection) {
-		setVisible(false);
-		getContentPane().removeAll();
-		getContentPane().add(new GUILimitedBill(this, selection));
-		setSize(500, 450);
-		run();
+		cleanUp(new GUILimitedBill(this, selection), 500, 450);
 	}
 
-	public void changeToAnnual() {
-		setVisible(false);
-		getContentPane().removeAll();
-		getContentPane().add(new GUIAnnualBill(this));
-		setSize(500, 350);
-		run();
+	public void changeToAnnual(int transactionType) {
+		cleanUp(new GUIAnnualBill(this, transactionType), 500, 350);
 	}
 
 	public void changeToEditAnnual(int selection) {
+		cleanUp(new GUIAnnualBill(this, selection), 500, 350);
+	}
+	
+	private void cleanUp(Component component, int x, int y) {
 		setVisible(false);
 		getContentPane().removeAll();
-		getContentPane().add(new GUIAnnualBill(this, selection));
-		setSize(500, 350);
+		getContentPane().add(component);
+		setSize(x, y);
 		run();
 	}
 

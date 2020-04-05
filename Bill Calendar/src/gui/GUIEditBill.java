@@ -3,14 +3,10 @@
  */
 package gui;
 
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JPanel;
 
-import gui.GUIAddBill.MenuActionListener;
 import main.Utility;
 
 /**
@@ -31,19 +27,19 @@ public class GUIEditBill extends GUIMenu {
 		public void actionPerformed(ActionEvent ae) {
 	        String action = ae.getActionCommand();
 	        if (action.equals(Utility.MonthlyBill)) {
-	            frame.changeToSelect(Utility.MonthlyBillValue);
+	            frame.changeToSelect(Utility.MonthlyBillValue, Utility.BILL);
 	        }
 	        else if(action.equals(Utility.AnnualBill)) {
-	        	frame.changeToSelect(Utility.AnnualBillValue);
+	        	frame.changeToSelect(Utility.AnnualBillValue, Utility.BILL);
 	        }
 	        else if (action.equals(Utility.WeeklyBill)) {
-	            frame.changeToSelect(Utility.WeeklyBillValue);
+	            frame.changeToSelect(Utility.WeeklyBillValue, Utility.BILL);
 	        }
 	        else if (action.equals(Utility.OneTimeBill)) {
-	        	frame.changeToSelect(Utility.OneTimeBillValue);
+	        	frame.changeToSelect(Utility.OneTimeBillValue, Utility.BILL);
 	        }
 	        else if(action.contentEquals(Utility.LimitedBill)) {
-	        	frame.changeToSelect(Utility.LimitedBillValue);
+	        	frame.changeToSelect(Utility.LimitedBillValue, Utility.BILL);
 	        }
 	        else if(action.contentEquals(Utility.BackToMainMenu)) {
 	        	frame.changeToMain();

@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import gui.GUIMain;
+import main.ListCollection;
 import main.Utility;
 
 /**
@@ -24,6 +25,7 @@ import main.Utility;
 public abstract class GUITransaction extends JPanel {
 
 	GUIMain frame;
+	ListCollection listCollection;
 	JTextField nameTextField, amountTextField, dateTextField, yearTextField;
 	JComboBox<String> recurringDateComboBox, monthsComboBox, endDateComboBox;
 	JLabel nameLabel, amountLabel, recurringDateLabel, monthLabel, yearLabel, endDateLabel;
@@ -32,15 +34,28 @@ public abstract class GUITransaction extends JPanel {
 	Double amount;
 	Integer recurringDate, month;
 	GregorianCalendar endDate;
-	int selection;
+	int selection, transactionType;
 	
-	public GUITransaction(GUIMain frame) {
+	public GUITransaction(GUIMain frame, int transactionType) {
 		this.frame = frame;
+		setListCollection(transactionType);
 	}
 	
-	public GUITransaction(GUIMain frame, int selection) {
+	private void setListCollection(int transactionType) {
+		this.transactionType = transactionType;
+		switch(transactionType){
+			case 0: listCollection = frame.getCollections().getBillListCollection();
+			break;
+			case 1: listCollection = frame.getCollections().getIncomeListCollection();
+			break;
+		}
+		
+	}
+
+	public GUITransaction(GUIMain frame, int selection, int transactionType) {
 		this.frame = frame;
 		this.selection = selection;
+		setListCollection(transactionType);
 	}
 	
 	private void initializeNameLabel() {

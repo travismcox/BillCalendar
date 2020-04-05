@@ -15,8 +15,8 @@ import main.transactions.AnnualTransaction;
  */
 public class GUIAnnualBill extends GUITransaction {
 
-	public GUIAnnualBill(GUIMain frame) {
-		super(frame);
+	public GUIAnnualBill(GUIMain frame, int transactionType) {
+		super(frame, transactionType);
 		
 		initializeLabelsAndFields(Utility.EmptyField, Utility.EmptyField, Utility.InitialIndex, Utility.InitialIndex);
 		initializeButtonsNew(new AddBillActionListener(), new AddBillActionListener());
@@ -25,11 +25,11 @@ public class GUIAnnualBill extends GUITransaction {
 		
 	}
 	
-	public GUIAnnualBill(GUIMain frame, int selection) {
-		super(frame, selection);
-		AnnualTransaction tempBill = frame.getListCollection().getListAnnualBill().get(selection);
+	public GUIAnnualBill(GUIMain frame, int selection, int transactionType) {
+		super(frame, selection, transactionType);
+		AnnualTransaction tempBill = listCollection.getListAnnual().get(selection);
 		
-		initializeLabelsAndFields(tempBill.getName(), String.valueOf(tempBill.getAmount()), tempBill.getMonth(), tempBill.getDay());
+		initializeLabelsAndFields(tempBill.getName(), String.valueOf(tempBill.getAmount()), tempBill.getRecurringMonth(), tempBill.getRecurringDate());
 		initializeButtonsEdit(new AddBillActionListener(), new AddBillActionListener());
 		
 		addComponentsEdit();	
@@ -70,19 +70,19 @@ public class GUIAnnualBill extends GUITransaction {
 			String action = ae.getActionCommand();
 	        if(action.contentEquals(Utility.AddBill)) {
 	        	getFieldInput();
-	        	frame.getListCollection().getListAnnualBill().add(new AnnualTransaction(name, amount, month, recurringDate));
+	        	listCollection.getListAnnual().add(new AnnualTransaction(name, amount, month, recurringDate));
 	        	frame.changeToAddBill();
 	        }
 	        else if(action.contentEquals(Utility.GoBackSelect)) {
-	        	frame.changeToSelect(Utility.OneTimeBillValue);
+	        	frame.changeToSelect(Utility.OneTimeBillValue, transactionType);
 	        }
 	        else if(action.contentEquals(Utility.GoBackAdd)) {
 	        	frame.changeToAddBill();
 	        }
 	        else if(action.contentEquals(Utility.Edit)) {
 	        	getFieldInput();
-	        	frame.getListCollection().getListAnnualBill().get(selection).edit(name, amount, month, recurringDate);
-	        	frame.changeToSelect(Utility.OneTimeBillValue);
+	        	listCollection.getListAnnual().get(selection).edit(name, amount, month, recurringDate);
+	        	frame.changeToSelect(Utility.OneTimeBillValue, transactionType);
 	        }
 		}
 	}

@@ -3,15 +3,7 @@
  */
 package main;
 
-import java.util.ArrayList;
 import java.util.GregorianCalendar;
-import java.util.Scanner;
-
-import main.transactions.LimitedMonthlyTransaction;
-import main.transactions.MonthlyTransaction;
-import main.transactions.OneTimeTransaction;
-import main.transactions.Transaction;
-import main.transactions.WeeklyTransaction;
 
 /**
  * @author traviscox

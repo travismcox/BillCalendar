@@ -28,19 +28,19 @@ public class GUIAddBill extends GUIMenu {
 		public void actionPerformed(ActionEvent ae) {
 	        String action = ae.getActionCommand();
 	        if (action.equals(Utility.MonthlyBill)) {
-	            frame.changeToMonthly();
+	            frame.changeToMonthly(Utility.BILL);
 	        }
 	        else if(action.equals(Utility.AnnualBill)) {
-	        	frame.changeToAnnual();
+	        	frame.changeToAnnual(Utility.BILL);
 	        }
 	        else if (action.equals(Utility.WeeklyBill)) {
-	            frame.changeToWeekly();
+	            frame.changeToWeekly(Utility.BILL);
 	        }
 	        else if (action.equals(Utility.OneTimeBill)) {
-	        	frame.changeToOneTime();
+	        	frame.changeToOneTime(Utility.BILL);
 	        }
 	        else if(action.contentEquals(Utility.LimitedBill)) {
-	        	frame.changeToLimited();
+	        	frame.changeToLimited(Utility.BILL);
 	        }
 	        else if(action.contentEquals(Utility.BackToMainMenu)) {
 	        	frame.changeToMain();

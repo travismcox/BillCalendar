@@ -3,19 +3,10 @@
  */
 package gui.transactions;
 
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 import gui.GUIMain;
-import gui.transactions.GUIMonthlyBill.AddBillActionListener;
 import main.Utility;
-import main.transactions.MonthlyTransaction;
 import main.transactions.WeeklyTransaction;
 
 /**
@@ -24,8 +15,8 @@ import main.transactions.WeeklyTransaction;
  */
 public class GUIWeeklyBill extends GUITransaction {
 
-	public GUIWeeklyBill(GUIMain frame) {
-		super(frame);
+	public GUIWeeklyBill(GUIMain frame, int transactionType) {
+		super(frame, transactionType);
 		
 		initializeLabelsAndFields(Utility.EmptyField, Utility.EmptyField);
 		initializeButtonsNew(new AddBillActionListener(), new AddBillActionListener());
@@ -46,9 +37,9 @@ public class GUIWeeklyBill extends GUITransaction {
 		addComponentsStart(3, 2);
 	}
 
-	public GUIWeeklyBill(GUIMain frame, int selection) {
-		super(frame, selection);
-		WeeklyTransaction tempBill = frame.getListCollection().getListWeeklyBill().get(selection);
+	public GUIWeeklyBill(GUIMain frame, int selection, int transactionType) {
+		super(frame, selection, transactionType);
+		WeeklyTransaction tempBill = listCollection.getListWeekly().get(selection);
 		
 		initializeLabelsAndFields(tempBill.getName(), String.valueOf(tempBill.getAmount()));
 		initializeButtonsEdit(new AddBillActionListener(), new AddBillActionListener());
@@ -67,19 +58,19 @@ public class GUIWeeklyBill extends GUITransaction {
 	        String action = ae.getActionCommand();
 	        if(action.contentEquals(Utility.AddBill)) {
 	        	getFieldInput();
-	        	frame.getListCollection().getListWeeklyBill().add(new WeeklyTransaction(name, amount));
+	        	listCollection.getListWeekly().add(new WeeklyTransaction(name, amount));
 	        	frame.changeToAddBill();
 	        }
 	        else if(action.contentEquals(Utility.GoBackSelect)) {
-	        	frame.changeToSelect(Utility.WeeklyBillValue);
+	        	frame.changeToSelect(Utility.WeeklyBillValue, transactionType);
 	        }
 	        else if(action.contentEquals(Utility.GoBackAdd)) {
 	        	frame.changeToAddBill();
 	        }
 	        if(action.contentEquals(Utility.Edit)) {
 	        	getFieldInput();
-	        	frame.getListCollection().getListWeeklyBill().get(selection).edit(name, amount);
-	        	frame.changeToSelect(Utility.WeeklyBillValue);
+	        	listCollection.getListWeekly().get(selection).edit(name, amount);
+	        	frame.changeToSelect(Utility.WeeklyBillValue, transactionType);
 	        }
 	    }
 	}

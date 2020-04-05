@@ -17,8 +17,8 @@ import main.transactions.OneTimeTransaction;
  */
 public class GUIOneTimeBill extends GUITransaction {
 	
-	public GUIOneTimeBill(GUIMain frame) {
-		super(frame);
+	public GUIOneTimeBill(GUIMain frame, int transactionType) {
+		super(frame, transactionType);
 		
 		initializeLabelsAndFields(Utility.EmptyField, Utility.EmptyField, Utility.EmptyField, Utility.InitialIndex, Utility.InitialIndex);
 		initializeButtonsNew(new AddBillActionListener(), new AddBillActionListener());
@@ -26,11 +26,11 @@ public class GUIOneTimeBill extends GUITransaction {
 		addComponentsNew();
 	}
 	
-	public GUIOneTimeBill(GUIMain frame, int selection) {
-		super(frame, selection);
-		OneTimeTransaction tempBill = frame.getListCollection().getListOneTimeBill().get(selection);
+	public GUIOneTimeBill(GUIMain frame, int selection, int transactionType) {
+		super(frame, selection, transactionType);
+		OneTimeTransaction tempBill = listCollection.getListOneTime().get(selection);
 		
-		initializeLabelsAndFields(tempBill.getName(), String.valueOf(tempBill.getAmount()), String.valueOf(tempBill.getDate().get(Calendar.YEAR)), tempBill.getDate().get(Calendar.MONTH), tempBill.getDate().get(Calendar.DAY_OF_MONTH)-1);
+		initializeLabelsAndFields(tempBill.getName(), String.valueOf(tempBill.getAmount()), String.valueOf(tempBill.getEndDate().get(Calendar.YEAR)), tempBill.getEndDate().get(Calendar.MONTH), tempBill.getEndDate().get(Calendar.DAY_OF_MONTH)-1);
 		initializeButtonsEdit(new AddBillActionListener(), new AddBillActionListener());
 		
 		addComponentsEdit();
@@ -66,19 +66,19 @@ public class GUIOneTimeBill extends GUITransaction {
 	        String action = ae.getActionCommand();
 	        if(action.contentEquals(Utility.AddBill)) {
 	        	getFieldInput();
-	        	frame.getListCollection().getListOneTimeBill().add(new OneTimeTransaction(name, amount, endDate));
+	        	listCollection.getListOneTime().add(new OneTimeTransaction(name, amount, endDate));
 	        	frame.changeToAddBill();
 	        }
 	        else if(action.contentEquals(Utility.GoBackSelect)) {
-	        	frame.changeToSelect(Utility.OneTimeBillValue);
+	        	frame.changeToSelect(Utility.OneTimeBillValue, transactionType);
 	        }
 	        else if(action.contentEquals(Utility.GoBackAdd)) {
 	        	frame.changeToAddBill();
 	        }
 	        else if(action.contentEquals(Utility.Edit)) {
 	        	getFieldInput();
-	        	frame.getListCollection().getListOneTimeBill().get(selection).edit(name, amount, endDate);
-	        	frame.changeToSelect(Utility.OneTimeBillValue);
+	        	listCollection.getListOneTime().get(selection).edit(name, amount, endDate);
+	        	frame.changeToSelect(Utility.OneTimeBillValue, transactionType);
 	        }
 	    }
 	}

@@ -17,8 +17,8 @@ import main.transactions.LimitedMonthlyTransaction;
  */
 public class GUILimitedBill extends GUITransaction {
 	
-	public GUILimitedBill(GUIMain frame) {
-		super(frame);
+	public GUILimitedBill(GUIMain frame, int transactionType) {
+		super(frame, transactionType);
 		
 		initializeLabelsAndFields(Utility.EmptyField, Utility.EmptyField, Utility.InitialIndex, Utility.EmptyField, Utility.InitialIndex, Utility.InitialIndex);
 		initializeButtonsNew(new AddBillActionListener(), new AddBillActionListener());
@@ -47,11 +47,11 @@ public class GUILimitedBill extends GUITransaction {
 		this.initializeEndDate(endDateIndex);
 	}
 
-	public GUILimitedBill(GUIMain frame, int selection) {
-		super(frame, selection);
-		LimitedMonthlyTransaction tempBill = frame.getListCollection().getListLimitedBill().get(selection);
+	public GUILimitedBill(GUIMain frame, int selection, int transactionType) {
+		super(frame, selection, transactionType);
+		LimitedMonthlyTransaction tempBill = listCollection.getListLimited().get(selection);
 		
-		initializeLabelsAndFields(tempBill.getName(), String.valueOf(tempBill.getAmount()), tempBill.getDate()-1, Integer.toString(tempBill.getEndDate().get(Calendar.YEAR)), tempBill.getEndDate().get(Calendar.MONTH), tempBill.getEndDate().get(Calendar.DAY_OF_MONTH)-1);
+		initializeLabelsAndFields(tempBill.getName(), String.valueOf(tempBill.getAmount()), tempBill.getRecurringDate()-1, Integer.toString(tempBill.getEndDate().get(Calendar.YEAR)), tempBill.getEndDate().get(Calendar.MONTH), tempBill.getEndDate().get(Calendar.DAY_OF_MONTH)-1);
 		initializeButtonsEdit(new AddBillActionListener(), new AddBillActionListener());
 		
 		addComponentsEdit();
@@ -68,19 +68,19 @@ public class GUILimitedBill extends GUITransaction {
 	        String action = ae.getActionCommand();
 	        if(action.contentEquals(Utility.AddBill)) {
 	        	getFieldInput();
-	        	frame.getListCollection().getListLimitedBill().add(new LimitedMonthlyTransaction(name, amount, recurringDate, endDate));
+	        	listCollection.getListLimited().add(new LimitedMonthlyTransaction(name, amount, recurringDate, endDate));
 	        	frame.changeToAddBill();
 	        }
 	        else if(action.contentEquals(Utility.GoBackSelect)) {
-	        	frame.changeToSelect(Utility.LimitedBillValue);
+	        	frame.changeToSelect(Utility.LimitedBillValue, transactionType);
 	        }
 	        else if(action.contentEquals(Utility.GoBackAdd)) {
 	        	frame.changeToAddBill();
 	        }
 	        else if(action.contentEquals(Utility.Edit)) {
 	        	getFieldInput();
-	        	frame.getListCollection().getListLimitedBill().get(selection).edit(name, amount, recurringDate, endDate);
-	        	frame.changeToSelect(Utility.LimitedBillValue);
+	        	listCollection.getListLimited().get(selection).edit(name, amount, recurringDate, endDate);
+	        	frame.changeToSelect(Utility.LimitedBillValue, transactionType);
 	        }
 	    }
 	}

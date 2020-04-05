@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+import main.CollectionOfListCollections;
 import main.ListCollection;
 import main.Utility;
 
@@ -23,16 +24,23 @@ import main.Utility;
 public class GUISelect extends JPanel implements ActionListener, ListSelectionListener {
 
 	GUIMain frame;
-	ListCollection listCollection;
+	CollectionOfListCollections collection;
 	int typeOfBill;
 	JList selectionList;
-	public GUISelect(GUIMain guiMain, int typeOfBill) {
+	public GUISelect(GUIMain guiMain, int typeOfBill, int transactionType) {
 		frame = guiMain;
-		listCollection = this.frame.getListCollection();
+		collection = this.frame.getCollections();
 		this.typeOfBill = typeOfBill;
 		
 		//select(typeOfBill);
-		selectionList = new JList(selectBill());
+		switch(transactionType) {
+		case 0: selectionList = new JList(selectBill(collection.getBillListCollection()));
+			break;
+		case 1: selectionList = new JList(selectBill(collection.getIncomeListCollection()));
+			break;
+		}
+		
+		
 		JButton goBackButton = new JButton(Utility.GoBackMenu);
 		JButton enterButton = new JButton(Utility.Enter);
 		
@@ -68,44 +76,19 @@ public class GUISelect extends JPanel implements ActionListener, ListSelectionLi
         }
 	}
 	
-	private String[] selectBill() {
+	private String[] selectBill(ListCollection listCollection) {
 		ArrayList<String> arrayOfStrings = null;
 		
 		switch(typeOfBill) {
-		case 0: arrayOfStrings = selectMonthlyBill();
+		case 0: arrayOfStrings = selectMonthlyTransaction(listCollection);
 			break;
-		case 1: arrayOfStrings = selectAnnualBill();
+		case 1: arrayOfStrings = selectAnnualTransaction(listCollection);
 			break;
-		case 2: arrayOfStrings = selectWeeklyBill();
+		case 2: arrayOfStrings = selectWeeklyTransaction(listCollection);
 			break;
-		case 3: arrayOfStrings = selectOneTimeBill();
+		case 3: arrayOfStrings = selectOneTimeTransaction(listCollection);
 			break;
-		case 4: arrayOfStrings = selectLimitedBill();
-			break;
-		}
-		
-		String[] listArray = new String[arrayOfStrings.size()];
-		for(int i = 0; i < arrayOfStrings.size(); i++) {
-			listArray[i] = arrayOfStrings.get(i);
-		}
-		
-		
-		return listArray;
-	}
-	
-	private String[] selectIncome() {
-		ArrayList<String> arrayOfStrings = null;
-		
-		switch(typeOfBill) {
-		case 0: arrayOfStrings = selectMonthlyIncome();
-			break;
-		case 1: arrayOfStrings = selectAnnualIncome();
-			break;
-		case 2: arrayOfStrings = selectWeeklyIncome();
-			break;
-		case 3: arrayOfStrings = selectOneTimeIncome();
-			break;
-		case 4: arrayOfStrings = selectLimitedIncome();
+		case 4: arrayOfStrings = selectLimitedTransaction(listCollection);
 			break;
 		}
 		
@@ -118,91 +101,46 @@ public class GUISelect extends JPanel implements ActionListener, ListSelectionLi
 		return listArray;
 	}
 
-	private ArrayList<String> selectLimitedBill() {
+	private ArrayList<String> selectLimitedTransaction(ListCollection listCollection) {
 		ArrayList<String> list = new ArrayList<String>();
-		for(int i = 0; i < listCollection.getListLimitedBill().size(); i++) {
-			list.add(listCollection.getListLimitedBill().get(i).listToString());
+		for(int i = 0; i < listCollection.getListLimited().size(); i++) {
+			list.add(listCollection.getListLimited().get(i).listToString());
 		}
 		
 		return list;
 	}
 	
-	private ArrayList<String> selectLimitedIncome() {
+	private ArrayList<String> selectAnnualTransaction(ListCollection listCollection) {
 		ArrayList<String> list = new ArrayList<String>();
-		for(int i = 0; i < listCollection.getListLimitedIncome().size(); i++) {
-			list.add(listCollection.getListLimitedIncome().get(i).listToString());
-		}
-		
-		return list;
-	}
-	
-	private ArrayList<String> selectAnnualBill() {
-		ArrayList<String> list = new ArrayList<String>();
-		for(int i = 0; i < listCollection.getListAnnualBill().size(); i++) {
-			list.add(listCollection.getListAnnualBill().get(i).listToString());
-		}
-		
-		return list;
-	}
-	
-	private ArrayList<String> selectAnnualIncome() {
-		ArrayList<String> list = new ArrayList<String>();
-		for(int i = 0; i < listCollection.getListAnnualIncome().size(); i++) {
-			list.add(listCollection.getListAnnualIncome().get(i).listToString());
+		for(int i = 0; i < listCollection.getListAnnual().size(); i++) {
+			list.add(listCollection.getListAnnual().get(i).listToString());
 		}
 		
 		return list;
 	}
 
-	private ArrayList<String> selectOneTimeBill() {
+	private ArrayList<String> selectOneTimeTransaction(ListCollection listCollection) {
 		ArrayList<String> list = new ArrayList<String>();
-		for(int i = 0; i < listCollection.getListOneTimeBill().size(); i++) {
-			list.add(listCollection.getListOneTimeBill().get(i).listToString());
-		}
-		
-		return list;
-	}
-	
-	private ArrayList<String> selectOneTimeIncome() {
-		ArrayList<String> list = new ArrayList<String>();
-		for(int i = 0; i < listCollection.getListOneTimeIncome().size(); i++) {
-			list.add(listCollection.getListOneTimeIncome().get(i).listToString());
+		for(int i = 0; i < listCollection.getListOneTime().size(); i++) {
+			list.add(listCollection.getListOneTime().get(i).listToString());
 		}
 		
 		return list;
 	}
 
-	private ArrayList<String> selectWeeklyBill() {
+	private ArrayList<String> selectWeeklyTransaction(ListCollection listCollection) {
 		ArrayList<String> list = new ArrayList<String>();
-		for(int i = 0; i < listCollection.getListWeeklyBill().size(); i++) {
-			list.add(listCollection.getListWeeklyBill().get(i).listToString());
-		}
-		
-		return list;
-	}
-	
-	private ArrayList<String> selectWeeklyIncome() {
-		ArrayList<String> list = new ArrayList<String>();
-		for(int i = 0; i < listCollection.getListWeeklyIncome().size(); i++) {
-			list.add(listCollection.getListWeeklyIncome().get(i).listToString());
+		for(int i = 0; i < listCollection.getListWeekly().size(); i++) {
+			list.add(listCollection.getListWeekly().get(i).listToString());
 		}
 		
 		return list;
 	}
 
-	private ArrayList<String> selectMonthlyBill() {
+	private ArrayList<String> selectMonthlyTransaction(ListCollection listCollection) {
 		ArrayList<String> list = new ArrayList<String>();
-		for(int i = 0; i < listCollection.getListMonthlyBill().size(); i++) {
-			list.add(listCollection.getListMonthlyBill().get(i).listToString());
-		}
-		
-		return list;
-	}
-	
-	private ArrayList<String> selectMonthlyIncome() {
-		ArrayList<String> list = new ArrayList<String>();
-		for(int i = 0; i < listCollection.getListMonthlyIncome().size(); i++) {
-			list.add(listCollection.getListMonthlyIncome().get(i).listToString());
+		for(int i = 0; i < listCollection.getListMonthly().size(); i++) {
+			list.add(listCollection.getListMonthly().get(i).listToString());
 		}
 		
 		return list;

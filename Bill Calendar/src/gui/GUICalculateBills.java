@@ -46,7 +46,7 @@ public class GUICalculateBills extends JPanel {
 	        if(action.contentEquals("Calculate")) {
 	        	Integer weeks = Integer.parseInt(calculateTextField.getText());
 	        	//CalculateWeeks.startCalculateWeeks(frame.getListCollection(), weeks);
-	        	frame.printResults(CalculateWeeks.startCalculateWeeks(frame.getListCollection(), weeks));
+	        	frame.printResults(CalculateWeeks.startCalculateWeeks(frame.getCollections(), weeks));
 	        }
 	    }
 	}

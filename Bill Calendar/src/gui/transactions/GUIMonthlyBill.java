@@ -15,8 +15,8 @@ import main.transactions.MonthlyTransaction;
  */
 public class GUIMonthlyBill extends GUITransaction {
 
-	public GUIMonthlyBill(GUIMain frame) {
-		super(frame);
+	public GUIMonthlyBill(GUIMain frame, int transactionType) {
+		super(frame, transactionType);
 		
 		initializeLabelsAndFields(Utility.EmptyField, Utility.EmptyField, Utility.InitialIndex);
 		initializeButtonsNew(new AddBillActionListener(), new AddBillActionListener());
@@ -24,11 +24,11 @@ public class GUIMonthlyBill extends GUITransaction {
 		addComponentsNew();
 	}
 
-	public GUIMonthlyBill(GUIMain frame, int selection) {
-		super(frame, selection);
-		MonthlyTransaction tempBill = frame.getListCollection().getListMonthlyBill().get(selection);
+	public GUIMonthlyBill(GUIMain frame, int selection, int transactionType) {
+		super(frame, selection, transactionType);
+		MonthlyTransaction tempBill = listCollection.getListMonthly().get(selection);
 		
-		initializeLabelsAndFields(tempBill.getName(), String.valueOf(tempBill.getAmount()), tempBill.getDate());
+		initializeLabelsAndFields(tempBill.getName(), String.valueOf(tempBill.getAmount()), tempBill.getRecurringDate());
 		initializeButtonsEdit(new AddBillActionListener(), new AddBillActionListener());
 		
 		addComponentsEdit();
@@ -60,18 +60,18 @@ public class GUIMonthlyBill extends GUITransaction {
 	        String action = ae.getActionCommand();
 	        if(action.contentEquals(Utility.AddBill)) {
 	        	getFieldInput();
-	        	frame.getListCollection().getListMonthlyBill().add(new MonthlyTransaction(name, amount, recurringDate));
+	        	listCollection.getListMonthly().add(new MonthlyTransaction(name, amount, recurringDate));
 	        	frame.changeToAddBill();
 	        }
 	        else if(action.contentEquals(Utility.GoBackAdd)) {
 	        	frame.changeToAddBill();
 	        }
 	        else if(action.contentEquals(Utility.GoBackSelect)){
-	        	frame.changeToSelect(Utility.MonthlyBillValue);
+	        	frame.changeToSelect(Utility.MonthlyBillValue, transactionType);
 	        }
 	        else if(action.contentEquals(Utility.Edit)) {
 	        	getFieldInput();
-	        	frame.getListCollection().getListMonthlyBill().get(selection).edit(name, amount, recurringDate);
+	        	listCollection.getListMonthly().get(selection).edit(name, amount, recurringDate);
 	        	frame.changeToAddBill();
 	        }
 	    }
