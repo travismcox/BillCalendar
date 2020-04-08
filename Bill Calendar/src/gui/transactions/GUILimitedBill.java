@@ -4,8 +4,7 @@
 package gui.transactions;
 
 import java.awt.event.ActionEvent;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.time.LocalDate;
 
 import gui.GUIMain;
 import main.Utility;
@@ -56,7 +55,7 @@ public class GUILimitedBill extends GUITransaction {
 		super(frame, selection, transactionType);
 		LimitedMonthlyTransaction tempBill = listCollection.getListLimited().get(selection);
 		
-		initializeLabelsAndFields(tempBill.getName(), String.valueOf(tempBill.getAmount()), tempBill.getRecurringDate()-1, Integer.toString(tempBill.getEndDate().get(Calendar.YEAR)), tempBill.getEndDate().get(Calendar.MONTH), tempBill.getEndDate().get(Calendar.DAY_OF_MONTH)-1);
+		initializeLabelsAndFields(tempBill.getName(), String.valueOf(tempBill.getAmount()), tempBill.getRecurringDate()-1, Integer.toString(tempBill.getEndDate().getYear()), tempBill.getEndDate().getMonthValue(), tempBill.getEndDate().getDayOfMonth()-1);
 		initializeButtonsEdit(new AddBillActionListener(), new AddBillActionListener());
 		
 		addComponentsEdit();
@@ -94,7 +93,7 @@ public class GUILimitedBill extends GUITransaction {
 		name = nameTextField.getText();
     	amount = Double.parseDouble(amountTextField.getText());
     	recurringDate = recurringDateComboBox.getSelectedIndex();
-    	endDate = new GregorianCalendar(Integer.parseInt(yearTextField.getText()), monthsComboBox.getSelectedIndex(), recurringDateComboBox.getSelectedIndex()+1);
+    	endDate = LocalDate.of(Integer.parseInt(yearTextField.getText()), monthsComboBox.getSelectedIndex(), recurringDateComboBox.getSelectedIndex()+1);
     	
 	}
 }

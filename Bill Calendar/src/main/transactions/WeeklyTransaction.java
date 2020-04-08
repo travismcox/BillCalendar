@@ -27,10 +27,11 @@ public class WeeklyTransaction extends Transaction {
 		FileAccess.consumeNewLine(reader);
 	}
 	
-	public void edit(String name, Double amount)
+	public void edit(String name, Double amount, DayOfWeek dayOfWeek)
 	{
 		super.setName(name);
 		super.setAmount(amount);
+		setDayOfWeek(dayOfWeek);
 	}
 
 	/**

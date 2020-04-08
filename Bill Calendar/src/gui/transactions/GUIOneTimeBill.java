@@ -4,8 +4,7 @@
 package gui.transactions;
 
 import java.awt.event.ActionEvent;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.time.LocalDate;
 
 import gui.GUIMain;
 import main.Utility;
@@ -35,7 +34,7 @@ public class GUIOneTimeBill extends GUITransaction {
 		super(frame, selection, transactionType);
 		OneTimeTransaction tempBill = listCollection.getListOneTime().get(selection);
 		
-		initializeLabelsAndFields(tempBill.getName(), String.valueOf(tempBill.getAmount()), String.valueOf(tempBill.getEndDate().get(Calendar.YEAR)), tempBill.getEndDate().get(Calendar.MONTH), tempBill.getEndDate().get(Calendar.DAY_OF_MONTH)-1);
+		initializeLabelsAndFields(tempBill.getName(), String.valueOf(tempBill.getAmount()), String.valueOf(tempBill.getEndDate().getYear()), tempBill.getEndDate().getMonthValue(), tempBill.getEndDate().getDayOfMonth()-1);
 		initializeButtonsEdit(new AddBillActionListener(), new AddBillActionListener());
 		
 		addComponentsEdit();
@@ -91,6 +90,6 @@ public class GUIOneTimeBill extends GUITransaction {
 	public void getFieldInput() {
 		name = nameTextField.getText();
     	amount = Double.parseDouble(amountTextField.getText());
-    	endDate = new GregorianCalendar(Integer.parseInt(yearTextField.getText()), monthsComboBox.getSelectedIndex(), endDateComboBox.getSelectedIndex()+1);
+    	endDate = LocalDate.of(Integer.parseInt(yearTextField.getText()), monthsComboBox.getSelectedIndex(), endDateComboBox.getSelectedIndex()+1);
 	}
 }

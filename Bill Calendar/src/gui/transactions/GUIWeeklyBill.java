@@ -4,6 +4,7 @@
 package gui.transactions;
 
 import java.awt.event.ActionEvent;
+import java.time.DayOfWeek;
 
 import gui.GUIMain;
 import main.Utility;
@@ -23,14 +24,15 @@ public class GUIWeeklyBill extends GUITransaction {
 	public GUIWeeklyBill(GUIMain frame, int transactionType) {
 		super(frame, transactionType);
 		
-		initializeLabelsAndFields(Utility.EmptyField, Utility.EmptyField);
+		initializeLabelsAndFields(Utility.EmptyField, Utility.EmptyField, Utility.InitialIndex);
 		initializeButtonsNew(new AddBillActionListener(), new AddBillActionListener());
 		
 		addComponentsNew();
 	}
 
-	private void initializeLabelsAndFields(String nameField, String amountField) {
+	private void initializeLabelsAndFields(String nameField, String amountField, Integer dayOfWeekIndex) {
 		initializeNameAndAmount(nameField, amountField);
+		initializeDayOfWeek(dayOfWeekIndex);
 	}
 
 	private void addComponentsNew() {
@@ -46,7 +48,7 @@ public class GUIWeeklyBill extends GUITransaction {
 		super(frame, selection, transactionType);
 		WeeklyTransaction tempBill = listCollection.getListWeekly().get(selection);
 		
-		initializeLabelsAndFields(tempBill.getName(), String.valueOf(tempBill.getAmount()));
+		initializeLabelsAndFields(tempBill.getName(), String.valueOf(tempBill.getAmount()), tempBill.getDayOfWeek().getValue()-1);
 		initializeButtonsEdit(new AddBillActionListener(), new AddBillActionListener());
 		
 		addComponentsEdit();
@@ -63,7 +65,7 @@ public class GUIWeeklyBill extends GUITransaction {
 	        String action = ae.getActionCommand();
 	        if(action.contentEquals(Utility.AddBill)) {
 	        	getFieldInput();
-	        	listCollection.getListWeekly().add(new WeeklyTransaction(name, amount));
+	        	listCollection.getListWeekly().add(new WeeklyTransaction(name, amount, dayOfWeek));
 	        	frame.changeToAddTransaction(transactionType);
 	        }
 	        else if(action.contentEquals(Utility.GoBackSelect)) {
@@ -74,7 +76,7 @@ public class GUIWeeklyBill extends GUITransaction {
 	        }
 	        if(action.contentEquals(Utility.Edit)) {
 	        	getFieldInput();
-	        	listCollection.getListWeekly().get(selection).edit(name, amount);
+	        	listCollection.getListWeekly().get(selection).edit(name, amount, dayOfWeek);
 	        	frame.changeToSelect(Utility.WeeklyBillValue, transactionType);
 	        }
 	    }
@@ -83,5 +85,6 @@ public class GUIWeeklyBill extends GUITransaction {
 	public void getFieldInput() {
 		name = nameTextField.getText();
     	amount = Double.parseDouble(amountTextField.getText());
+    	dayOfWeek = DayOfWeek.of(dayOfWeekComboBox.getSelectedIndex());
 	}
 }

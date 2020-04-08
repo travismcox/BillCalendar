@@ -6,7 +6,8 @@ package gui.transactions;
 import java.awt.Component;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
-import java.util.GregorianCalendar;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -31,13 +32,14 @@ public abstract class GUITransaction extends JPanel {
 	GUIMain frame;
 	ListCollection listCollection;
 	JTextField nameTextField, amountTextField, dateTextField, yearTextField;
-	JComboBox<String> recurringDateComboBox, monthsComboBox, endDateComboBox;
-	JLabel nameLabel, amountLabel, recurringDateLabel, monthLabel, yearLabel, endDateLabel;
+	JComboBox<String> recurringDateComboBox, monthsComboBox, endDateComboBox, dayOfWeekComboBox;
+	JLabel nameLabel, amountLabel, recurringDateLabel, monthLabel, yearLabel, endDateLabel, dayOfWeekLabel;
 	JButton buttonEnter, buttonGoBackAdd, buttonGoBackSelect, buttonEdit;
 	String name;
 	Double amount;
 	Integer recurringDate, month;
-	GregorianCalendar endDate;
+	LocalDate endDate;
+	DayOfWeek dayOfWeek;
 	int selection, transactionType;
 	
 	public GUITransaction(GUIMain frame, int transactionType) {
@@ -87,6 +89,13 @@ public abstract class GUITransaction extends JPanel {
 	private void initializeMonthField(Integer index) {
 		monthsComboBox = new JComboBox<String>(Utility.Months);
 		monthsComboBox.setSelectedIndex(index);
+	}
+	private void initializeDayOfWeekLabel() {
+		dayOfWeekLabel = new JLabel(Utility.DayOfWeek);
+	}
+	private void initializeDayOfWeekField(Integer index) {
+		dayOfWeekComboBox = new JComboBox<String>(Utility.DaysOfWeek);
+		dayOfWeekComboBox.setSelectedIndex(index);
 	}
 	private void initalizeYearLabel() {
 		yearLabel = new JLabel(Utility.Year);
@@ -146,6 +155,10 @@ public abstract class GUITransaction extends JPanel {
 	protected void initializeEndDate(Integer index) {
 		initializeEndDateLabel();
 		initializeEndDateField(index);
+	}
+	protected void initializeDayOfWeek(Integer index) {
+		initializeDayOfWeekLabel();
+		initializeDayOfWeekField(index);
 	}
 	protected void addComponentsStart(Integer rows, Integer columns) {
 		setLayout(new GridLayout(rows, columns));
