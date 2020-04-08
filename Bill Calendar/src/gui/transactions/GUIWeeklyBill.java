@@ -25,7 +25,7 @@ public class GUIWeeklyBill extends GUITransaction {
 	}
 
 	private void initializeLabelsAndFields(String nameField, String amountField) {
-		initializeLabelsAndFields(nameField, amountField);
+		initializeNameAndAmount(nameField, amountField);
 	}
 
 	private void addComponentsNew() {

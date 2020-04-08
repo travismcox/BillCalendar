@@ -68,10 +68,6 @@ public class GUIMain extends JFrame{
 		cleanUp(new GUIAddTransaction(this, transactionType), 200, 300);
 	}
 	
-	public void changeToAddIncome() {
-		cleanUp(new GUIAddIncome(this), 200, 300);
-	}
-	
 	public void changeToMonthly(int transactionType) {
 		cleanUp(new GUIMonthlyBill(this, transactionType), 500, 300);
 	}

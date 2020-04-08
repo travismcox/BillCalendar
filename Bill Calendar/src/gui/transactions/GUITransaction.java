@@ -147,8 +147,6 @@ public abstract class GUITransaction extends JPanel {
 		setLayout(new GridLayout(rows, columns));
 		addComponentsLabelAndField(nameLabel, nameTextField);
 		addComponentsLabelAndField(amountLabel, amountTextField);
-		add(recurringDateLabel);
-		add(recurringDateComboBox);
 	}
 	protected void addComponentsLabelAndField(Component component1, Component component2) {
 		add(component1);
