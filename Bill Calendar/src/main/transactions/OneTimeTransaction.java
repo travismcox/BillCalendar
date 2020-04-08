@@ -5,8 +5,7 @@ package main.transactions;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.time.LocalDate;
 
 import main.FileAccess;
 
@@ -16,30 +15,30 @@ import main.FileAccess;
  */
 public class OneTimeTransaction extends Transaction {
 
-	private GregorianCalendar endDate;
+	private LocalDate endDate;
 	/**
 	 * 
 	 */
-	public OneTimeTransaction(String name, Double amount, GregorianCalendar date) {
+	public OneTimeTransaction(String name, Double amount, LocalDate date) {
 		super(name, amount);
 		setEndDate(date);
 	}
 	
 	public OneTimeTransaction(BufferedReader reader) throws NumberFormatException, IOException {
 		super(reader);
-		setEndDate(new GregorianCalendar(Integer.parseInt(FileAccess.getStringSpace(reader)), Integer.parseInt(FileAccess.getStringSpace(reader)), Integer.parseInt(FileAccess.getStringSpace(reader))));
+		setEndDate(LocalDate.of(Integer.parseInt(FileAccess.getStringSpace(reader)), Integer.parseInt(FileAccess.getStringSpace(reader)), Integer.parseInt(FileAccess.getStringSpace(reader))));
 		FileAccess.consumeNewLine(reader);
 	}
 	/**
 	 * @return the date
 	 */
-	public GregorianCalendar getEndDate() {
+	public LocalDate getEndDate() {
 		return endDate;
 	}
 	/**
 	 * @param date the date to set
 	 */
-	public void setEndDate(GregorianCalendar date) {
+	public void setEndDate(LocalDate date) {
 		this.endDate = date;
 	}
 	@Override
@@ -52,10 +51,10 @@ public class OneTimeTransaction extends Transaction {
 	}
 
 	private String getFullDate(char seperator) {
-		return "" + getEndDate().get(Calendar.YEAR) + seperator + (getEndDate().get(Calendar.MONTH)) + seperator + getEndDate().get(Calendar.DAY_OF_MONTH);
+		return "" + getEndDate().getYear() + seperator + getEndDate().getMonthValue() + seperator + getEndDate().getDayOfMonth();
 	}
 
-	public void edit(String name, Double amount, GregorianCalendar date) {
+	public void edit(String name, Double amount, LocalDate date) {
 		super.setName(name);
 		super.setAmount(amount);
 		setEndDate(date);

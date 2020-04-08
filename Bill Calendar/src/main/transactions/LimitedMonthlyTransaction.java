@@ -5,8 +5,7 @@ package main.transactions;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.time.LocalDate;
 
 import main.FileAccess;
 
@@ -16,14 +15,14 @@ import main.FileAccess;
  */
 public class LimitedMonthlyTransaction extends Transaction {
 
-	private GregorianCalendar endDate;
+	private LocalDate endDate;
 	private int recurringDate;
 	/**
 	 * @param name
 	 * @param amount
 	 * @param date
 	 */
-	public LimitedMonthlyTransaction(String name, Double amount, int date, GregorianCalendar endDate) {
+	public LimitedMonthlyTransaction(String name, Double amount, int date, LocalDate endDate) {
 		super(name, amount);
 		setRecurringDate(date);
 		setEndDate(endDate);
@@ -32,19 +31,19 @@ public class LimitedMonthlyTransaction extends Transaction {
 	public LimitedMonthlyTransaction(BufferedReader reader) throws IOException {
 		super(reader);
 		setRecurringDate(Integer.parseInt(FileAccess.getStringSpace(reader)));
-		setEndDate(new GregorianCalendar(Integer.parseInt(FileAccess.getStringSpace(reader)), Integer.parseInt(FileAccess.getStringSpace(reader)), Integer.parseInt(FileAccess.getStringSpace(reader))));
+		setEndDate(LocalDate.of(Integer.parseInt(FileAccess.getStringSpace(reader)), Integer.parseInt(FileAccess.getStringSpace(reader)), Integer.parseInt(FileAccess.getStringSpace(reader))));
 		FileAccess.consumeNewLine(reader);
 	}
 	/**
 	 * @return the endDate
 	 */
-	public GregorianCalendar getEndDate() {
+	public LocalDate getEndDate() {
 		return endDate;
 	}
 	/**
 	 * @param endDate the endDate to set
 	 */
-	public void setEndDate(GregorianCalendar endDate) {
+	public void setEndDate(LocalDate endDate) {
 		this.endDate = endDate;
 	}
 	
@@ -70,10 +69,10 @@ public class LimitedMonthlyTransaction extends Transaction {
 	}
 	
 	private String getFullDate(char seperator) {
-		return "" + getEndDate().get(Calendar.YEAR) + seperator + (getEndDate().get(Calendar.MONTH)) + seperator + getEndDate().get(Calendar.DAY_OF_MONTH);
+		return "" + getEndDate().getYear() + seperator + getEndDate().getMonthValue() + seperator + getEndDate().getDayOfMonth();
 	}
 
-	public void edit(String name, Double amount, Integer recurringDate, GregorianCalendar endDate) {
+	public void edit(String name, Double amount, Integer recurringDate, LocalDate endDate) {
 		super.setName(name);
 		super.setAmount(amount);
 		setRecurringDate(recurringDate);
