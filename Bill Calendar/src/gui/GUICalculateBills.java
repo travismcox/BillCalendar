@@ -13,13 +13,16 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import main.CalculateWeeks;
-import main.transactions.WeeklyTransaction;
 
 /**
  * @author traviscox
  *
  */
 public class GUICalculateBills extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5482665982596328877L;
 	GUIMain frame;
 	JTextField calculateTextField;
 	public GUICalculateBills(GUIMain frame) {

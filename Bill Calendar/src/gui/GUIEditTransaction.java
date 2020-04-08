@@ -15,6 +15,10 @@ import main.Utility;
  */
 public class GUIEditTransaction extends GUIMenu {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6466536466043786042L;
 	int transactionType;
 	public GUIEditTransaction(GUIMain frame, int transactionType) {
 		super(frame);

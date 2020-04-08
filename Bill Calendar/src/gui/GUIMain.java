@@ -4,20 +4,10 @@
 package gui;
 
 import java.awt.Component;
-import java.awt.Container;
-import java.awt.Frame;
-import java.awt.GridLayout;
-import java.awt.Panel;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 import gui.transactions.GUIAnnualBill;
 import gui.transactions.GUILimitedBill;
@@ -26,7 +16,6 @@ import gui.transactions.GUIOneTimeBill;
 import gui.transactions.GUIWeeklyBill;
 import main.CollectionOfListCollections;
 import main.FileAccess;
-import main.ListCollection;
 
 /**
  * @author traviscox
@@ -34,6 +23,10 @@ import main.ListCollection;
  */
 public class GUIMain extends JFrame{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4599239660108201481L;
 	CollectionOfListCollections listCollection;
 	/**
 	 * @param collection 

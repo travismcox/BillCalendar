@@ -17,6 +17,11 @@ import main.transactions.OneTimeTransaction;
  */
 public class GUIOneTimeBill extends GUITransaction {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1271944058884453767L;
+
 	public GUIOneTimeBill(GUIMain frame, int transactionType) {
 		super(frame, transactionType);
 		

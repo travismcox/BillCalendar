@@ -23,10 +23,14 @@ import main.Utility;
  */
 public class GUISelect extends JPanel implements ActionListener, ListSelectionListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6232539809661294561L;
 	GUIMain frame;
 	CollectionOfListCollections collection;
 	int typeOfBill, transactionType;
-	JList selectionList;
+	JList<String> selectionList;
 	public GUISelect(GUIMain guiMain, int typeOfBill, int transactionType) {
 		frame = guiMain;
 		collection = this.frame.getCollections();
@@ -35,9 +39,9 @@ public class GUISelect extends JPanel implements ActionListener, ListSelectionLi
 		
 		//select(typeOfBill);
 		switch(transactionType) {
-		case 0: selectionList = new JList(selectBill(collection.getBillListCollection()));
+		case 0: selectionList = new JList<String>(selectTransactionPeriod(collection.getBillListCollection()));
 			break;
-		case 1: selectionList = new JList(selectBill(collection.getIncomeListCollection()));
+		case 1: selectionList = new JList<String>(selectTransactionPeriod(collection.getIncomeListCollection()));
 			break;
 		}
 		
@@ -77,7 +81,7 @@ public class GUISelect extends JPanel implements ActionListener, ListSelectionLi
         }
 	}
 	
-	private String[] selectBill(ListCollection listCollection) {
+	private String[] selectTransactionPeriod(ListCollection listCollection) {
 		ArrayList<String> arrayOfStrings = null;
 		
 		switch(typeOfBill) {

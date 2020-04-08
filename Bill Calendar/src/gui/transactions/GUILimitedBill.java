@@ -17,6 +17,11 @@ import main.transactions.LimitedMonthlyTransaction;
  */
 public class GUILimitedBill extends GUITransaction {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6917256282447426216L;
+
 	public GUILimitedBill(GUIMain frame, int transactionType) {
 		super(frame, transactionType);
 		

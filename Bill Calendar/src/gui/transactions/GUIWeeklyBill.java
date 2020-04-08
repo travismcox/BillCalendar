@@ -15,6 +15,11 @@ import main.transactions.WeeklyTransaction;
  */
 public class GUIWeeklyBill extends GUITransaction {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5968819062882307497L;
+
 	public GUIWeeklyBill(GUIMain frame, int transactionType) {
 		super(frame, transactionType);
 		

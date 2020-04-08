@@ -15,6 +15,11 @@ import javax.swing.JTextArea;
  */
 public class GUIResults extends JFrame {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3354377423869181688L;
+
 	public GUIResults(ArrayList<String> results) {
 		JTextArea text = new JTextArea();
 		for(int i = 0; i < results.size(); i++) {

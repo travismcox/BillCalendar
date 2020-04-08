@@ -15,6 +15,10 @@ import javax.swing.JPanel;
  */
 public class GUIMenu extends JPanel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6373594904327308730L;
 	GUIMain frame;
 	JButton[] buttonList;
 	MenuActionListener[] actionListenerList;

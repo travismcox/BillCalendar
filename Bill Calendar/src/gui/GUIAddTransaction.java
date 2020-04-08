@@ -7,7 +7,6 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JButton;
 
-import gui.GUIMainMenu.MenuActionListener;
 import main.Utility;
 
 /**
@@ -16,6 +15,10 @@ import main.Utility;
  */
 public class GUIAddTransaction extends GUIMenu {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 9192909340786985785L;
 	int transactionType;
 	public GUIAddTransaction(GUIMain frame, int transactionType) {
 		super(frame);

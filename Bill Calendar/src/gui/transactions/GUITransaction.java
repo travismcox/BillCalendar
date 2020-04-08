@@ -24,6 +24,10 @@ import main.Utility;
  */
 public abstract class GUITransaction extends JPanel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 443813865840801343L;
 	GUIMain frame;
 	ListCollection listCollection;
 	JTextField nameTextField, amountTextField, dateTextField, yearTextField;

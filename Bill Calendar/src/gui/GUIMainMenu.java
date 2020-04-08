@@ -3,14 +3,10 @@
  */
 package gui;
 
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import javax.swing.JPanel;
 
-import gui.GUIAddTransaction.MenuActionListener;
 import main.Utility;
 
 
@@ -19,6 +15,11 @@ import main.Utility;
  *
  */
 public class GUIMainMenu extends GUIMenu {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1728939881900207545L;
 
 	public GUIMainMenu(GUIMain frame) {
 		super(frame);
