@@ -85,6 +85,6 @@ public class GUIWeeklyBill extends GUITransaction {
 	public void getFieldInput() {
 		name = nameTextField.getText();
     	amount = Double.parseDouble(amountTextField.getText());
-    	dayOfWeek = DayOfWeek.of(dayOfWeekComboBox.getSelectedIndex());
+    	dayOfWeek = DayOfWeek.of(dayOfWeekComboBox.getSelectedIndex()+1);
 	}
 }

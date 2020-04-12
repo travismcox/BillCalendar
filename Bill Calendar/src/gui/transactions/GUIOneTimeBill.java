@@ -90,6 +90,6 @@ public class GUIOneTimeBill extends GUITransaction {
 	public void getFieldInput() {
 		name = nameTextField.getText();
     	amount = Double.parseDouble(amountTextField.getText());
-    	endDate = LocalDate.of(Integer.parseInt(yearTextField.getText()), monthsComboBox.getSelectedIndex(), endDateComboBox.getSelectedIndex()+1);
+    	endDate = LocalDate.of(Integer.parseInt(yearTextField.getText()), monthsComboBox.getSelectedIndex()+1, endDateComboBox.getSelectedIndex()+1);
 	}
 }

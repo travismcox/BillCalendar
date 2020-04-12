@@ -85,6 +85,6 @@ public class GUIMonthlyBill extends GUITransaction {
 	public void getFieldInput() {
 		name = nameTextField.getText();
     	amount = Double.parseDouble(amountTextField.getText());
-    	recurringDate = recurringDateComboBox.getSelectedIndex() + 1;
+    	recurringDate = recurringDateComboBox.getSelectedIndex()+1;
 	}
 }

@@ -47,7 +47,7 @@ public class OneTimeTransaction extends Transaction {
 	}
 	
 	public String listToString() {
-		return super.toString() + " " + getFullDate('/');
+		return super.listToString() + " " + getFullDate('/');
 	}
 
 	private String getFullDate(char seperator) {

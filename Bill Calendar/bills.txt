@@ -7,12 +7,9 @@ M8 Spectrum50.0 20
 M14 Green Mountain135.0 6 
 M7 NYTimes6.38 24 
 M17 Alamo Season Pass21.64 26 
-W6 Factor77.0 
-O6 Amazon14.0 2020 3 12 
-O14 Barclay - 1964120.0 2020 3 20 
-O11 Care Credit28.0 2020 3 20 
-L15 Affirm - Casper208.33 22 2020 3 22 
-L14 Affirm - Giant120.83 22 2020 9 22 
-L20 Broadway at the Bass179.79 1 2020 4 1 
-L21 Broadway at the Bass2179.79 15 2020 4 15 
-L11 iPhone Loan60.37 20 2021 8 20 
+W6 Factor77.0 3 
+L14 Affirm - Giant120.83 22 2020 10 22 
+L15 Affirm - Casper208.83 22 2020 4 22 
+L21 Broadway at the Bass2179.79 15 2020 5 15 
+L11 iPhone Loan60.37 20 2021 9 20 
+L20 Broadway at the Bass179.19 1 2020 5 1 

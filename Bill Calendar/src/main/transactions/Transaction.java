@@ -55,6 +55,10 @@ public class Transaction {
 	public String toString() {
 		return name.length() + " " + name + amount + " ";
 	}
+	
+	public String listToString() {
+		return name + " " + amount + " ";
+	}
 
 	
 }

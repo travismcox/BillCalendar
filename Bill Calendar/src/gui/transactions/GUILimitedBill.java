@@ -92,8 +92,8 @@ public class GUILimitedBill extends GUITransaction {
 	private void getFieldInput() {
 		name = nameTextField.getText();
     	amount = Double.parseDouble(amountTextField.getText());
-    	recurringDate = recurringDateComboBox.getSelectedIndex();
-    	endDate = LocalDate.of(Integer.parseInt(yearTextField.getText()), monthsComboBox.getSelectedIndex(), recurringDateComboBox.getSelectedIndex()+1);
+    	recurringDate = recurringDateComboBox.getSelectedIndex()+1;
+    	endDate = LocalDate.of(Integer.parseInt(yearTextField.getText()), monthsComboBox.getSelectedIndex()+1, endDateComboBox.getSelectedIndex()+1);
     	
 	}
 }

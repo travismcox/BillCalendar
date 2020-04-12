@@ -9,23 +9,15 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
-import main.transactions.LimitedMonthlyTransaction;
-import main.transactions.MonthlyTransaction;
 import main.transactions.OneTimeTransaction;
 import main.transactions.Transaction;
-import main.transactions.WeeklyTransaction;
 
 /**
  * @author traviscox
  *
  */
 public abstract class CalculateWeeks {
-
-	/**
-	 * @param listLimited 
-	 * @param scan2 
-	 * 
-	 */
+	
 	public CalculateWeeks() {
 		
 	}
@@ -33,20 +25,18 @@ public abstract class CalculateWeeks {
 	public static ArrayList<String> startCalculateWeeks(CollectionOfListCollections collection, int weeks) {
 		LocalDate startOfWeek = findNextDayOfWeekOccurance(LocalDate.now(), DayOfWeek.FRIDAY);
 		LocalDate endOfWeek = findNextDayOfWeekOccurance(startOfWeek, DayOfWeek.THURSDAY);
-		ArrayList<String> results = new ArrayList<String>(), tempResults;
-		ArrayList<Double> pastFourWeeks = new ArrayList<Double>();
-		for(int i = 0; i < Utility.FourInteger; i++) {
-			pastFourWeeks.add(0.0);
-		}
+		ArrayList<OneTimeTransaction> tempResultsBill, tempResultsIncome; 
+		ArrayList<String> results = new ArrayList<String>();
+		ArrayList<Double> totalTotals = new ArrayList<Double>(), bills = new ArrayList<Double>(), incomes = new ArrayList<Double>();
 		
 		for(int i = 0; i < weeks; i++) {
 			LocalDate tempStart = startOfWeek.plusWeeks(i);
 			LocalDate tempEnd = endOfWeek.plusWeeks(i);
-			tempResults = calculateWeek(tempStart, tempEnd, collection, i, pastFourWeeks);
+			tempResultsBill = new ArrayList<OneTimeTransaction>();
+			tempResultsIncome = new ArrayList<OneTimeTransaction>();
+			calculateWeek(tempStart, tempEnd, collection, i, totalTotals, bills, incomes, tempResultsBill, tempResultsIncome);
 			
-			for(int j = 0; j < tempResults.size(); j++) {
-				results.add(tempResults.get(j));
-			}
+			addWeekToOutput(tempResultsBill, tempResultsIncome, results, tempStart, tempEnd, i, bills, incomes, totalTotals);
 		}
 		
 		printWeeks(results);
@@ -54,14 +44,26 @@ public abstract class CalculateWeeks {
 		return results;
 	}
 	
+	private static void addWeekToOutput(ArrayList<OneTimeTransaction> tempResultsBill, ArrayList<OneTimeTransaction> tempResultsIncome, ArrayList<String> results, LocalDate tempStart, LocalDate tempEnd, int week, ArrayList<Double> bills, ArrayList<Double> incomes, ArrayList<Double> totalTotals) {
+		results.add(printWeek(tempStart, tempEnd, bills.get(week), incomes.get(week), totalTotals.get(week)));
+		addTransactionToOutput(tempResultsBill, results);
+		addTransactionToOutput(tempResultsIncome, results);
+	}
+
+	private static void addTransactionToOutput(ArrayList<OneTimeTransaction> tempResults, ArrayList<String> results) {
+		for(int i = 0; i< tempResults.size(); i++) {
+			results.add("     " + tempResults.get(i).listToString());
+		}
+	}
+
 	private static LocalDate findNextDayOfWeekOccurance(LocalDate start, DayOfWeek target) {
 		LocalDate temp = start.plusDays(0);
-		while(temp.getDayOfWeek() != target) {
+		while(temp.getDayOfWeek().getValue() != target.getValue()) {
 			LocalDate tempDate = temp.plusDays(1);
-			start = tempDate;
+			temp = tempDate;
 		}
 		
-		return start;
+		return temp;
 	}
 
 	private static void printWeeks(ArrayList<String> results) {
@@ -73,86 +75,69 @@ public abstract class CalculateWeeks {
 		
 	}
 	
-	private static ArrayList<String> calculateWeek(LocalDate tempStart, LocalDate tempEnd, CollectionOfListCollections collection, int week, ArrayList<Double> pastFourWeeks){
-		ArrayList<String> listOfBills = new ArrayList<String>();
-		ArrayList<String> results = new ArrayList<String>();
+	private static void calculateWeek(LocalDate tempStart, LocalDate tempEnd, CollectionOfListCollections collection, int week, ArrayList<Double> totalTotals, ArrayList<Double> bills, ArrayList<Double> incomes, ArrayList<OneTimeTransaction> tempResultsBill, ArrayList<OneTimeTransaction> tempResultsIncome){
+		bills.add(calculateTransactions(tempStart, tempEnd, collection.getBillListCollection(), week, tempResultsBill));
+		incomes.add(calculateTransactions(tempStart, tempEnd, collection.getIncomeListCollection(), week, tempResultsIncome));
 		
-		Double billSum = calculateTransactions(tempStart, tempEnd, collection.getBillListCollection(), week, listOfBills, results);
-		Double incomeSum = calculateTransactions(tempStart, tempEnd, collection.getIncomeListCollection(), week, listOfBills, results);
-		
-		/*//Get Average
-		pastFourWeeks.set(week%Utility.FourInteger, billSum);
-		Double tempSum = 0.0;
-		for(int i = 0; i < pastFourWeeks.size(); i++) {
-			tempSum += pastFourWeeks.get(i);
+		totalTotals.add(incomes.get(week)-bills.get(week));
+		if(week > 0) {
+			totalTotals.set(week, totalTotals.get(week)+totalTotals.get(week-1));
 		}
-		Double average = tempSum / Utility.FourDouble;*/
-		
-		//Print output
-		results.add(printWeek(tempStart, tempEnd, billSum, incomeSum));
-		for(int i = 0; i < listOfBills.size(); i++) {
-			results.add("       " + listOfBills.get(i));
-		}
-		return results;
 	}
 
-	private static Double calculateTransactions(LocalDate tempStart, LocalDate tempEnd, ListCollection listCollection, int week, ArrayList<String> listOfBills, ArrayList<String> results) {
-		ArrayList<MonthlyTransaction> listMonthly = listCollection.getListMonthly();
-		ArrayList<WeeklyTransaction> listWeekly = listCollection.getListWeekly();
-		ArrayList<OneTimeTransaction> listOneTime = listCollection.getListOneTime();
-		ArrayList<LimitedMonthlyTransaction> listLimited = listCollection.getListLimited();
-		Double sum = 0.0;
-		
+	private static Double calculateTransactions(LocalDate tempStart, LocalDate tempEnd, ListCollection listCollection, int week, ArrayList<OneTimeTransaction> tempResults) {
 		//Weekly
-		for(int i = 0; i < listWeekly.size(); i++) {
-			LocalDate tempDate = findNextDayOfWeekOccurance(tempStart, listWeekly.get(i).getDayOfWeek());
-			sum = foundDate(listWeekly.get(i), listOfBills, sum, tempDate);
+		for(int i = 0; i < listCollection.getListWeekly().size(); i++) {
+			LocalDate tempDate = findNextDayOfWeekOccurance(tempStart, listCollection.getListWeekly().get(i).getDayOfWeek());
+			foundDate(listCollection.getListWeekly().get(i), tempDate, tempResults);
 		}
 		//Monthly
-		for(int i = 0; i < listMonthly.size(); i++) {
-			sum = monthlyCalculator(listMonthly.get(i), listOfBills, tempStart, tempEnd, sum, listMonthly.get(i).getRecurringDate());
+		for(int i = 0; i < listCollection.getListMonthly().size(); i++) {
+			monthlyCalculator(listCollection.getListMonthly().get(i), tempStart, tempEnd, listCollection.getListMonthly().get(i).getRecurringDate(), tempResults);
 		}
 		//One Time
-		for(int i = 0; i < listOneTime.size(); i++) {
-			LocalDate date = listOneTime.get(i).getEndDate();
-			sum = dateComparison(listOneTime.get(i), date, listOfBills, tempStart, tempEnd, sum);
+		for(int i = 0; i < listCollection.getListOneTime().size(); i++) {
+			LocalDate date = listCollection.getListOneTime().get(i).getEndDate();
+			dateComparison(listCollection.getListOneTime().get(i), date, tempStart, tempEnd, tempResults);
 		}
 		//Limited Monthly
-		for(int i = 0; i < listLimited.size(); i++) {
-			sum = monthlyCalculator(listLimited.get(i), listOfBills, tempStart, tempEnd, sum, listLimited.get(i).getRecurringDate());
+		for(int i = 0; i < listCollection.getListLimited().size(); i++) {
+			if(listCollection.getListLimited().get(i).getEndDate().isAfter(tempStart.minusDays(1))) {
+				monthlyCalculator(listCollection.getListLimited().get(i), tempStart, tempEnd, listCollection.getListLimited().get(i).getRecurringDate(), tempResults);
+			}
 		}
 		
-		return sum;
+		return sumTransactions(tempResults);
 	}
 	
-	private static Double monthlyCalculator(Transaction bill, ArrayList<String> listOfBills, LocalDate tempStart, LocalDate tempEnd, Double sum, int recurringDate) {
-		LocalDate date = tempStart.withDayOfMonth(recurringDate);
-		sum = dateComparison(bill, date, listOfBills, tempStart, tempEnd, sum);
-		if(tempStart.getMonthValue() != tempEnd.getMonthValue()) {
-			date = LocalDate.from(date).plusMonths(1);
-			sum = dateComparison(bill, date, listOfBills, tempStart, tempEnd, sum);
+	private static Double sumTransactions(ArrayList<OneTimeTransaction> tempResults) {
+		Double sum = 0.0;
+		for(int i = 0; i < tempResults.size(); i++) {
+			sum += tempResults.get(i).getAmount();
 		}
 		return sum;
-	}
-	
-	private static Double dateComparison(Transaction bill, LocalDate date, ArrayList<String> listOfBills, LocalDate tempStart, LocalDate tempEnd, Double sum) {
-		if(date.isAfter(tempStart) && date.isBefore(tempEnd)) {
-			sum = foundDate(bill, listOfBills, sum, date);
-		}
-		else if(date.isEqual(tempStart) || date.isEqual(tempEnd)) {
-			sum = foundDate(bill, listOfBills, sum, date);
-		}
-		
-		return sum;
-	}
-	
-	private static Double foundDate(Transaction bill, ArrayList<String> listOfBills, Double sum, LocalDate tempDate) {
-		listOfBills.add(bill.getName() + " - " + bill.getAmount() + " - " + printDate(tempDate));
-		return sum += bill.getAmount();
 	}
 
-	private static String printWeek(LocalDate tempStart, LocalDate tempEnd, Double billSum, Double incomeSum) {
-		return printDate(tempStart) + " - " + printDate(tempEnd) + " " + String.format("\tbills:%.2f", billSum) + String.format("\tincome:%.2f", incomeSum) + String.format("\ttotal:%.2f", (incomeSum-billSum));
+	private static void monthlyCalculator(Transaction bill, LocalDate tempStart, LocalDate tempEnd, int recurringDate, ArrayList<OneTimeTransaction> tempResults) {
+		dateComparison(bill, tempStart.withDayOfMonth(recurringDate), tempStart, tempEnd, tempResults);
+		if(tempStart.getMonthValue() != tempEnd.getMonthValue()) {
+			dateComparison(bill, tempStart.withDayOfMonth(recurringDate).plusMonths(1), tempStart, tempEnd, tempResults);
+		}
+	}
+	
+	private static void dateComparison(Transaction bill, LocalDate date, LocalDate tempStart, LocalDate tempEnd, ArrayList<OneTimeTransaction> tempResults) {
+		if((date.isAfter(tempStart) && date.isBefore(tempEnd)) || date.isEqual(tempStart) || date.isEqual(tempEnd)) {
+			foundDate(bill, date, tempResults);
+		}
+	}
+	
+	private static void foundDate(Transaction bill, LocalDate tempDate, ArrayList<OneTimeTransaction> tempResults) {
+		tempResults.add(new OneTimeTransaction(bill.getName(), bill.getAmount(), tempDate));
+	}
+
+	private static String printWeek(LocalDate tempStart, LocalDate tempEnd, Double bills, Double incomes, Double total) {
+		return printDate(tempStart) + " - " + printDate(tempEnd) + " " + String.format("\tbills:%.2f", bills) + String.format("\tincome:%.2f", incomes) + String.format("\ttotal:%.2f", (incomes-bills)) + String.format("\tTOTAL:%.2f", total) ;
+		
 	}
 	
 	private static String printDate(LocalDate tempDate) {

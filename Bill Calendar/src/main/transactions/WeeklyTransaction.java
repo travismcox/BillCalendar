@@ -50,7 +50,7 @@ public class WeeklyTransaction extends Transaction {
 
 	@Override
 	public String toString() {
-		return "W" + super.toString() + '\n';
+		return "W" + super.toString() + dayOfWeek.getValue() + ' ' + '\n';
 	}
 	
 	public String listToString() {
