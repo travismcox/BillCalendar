@@ -1,4 +1,10 @@
-2020-04-17 - 2020-04-23 	bills:650.98	income:500.00	total:-150.98	TOTAL:-150.98
+2020-04-10 - 2020-04-16
+bills:256.79	income:500.00	remaining:243.21	TOTAL:243.21
+     Factor 77.0  2020/4/15
+     Broadway at the Bass2 179.79  2020/4/15
+     Allowance 500.0  2020/4/10
+2020-04-17 - 2020-04-23
+bills:650.98	income:500.00	remaining:-150.98	TOTAL:92.23
      Factor 77.0  2020/4/22
      Netflix DVD 21.64  2020/4/21
      Netflix 17.31  2020/4/17
@@ -8,22 +14,26 @@
      Affirm - Casper 208.83  2020/4/22
      iPhone Loan 60.37  2020/4/20
      Allowance 500.0  2020/4/17
-2020-04-24 - 2020-04-30 	bills:105.02	income:500.00	total:394.98	TOTAL:244.00
+2020-04-24 - 2020-04-30
+bills:105.02	income:500.00	remaining:394.98	TOTAL:487.21
      Factor 77.0  2020/4/29
      NYTimes 6.38  2020/4/24
      Alamo Season Pass 21.64  2020/4/26
      Allowance 500.0  2020/4/24
-2020-05-01 - 2020-05-07 	bills:597.40	income:500.00	total:-97.40	TOTAL:146.60
+2020-05-01 - 2020-05-07
+bills:597.40	income:500.00	remaining:-97.40	TOTAL:389.81
      Factor 77.0  2020/5/6
      AT&T 206.21  2020/5/4
      Green Mountain 135.0  2020/5/6
      Broadway at the Bass 179.19  2020/5/1
      Allowance 500.0  2020/5/1
-2020-05-08 - 2020-05-14 	bills:89.98	income:500.00	total:410.02	TOTAL:556.62
+2020-05-08 - 2020-05-14
+bills:89.98	income:500.00	remaining:410.02	TOTAL:799.83
      Factor 77.0  2020/5/13
      Hulu 12.98  2020/5/8
      Allowance 500.0  2020/5/8
-2020-05-15 - 2020-05-21 	bills:406.11	income:500.00	total:93.89	TOTAL:650.51
+2020-05-15 - 2020-05-21
+bills:406.11	income:500.00	remaining:93.89	TOTAL:893.72
      Factor 77.0  2020/5/20
      Netflix DVD 21.64  2020/5/21
      Netflix 17.31  2020/5/17
@@ -31,27 +41,32 @@
      Broadway at the Bass2 179.79  2020/5/15
      iPhone Loan 60.37  2020/5/20
      Allowance 500.0  2020/5/15
-2020-05-22 - 2020-05-28 	bills:320.85	income:500.00	total:179.15	TOTAL:829.66
+2020-05-22 - 2020-05-28
+bills:320.85	income:500.00	remaining:179.15	TOTAL:1072.87
      Factor 77.0  2020/5/27
      AT&T TV 95.0  2020/5/22
      NYTimes 6.38  2020/5/24
      Alamo Season Pass 21.64  2020/5/26
      Affirm - Giant 120.83  2020/5/22
      Allowance 500.0  2020/5/22
-2020-05-29 - 2020-06-04 	bills:283.21	income:500.00	total:216.79	TOTAL:1046.45
+2020-05-29 - 2020-06-04
+bills:283.21	income:500.00	remaining:216.79	TOTAL:1289.66
      Factor 77.0  2020/6/3
      AT&T 206.21  2020/6/4
      Allowance 500.0  2020/5/29
-2020-06-05 - 2020-06-11 	bills:224.98	income:500.00	total:275.02	TOTAL:1321.47
+2020-06-05 - 2020-06-11
+bills:224.98	income:500.00	remaining:275.02	TOTAL:1564.68
      Factor 77.0  2020/6/10
      Hulu 12.98  2020/6/8
      Green Mountain 135.0  2020/6/6
      Allowance 500.0  2020/6/5
-2020-06-12 - 2020-06-18 	bills:94.31	income:500.00	total:405.69	TOTAL:1727.16
+2020-06-12 - 2020-06-18
+bills:94.31	income:500.00	remaining:405.69	TOTAL:1970.37
      Factor 77.0  2020/6/17
      Netflix 17.31  2020/6/17
      Allowance 500.0  2020/6/12
-2020-06-19 - 2020-06-25 	bills:431.22	income:500.00	total:68.78	TOTAL:1795.94
+2020-06-19 - 2020-06-25
+bills:431.22	income:500.00	remaining:68.78	TOTAL:2039.15
      Factor 77.0  2020/6/24
      Netflix DVD 21.64  2020/6/21
      AT&T TV 95.0  2020/6/22
@@ -60,20 +75,24 @@
      Affirm - Giant 120.83  2020/6/22
      iPhone Loan 60.37  2020/6/20
      Allowance 500.0  2020/6/19
-2020-06-26 - 2020-07-02 	bills:98.64	income:500.00	total:401.36	TOTAL:2197.30
+2020-06-26 - 2020-07-02
+bills:98.64	income:500.00	remaining:401.36	TOTAL:2440.51
      Factor 77.0  2020/7/1
      Alamo Season Pass 21.64  2020/6/26
      Allowance 500.0  2020/6/26
-2020-07-03 - 2020-07-09 	bills:431.19	income:500.00	total:68.81	TOTAL:2266.11
+2020-07-03 - 2020-07-09
+bills:431.19	income:500.00	remaining:68.81	TOTAL:2509.32
      Factor 77.0  2020/7/8
      Hulu 12.98  2020/7/8
      AT&T 206.21  2020/7/4
      Green Mountain 135.0  2020/7/6
      Allowance 500.0  2020/7/3
-2020-07-10 - 2020-07-16 	bills:77.00	income:500.00	total:423.00	TOTAL:2689.11
+2020-07-10 - 2020-07-16
+bills:77.00	income:500.00	remaining:423.00	TOTAL:2932.32
      Factor 77.0  2020/7/15
      Allowance 500.0  2020/7/10
-2020-07-17 - 2020-07-23 	bills:442.15	income:500.00	total:57.85	TOTAL:2746.96
+2020-07-17 - 2020-07-23
+bills:442.15	income:500.00	remaining:57.85	TOTAL:2990.17
      Factor 77.0  2020/7/22
      Netflix DVD 21.64  2020/7/21
      Netflix 17.31  2020/7/17
@@ -82,27 +101,32 @@
      Affirm - Giant 120.83  2020/7/22
      iPhone Loan 60.37  2020/7/20
      Allowance 500.0  2020/7/17
-2020-07-24 - 2020-07-30 	bills:105.02	income:500.00	total:394.98	TOTAL:3141.94
+2020-07-24 - 2020-07-30
+bills:105.02	income:500.00	remaining:394.98	TOTAL:3385.15
      Factor 77.0  2020/7/29
      NYTimes 6.38  2020/7/24
      Alamo Season Pass 21.64  2020/7/26
      Allowance 500.0  2020/7/24
-2020-07-31 - 2020-08-06 	bills:418.21	income:500.00	total:81.79	TOTAL:3223.73
+2020-07-31 - 2020-08-06
+bills:418.21	income:500.00	remaining:81.79	TOTAL:3466.94
      Factor 77.0  2020/8/5
      AT&T 206.21  2020/8/4
      Green Mountain 135.0  2020/8/6
      Allowance 500.0  2020/7/31
-2020-08-07 - 2020-08-13 	bills:89.98	income:500.00	total:410.02	TOTAL:3633.75
+2020-08-07 - 2020-08-13
+bills:89.98	income:500.00	remaining:410.02	TOTAL:3876.96
      Factor 77.0  2020/8/12
      Hulu 12.98  2020/8/8
      Allowance 500.0  2020/8/7
-2020-08-14 - 2020-08-20 	bills:204.68	income:500.00	total:295.32	TOTAL:3929.07
+2020-08-14 - 2020-08-20
+bills:204.68	income:500.00	remaining:295.32	TOTAL:4172.28
      Factor 77.0  2020/8/19
      Netflix 17.31  2020/8/17
      Spectrum 50.0  2020/8/20
      iPhone Loan 60.37  2020/8/20
      Allowance 500.0  2020/8/14
-2020-08-21 - 2020-08-27 	bills:342.49	income:500.00	total:157.51	TOTAL:4086.58
+2020-08-21 - 2020-08-27
+bills:342.49	income:500.00	remaining:157.51	TOTAL:4329.79
      Factor 77.0  2020/8/26
      Netflix DVD 21.64  2020/8/21
      AT&T TV 95.0  2020/8/22
@@ -110,933 +134,3 @@
      Alamo Season Pass 21.64  2020/8/26
      Affirm - Giant 120.83  2020/8/22
      Allowance 500.0  2020/8/21
-2020-08-28 - 2020-09-03 	bills:77.00	income:500.00	total:423.00	TOTAL:4509.58
-     Factor 77.0  2020/9/2
-     Allowance 500.0  2020/8/28
-2020-09-04 - 2020-09-10 	bills:431.19	income:500.00	total:68.81	TOTAL:4578.39
-     Factor 77.0  2020/9/9
-     Hulu 12.98  2020/9/8
-     AT&T 206.21  2020/9/4
-     Green Mountain 135.0  2020/9/6
-     Allowance 500.0  2020/9/4
-2020-09-11 - 2020-09-17 	bills:94.31	income:500.00	total:405.69	TOTAL:4984.08
-     Factor 77.0  2020/9/16
-     Netflix 17.31  2020/9/17
-     Allowance 500.0  2020/9/11
-2020-09-18 - 2020-09-24 	bills:431.22	income:500.00	total:68.78	TOTAL:5052.86
-     Factor 77.0  2020/9/23
-     Netflix DVD 21.64  2020/9/21
-     AT&T TV 95.0  2020/9/22
-     Spectrum 50.0  2020/9/20
-     NYTimes 6.38  2020/9/24
-     Affirm - Giant 120.83  2020/9/22
-     iPhone Loan 60.37  2020/9/20
-     Allowance 500.0  2020/9/18
-2020-09-25 - 2020-10-01 	bills:98.64	income:500.00	total:401.36	TOTAL:5454.22
-     Factor 77.0  2020/9/30
-     Alamo Season Pass 21.64  2020/9/26
-     Allowance 500.0  2020/9/25
-2020-10-02 - 2020-10-08 	bills:431.19	income:500.00	total:68.81	TOTAL:5523.03
-     Factor 77.0  2020/10/7
-     Hulu 12.98  2020/10/8
-     AT&T 206.21  2020/10/4
-     Green Mountain 135.0  2020/10/6
-     Allowance 500.0  2020/10/2
-2020-10-09 - 2020-10-15 	bills:77.00	income:500.00	total:423.00	TOTAL:5946.03
-     Factor 77.0  2020/10/14
-     Allowance 500.0  2020/10/9
-2020-10-16 - 2020-10-22 	bills:442.15	income:500.00	total:57.85	TOTAL:6003.88
-     Factor 77.0  2020/10/21
-     Netflix DVD 21.64  2020/10/21
-     Netflix 17.31  2020/10/17
-     AT&T TV 95.0  2020/10/22
-     Spectrum 50.0  2020/10/20
-     Affirm - Giant 120.83  2020/10/22
-     iPhone Loan 60.37  2020/10/20
-     Allowance 500.0  2020/10/16
-2020-10-23 - 2020-10-29 	bills:105.02	income:500.00	total:394.98	TOTAL:6398.86
-     Factor 77.0  2020/10/28
-     NYTimes 6.38  2020/10/24
-     Alamo Season Pass 21.64  2020/10/26
-     Allowance 500.0  2020/10/23
-2020-10-30 - 2020-11-05 	bills:283.21	income:500.00	total:216.79	TOTAL:6615.65
-     Factor 77.0  2020/11/4
-     AT&T 206.21  2020/11/4
-     Allowance 500.0  2020/10/30
-2020-11-06 - 2020-11-12 	bills:224.98	income:500.00	total:275.02	TOTAL:6890.67
-     Factor 77.0  2020/11/11
-     Hulu 12.98  2020/11/8
-     Green Mountain 135.0  2020/11/6
-     Allowance 500.0  2020/11/6
-2020-11-13 - 2020-11-19 	bills:94.31	income:500.00	total:405.69	TOTAL:7296.36
-     Factor 77.0  2020/11/18
-     Netflix 17.31  2020/11/17
-     Allowance 500.0  2020/11/13
-2020-11-20 - 2020-11-26 	bills:332.03	income:500.00	total:167.97	TOTAL:7464.33
-     Factor 77.0  2020/11/25
-     Netflix DVD 21.64  2020/11/21
-     AT&T TV 95.0  2020/11/22
-     Spectrum 50.0  2020/11/20
-     NYTimes 6.38  2020/11/24
-     Alamo Season Pass 21.64  2020/11/26
-     iPhone Loan 60.37  2020/11/20
-     Allowance 500.0  2020/11/20
-2020-11-27 - 2020-12-03 	bills:77.00	income:500.00	total:423.00	TOTAL:7887.33
-     Factor 77.0  2020/12/2
-     Allowance 500.0  2020/11/27
-2020-12-04 - 2020-12-10 	bills:431.19	income:500.00	total:68.81	TOTAL:7956.14
-     Factor 77.0  2020/12/9
-     Hulu 12.98  2020/12/8
-     AT&T 206.21  2020/12/4
-     Green Mountain 135.0  2020/12/6
-     Allowance 500.0  2020/12/4
-2020-12-11 - 2020-12-17 	bills:94.31	income:500.00	total:405.69	TOTAL:8361.83
-     Factor 77.0  2020/12/16
-     Netflix 17.31  2020/12/17
-     Allowance 500.0  2020/12/11
-2020-12-18 - 2020-12-24 	bills:310.39	income:500.00	total:189.61	TOTAL:8551.44
-     Factor 77.0  2020/12/23
-     Netflix DVD 21.64  2020/12/21
-     AT&T TV 95.0  2020/12/22
-     Spectrum 50.0  2020/12/20
-     NYTimes 6.38  2020/12/24
-     iPhone Loan 60.37  2020/12/20
-     Allowance 500.0  2020/12/18
-2020-12-25 - 2020-12-31 	bills:98.64	income:500.00	total:401.36	TOTAL:8952.80
-     Factor 77.0  2020/12/30
-     Alamo Season Pass 21.64  2020/12/26
-     Allowance 500.0  2020/12/25
-2021-01-01 - 2021-01-07 	bills:418.21	income:500.00	total:81.79	TOTAL:9034.59
-     Factor 77.0  2021/1/6
-     AT&T 206.21  2021/1/4
-     Green Mountain 135.0  2021/1/6
-     Allowance 500.0  2021/1/1
-2021-01-08 - 2021-01-14 	bills:89.98	income:500.00	total:410.02	TOTAL:9444.61
-     Factor 77.0  2021/1/13
-     Hulu 12.98  2021/1/8
-     Allowance 500.0  2021/1/8
-2021-01-15 - 2021-01-21 	bills:226.32	income:500.00	total:273.68	TOTAL:9718.29
-     Factor 77.0  2021/1/20
-     Netflix DVD 21.64  2021/1/21
-     Netflix 17.31  2021/1/17
-     Spectrum 50.0  2021/1/20
-     iPhone Loan 60.37  2021/1/20
-     Allowance 500.0  2021/1/15
-2021-01-22 - 2021-01-28 	bills:200.02	income:500.00	total:299.98	TOTAL:10018.27
-     Factor 77.0  2021/1/27
-     AT&T TV 95.0  2021/1/22
-     NYTimes 6.38  2021/1/24
-     Alamo Season Pass 21.64  2021/1/26
-     Allowance 500.0  2021/1/22
-2021-01-29 - 2021-02-04 	bills:283.21	income:500.00	total:216.79	TOTAL:10235.06
-     Factor 77.0  2021/2/3
-     AT&T 206.21  2021/2/4
-     Allowance 500.0  2021/1/29
-2021-02-05 - 2021-02-11 	bills:224.98	income:500.00	total:275.02	TOTAL:10510.08
-     Factor 77.0  2021/2/10
-     Hulu 12.98  2021/2/8
-     Green Mountain 135.0  2021/2/6
-     Allowance 500.0  2021/2/5
-2021-02-12 - 2021-02-18 	bills:94.31	income:500.00	total:405.69	TOTAL:10915.77
-     Factor 77.0  2021/2/17
-     Netflix 17.31  2021/2/17
-     Allowance 500.0  2021/2/12
-2021-02-19 - 2021-02-25 	bills:310.39	income:500.00	total:189.61	TOTAL:11105.38
-     Factor 77.0  2021/2/24
-     Netflix DVD 21.64  2021/2/21
-     AT&T TV 95.0  2021/2/22
-     Spectrum 50.0  2021/2/20
-     NYTimes 6.38  2021/2/24
-     iPhone Loan 60.37  2021/2/20
-     Allowance 500.0  2021/2/19
-2021-02-26 - 2021-03-04 	bills:304.85	income:500.00	total:195.15	TOTAL:11300.53
-     Factor 77.0  2021/3/3
-     AT&T 206.21  2021/3/4
-     Alamo Season Pass 21.64  2021/2/26
-     Allowance 500.0  2021/2/26
-2021-03-05 - 2021-03-11 	bills:224.98	income:500.00	total:275.02	TOTAL:11575.55
-     Factor 77.0  2021/3/10
-     Hulu 12.98  2021/3/8
-     Green Mountain 135.0  2021/3/6
-     Allowance 500.0  2021/3/5
-2021-03-12 - 2021-03-18 	bills:94.31	income:500.00	total:405.69	TOTAL:11981.24
-     Factor 77.0  2021/3/17
-     Netflix 17.31  2021/3/17
-     Allowance 500.0  2021/3/12
-2021-03-19 - 2021-03-25 	bills:310.39	income:500.00	total:189.61	TOTAL:12170.85
-     Factor 77.0  2021/3/24
-     Netflix DVD 21.64  2021/3/21
-     AT&T TV 95.0  2021/3/22
-     Spectrum 50.0  2021/3/20
-     NYTimes 6.38  2021/3/24
-     iPhone Loan 60.37  2021/3/20
-     Allowance 500.0  2021/3/19
-2021-03-26 - 2021-04-01 	bills:98.64	income:500.00	total:401.36	TOTAL:12572.21
-     Factor 77.0  2021/3/31
-     Alamo Season Pass 21.64  2021/3/26
-     Allowance 500.0  2021/3/26
-2021-04-02 - 2021-04-08 	bills:431.19	income:500.00	total:68.81	TOTAL:12641.02
-     Factor 77.0  2021/4/7
-     Hulu 12.98  2021/4/8
-     AT&T 206.21  2021/4/4
-     Green Mountain 135.0  2021/4/6
-     Allowance 500.0  2021/4/2
-2021-04-09 - 2021-04-15 	bills:77.00	income:500.00	total:423.00	TOTAL:13064.02
-     Factor 77.0  2021/4/14
-     Allowance 500.0  2021/4/9
-2021-04-16 - 2021-04-22 	bills:321.32	income:500.00	total:178.68	TOTAL:13242.70
-     Factor 77.0  2021/4/21
-     Netflix DVD 21.64  2021/4/21
-     Netflix 17.31  2021/4/17
-     AT&T TV 95.0  2021/4/22
-     Spectrum 50.0  2021/4/20
-     iPhone Loan 60.37  2021/4/20
-     Allowance 500.0  2021/4/16
-2021-04-23 - 2021-04-29 	bills:105.02	income:500.00	total:394.98	TOTAL:13637.68
-     Factor 77.0  2021/4/28
-     NYTimes 6.38  2021/4/24
-     Alamo Season Pass 21.64  2021/4/26
-     Allowance 500.0  2021/4/23
-2021-04-30 - 2021-05-06 	bills:418.21	income:500.00	total:81.79	TOTAL:13719.47
-     Factor 77.0  2021/5/5
-     AT&T 206.21  2021/5/4
-     Green Mountain 135.0  2021/5/6
-     Allowance 500.0  2021/4/30
-2021-05-07 - 2021-05-13 	bills:89.98	income:500.00	total:410.02	TOTAL:14129.49
-     Factor 77.0  2021/5/12
-     Hulu 12.98  2021/5/8
-     Allowance 500.0  2021/5/7
-2021-05-14 - 2021-05-20 	bills:204.68	income:500.00	total:295.32	TOTAL:14424.81
-     Factor 77.0  2021/5/19
-     Netflix 17.31  2021/5/17
-     Spectrum 50.0  2021/5/20
-     iPhone Loan 60.37  2021/5/20
-     Allowance 500.0  2021/5/14
-2021-05-21 - 2021-05-27 	bills:221.66	income:500.00	total:278.34	TOTAL:14703.15
-     Factor 77.0  2021/5/26
-     Netflix DVD 21.64  2021/5/21
-     AT&T TV 95.0  2021/5/22
-     NYTimes 6.38  2021/5/24
-     Alamo Season Pass 21.64  2021/5/26
-     Allowance 500.0  2021/5/21
-2021-05-28 - 2021-06-03 	bills:77.00	income:500.00	total:423.00	TOTAL:15126.15
-     Factor 77.0  2021/6/2
-     Allowance 500.0  2021/5/28
-2021-06-04 - 2021-06-10 	bills:431.19	income:500.00	total:68.81	TOTAL:15194.96
-     Factor 77.0  2021/6/9
-     Hulu 12.98  2021/6/8
-     AT&T 206.21  2021/6/4
-     Green Mountain 135.0  2021/6/6
-     Allowance 500.0  2021/6/4
-2021-06-11 - 2021-06-17 	bills:94.31	income:500.00	total:405.69	TOTAL:15600.65
-     Factor 77.0  2021/6/16
-     Netflix 17.31  2021/6/17
-     Allowance 500.0  2021/6/11
-2021-06-18 - 2021-06-24 	bills:310.39	income:500.00	total:189.61	TOTAL:15790.26
-     Factor 77.0  2021/6/23
-     Netflix DVD 21.64  2021/6/21
-     AT&T TV 95.0  2021/6/22
-     Spectrum 50.0  2021/6/20
-     NYTimes 6.38  2021/6/24
-     iPhone Loan 60.37  2021/6/20
-     Allowance 500.0  2021/6/18
-2021-06-25 - 2021-07-01 	bills:98.64	income:500.00	total:401.36	TOTAL:16191.62
-     Factor 77.0  2021/6/30
-     Alamo Season Pass 21.64  2021/6/26
-     Allowance 500.0  2021/6/25
-2021-07-02 - 2021-07-08 	bills:431.19	income:500.00	total:68.81	TOTAL:16260.43
-     Factor 77.0  2021/7/7
-     Hulu 12.98  2021/7/8
-     AT&T 206.21  2021/7/4
-     Green Mountain 135.0  2021/7/6
-     Allowance 500.0  2021/7/2
-2021-07-09 - 2021-07-15 	bills:77.00	income:500.00	total:423.00	TOTAL:16683.43
-     Factor 77.0  2021/7/14
-     Allowance 500.0  2021/7/9
-2021-07-16 - 2021-07-22 	bills:321.32	income:500.00	total:178.68	TOTAL:16862.11
-     Factor 77.0  2021/7/21
-     Netflix DVD 21.64  2021/7/21
-     Netflix 17.31  2021/7/17
-     AT&T TV 95.0  2021/7/22
-     Spectrum 50.0  2021/7/20
-     iPhone Loan 60.37  2021/7/20
-     Allowance 500.0  2021/7/16
-2021-07-23 - 2021-07-29 	bills:105.02	income:500.00	total:394.98	TOTAL:17257.09
-     Factor 77.0  2021/7/28
-     NYTimes 6.38  2021/7/24
-     Alamo Season Pass 21.64  2021/7/26
-     Allowance 500.0  2021/7/23
-2021-07-30 - 2021-08-05 	bills:283.21	income:500.00	total:216.79	TOTAL:17473.88
-     Factor 77.0  2021/8/4
-     AT&T 206.21  2021/8/4
-     Allowance 500.0  2021/7/30
-2021-08-06 - 2021-08-12 	bills:224.98	income:500.00	total:275.02	TOTAL:17748.90
-     Factor 77.0  2021/8/11
-     Hulu 12.98  2021/8/8
-     Green Mountain 135.0  2021/8/6
-     Allowance 500.0  2021/8/6
-2021-08-13 - 2021-08-19 	bills:94.31	income:500.00	total:405.69	TOTAL:18154.59
-     Factor 77.0  2021/8/18
-     Netflix 17.31  2021/8/17
-     Allowance 500.0  2021/8/13
-2021-08-20 - 2021-08-26 	bills:332.03	income:500.00	total:167.97	TOTAL:18322.56
-     Factor 77.0  2021/8/25
-     Netflix DVD 21.64  2021/8/21
-     AT&T TV 95.0  2021/8/22
-     Spectrum 50.0  2021/8/20
-     NYTimes 6.38  2021/8/24
-     Alamo Season Pass 21.64  2021/8/26
-     iPhone Loan 60.37  2021/8/20
-     Allowance 500.0  2021/8/20
-2021-08-27 - 2021-09-02 	bills:77.00	income:500.00	total:423.00	TOTAL:18745.56
-     Factor 77.0  2021/9/1
-     Allowance 500.0  2021/8/27
-2021-09-03 - 2021-09-09 	bills:431.19	income:500.00	total:68.81	TOTAL:18814.37
-     Factor 77.0  2021/9/8
-     Hulu 12.98  2021/9/8
-     AT&T 206.21  2021/9/4
-     Green Mountain 135.0  2021/9/6
-     Allowance 500.0  2021/9/3
-2021-09-10 - 2021-09-16 	bills:77.00	income:500.00	total:423.00	TOTAL:19237.37
-     Factor 77.0  2021/9/15
-     Allowance 500.0  2021/9/10
-2021-09-17 - 2021-09-23 	bills:321.32	income:500.00	total:178.68	TOTAL:19416.05
-     Factor 77.0  2021/9/22
-     Netflix DVD 21.64  2021/9/21
-     Netflix 17.31  2021/9/17
-     AT&T TV 95.0  2021/9/22
-     Spectrum 50.0  2021/9/20
-     iPhone Loan 60.37  2021/9/20
-     Allowance 500.0  2021/9/17
-2021-09-24 - 2021-09-30 	bills:105.02	income:500.00	total:394.98	TOTAL:19811.03
-     Factor 77.0  2021/9/29
-     NYTimes 6.38  2021/9/24
-     Alamo Season Pass 21.64  2021/9/26
-     Allowance 500.0  2021/9/24
-2021-10-01 - 2021-10-07 	bills:418.21	income:500.00	total:81.79	TOTAL:19892.82
-     Factor 77.0  2021/10/6
-     AT&T 206.21  2021/10/4
-     Green Mountain 135.0  2021/10/6
-     Allowance 500.0  2021/10/1
-2021-10-08 - 2021-10-14 	bills:89.98	income:500.00	total:410.02	TOTAL:20302.84
-     Factor 77.0  2021/10/13
-     Hulu 12.98  2021/10/8
-     Allowance 500.0  2021/10/8
-2021-10-15 - 2021-10-21 	bills:165.95	income:500.00	total:334.05	TOTAL:20636.89
-     Factor 77.0  2021/10/20
-     Netflix DVD 21.64  2021/10/21
-     Netflix 17.31  2021/10/17
-     Spectrum 50.0  2021/10/20
-     Allowance 500.0  2021/10/15
-2021-10-22 - 2021-10-28 	bills:200.02	income:500.00	total:299.98	TOTAL:20936.87
-     Factor 77.0  2021/10/27
-     AT&T TV 95.0  2021/10/22
-     NYTimes 6.38  2021/10/24
-     Alamo Season Pass 21.64  2021/10/26
-     Allowance 500.0  2021/10/22
-2021-10-29 - 2021-11-04 	bills:283.21	income:500.00	total:216.79	TOTAL:21153.66
-     Factor 77.0  2021/11/3
-     AT&T 206.21  2021/11/4
-     Allowance 500.0  2021/10/29
-2021-11-05 - 2021-11-11 	bills:224.98	income:500.00	total:275.02	TOTAL:21428.68
-     Factor 77.0  2021/11/10
-     Hulu 12.98  2021/11/8
-     Green Mountain 135.0  2021/11/6
-     Allowance 500.0  2021/11/5
-2021-11-12 - 2021-11-18 	bills:94.31	income:500.00	total:405.69	TOTAL:21834.37
-     Factor 77.0  2021/11/17
-     Netflix 17.31  2021/11/17
-     Allowance 500.0  2021/11/12
-2021-11-19 - 2021-11-25 	bills:250.02	income:500.00	total:249.98	TOTAL:22084.35
-     Factor 77.0  2021/11/24
-     Netflix DVD 21.64  2021/11/21
-     AT&T TV 95.0  2021/11/22
-     Spectrum 50.0  2021/11/20
-     NYTimes 6.38  2021/11/24
-     Allowance 500.0  2021/11/19
-2021-11-26 - 2021-12-02 	bills:98.64	income:500.00	total:401.36	TOTAL:22485.71
-     Factor 77.0  2021/12/1
-     Alamo Season Pass 21.64  2021/11/26
-     Allowance 500.0  2021/11/26
-2021-12-03 - 2021-12-09 	bills:431.19	income:500.00	total:68.81	TOTAL:22554.52
-     Factor 77.0  2021/12/8
-     Hulu 12.98  2021/12/8
-     AT&T 206.21  2021/12/4
-     Green Mountain 135.0  2021/12/6
-     Allowance 500.0  2021/12/3
-2021-12-10 - 2021-12-16 	bills:77.00	income:500.00	total:423.00	TOTAL:22977.52
-     Factor 77.0  2021/12/15
-     Allowance 500.0  2021/12/10
-2021-12-17 - 2021-12-23 	bills:260.95	income:500.00	total:239.05	TOTAL:23216.57
-     Factor 77.0  2021/12/22
-     Netflix DVD 21.64  2021/12/21
-     Netflix 17.31  2021/12/17
-     AT&T TV 95.0  2021/12/22
-     Spectrum 50.0  2021/12/20
-     Allowance 500.0  2021/12/17
-2021-12-24 - 2021-12-30 	bills:105.02	income:500.00	total:394.98	TOTAL:23611.55
-     Factor 77.0  2021/12/29
-     NYTimes 6.38  2021/12/24
-     Alamo Season Pass 21.64  2021/12/26
-     Allowance 500.0  2021/12/24
-2021-12-31 - 2022-01-06 	bills:418.21	income:500.00	total:81.79	TOTAL:23693.34
-     Factor 77.0  2022/1/5
-     AT&T 206.21  2022/1/4
-     Green Mountain 135.0  2022/1/6
-     Allowance 500.0  2021/12/31
-2022-01-07 - 2022-01-13 	bills:89.98	income:500.00	total:410.02	TOTAL:24103.36
-     Factor 77.0  2022/1/12
-     Hulu 12.98  2022/1/8
-     Allowance 500.0  2022/1/7
-2022-01-14 - 2022-01-20 	bills:144.31	income:500.00	total:355.69	TOTAL:24459.05
-     Factor 77.0  2022/1/19
-     Netflix 17.31  2022/1/17
-     Spectrum 50.0  2022/1/20
-     Allowance 500.0  2022/1/14
-2022-01-21 - 2022-01-27 	bills:221.66	income:500.00	total:278.34	TOTAL:24737.39
-     Factor 77.0  2022/1/26
-     Netflix DVD 21.64  2022/1/21
-     AT&T TV 95.0  2022/1/22
-     NYTimes 6.38  2022/1/24
-     Alamo Season Pass 21.64  2022/1/26
-     Allowance 500.0  2022/1/21
-2022-01-28 - 2022-02-03 	bills:77.00	income:500.00	total:423.00	TOTAL:25160.39
-     Factor 77.0  2022/2/2
-     Allowance 500.0  2022/1/28
-2022-02-04 - 2022-02-10 	bills:431.19	income:500.00	total:68.81	TOTAL:25229.20
-     Factor 77.0  2022/2/9
-     Hulu 12.98  2022/2/8
-     AT&T 206.21  2022/2/4
-     Green Mountain 135.0  2022/2/6
-     Allowance 500.0  2022/2/4
-2022-02-11 - 2022-02-17 	bills:94.31	income:500.00	total:405.69	TOTAL:25634.89
-     Factor 77.0  2022/2/16
-     Netflix 17.31  2022/2/17
-     Allowance 500.0  2022/2/11
-2022-02-18 - 2022-02-24 	bills:250.02	income:500.00	total:249.98	TOTAL:25884.87
-     Factor 77.0  2022/2/23
-     Netflix DVD 21.64  2022/2/21
-     AT&T TV 95.0  2022/2/22
-     Spectrum 50.0  2022/2/20
-     NYTimes 6.38  2022/2/24
-     Allowance 500.0  2022/2/18
-2022-02-25 - 2022-03-03 	bills:98.64	income:500.00	total:401.36	TOTAL:26286.23
-     Factor 77.0  2022/3/2
-     Alamo Season Pass 21.64  2022/2/26
-     Allowance 500.0  2022/2/25
-2022-03-04 - 2022-03-10 	bills:431.19	income:500.00	total:68.81	TOTAL:26355.04
-     Factor 77.0  2022/3/9
-     Hulu 12.98  2022/3/8
-     AT&T 206.21  2022/3/4
-     Green Mountain 135.0  2022/3/6
-     Allowance 500.0  2022/3/4
-2022-03-11 - 2022-03-17 	bills:94.31	income:500.00	total:405.69	TOTAL:26760.73
-     Factor 77.0  2022/3/16
-     Netflix 17.31  2022/3/17
-     Allowance 500.0  2022/3/11
-2022-03-18 - 2022-03-24 	bills:250.02	income:500.00	total:249.98	TOTAL:27010.71
-     Factor 77.0  2022/3/23
-     Netflix DVD 21.64  2022/3/21
-     AT&T TV 95.0  2022/3/22
-     Spectrum 50.0  2022/3/20
-     NYTimes 6.38  2022/3/24
-     Allowance 500.0  2022/3/18
-2022-03-25 - 2022-03-31 	bills:98.64	income:500.00	total:401.36	TOTAL:27412.07
-     Factor 77.0  2022/3/30
-     Alamo Season Pass 21.64  2022/3/26
-     Allowance 500.0  2022/3/25
-2022-04-01 - 2022-04-07 	bills:418.21	income:500.00	total:81.79	TOTAL:27493.86
-     Factor 77.0  2022/4/6
-     AT&T 206.21  2022/4/4
-     Green Mountain 135.0  2022/4/6
-     Allowance 500.0  2022/4/1
-2022-04-08 - 2022-04-14 	bills:89.98	income:500.00	total:410.02	TOTAL:27903.88
-     Factor 77.0  2022/4/13
-     Hulu 12.98  2022/4/8
-     Allowance 500.0  2022/4/8
-2022-04-15 - 2022-04-21 	bills:165.95	income:500.00	total:334.05	TOTAL:28237.93
-     Factor 77.0  2022/4/20
-     Netflix DVD 21.64  2022/4/21
-     Netflix 17.31  2022/4/17
-     Spectrum 50.0  2022/4/20
-     Allowance 500.0  2022/4/15
-2022-04-22 - 2022-04-28 	bills:200.02	income:500.00	total:299.98	TOTAL:28537.91
-     Factor 77.0  2022/4/27
-     AT&T TV 95.0  2022/4/22
-     NYTimes 6.38  2022/4/24
-     Alamo Season Pass 21.64  2022/4/26
-     Allowance 500.0  2022/4/22
-2022-04-29 - 2022-05-05 	bills:283.21	income:500.00	total:216.79	TOTAL:28754.70
-     Factor 77.0  2022/5/4
-     AT&T 206.21  2022/5/4
-     Allowance 500.0  2022/4/29
-2022-05-06 - 2022-05-12 	bills:224.98	income:500.00	total:275.02	TOTAL:29029.72
-     Factor 77.0  2022/5/11
-     Hulu 12.98  2022/5/8
-     Green Mountain 135.0  2022/5/6
-     Allowance 500.0  2022/5/6
-2022-05-13 - 2022-05-19 	bills:94.31	income:500.00	total:405.69	TOTAL:29435.41
-     Factor 77.0  2022/5/18
-     Netflix 17.31  2022/5/17
-     Allowance 500.0  2022/5/13
-2022-05-20 - 2022-05-26 	bills:271.66	income:500.00	total:228.34	TOTAL:29663.75
-     Factor 77.0  2022/5/25
-     Netflix DVD 21.64  2022/5/21
-     AT&T TV 95.0  2022/5/22
-     Spectrum 50.0  2022/5/20
-     NYTimes 6.38  2022/5/24
-     Alamo Season Pass 21.64  2022/5/26
-     Allowance 500.0  2022/5/20
-2022-05-27 - 2022-06-02 	bills:77.00	income:500.00	total:423.00	TOTAL:30086.75
-     Factor 77.0  2022/6/1
-     Allowance 500.0  2022/5/27
-2022-06-03 - 2022-06-09 	bills:431.19	income:500.00	total:68.81	TOTAL:30155.56
-     Factor 77.0  2022/6/8
-     Hulu 12.98  2022/6/8
-     AT&T 206.21  2022/6/4
-     Green Mountain 135.0  2022/6/6
-     Allowance 500.0  2022/6/3
-2022-06-10 - 2022-06-16 	bills:77.00	income:500.00	total:423.00	TOTAL:30578.56
-     Factor 77.0  2022/6/15
-     Allowance 500.0  2022/6/10
-2022-06-17 - 2022-06-23 	bills:260.95	income:500.00	total:239.05	TOTAL:30817.61
-     Factor 77.0  2022/6/22
-     Netflix DVD 21.64  2022/6/21
-     Netflix 17.31  2022/6/17
-     AT&T TV 95.0  2022/6/22
-     Spectrum 50.0  2022/6/20
-     Allowance 500.0  2022/6/17
-2022-06-24 - 2022-06-30 	bills:105.02	income:500.00	total:394.98	TOTAL:31212.59
-     Factor 77.0  2022/6/29
-     NYTimes 6.38  2022/6/24
-     Alamo Season Pass 21.64  2022/6/26
-     Allowance 500.0  2022/6/24
-2022-07-01 - 2022-07-07 	bills:418.21	income:500.00	total:81.79	TOTAL:31294.38
-     Factor 77.0  2022/7/6
-     AT&T 206.21  2022/7/4
-     Green Mountain 135.0  2022/7/6
-     Allowance 500.0  2022/7/1
-2022-07-08 - 2022-07-14 	bills:89.98	income:500.00	total:410.02	TOTAL:31704.40
-     Factor 77.0  2022/7/13
-     Hulu 12.98  2022/7/8
-     Allowance 500.0  2022/7/8
-2022-07-15 - 2022-07-21 	bills:165.95	income:500.00	total:334.05	TOTAL:32038.45
-     Factor 77.0  2022/7/20
-     Netflix DVD 21.64  2022/7/21
-     Netflix 17.31  2022/7/17
-     Spectrum 50.0  2022/7/20
-     Allowance 500.0  2022/7/15
-2022-07-22 - 2022-07-28 	bills:200.02	income:500.00	total:299.98	TOTAL:32338.43
-     Factor 77.0  2022/7/27
-     AT&T TV 95.0  2022/7/22
-     NYTimes 6.38  2022/7/24
-     Alamo Season Pass 21.64  2022/7/26
-     Allowance 500.0  2022/7/22
-2022-07-29 - 2022-08-04 	bills:283.21	income:500.00	total:216.79	TOTAL:32555.22
-     Factor 77.0  2022/8/3
-     AT&T 206.21  2022/8/4
-     Allowance 500.0  2022/7/29
-2022-08-05 - 2022-08-11 	bills:224.98	income:500.00	total:275.02	TOTAL:32830.24
-     Factor 77.0  2022/8/10
-     Hulu 12.98  2022/8/8
-     Green Mountain 135.0  2022/8/6
-     Allowance 500.0  2022/8/5
-2022-08-12 - 2022-08-18 	bills:94.31	income:500.00	total:405.69	TOTAL:33235.93
-     Factor 77.0  2022/8/17
-     Netflix 17.31  2022/8/17
-     Allowance 500.0  2022/8/12
-2022-08-19 - 2022-08-25 	bills:250.02	income:500.00	total:249.98	TOTAL:33485.91
-     Factor 77.0  2022/8/24
-     Netflix DVD 21.64  2022/8/21
-     AT&T TV 95.0  2022/8/22
-     Spectrum 50.0  2022/8/20
-     NYTimes 6.38  2022/8/24
-     Allowance 500.0  2022/8/19
-2022-08-26 - 2022-09-01 	bills:98.64	income:500.00	total:401.36	TOTAL:33887.27
-     Factor 77.0  2022/8/31
-     Alamo Season Pass 21.64  2022/8/26
-     Allowance 500.0  2022/8/26
-2022-09-02 - 2022-09-08 	bills:431.19	income:500.00	total:68.81	TOTAL:33956.08
-     Factor 77.0  2022/9/7
-     Hulu 12.98  2022/9/8
-     AT&T 206.21  2022/9/4
-     Green Mountain 135.0  2022/9/6
-     Allowance 500.0  2022/9/2
-2022-09-09 - 2022-09-15 	bills:77.00	income:500.00	total:423.00	TOTAL:34379.08
-     Factor 77.0  2022/9/14
-     Allowance 500.0  2022/9/9
-2022-09-16 - 2022-09-22 	bills:260.95	income:500.00	total:239.05	TOTAL:34618.13
-     Factor 77.0  2022/9/21
-     Netflix DVD 21.64  2022/9/21
-     Netflix 17.31  2022/9/17
-     AT&T TV 95.0  2022/9/22
-     Spectrum 50.0  2022/9/20
-     Allowance 500.0  2022/9/16
-2022-09-23 - 2022-09-29 	bills:105.02	income:500.00	total:394.98	TOTAL:35013.11
-     Factor 77.0  2022/9/28
-     NYTimes 6.38  2022/9/24
-     Alamo Season Pass 21.64  2022/9/26
-     Allowance 500.0  2022/9/23
-2022-09-30 - 2022-10-06 	bills:418.21	income:500.00	total:81.79	TOTAL:35094.90
-     Factor 77.0  2022/10/5
-     AT&T 206.21  2022/10/4
-     Green Mountain 135.0  2022/10/6
-     Allowance 500.0  2022/9/30
-2022-10-07 - 2022-10-13 	bills:89.98	income:500.00	total:410.02	TOTAL:35504.92
-     Factor 77.0  2022/10/12
-     Hulu 12.98  2022/10/8
-     Allowance 500.0  2022/10/7
-2022-10-14 - 2022-10-20 	bills:144.31	income:500.00	total:355.69	TOTAL:35860.61
-     Factor 77.0  2022/10/19
-     Netflix 17.31  2022/10/17
-     Spectrum 50.0  2022/10/20
-     Allowance 500.0  2022/10/14
-2022-10-21 - 2022-10-27 	bills:221.66	income:500.00	total:278.34	TOTAL:36138.95
-     Factor 77.0  2022/10/26
-     Netflix DVD 21.64  2022/10/21
-     AT&T TV 95.0  2022/10/22
-     NYTimes 6.38  2022/10/24
-     Alamo Season Pass 21.64  2022/10/26
-     Allowance 500.0  2022/10/21
-2022-10-28 - 2022-11-03 	bills:77.00	income:500.00	total:423.00	TOTAL:36561.95
-     Factor 77.0  2022/11/2
-     Allowance 500.0  2022/10/28
-2022-11-04 - 2022-11-10 	bills:431.19	income:500.00	total:68.81	TOTAL:36630.76
-     Factor 77.0  2022/11/9
-     Hulu 12.98  2022/11/8
-     AT&T 206.21  2022/11/4
-     Green Mountain 135.0  2022/11/6
-     Allowance 500.0  2022/11/4
-2022-11-11 - 2022-11-17 	bills:94.31	income:500.00	total:405.69	TOTAL:37036.45
-     Factor 77.0  2022/11/16
-     Netflix 17.31  2022/11/17
-     Allowance 500.0  2022/11/11
-2022-11-18 - 2022-11-24 	bills:250.02	income:500.00	total:249.98	TOTAL:37286.43
-     Factor 77.0  2022/11/23
-     Netflix DVD 21.64  2022/11/21
-     AT&T TV 95.0  2022/11/22
-     Spectrum 50.0  2022/11/20
-     NYTimes 6.38  2022/11/24
-     Allowance 500.0  2022/11/18
-2022-11-25 - 2022-12-01 	bills:98.64	income:500.00	total:401.36	TOTAL:37687.79
-     Factor 77.0  2022/11/30
-     Alamo Season Pass 21.64  2022/11/26
-     Allowance 500.0  2022/11/25
-2022-12-02 - 2022-12-08 	bills:431.19	income:500.00	total:68.81	TOTAL:37756.60
-     Factor 77.0  2022/12/7
-     Hulu 12.98  2022/12/8
-     AT&T 206.21  2022/12/4
-     Green Mountain 135.0  2022/12/6
-     Allowance 500.0  2022/12/2
-2022-12-09 - 2022-12-15 	bills:77.00	income:500.00	total:423.00	TOTAL:38179.60
-     Factor 77.0  2022/12/14
-     Allowance 500.0  2022/12/9
-2022-12-16 - 2022-12-22 	bills:260.95	income:500.00	total:239.05	TOTAL:38418.65
-     Factor 77.0  2022/12/21
-     Netflix DVD 21.64  2022/12/21
-     Netflix 17.31  2022/12/17
-     AT&T TV 95.0  2022/12/22
-     Spectrum 50.0  2022/12/20
-     Allowance 500.0  2022/12/16
-2022-12-23 - 2022-12-29 	bills:105.02	income:500.00	total:394.98	TOTAL:38813.63
-     Factor 77.0  2022/12/28
-     NYTimes 6.38  2022/12/24
-     Alamo Season Pass 21.64  2022/12/26
-     Allowance 500.0  2022/12/23
-2022-12-30 - 2023-01-05 	bills:283.21	income:500.00	total:216.79	TOTAL:39030.42
-     Factor 77.0  2023/1/4
-     AT&T 206.21  2023/1/4
-     Allowance 500.0  2022/12/30
-2023-01-06 - 2023-01-12 	bills:224.98	income:500.00	total:275.02	TOTAL:39305.44
-     Factor 77.0  2023/1/11
-     Hulu 12.98  2023/1/8
-     Green Mountain 135.0  2023/1/6
-     Allowance 500.0  2023/1/6
-2023-01-13 - 2023-01-19 	bills:94.31	income:500.00	total:405.69	TOTAL:39711.13
-     Factor 77.0  2023/1/18
-     Netflix 17.31  2023/1/17
-     Allowance 500.0  2023/1/13
-2023-01-20 - 2023-01-26 	bills:271.66	income:500.00	total:228.34	TOTAL:39939.47
-     Factor 77.0  2023/1/25
-     Netflix DVD 21.64  2023/1/21
-     AT&T TV 95.0  2023/1/22
-     Spectrum 50.0  2023/1/20
-     NYTimes 6.38  2023/1/24
-     Alamo Season Pass 21.64  2023/1/26
-     Allowance 500.0  2023/1/20
-2023-01-27 - 2023-02-02 	bills:77.00	income:500.00	total:423.00	TOTAL:40362.47
-     Factor 77.0  2023/2/1
-     Allowance 500.0  2023/1/27
-2023-02-03 - 2023-02-09 	bills:431.19	income:500.00	total:68.81	TOTAL:40431.28
-     Factor 77.0  2023/2/8
-     Hulu 12.98  2023/2/8
-     AT&T 206.21  2023/2/4
-     Green Mountain 135.0  2023/2/6
-     Allowance 500.0  2023/2/3
-2023-02-10 - 2023-02-16 	bills:77.00	income:500.00	total:423.00	TOTAL:40854.28
-     Factor 77.0  2023/2/15
-     Allowance 500.0  2023/2/10
-2023-02-17 - 2023-02-23 	bills:260.95	income:500.00	total:239.05	TOTAL:41093.33
-     Factor 77.0  2023/2/22
-     Netflix DVD 21.64  2023/2/21
-     Netflix 17.31  2023/2/17
-     AT&T TV 95.0  2023/2/22
-     Spectrum 50.0  2023/2/20
-     Allowance 500.0  2023/2/17
-2023-02-24 - 2023-03-02 	bills:105.02	income:500.00	total:394.98	TOTAL:41488.31
-     Factor 77.0  2023/3/1
-     NYTimes 6.38  2023/2/24
-     Alamo Season Pass 21.64  2023/2/26
-     Allowance 500.0  2023/2/24
-2023-03-03 - 2023-03-09 	bills:431.19	income:500.00	total:68.81	TOTAL:41557.12
-     Factor 77.0  2023/3/8
-     Hulu 12.98  2023/3/8
-     AT&T 206.21  2023/3/4
-     Green Mountain 135.0  2023/3/6
-     Allowance 500.0  2023/3/3
-2023-03-10 - 2023-03-16 	bills:77.00	income:500.00	total:423.00	TOTAL:41980.12
-     Factor 77.0  2023/3/15
-     Allowance 500.0  2023/3/10
-2023-03-17 - 2023-03-23 	bills:260.95	income:500.00	total:239.05	TOTAL:42219.17
-     Factor 77.0  2023/3/22
-     Netflix DVD 21.64  2023/3/21
-     Netflix 17.31  2023/3/17
-     AT&T TV 95.0  2023/3/22
-     Spectrum 50.0  2023/3/20
-     Allowance 500.0  2023/3/17
-2023-03-24 - 2023-03-30 	bills:105.02	income:500.00	total:394.98	TOTAL:42614.15
-     Factor 77.0  2023/3/29
-     NYTimes 6.38  2023/3/24
-     Alamo Season Pass 21.64  2023/3/26
-     Allowance 500.0  2023/3/24
-2023-03-31 - 2023-04-06 	bills:418.21	income:500.00	total:81.79	TOTAL:42695.94
-     Factor 77.0  2023/4/5
-     AT&T 206.21  2023/4/4
-     Green Mountain 135.0  2023/4/6
-     Allowance 500.0  2023/3/31
-2023-04-07 - 2023-04-13 	bills:89.98	income:500.00	total:410.02	TOTAL:43105.96
-     Factor 77.0  2023/4/12
-     Hulu 12.98  2023/4/8
-     Allowance 500.0  2023/4/7
-2023-04-14 - 2023-04-20 	bills:144.31	income:500.00	total:355.69	TOTAL:43461.65
-     Factor 77.0  2023/4/19
-     Netflix 17.31  2023/4/17
-     Spectrum 50.0  2023/4/20
-     Allowance 500.0  2023/4/14
-2023-04-21 - 2023-04-27 	bills:221.66	income:500.00	total:278.34	TOTAL:43739.99
-     Factor 77.0  2023/4/26
-     Netflix DVD 21.64  2023/4/21
-     AT&T TV 95.0  2023/4/22
-     NYTimes 6.38  2023/4/24
-     Alamo Season Pass 21.64  2023/4/26
-     Allowance 500.0  2023/4/21
-2023-04-28 - 2023-05-04 	bills:283.21	income:500.00	total:216.79	TOTAL:43956.78
-     Factor 77.0  2023/5/3
-     AT&T 206.21  2023/5/4
-     Allowance 500.0  2023/4/28
-2023-05-05 - 2023-05-11 	bills:224.98	income:500.00	total:275.02	TOTAL:44231.80
-     Factor 77.0  2023/5/10
-     Hulu 12.98  2023/5/8
-     Green Mountain 135.0  2023/5/6
-     Allowance 500.0  2023/5/5
-2023-05-12 - 2023-05-18 	bills:94.31	income:500.00	total:405.69	TOTAL:44637.49
-     Factor 77.0  2023/5/17
-     Netflix 17.31  2023/5/17
-     Allowance 500.0  2023/5/12
-2023-05-19 - 2023-05-25 	bills:250.02	income:500.00	total:249.98	TOTAL:44887.47
-     Factor 77.0  2023/5/24
-     Netflix DVD 21.64  2023/5/21
-     AT&T TV 95.0  2023/5/22
-     Spectrum 50.0  2023/5/20
-     NYTimes 6.38  2023/5/24
-     Allowance 500.0  2023/5/19
-2023-05-26 - 2023-06-01 	bills:98.64	income:500.00	total:401.36	TOTAL:45288.83
-     Factor 77.0  2023/5/31
-     Alamo Season Pass 21.64  2023/5/26
-     Allowance 500.0  2023/5/26
-2023-06-02 - 2023-06-08 	bills:431.19	income:500.00	total:68.81	TOTAL:45357.64
-     Factor 77.0  2023/6/7
-     Hulu 12.98  2023/6/8
-     AT&T 206.21  2023/6/4
-     Green Mountain 135.0  2023/6/6
-     Allowance 500.0  2023/6/2
-2023-06-09 - 2023-06-15 	bills:77.00	income:500.00	total:423.00	TOTAL:45780.64
-     Factor 77.0  2023/6/14
-     Allowance 500.0  2023/6/9
-2023-06-16 - 2023-06-22 	bills:260.95	income:500.00	total:239.05	TOTAL:46019.69
-     Factor 77.0  2023/6/21
-     Netflix DVD 21.64  2023/6/21
-     Netflix 17.31  2023/6/17
-     AT&T TV 95.0  2023/6/22
-     Spectrum 50.0  2023/6/20
-     Allowance 500.0  2023/6/16
-2023-06-23 - 2023-06-29 	bills:105.02	income:500.00	total:394.98	TOTAL:46414.67
-     Factor 77.0  2023/6/28
-     NYTimes 6.38  2023/6/24
-     Alamo Season Pass 21.64  2023/6/26
-     Allowance 500.0  2023/6/23
-2023-06-30 - 2023-07-06 	bills:418.21	income:500.00	total:81.79	TOTAL:46496.46
-     Factor 77.0  2023/7/5
-     AT&T 206.21  2023/7/4
-     Green Mountain 135.0  2023/7/6
-     Allowance 500.0  2023/6/30
-2023-07-07 - 2023-07-13 	bills:89.98	income:500.00	total:410.02	TOTAL:46906.48
-     Factor 77.0  2023/7/12
-     Hulu 12.98  2023/7/8
-     Allowance 500.0  2023/7/7
-2023-07-14 - 2023-07-20 	bills:144.31	income:500.00	total:355.69	TOTAL:47262.17
-     Factor 77.0  2023/7/19
-     Netflix 17.31  2023/7/17
-     Spectrum 50.0  2023/7/20
-     Allowance 500.0  2023/7/14
-2023-07-21 - 2023-07-27 	bills:221.66	income:500.00	total:278.34	TOTAL:47540.51
-     Factor 77.0  2023/7/26
-     Netflix DVD 21.64  2023/7/21
-     AT&T TV 95.0  2023/7/22
-     NYTimes 6.38  2023/7/24
-     Alamo Season Pass 21.64  2023/7/26
-     Allowance 500.0  2023/7/21
-2023-07-28 - 2023-08-03 	bills:77.00	income:500.00	total:423.00	TOTAL:47963.51
-     Factor 77.0  2023/8/2
-     Allowance 500.0  2023/7/28
-2023-08-04 - 2023-08-10 	bills:431.19	income:500.00	total:68.81	TOTAL:48032.32
-     Factor 77.0  2023/8/9
-     Hulu 12.98  2023/8/8
-     AT&T 206.21  2023/8/4
-     Green Mountain 135.0  2023/8/6
-     Allowance 500.0  2023/8/4
-2023-08-11 - 2023-08-17 	bills:94.31	income:500.00	total:405.69	TOTAL:48438.01
-     Factor 77.0  2023/8/16
-     Netflix 17.31  2023/8/17
-     Allowance 500.0  2023/8/11
-2023-08-18 - 2023-08-24 	bills:250.02	income:500.00	total:249.98	TOTAL:48687.99
-     Factor 77.0  2023/8/23
-     Netflix DVD 21.64  2023/8/21
-     AT&T TV 95.0  2023/8/22
-     Spectrum 50.0  2023/8/20
-     NYTimes 6.38  2023/8/24
-     Allowance 500.0  2023/8/18
-2023-08-25 - 2023-08-31 	bills:98.64	income:500.00	total:401.36	TOTAL:49089.35
-     Factor 77.0  2023/8/30
-     Alamo Season Pass 21.64  2023/8/26
-     Allowance 500.0  2023/8/25
-2023-09-01 - 2023-09-07 	bills:418.21	income:500.00	total:81.79	TOTAL:49171.14
-     Factor 77.0  2023/9/6
-     AT&T 206.21  2023/9/4
-     Green Mountain 135.0  2023/9/6
-     Allowance 500.0  2023/9/1
-2023-09-08 - 2023-09-14 	bills:89.98	income:500.00	total:410.02	TOTAL:49581.16
-     Factor 77.0  2023/9/13
-     Hulu 12.98  2023/9/8
-     Allowance 500.0  2023/9/8
-2023-09-15 - 2023-09-21 	bills:165.95	income:500.00	total:334.05	TOTAL:49915.21
-     Factor 77.0  2023/9/20
-     Netflix DVD 21.64  2023/9/21
-     Netflix 17.31  2023/9/17
-     Spectrum 50.0  2023/9/20
-     Allowance 500.0  2023/9/15
-2023-09-22 - 2023-09-28 	bills:200.02	income:500.00	total:299.98	TOTAL:50215.19
-     Factor 77.0  2023/9/27
-     AT&T TV 95.0  2023/9/22
-     NYTimes 6.38  2023/9/24
-     Alamo Season Pass 21.64  2023/9/26
-     Allowance 500.0  2023/9/22
-2023-09-29 - 2023-10-05 	bills:283.21	income:500.00	total:216.79	TOTAL:50431.98
-     Factor 77.0  2023/10/4
-     AT&T 206.21  2023/10/4
-     Allowance 500.0  2023/9/29
-2023-10-06 - 2023-10-12 	bills:224.98	income:500.00	total:275.02	TOTAL:50707.00
-     Factor 77.0  2023/10/11
-     Hulu 12.98  2023/10/8
-     Green Mountain 135.0  2023/10/6
-     Allowance 500.0  2023/10/6
-2023-10-13 - 2023-10-19 	bills:94.31	income:500.00	total:405.69	TOTAL:51112.69
-     Factor 77.0  2023/10/18
-     Netflix 17.31  2023/10/17
-     Allowance 500.0  2023/10/13
-2023-10-20 - 2023-10-26 	bills:271.66	income:500.00	total:228.34	TOTAL:51341.03
-     Factor 77.0  2023/10/25
-     Netflix DVD 21.64  2023/10/21
-     AT&T TV 95.0  2023/10/22
-     Spectrum 50.0  2023/10/20
-     NYTimes 6.38  2023/10/24
-     Alamo Season Pass 21.64  2023/10/26
-     Allowance 500.0  2023/10/20
-2023-10-27 - 2023-11-02 	bills:77.00	income:500.00	total:423.00	TOTAL:51764.03
-     Factor 77.0  2023/11/1
-     Allowance 500.0  2023/10/27
-2023-11-03 - 2023-11-09 	bills:431.19	income:500.00	total:68.81	TOTAL:51832.84
-     Factor 77.0  2023/11/8
-     Hulu 12.98  2023/11/8
-     AT&T 206.21  2023/11/4
-     Green Mountain 135.0  2023/11/6
-     Allowance 500.0  2023/11/3
-2023-11-10 - 2023-11-16 	bills:77.00	income:500.00	total:423.00	TOTAL:52255.84
-     Factor 77.0  2023/11/15
-     Allowance 500.0  2023/11/10
-2023-11-17 - 2023-11-23 	bills:260.95	income:500.00	total:239.05	TOTAL:52494.89
-     Factor 77.0  2023/11/22
-     Netflix DVD 21.64  2023/11/21
-     Netflix 17.31  2023/11/17
-     AT&T TV 95.0  2023/11/22
-     Spectrum 50.0  2023/11/20
-     Allowance 500.0  2023/11/17
-2023-11-24 - 2023-11-30 	bills:105.02	income:500.00	total:394.98	TOTAL:52889.87
-     Factor 77.0  2023/11/29
-     NYTimes 6.38  2023/11/24
-     Alamo Season Pass 21.64  2023/11/26
-     Allowance 500.0  2023/11/24
-2023-12-01 - 2023-12-07 	bills:418.21	income:500.00	total:81.79	TOTAL:52971.66
-     Factor 77.0  2023/12/6
-     AT&T 206.21  2023/12/4
-     Green Mountain 135.0  2023/12/6
-     Allowance 500.0  2023/12/1
-2023-12-08 - 2023-12-14 	bills:89.98	income:500.00	total:410.02	TOTAL:53381.68
-     Factor 77.0  2023/12/13
-     Hulu 12.98  2023/12/8
-     Allowance 500.0  2023/12/8
-2023-12-15 - 2023-12-21 	bills:165.95	income:500.00	total:334.05	TOTAL:53715.73
-     Factor 77.0  2023/12/20
-     Netflix DVD 21.64  2023/12/21
-     Netflix 17.31  2023/12/17
-     Spectrum 50.0  2023/12/20
-     Allowance 500.0  2023/12/15
-2023-12-22 - 2023-12-28 	bills:200.02	income:500.00	total:299.98	TOTAL:54015.71
-     Factor 77.0  2023/12/27
-     AT&T TV 95.0  2023/12/22
-     NYTimes 6.38  2023/12/24
-     Alamo Season Pass 21.64  2023/12/26
-     Allowance 500.0  2023/12/22
-2023-12-29 - 2024-01-04 	bills:283.21	income:500.00	total:216.79	TOTAL:54232.50
-     Factor 77.0  2024/1/3
-     AT&T 206.21  2024/1/4
-     Allowance 500.0  2023/12/29
-2024-01-05 - 2024-01-11 	bills:224.98	income:500.00	total:275.02	TOTAL:54507.52
-     Factor 77.0  2024/1/10
-     Hulu 12.98  2024/1/8
-     Green Mountain 135.0  2024/1/6
-     Allowance 500.0  2024/1/5
-2024-01-12 - 2024-01-18 	bills:94.31	income:500.00	total:405.69	TOTAL:54913.21
-     Factor 77.0  2024/1/17
-     Netflix 17.31  2024/1/17
-     Allowance 500.0  2024/1/12
-2024-01-19 - 2024-01-25 	bills:250.02	income:500.00	total:249.98	TOTAL:55163.19
-     Factor 77.0  2024/1/24
-     Netflix DVD 21.64  2024/1/21
-     AT&T TV 95.0  2024/1/22
-     Spectrum 50.0  2024/1/20
-     NYTimes 6.38  2024/1/24
-     Allowance 500.0  2024/1/19
-2024-01-26 - 2024-02-01 	bills:98.64	income:500.00	total:401.36	TOTAL:55564.55
-     Factor 77.0  2024/1/31
-     Alamo Season Pass 21.64  2024/1/26
-     Allowance 500.0  2024/1/26
-2024-02-02 - 2024-02-08 	bills:431.19	income:500.00	total:68.81	TOTAL:55633.36
-     Factor 77.0  2024/2/7
-     Hulu 12.98  2024/2/8
-     AT&T 206.21  2024/2/4
-     Green Mountain 135.0  2024/2/6
-     Allowance 500.0  2024/2/2
-2024-02-09 - 2024-02-15 	bills:77.00	income:500.00	total:423.00	TOTAL:56056.36
-     Factor 77.0  2024/2/14
-     Allowance 500.0  2024/2/9

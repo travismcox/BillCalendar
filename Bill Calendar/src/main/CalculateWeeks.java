@@ -23,8 +23,8 @@ public abstract class CalculateWeeks {
 	}
 	
 	public static ArrayList<String> startCalculateWeeks(CollectionOfListCollections collection, int weeks) {
-		LocalDate startOfWeek = findNextDayOfWeekOccurance(LocalDate.now(), DayOfWeek.FRIDAY);
-		LocalDate endOfWeek = findNextDayOfWeekOccurance(startOfWeek, DayOfWeek.THURSDAY);
+		LocalDate startOfWeek = findNextDayOfWeekOccurance(LocalDate.now(), DayOfWeek.FRIDAY, -1);
+		LocalDate endOfWeek = findNextDayOfWeekOccurance(startOfWeek, DayOfWeek.THURSDAY, 1);
 		ArrayList<OneTimeTransaction> tempResultsBill, tempResultsIncome; 
 		ArrayList<String> results = new ArrayList<String>();
 		ArrayList<Double> totalTotals = new ArrayList<Double>(), bills = new ArrayList<Double>(), incomes = new ArrayList<Double>();
@@ -43,7 +43,8 @@ public abstract class CalculateWeeks {
 	}
 	
 	private static void addWeekToOutput(ArrayList<OneTimeTransaction> tempResultsBill, ArrayList<OneTimeTransaction> tempResultsIncome, ArrayList<String> results, LocalDate tempStart, LocalDate tempEnd, int week, ArrayList<Double> bills, ArrayList<Double> incomes, ArrayList<Double> totalTotals) {
-		results.add(printDate(tempStart) + " - " + printDate(tempEnd) + " " + String.format("\tbills:%.2f", bills.get(week)) + String.format("\tincome:%.2f", incomes.get(week)) + String.format("\ttotal:%.2f", (incomes.get(week)-bills.get(week))) + String.format("\tTOTAL:%.2f", totalTotals.get(week)));
+		results.add(printDate(tempStart) + " - " + printDate(tempEnd));
+		results.add(String.format("bills:%.2f", bills.get(week)) + String.format("\tincome:%.2f", incomes.get(week)) + String.format("\tremaining:%.2f", (incomes.get(week)-bills.get(week))) + String.format("\tTOTAL:%.2f", totalTotals.get(week)));
 		addTransactionToOutput(tempResultsBill, results);
 		addTransactionToOutput(tempResultsIncome, results);
 	}
@@ -54,10 +55,10 @@ public abstract class CalculateWeeks {
 		}
 	}
 
-	private static LocalDate findNextDayOfWeekOccurance(LocalDate start, DayOfWeek target) {
+	private static LocalDate findNextDayOfWeekOccurance(LocalDate start, DayOfWeek target, int increment) {
 		LocalDate temp = start.plusDays(0);
 		while(temp.getDayOfWeek().getValue() != target.getValue()) {
-			LocalDate tempDate = temp.plusDays(1);
+			LocalDate tempDate = temp.plusDays(increment);
 			temp = tempDate;
 		}
 		
@@ -85,7 +86,7 @@ public abstract class CalculateWeeks {
 	private static Double calculateTransactions(LocalDate tempStart, LocalDate tempEnd, ListCollection listCollection, int week, ArrayList<OneTimeTransaction> tempResults) {
 		//Weekly
 		for(int i = 0; i < listCollection.getListWeekly().size(); i++) {
-			foundDate(listCollection.getListWeekly().get(i), findNextDayOfWeekOccurance(tempStart, listCollection.getListWeekly().get(i).getDayOfWeek()), tempResults);
+			foundDate(listCollection.getListWeekly().get(i), findNextDayOfWeekOccurance(tempStart, listCollection.getListWeekly().get(i).getDayOfWeek(), 1), tempResults);
 		}
 		//Monthly
 		for(int i = 0; i < listCollection.getListMonthly().size(); i++) {
