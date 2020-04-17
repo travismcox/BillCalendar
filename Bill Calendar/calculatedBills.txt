@@ -1,39 +1,32 @@
-2020-04-10 - 2020-04-16
-bills:256.79	income:500.00	remaining:243.21	TOTAL:243.21
-     Factor 77.0  2020/4/15
-     Broadway at the Bass2 179.79  2020/4/15
-     Allowance 500.0  2020/4/10
 2020-04-17 - 2020-04-23
-bills:650.98	income:500.00	remaining:-150.98	TOTAL:92.23
+bills:650.98	income:500.00	remaining:-150.98	TOTAL:-150.98
      Factor 77.0  2020/4/22
      Netflix DVD 21.64  2020/4/21
      Netflix 17.31  2020/4/17
-     AT&T TV 95.0  2020/4/22
-     Spectrum 50.0  2020/4/20
      Affirm - Giant 120.83  2020/4/22
      Affirm - Casper 208.83  2020/4/22
      iPhone Loan 60.37  2020/4/20
      Allowance 500.0  2020/4/17
 2020-04-24 - 2020-04-30
-bills:105.02	income:500.00	remaining:394.98	TOTAL:487.21
+bills:105.02	income:500.00	remaining:394.98	TOTAL:244.00
      Factor 77.0  2020/4/29
      NYTimes 6.38  2020/4/24
      Alamo Season Pass 21.64  2020/4/26
      Allowance 500.0  2020/4/24
 2020-05-01 - 2020-05-07
-bills:597.40	income:500.00	remaining:-97.40	TOTAL:389.81
+bills:598.50	income:500.00	remaining:-98.50	TOTAL:145.50
      Factor 77.0  2020/5/6
-     AT&T 206.21  2020/5/4
-     Green Mountain 135.0  2020/5/6
+     AT&T 242.31  2020/5/4
+     Green Mountain 100.0  2020/5/6
      Broadway at the Bass 179.19  2020/5/1
      Allowance 500.0  2020/5/1
 2020-05-08 - 2020-05-14
-bills:89.98	income:500.00	remaining:410.02	TOTAL:799.83
+bills:89.98	income:500.00	remaining:410.02	TOTAL:555.52
      Factor 77.0  2020/5/13
      Hulu 12.98  2020/5/8
      Allowance 500.0  2020/5/8
 2020-05-15 - 2020-05-21
-bills:406.11	income:500.00	remaining:93.89	TOTAL:893.72
+bills:406.11	income:500.00	remaining:93.89	TOTAL:649.41
      Factor 77.0  2020/5/20
      Netflix DVD 21.64  2020/5/21
      Netflix 17.31  2020/5/17
@@ -42,7 +35,7 @@ bills:406.11	income:500.00	remaining:93.89	TOTAL:893.72
      iPhone Loan 60.37  2020/5/20
      Allowance 500.0  2020/5/15
 2020-05-22 - 2020-05-28
-bills:320.85	income:500.00	remaining:179.15	TOTAL:1072.87
+bills:320.85	income:500.00	remaining:179.15	TOTAL:828.56
      Factor 77.0  2020/5/27
      AT&T TV 95.0  2020/5/22
      NYTimes 6.38  2020/5/24
@@ -50,23 +43,23 @@ bills:320.85	income:500.00	remaining:179.15	TOTAL:1072.87
      Affirm - Giant 120.83  2020/5/22
      Allowance 500.0  2020/5/22
 2020-05-29 - 2020-06-04
-bills:283.21	income:500.00	remaining:216.79	TOTAL:1289.66
+bills:319.31	income:500.00	remaining:180.69	TOTAL:1009.25
      Factor 77.0  2020/6/3
-     AT&T 206.21  2020/6/4
+     AT&T 242.31  2020/6/4
      Allowance 500.0  2020/5/29
 2020-06-05 - 2020-06-11
-bills:224.98	income:500.00	remaining:275.02	TOTAL:1564.68
+bills:189.98	income:500.00	remaining:310.02	TOTAL:1319.27
      Factor 77.0  2020/6/10
      Hulu 12.98  2020/6/8
-     Green Mountain 135.0  2020/6/6
+     Green Mountain 100.0  2020/6/6
      Allowance 500.0  2020/6/5
 2020-06-12 - 2020-06-18
-bills:94.31	income:500.00	remaining:405.69	TOTAL:1970.37
+bills:94.31	income:500.00	remaining:405.69	TOTAL:1724.96
      Factor 77.0  2020/6/17
      Netflix 17.31  2020/6/17
      Allowance 500.0  2020/6/12
 2020-06-19 - 2020-06-25
-bills:431.22	income:500.00	remaining:68.78	TOTAL:2039.15
+bills:431.22	income:500.00	remaining:68.78	TOTAL:1793.74
      Factor 77.0  2020/6/24
      Netflix DVD 21.64  2020/6/21
      AT&T TV 95.0  2020/6/22
@@ -76,23 +69,23 @@ bills:431.22	income:500.00	remaining:68.78	TOTAL:2039.15
      iPhone Loan 60.37  2020/6/20
      Allowance 500.0  2020/6/19
 2020-06-26 - 2020-07-02
-bills:98.64	income:500.00	remaining:401.36	TOTAL:2440.51
+bills:98.64	income:500.00	remaining:401.36	TOTAL:2195.10
      Factor 77.0  2020/7/1
      Alamo Season Pass 21.64  2020/6/26
      Allowance 500.0  2020/6/26
 2020-07-03 - 2020-07-09
-bills:431.19	income:500.00	remaining:68.81	TOTAL:2509.32
+bills:432.29	income:500.00	remaining:67.71	TOTAL:2262.81
      Factor 77.0  2020/7/8
      Hulu 12.98  2020/7/8
-     AT&T 206.21  2020/7/4
-     Green Mountain 135.0  2020/7/6
+     AT&T 242.31  2020/7/4
+     Green Mountain 100.0  2020/7/6
      Allowance 500.0  2020/7/3
 2020-07-10 - 2020-07-16
-bills:77.00	income:500.00	remaining:423.00	TOTAL:2932.32
+bills:77.00	income:500.00	remaining:423.00	TOTAL:2685.81
      Factor 77.0  2020/7/15
      Allowance 500.0  2020/7/10
 2020-07-17 - 2020-07-23
-bills:442.15	income:500.00	remaining:57.85	TOTAL:2990.17
+bills:442.15	income:500.00	remaining:57.85	TOTAL:2743.66
      Factor 77.0  2020/7/22
      Netflix DVD 21.64  2020/7/21
      Netflix 17.31  2020/7/17
@@ -102,31 +95,31 @@ bills:442.15	income:500.00	remaining:57.85	TOTAL:2990.17
      iPhone Loan 60.37  2020/7/20
      Allowance 500.0  2020/7/17
 2020-07-24 - 2020-07-30
-bills:105.02	income:500.00	remaining:394.98	TOTAL:3385.15
+bills:105.02	income:500.00	remaining:394.98	TOTAL:3138.64
      Factor 77.0  2020/7/29
      NYTimes 6.38  2020/7/24
      Alamo Season Pass 21.64  2020/7/26
      Allowance 500.0  2020/7/24
 2020-07-31 - 2020-08-06
-bills:418.21	income:500.00	remaining:81.79	TOTAL:3466.94
+bills:419.31	income:500.00	remaining:80.69	TOTAL:3219.33
      Factor 77.0  2020/8/5
-     AT&T 206.21  2020/8/4
-     Green Mountain 135.0  2020/8/6
+     AT&T 242.31  2020/8/4
+     Green Mountain 100.0  2020/8/6
      Allowance 500.0  2020/7/31
 2020-08-07 - 2020-08-13
-bills:89.98	income:500.00	remaining:410.02	TOTAL:3876.96
+bills:89.98	income:500.00	remaining:410.02	TOTAL:3629.35
      Factor 77.0  2020/8/12
      Hulu 12.98  2020/8/8
      Allowance 500.0  2020/8/7
 2020-08-14 - 2020-08-20
-bills:204.68	income:500.00	remaining:295.32	TOTAL:4172.28
+bills:204.68	income:500.00	remaining:295.32	TOTAL:3924.67
      Factor 77.0  2020/8/19
      Netflix 17.31  2020/8/17
      Spectrum 50.0  2020/8/20
      iPhone Loan 60.37  2020/8/20
      Allowance 500.0  2020/8/14
 2020-08-21 - 2020-08-27
-bills:342.49	income:500.00	remaining:157.51	TOTAL:4329.79
+bills:342.49	income:500.00	remaining:157.51	TOTAL:4082.18
      Factor 77.0  2020/8/26
      Netflix DVD 21.64  2020/8/21
      AT&T TV 95.0  2020/8/22
@@ -134,3 +127,7 @@ bills:342.49	income:500.00	remaining:157.51	TOTAL:4329.79
      Alamo Season Pass 21.64  2020/8/26
      Affirm - Giant 120.83  2020/8/22
      Allowance 500.0  2020/8/21
+2020-08-28 - 2020-09-03
+bills:77.00	income:500.00	remaining:423.00	TOTAL:4505.18
+     Factor 77.0  2020/9/2
+     Allowance 500.0  2020/8/28

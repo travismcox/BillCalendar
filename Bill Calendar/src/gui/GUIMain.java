@@ -104,28 +104,28 @@ public class GUIMain extends JFrame{
 		cleanUp(new GUISelect(this, timeType, transactionType), 200, 300);
 	}
 
-	public void changeToEditMonthly(int selection) {
-		cleanUp(new GUIMonthlyBill(this, selection), 500, 300);
+	public void changeToEditMonthly(int selection, int transactionType) {
+		cleanUp(new GUIMonthlyBill(this, selection, transactionType), 500, 300);
 	}
 
-	public void changeToEditWeekly(int selection) {
-		cleanUp(new GUIWeeklyBill(this, selection), 500, 300);
+	public void changeToEditWeekly(int selection, int transactionType) {
+		cleanUp(new GUIWeeklyBill(this, selection, transactionType), 500, 300);
 	}
 
-	public void changeToEditOneTime(int selection) {
-		cleanUp(new GUIOneTimeBill(this, selection), 500, 400);
+	public void changeToEditOneTime(int selection, int transactionType) {
+		cleanUp(new GUIOneTimeBill(this, selection, transactionType), 500, 400);
 	}
 
-	public void changeToEditLimited(int selection) {
-		cleanUp(new GUILimitedBill(this, selection), 500, 450);
+	public void changeToEditLimited(int selection, int transactionType) {
+		cleanUp(new GUILimitedBill(this, selection, transactionType), 500, 450);
 	}
 
 	public void changeToAnnual(int transactionType) {
 		cleanUp(new GUIAnnualBill(this, transactionType), 500, 350);
 	}
 
-	public void changeToEditAnnual(int selection) {
-		cleanUp(new GUIAnnualBill(this, selection), 500, 350);
+	public void changeToEditAnnual(int selection, int transactionType) {
+		cleanUp(new GUIAnnualBill(this, selection, transactionType), 500, 350);
 	}
 	
 	private void cleanUp(Component component, int x, int y) {

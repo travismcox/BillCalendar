@@ -67,15 +67,15 @@ public class GUISelect extends JPanel implements ActionListener, ListSelectionLi
         else if (action.equals(Utility.Enter)) {
             int selection = selectionList.getSelectedIndex();
             switch(typeOfBill) {
-    		case 0: frame.changeToEditMonthly(selection);
+    		case 0: frame.changeToEditMonthly(selection, transactionType);
     			break;
-    		case 1: frame.changeToEditAnnual(selection);
+    		case 1: frame.changeToEditAnnual(selection, transactionType);
     			break;
-    		case 2: frame.changeToEditWeekly(selection);
+    		case 2: frame.changeToEditWeekly(selection, transactionType);
     			break;
-    		case 3: frame.changeToEditOneTime(selection);
+    		case 3: frame.changeToEditOneTime(selection, transactionType);
     			break;
-    		case 4: frame.changeToEditLimited(selection);
+    		case 4: frame.changeToEditLimited(selection, transactionType);
     			break;
     		}
         }
